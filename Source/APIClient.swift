@@ -32,21 +32,23 @@ public class APIClient {
         }
 
         URLSession.shared.dataTask(with: req) { (data, response, error) in
-            if let error = error {
-                return completionHandler(nil, Error.other(error.localizedDescription))
-            }
-
-            guard let data = data else {
-                return completionHandler(nil, Error.emptyData)
-            }
-
-            do {
-                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
-                    return completionHandler(nil, Error.invalidJSON)
+            DispatchQueue.main.async {
+                if let error = error {
+                    return completionHandler(nil, Error.other(error.localizedDescription))
                 }
-                completionHandler(json, nil)
-            } catch let error {
-                completionHandler(nil, Error.other(error.localizedDescription))
+
+                guard let data = data else {
+                    return completionHandler(nil, Error.emptyData)
+                }
+
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
+                        return completionHandler(nil, Error.invalidJSON)
+                    }
+                    completionHandler(json, nil)
+                } catch let error {
+                    completionHandler(nil, Error.other(error.localizedDescription))
+                }
             }
         }.resume()
     }
