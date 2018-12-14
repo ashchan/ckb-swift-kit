@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RawHeader: Codable {
+public struct RawHeader: Codable, Param {
     let version: UInt32
     let parentHash: H256
     let timestamp: UInt64
@@ -32,14 +32,43 @@ public struct RawHeader: Codable {
         case unclesHash = "uncles_hash"
         case unclesCount = "uncles_count"
     }
+
+    public var param: [String: Any] {
+        return [
+            "version": version,
+            CodingKeys.parentHash.rawValue: parentHash,
+            "timestamp": timestamp,
+            "number": number,
+            CodingKeys.txsCommit.rawValue: txsCommit,
+            CodingKeys.txsProposal.rawValue: txsProposal,
+            "difficulty": difficulty,
+            CodingKeys.cellbaseId.rawValue: cellbaseId,
+            CodingKeys.unclesHash.rawValue: unclesHash,
+            CodingKeys.unclesCount.rawValue: unclesCount
+        ]
+    }
 }
 
-public struct Seal: Codable {
+public struct Seal: Codable, Param {
     let nonce: UInt64
     let proof: [UInt8]
+
+    public var param: [String: Any] {
+        return [
+            "nonce": nonce,
+            "proof": proof
+        ]
+    }
 }
 
-public struct Header: Codable {
+public struct Header: Codable, Param {
     let raw: RawHeader
     let seal: Seal
+
+    public var param: [String: Any] {
+        return [
+            "raw": raw.param,
+            "seal": seal.param
+        ]
+    }
 }

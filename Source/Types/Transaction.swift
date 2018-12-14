@@ -8,14 +8,19 @@
 
 import Foundation
 
-public struct Transaction: Codable {
+public struct Transaction: Codable, Param {
     let version: UInt32
     let deps: [OutPoint]
     let inputs: [CellInput]
     let outputs: [CellOutput]
 
-    var json: [String: Any] {
-        return [:] // TODO
+    public var param: [String: Any] {
+        return [
+            "version": version,
+            "deps": deps.map { $0.param },
+            "inputs": inputs.map { $0.param },
+            "outputs": outputs.map { $0.param }
+        ]
     }
 }
 

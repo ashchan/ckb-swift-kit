@@ -22,7 +22,7 @@ public struct BlockTemplate: Codable {
     }
 }
 
-public struct Block: Codable {
+public struct Block: Codable, Param {
     let header: Header
     let uncles: [UncleBlock]
     let commitTransactions: [Transaction]
@@ -35,8 +35,13 @@ public struct Block: Codable {
         case proposalTransactions = "proposal_transactions"
     }
 
-    var json: [String: Any] {
-        return [:] // TODO
+    public var param: [String: Any] {
+        return [
+            "header": header.param,
+            "uncles": uncles.map { $0.param },
+            CodingKeys.commitTransactions.rawValue: commitTransactions.map { $0.param },
+            CodingKeys.proposalTransactions.rawValue: proposalTransactions
+        ]
     }
 }
 
@@ -46,7 +51,7 @@ public struct BlockWithHash: Codable {
     let transactions: [TransactionWithHash]
 }
 
-public struct UncleBlock: Codable {
+public struct UncleBlock: Codable, Param {
     let header: Header
     let cellbase: Transaction
     let proposalTransactions: [ProposalShortId]
@@ -55,5 +60,13 @@ public struct UncleBlock: Codable {
         case header
         case cellbase
         case proposalTransactions = "proposal_transactions"
+    }
+
+    public var param: [String: Any] {
+        return [
+            "header": header.param,
+            "cellbase": cellbase.param,
+            CodingKeys.proposalTransactions.rawValue: proposalTransactions
+        ]
     }
 }
