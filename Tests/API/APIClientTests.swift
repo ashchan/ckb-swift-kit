@@ -13,9 +13,10 @@ class APIClientTests: XCTestCase {
     func testRequestRPC() {
         let expectation = XCTestExpectation(description: "Access JSON RPC")
 
+        let request = APIRequest<String>(method: "eth_blockNumber", params: [])
         let client = APIClient(url: URL(string: "https://web3.gastracker.io")!)
-        client.request(method: "eth_blockNumber") { (json, error) in
-            XCTAssertNotNil(json)
+        client.load(request) { (result, error) in
+            XCTAssertNotNil(result)
             expectation.fulfill()
         }
 
