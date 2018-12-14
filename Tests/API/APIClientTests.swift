@@ -10,44 +10,54 @@ import XCTest
 @testable import CKB
 
 class APIClientTests: XCTestCase {
-    func testRequestRPC() throws {
-        let request = APIRequest<String>(method: "eth_blockNumber", params: [])
-        let client = APIClient(url: URL(string: "https://web3.gastracker.io")!)
-        let result = try client.load(request)
-        XCTAssertNotNil(result)
-    }
-
     func testGenesisBlock() throws {
-        let client = APIClient()
-        let result = try client.genesisBlock()
+        let result = try APIClient().genesisBlock()
         XCTAssertNotNil(result)
     }
 
     func testGetBlock() throws {
+        let client = APIClient()
+        let hash = try client.genesisBlock()
+        let result = try client.getBlock(hash: hash)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(hash, result.hash)
     }
 
     func testGetTransaction() throws {
     }
 
     func testGetBlockHash() throws {
-        let client = APIClient()
-        let result = try client.getBlockHash(number: 1)
+        let result = try APIClient().getBlockHash(number: 1)
         XCTAssertNotNil(result)
     }
 
     func testGetTipHeader() throws {
+        let client = APIClient()
+        let result = try client.getTipHeader()
+        XCTAssertNotNil(result)
+        XCTAssertTrue(result.raw.number > 0)
     }
 
     func testGetCellsByTypeHash() throws {
+        let client = APIClient()
+        let result = try client.getCellsByTypeHash(typeHash: "0xb3c01133a371480a184372500197033850d53b482c0005795604bedba5d90978", from: 1, to: 100)
+        XCTAssertNotNil(result)
     }
 
     func testGetCurrentCell() throws {
+        let client = APIClient()
+        let cells = try client.getCellsByTypeHash(typeHash: "0xb3c01133a371480a184372500197033850d53b482c0005795604bedba5d90978", from: 1, to: 100)
+        let result = try client.getCurrentCell(outPoint: cells.first!.outPoint)
+        XCTAssertNotNil(result)
     }
 
     func testSendTransaction() throws {
     }
 
     func testGetBlockTemplate() throws {
+        let client = APIClient()
+        let result = try client.getBlockTemplate(typeHash: "0xb3c01133a371480a184372500197033850d53b482c0005795604bedba5d90978", maxTransactions: 1000, maxProposals: 1000)
+        XCTAssertNotNil(result)
     }
 
     func testSubmitBlock() throws {
