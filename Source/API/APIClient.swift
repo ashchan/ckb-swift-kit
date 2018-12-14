@@ -57,10 +57,6 @@ public class APIClient {
 
         return req
     }
-
-    private enum NotImpl: Error {
-        case todo
-    }
 }
 
 extension APIClient {
@@ -73,11 +69,11 @@ extension APIClient {
 
 extension APIClient {
     public func getBlock(hash: H256) throws -> BlockWithHash {
-        throw NotImpl.todo
+        return try load(APIRequest<BlockWithHash>(method: "get_block", params: [hash]))
     }
 
     public func getTransaction(hash: H256) throws -> TransactionWithHash {
-        throw NotImpl.todo
+        return try load(APIRequest<TransactionWithHash>(method: "get_transaction", params: [hash]))
     }
 
     public func getBlockHash(number: BlockNumber) throws -> H256 {
@@ -85,15 +81,15 @@ extension APIClient {
     }
 
     public func getTipHeader() throws -> Header {
-        throw NotImpl.todo
+        return try load(APIRequest<Header>(method: "get_tip_header"))
     }
 
     public func getCellsByTypeHash(typeHash: H256, from: UInt64, to: UInt64) throws -> [CellOutputWithOutPoint] {
-        throw NotImpl.todo
+        return try load(APIRequest<[CellOutputWithOutPoint]>(method: "get_cells_by_type_hash", params: [typeHash, from, to]))
     }
 
     public func getCurrentCell(outPoint: OutPoint) throws -> CellWithStatus {
-        throw NotImpl.todo
+        return try load(APIRequest<CellWithStatus>(method: "get_current_cell", params: [outPoint]))
     }
 }
 
@@ -101,7 +97,7 @@ extension APIClient {
 
 extension APIClient {
     public func sendTransaction(transaction: Transaction) throws -> H256 {
-        throw NotImpl.todo
+        return try load(APIRequest<H256>(method: "send_transaction", params: [transaction]))
     }
 }
 
@@ -109,10 +105,10 @@ extension APIClient {
 
 extension APIClient {
     public func getBlockTemplate(typeHash: String, maxTransactions: UInt, maxProposals: UInt) throws -> BlockTemplate {
-        throw NotImpl.todo
+        return try load(APIRequest<BlockTemplate>(method: "get_block_template", params: [typeHash, maxTransactions, maxProposals]))
     }
 
     public func submitBlock(block: Block) throws -> H256 {
-        throw NotImpl.todo
+        return try load(APIRequest<H256>(method: "submit_block", params: [block]))
     }
 }
