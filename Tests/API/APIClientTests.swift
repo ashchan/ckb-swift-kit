@@ -10,16 +10,10 @@ import XCTest
 @testable import CKB
 
 class APIClientTests: XCTestCase {
-    func testRequestRPC() {
-        let expectation = XCTestExpectation(description: "Access JSON RPC")
-
+    func testRequestRPC() throws {
         let request = APIRequest<String>(method: "eth_blockNumber", params: [])
         let client = APIClient(url: URL(string: "https://web3.gastracker.io")!)
-        client.load(request) { (result, error) in
-            XCTAssertNotNil(result)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 10.0)
+        let result = try client.load(request)
+        XCTAssertNotNil(result)
     }
 }

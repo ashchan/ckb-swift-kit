@@ -16,42 +16,45 @@ public class APIClient {
         self.url = url
     }
 
-    public func load<R: Codable>(_ request: APIRequest<R>, id: Int = 1, completionHandler: @escaping (_ response: R?, _ error: APIError?) -> Void) {
+    public func load<R: Codable>(_ request: APIRequest<R>, id: Int = 1) throws -> R {
+        var result: R?
+        var error: Error?
+
+        let semaphore = DispatchSemaphore(value: 0)
+        URLSession.shared.dataTask(with: try createRequest(request)) { (data, response, err) in
+            error = err
+
+            if data == nil {
+                error = APIError.emptyResponse
+            }
+
+            do {
+                result = try request.decode(data!)
+            } catch let err {
+                error = err
+            }
+
+            semaphore.signal()
+        }.resume()
+        semaphore.wait()
+
+        if let error = error {
+            throw error
+        }
+        return result!
+    }
+
+    private func createRequest<R>(_ request: APIRequest<R>, id: Int = 1) throws -> URLRequest {
         var req = URLRequest(url: url)
         req.httpMethod = "POST"
         req.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        do {
-            let jsonObject: Any = [ "jsonrpc": "2.0", "id": id, "method": request.method, "params": request.params ]
-            if !JSONSerialization.isValidJSONObject(jsonObject) {
-                throw APIError.invalidParameters
-            }
-            req.httpBody = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
-        } catch {
-            return completionHandler(nil, .invalidParameters)
+        let jsonObject: Any = [ "jsonrpc": "2.0", "id": id, "method": request.method, "params": request.params ]
+        if !JSONSerialization.isValidJSONObject(jsonObject) {
+            throw APIError.invalidParameters
         }
+        req.httpBody = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
 
-        URLSession.shared.dataTask(with: req) { (data, response, error) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    return completionHandler(nil, .genericError(error.localizedDescription))
-                }
-
-                guard let data = data else {
-                    return completionHandler(nil, .emptyResponse)
-                }
-
-                do {
-                    let result = try request.decode(data)
-                    completionHandler(result, nil)
-                } catch let error {
-                    if let apiError = error as? APIError {
-                        completionHandler(nil, apiError)
-                    } else {
-                        completionHandler(nil, .genericError(error.localizedDescription))
-                    }
-                }
-            }
-        }.resume()
+        return req
     }
 }
