@@ -84,7 +84,7 @@ extension APIClient {
         return try load(APIRequest<Header>(method: "get_tip_header"))
     }
 
-    public func getCellsByTypeHash(typeHash: H256, from: UInt64, to: UInt64) throws -> [CellOutputWithOutPoint] {
+    public func getCellsByTypeHash(typeHash: H256, from: BlockNumber, to: BlockNumber) throws -> [CellOutputWithOutPoint] {
         return try load(APIRequest<[CellOutputWithOutPoint]>(method: "get_cells_by_type_hash", params: [typeHash, from, to]))
     }
 
