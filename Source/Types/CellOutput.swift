@@ -16,7 +16,12 @@ public struct CellOutput: Codable {
 }
 
 public struct CellOutputWithOutPoint: Codable {
-    let outpoint: OutPoint
+    let outPoint: OutPoint
     let capacity: Capacity
     let lock: H256
+
+    enum CodingKeys: String, CodingKey {
+        case outPoint = "outpoint"
+        case capacity, lock
+    }
 }
