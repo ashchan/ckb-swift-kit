@@ -13,6 +13,10 @@ public struct Transaction: Codable {
     let deps: [OutPoint]
     let inputs: [CellInput]
     let outputs: [CellOutput]
+
+    var json: [String: Any] {
+        return [:] // TODO
+    }
 }
 
 public struct TransactionWithHash: Codable {

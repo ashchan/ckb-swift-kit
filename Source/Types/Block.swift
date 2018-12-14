@@ -34,6 +34,10 @@ public struct Block: Codable {
         case commitTransactions = "commit_transactions"
         case proposalTransactions = "proposal_transactions"
     }
+
+    var json: [String: Any] {
+        return [:] // TODO
+    }
 }
 
 public struct BlockWithHash: Codable {

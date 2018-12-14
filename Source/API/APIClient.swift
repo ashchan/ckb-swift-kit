@@ -89,7 +89,7 @@ extension APIClient {
     }
 
     public func getCurrentCell(outPoint: OutPoint) throws -> CellWithStatus {
-        return try load(APIRequest<CellWithStatus>(method: "get_current_cell", params: [outPoint]))
+        return try load(APIRequest<CellWithStatus>(method: "get_current_cell", params: [outPoint.json]))
     }
 }
 
@@ -97,7 +97,7 @@ extension APIClient {
 
 extension APIClient {
     public func sendTransaction(transaction: Transaction) throws -> H256 {
-        return try load(APIRequest<H256>(method: "send_transaction", params: [transaction]))
+        return try load(APIRequest<H256>(method: "send_transaction", params: [transaction.json]))
     }
 }
 
@@ -109,6 +109,6 @@ extension APIClient {
     }
 
     public func submitBlock(block: Block) throws -> H256 {
-        return try load(APIRequest<H256>(method: "submit_block", params: [block]))
+        return try load(APIRequest<H256>(method: "submit_block", params: [block.json]))
     }
 }

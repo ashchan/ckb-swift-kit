@@ -11,4 +11,11 @@ import Foundation
 public struct OutPoint: Codable {
     let hash: H256
     let index: UInt32
+
+    var json: [String: Any] {
+        return [
+            "hash": hash,
+            "index": index
+        ]
+    }
 }
