@@ -19,7 +19,3 @@ public struct TransactionWithHash: Codable {
     let hash: H256
     let transaction: Transaction
 }
-
-public struct ProposalShortId: Codable {
-    // TODO
-}

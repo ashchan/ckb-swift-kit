@@ -10,5 +10,6 @@ import Foundation
 
 public typealias H256 = String // No strict typing for now.
 public typealias UInt256 = String // e.g. 0x400, TODO: Define a custom type?
+public typealias ProposalShortId = [UInt8] // Fixed 10-element array representing short hash.
 public typealias Capacity = UInt64
 public typealias BlockNumber = UInt64
