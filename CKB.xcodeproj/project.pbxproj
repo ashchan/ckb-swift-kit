@@ -13,6 +13,15 @@
 		1A414A7D21C23A3900B28C09 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A7C21C23A3900B28C09 /* APIClientTests.swift */; };
 		1A414A8121C32D4B00B28C09 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8021C32D4B00B28C09 /* APIResult.swift */; };
 		1A414A8321C334EB00B28C09 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8221C334EB00B28C09 /* APIRequest.swift */; };
+		1A414A8821C36FCF00B28C09 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8721C36FCF00B28C09 /* Header.swift */; };
+		1A414A8A21C36FE900B28C09 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8921C36FE900B28C09 /* Block.swift */; };
+		1A414A8C21C3714E00B28C09 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8B21C3714E00B28C09 /* Transaction.swift */; };
+		1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8D21C3722300B28C09 /* CellInput.swift */; };
+		1A414A9021C3723E00B28C09 /* CellOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8F21C3723E00B28C09 /* CellOutput.swift */; };
+		1A414A9221C3725300B28C09 /* OutPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9121C3725300B28C09 /* OutPoint.swift */; };
+		1A414A9421C3789000B28C09 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9321C3789000B28C09 /* Primitives.swift */; };
+		1A414A9621C37AA000B28C09 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9521C37AA000B28C09 /* Script.swift */; };
+		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		2D6EA000E9B8936CB81356CC /* Pods_CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4BD554CBEED5D384A1C737 /* Pods_CKB.framework */; };
 		591DADB7D11BC8F71DBF4902 /* Pods_CKBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +46,15 @@
 		1A414A7C21C23A3900B28C09 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		1A414A8021C32D4B00B28C09 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		1A414A8221C334EB00B28C09 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		1A414A8721C36FCF00B28C09 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		1A414A8921C36FE900B28C09 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		1A414A8B21C3714E00B28C09 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		1A414A8D21C3722300B28C09 /* CellInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInput.swift; sourceTree = "<group>"; };
+		1A414A8F21C3723E00B28C09 /* CellOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOutput.swift; sourceTree = "<group>"; };
+		1A414A9121C3725300B28C09 /* OutPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutPoint.swift; sourceTree = "<group>"; };
+		1A414A9321C3789000B28C09 /* Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
+		1A414A9521C37AA000B28C09 /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
+		1A414A9921C3879500B28C09 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		3280C4848C7A8236CA5F4CD8 /* Pods-CKBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5CAEE4335089142E8F3ECC55 /* Pods-CKBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.release.xcconfig"; sourceTree = "<group>"; };
 		5CD9DB4E09DDB6450D81BC6F /* Pods-CKB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKB/Pods-CKB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +107,7 @@
 		1A414A6221C2226E00B28C09 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1A414A8621C36FAA00B28C09 /* Types */,
 				1A414A7E21C32D1D00B28C09 /* API */,
 				1A414A6321C2226E00B28C09 /* CKB.h */,
 				1A414A6421C2226E00B28C09 /* Info.plist */,
@@ -121,6 +140,22 @@
 				1A414A7C21C23A3900B28C09 /* APIClientTests.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		1A414A8621C36FAA00B28C09 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				1A414A9321C3789000B28C09 /* Primitives.swift */,
+				1A414A9521C37AA000B28C09 /* Script.swift */,
+				1A414A9121C3725300B28C09 /* OutPoint.swift */,
+				1A414A9921C3879500B28C09 /* Cell.swift */,
+				1A414A8D21C3722300B28C09 /* CellInput.swift */,
+				1A414A8F21C3723E00B28C09 /* CellOutput.swift */,
+				1A414A8721C36FCF00B28C09 /* Header.swift */,
+				1A414A8921C36FE900B28C09 /* Block.swift */,
+				1A414A8B21C3714E00B28C09 /* Transaction.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 		4F766494AD6DB6539413DFD4 /* Frameworks */ = {
@@ -301,7 +336,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A414A9221C3725300B28C09 /* OutPoint.swift in Sources */,
+				1A414A8821C36FCF00B28C09 /* Header.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
+				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
+				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
+				1A414A9A21C3879500B28C09 /* Cell.swift in Sources */,
+				1A414A8C21C3714E00B28C09 /* Transaction.swift in Sources */,
+				1A414A9021C3723E00B28C09 /* CellOutput.swift in Sources */,
+				1A414A8A21C36FE900B28C09 /* Block.swift in Sources */,
+				1A414A9421C3789000B28C09 /* Primitives.swift in Sources */,
 				1A414A8321C334EB00B28C09 /* APIRequest.swift in Sources */,
 				1A414A8121C32D4B00B28C09 /* APIResult.swift in Sources */,
 			);
