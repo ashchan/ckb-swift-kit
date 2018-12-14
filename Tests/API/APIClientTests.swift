@@ -40,13 +40,13 @@ class APIClientTests: XCTestCase {
 
     func testGetCellsByTypeHash() throws {
         let client = APIClient()
-        let result = try client.getCellsByTypeHash(typeHash: "0xb3c01133a371480a184372500197033850d53b482c0005795604bedba5d90978", from: 1, to: 100)
+        let result = try client.getCellsByTypeHash(typeHash: "0x565cd9ac9a251109ff642090b91af29bfaa451b2d0e3093a29bba74743408a4a", from: 1, to: 100)
         XCTAssertNotNil(result)
     }
 
     func testGetCurrentCell() throws {
         let client = APIClient()
-        let cells = try client.getCellsByTypeHash(typeHash: "0xb3c01133a371480a184372500197033850d53b482c0005795604bedba5d90978", from: 1, to: 100)
+        let cells = try client.getCellsByTypeHash(typeHash: "0x565cd9ac9a251109ff642090b91af29bfaa451b2d0e3093a29bba74743408a4a", from: 1, to: 100)
         let result = try client.getCurrentCell(outPoint: cells.first!.outPoint)
         XCTAssertNotNil(result)
     }
@@ -56,7 +56,7 @@ class APIClientTests: XCTestCase {
 
     func testGetBlockTemplate() throws {
         let client = APIClient()
-        let result = try client.getBlockTemplate(typeHash: "0xb3c01133a371480a184372500197033850d53b482c0005795604bedba5d90978", maxTransactions: 1000, maxProposals: 1000)
+        let result = try client.getBlockTemplate(typeHash: "0x565cd9ac9a251109ff642090b91af29bfaa451b2d0e3093a29bba74743408a4a", maxTransactions: 1000, maxProposals: 1000)
         XCTAssertNotNil(result)
     }
 
