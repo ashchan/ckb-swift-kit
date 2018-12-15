@@ -24,6 +24,7 @@ class APIClientTests: XCTestCase {
     }
 
     func testGetTransaction() throws {
+        XCTFail("TODO: Add get transaction test")
     }
 
     func testGetBlockHash() throws {
@@ -52,6 +53,7 @@ class APIClientTests: XCTestCase {
     }
 
     func testSendTransaction() throws {
+        XCTFail("TODO: Add send transaction test")
     }
 
     func testGetBlockTemplate() throws {
@@ -60,6 +62,6 @@ class APIClientTests: XCTestCase {
         XCTAssertNotNil(result)
     }
 
-    func testSubmitBlock() throws {
-    }
+    // Don't know if we have to test this.
+    func xtestSubmitBlock() throws {}
 }
