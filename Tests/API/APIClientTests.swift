@@ -24,7 +24,13 @@ class APIClientTests: XCTestCase {
     }
 
     func testGetTransaction() throws {
-        XCTFail("TODO: Add get transaction test")
+        let client = APIClient()
+        let genesisBlock = try client.getBlock(hash: client.genesisBlock())
+        if let tx = genesisBlock.transactions.first {
+            let result = try client.getTransaction(hash: tx.hash)
+            XCTAssertNotNil(result)
+            XCTAssertEqual(tx.hash, result.hash)
+        }
     }
 
     func testGetBlockHash() throws {
@@ -53,7 +59,10 @@ class APIClientTests: XCTestCase {
     }
 
     func testSendTransaction() throws {
-        XCTFail("TODO: Add send transaction test")
+        let tx = Transaction(version: 0, deps: [], inputs: [], outputs: [])
+        let client = APIClient()
+        let result = try client.sendTransaction(transaction: tx)
+        XCTAssertNotNil(result)
     }
 
     func testGetBlockTemplate() throws {
