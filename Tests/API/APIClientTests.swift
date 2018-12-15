@@ -23,6 +23,14 @@ class APIClientTests: XCTestCase {
         XCTAssertEqual(hash, result.hash)
     }
 
+    func testGetBlockPerformance() throws {
+        let client = APIClient()
+        let hash = try client.genesisBlock()
+        measure {
+            _ = try! client.getBlock(hash: hash)
+        }
+    }
+
     func testGetTransaction() throws {
         let client = APIClient()
         let genesisBlock = try client.getBlock(hash: client.genesisBlock())
