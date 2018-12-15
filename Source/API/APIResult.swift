@@ -21,6 +21,7 @@ extension APIError {
     static let genericErrorCode = -1
     static let invalidParameters = APIError(code: genericErrorCode, message: "Invalid parameters")
     static let emptyResponse = APIError(code: genericErrorCode, message: "Empty response")
+    static let nullResult = APIError(code: genericErrorCode, message: "Null result")
     static func genericError(_ message: String) -> APIError {
         return APIError(code: genericErrorCode, message: message)
     }

@@ -41,6 +41,10 @@ public class APIClient {
         if let error = error {
             throw error
         }
+
+        if result == nil {
+            throw APIError.emptyResponse
+        }
         return result!
     }
 
