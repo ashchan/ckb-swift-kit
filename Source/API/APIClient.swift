@@ -104,15 +104,3 @@ extension APIClient {
         return try load(APIRequest<H256>(method: "send_transaction", params: [transaction.param]))
     }
 }
-
-// MARK: - Miner RPC Methods
-
-extension APIClient {
-    public func getBlockTemplate(typeHash: String, maxTransactions: UInt, maxProposals: UInt) throws -> BlockTemplate {
-        return try load(APIRequest<BlockTemplate>(method: "get_block_template", params: [typeHash, maxTransactions, maxProposals]))
-    }
-
-    public func submitBlock(block: Block) throws -> H256 {
-        return try load(APIRequest<H256>(method: "submit_block", params: [block.param]))
-    }
-}
