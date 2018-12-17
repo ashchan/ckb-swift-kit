@@ -33,7 +33,7 @@ public struct CellOutputWithOutPoint: Codable {
     let lock: H256
 
     enum CodingKeys: String, CodingKey {
-        case outPoint = "outpoint"
+        case outPoint = "out_point"
         case capacity, lock
     }
 }
