@@ -20,4 +20,5 @@ Pod::Spec.new do |s|
   s.public_header_files = "Source/**/*.{h}"
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 
+  s.dependency 'secp256k1_swift', '~> 1.0.3' # https://github.com/shamatar/secp256k1_swift
 end
