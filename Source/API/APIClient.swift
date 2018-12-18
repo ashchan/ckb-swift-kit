@@ -64,8 +64,12 @@ public class APIClient {
 }
 
 extension APIClient {
-    public func genesisBlock() throws -> H256 {
+    public func genesisBlockHash() throws -> H256 {
         return try getBlockHash(number: 0)
+    }
+
+    public func genesisBlock() throws -> BlockWithHash {
+        return try getBlock(hash: try genesisBlockHash())
     }
 }
 

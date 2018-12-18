@@ -10,6 +10,11 @@ import XCTest
 @testable import CKB
 
 class APIClientTests: XCTestCase {
+    func testGenesisBlockHash() throws {
+        let result = try APIClient().genesisBlockHash()
+        XCTAssertNotNil(result)
+    }
+
     func testGenesisBlock() throws {
         let result = try APIClient().genesisBlock()
         XCTAssertNotNil(result)
@@ -17,7 +22,7 @@ class APIClientTests: XCTestCase {
 
     func testGetBlock() throws {
         let client = APIClient()
-        let hash = try client.genesisBlock()
+        let hash = try client.genesisBlockHash()
         let result = try client.getBlock(hash: hash)
         XCTAssertNotNil(result)
         XCTAssertEqual(hash, result.hash)
@@ -25,15 +30,14 @@ class APIClientTests: XCTestCase {
 
     func testGetBlockPerformance() throws {
         let client = APIClient()
-        let hash = try client.genesisBlock()
         measure {
-            _ = try! client.getBlock(hash: hash)
+            _ = try! client.genesisBlock()
         }
     }
 
     func testGetTransaction() throws {
         let client = APIClient()
-        let genesisBlock = try client.getBlock(hash: client.genesisBlock())
+        let genesisBlock = try client.genesisBlock()
         if let tx = genesisBlock.transactions.first {
             let result = try client.getTransaction(hash: tx.hash)
             XCTAssertNotNil(result)
