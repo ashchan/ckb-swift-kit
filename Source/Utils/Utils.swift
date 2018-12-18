@@ -12,4 +12,8 @@ public struct Utils {
     public static func privateToAddress(_ privateKey: String) -> String {
         return "todo"
     }
+
+    public static func prefixHex(_ string: String) -> String {
+        return "0x" + string
+    }
 }
