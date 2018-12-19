@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 /// JSON RPC API client.
 public class APIClient {
@@ -64,8 +65,12 @@ public class APIClient {
 }
 
 extension APIClient {
-    public func genesisBlock() throws -> H256 {
+    public func genesisBlockHash() throws -> H256 {
         return try getBlockHash(number: 0)
+    }
+
+    public func genesisBlock() throws -> BlockWithHash {
+        return try getBlock(hash: try genesisBlockHash())
     }
 }
 
@@ -102,5 +107,18 @@ extension APIClient {
 extension APIClient {
     public func sendTransaction(transaction: Transaction) throws -> H256 {
         return try load(APIRequest<H256>(method: "send_transaction", params: [transaction.param]))
+    }
+}
+
+// MARK: - Info for mruby script and verify cell
+
+extension APIClient {
+    func mrubyCellHash() throws -> String {
+        let systemCells = try genesisBlock().transactions.first!.transaction.outputs
+        if systemCells.count < 3 {
+            throw APIError.genericError("Cannot find mruby contract cell")
+        }
+        let hash = Data(bytes: systemCells[2].data).sha3(.sha256)
+        return Utils.prefixHex(hash.toHexString())
     }
 }
