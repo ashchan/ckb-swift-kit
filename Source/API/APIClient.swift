@@ -22,7 +22,7 @@ public class APIClient {
         var error: Error?
 
         let semaphore = DispatchSemaphore(value: 0)
-        URLSession.shared.dataTask(with: try createRequest(request)) { (data, response, err) in
+        URLSession.shared.dataTask(with: try createRequest(request)) { (data, _, err) in
             error = err
 
             if data == nil {
