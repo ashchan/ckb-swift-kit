@@ -1,0 +1,27 @@
+disabled_rules:
+  - force_cast
+  - force_try
+  - identifier_name
+  - todo
+
+included:
+  - Source
+
+excluded:
+  - Pods
+  - Tests
+
+function_body_length:
+  - 100 # warning
+  - 140 # error
+
+type_body_length:
+  - 200 # warning
+  - 300 # error
+
+function_parameter_count: 6
+
+line_length:
+  warning: 140
+  error: 200
+  ignores_comments: true
