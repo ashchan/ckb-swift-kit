@@ -59,13 +59,13 @@ class APIClientTests: XCTestCase {
 
     func testGetCellsByTypeHash() throws {
         let client = APIClient()
-        let result = try client.getCellsByTypeHash(typeHash: "0x565cd9ac9a251109ff642090b91af29bfaa451b2d0e3093a29bba74743408a4a", from: 1, to: 100)
+        let result = try client.getCellsByTypeHash(typeHash: "0x6c5b2cd24ce7cbc16ff368d116294b3c8e5e4f33197900396e9a35d52d8c0f83", from: 1, to: 100)
         XCTAssertNotNil(result)
     }
 
     func testGetCurrentCell() throws {
         let client = APIClient()
-        let cells = try client.getCellsByTypeHash(typeHash: "0x565cd9ac9a251109ff642090b91af29bfaa451b2d0e3093a29bba74743408a4a", from: 1, to: 100)
+        let cells = try client.getCellsByTypeHash(typeHash: "0x6c5b2cd24ce7cbc16ff368d116294b3c8e5e4f33197900396e9a35d52d8c0f83", from: 1, to: 100)
         let result = try client.getCurrentCell(outPoint: cells.first!.outPoint)
         XCTAssertNotNil(result)
     }
