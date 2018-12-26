@@ -100,6 +100,10 @@ extension APIClient {
     public func getCurrentCell(outPoint: OutPoint) throws -> CellWithStatus {
         return try load(APIRequest<CellWithStatus>(method: "get_current_cell", params: [outPoint.param]))
     }
+
+    public func getTipBlockNumber() throws -> BlockNumber {
+        return try load(APIRequest<BlockNumber>(method: "get_tip_block_number"))
+    }
 }
 
 // MARK: - Pool RPC Methods

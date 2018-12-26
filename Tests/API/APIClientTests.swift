@@ -70,6 +70,12 @@ class APIClientTests: XCTestCase {
         XCTAssertNotNil(result)
     }
 
+    func testGetTipBlockNumber() throws {
+        let client = APIClient()
+        let result = try client.getTipBlockNumber()
+        XCTAssertTrue(result > 0)
+    }
+
     func testSendTransaction() throws {
         let tx = Transaction(version: 0, deps: [], inputs: [], outputs: [])
         let client = APIClient()
