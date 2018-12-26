@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
 		1A3B979F21C9CBB700FC1C54 /* bitcoin_unlock.rb in Resources */ = {isa = PBXBuildFile; fileRef = 1A3B979E21C9CBB700FC1C54 /* bitcoin_unlock.rb */; };
 		1A3B97A121C9CC0200FC1C54 /* VerifyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */; };
 		1A3B97A321C9CD2700FC1C54 /* UnlockScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A28119621D3805800E7CEC5 /* ScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTests.swift; sourceTree = "<group>"; };
 		1A3B979E21C9CBB700FC1C54 /* bitcoin_unlock.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = bitcoin_unlock.rb; path = "ckb-demo-ruby-sdk/contracts/bitcoin_unlock.rb"; sourceTree = SOURCE_ROOT; };
 		1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyScript.swift; sourceTree = "<group>"; };
 		1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockScriptTests.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A28119521D3804600E7CEC5 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				1A28119621D3805800E7CEC5 /* ScriptTests.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 		1A414A5621C2226E00B28C09 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +139,7 @@
 		1A414A6D21C2226E00B28C09 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				1A28119521D3804600E7CEC5 /* Types */,
 				1A414A7F21C32D2500B28C09 /* API */,
 				1A414AA121C7711200B28C09 /* Utils */,
 				1A414A7021C2226E00B28C09 /* Info.plist */,
@@ -433,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */,
 				1A414A7D21C23A3900B28C09 /* APIClientTests.swift in Sources */,
 				1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */,
 				1A3B97A321C9CD2700FC1C54 /* UnlockScriptTests.swift in Sources */,

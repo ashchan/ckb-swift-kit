@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 public struct Script: Codable, Param {
     /// Used to resolve incompatible upgrades.
@@ -24,6 +25,22 @@ public struct Script: Codable, Param {
     enum CodingKeys: String, CodingKey {
         case version, args, reference, binary
         case signedArgs = "signed_args"
+    }
+
+    public var typeHash: String {
+        var sha3 = SHA3(variant: .sha256)
+        if let reference = reference {
+            _ = try! sha3.update(withBytes: Data(hex: reference).bytes)
+        }
+        _ = try! sha3.update(withBytes: "|".data(using: .utf8)!.bytes)
+        if let binary = binary {
+            _ = try! sha3.update(withBytes: binary)
+        }
+        signedArgs.forEach { (arg) in
+        _ = try! sha3.update(withBytes: arg)
+        }
+        let hash = try! sha3.finish()
+        return Utils.prefixHex(Data(bytes: hash).toHexString())
     }
 
     public var param: [String: Any] {
