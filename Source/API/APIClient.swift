@@ -125,4 +125,18 @@ extension APIClient {
         let hash = Data(bytes: systemCells[2].data).sha3(.sha256)
         return Utils.prefixHex(hash.toHexString())
     }
+
+    func alwaysSuccessCellHash() throws -> String {
+        let systemCells = try genesisBlock().transactions.first!.transaction.outputs
+        guard let cell = systemCells.first else {
+            throw APIError.genericError("Cannot find always success cell")
+        }
+        let hash = Data(bytes: cell.data).sha3(.sha256)
+        return Utils.prefixHex(hash.toHexString())
+    }
+
+    func alwaysSuccessScriptOutPoint() throws -> OutPoint {
+        let hash = try genesisBlock().transactions.first!.hash
+        return OutPoint(hash: hash, index: 0)
+    }
 }

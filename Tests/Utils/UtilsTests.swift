@@ -21,4 +21,17 @@ class UtilsTests: XCTestCase {
         let address = "0x6c5b2cd24ce7cbc16ff368d116294b3c8e5e4f33197900396e9a35d52d8c0f83"
         XCTAssertEqual(address, Utils.privateToAddress(privateKey))
     }
+
+    func testTypeHash() throws {
+        let client = APIClient()
+        let script = Script(
+            version: 0,
+            binary: nil,
+            reference: try client.alwaysSuccessCellHash(),
+            signedArgs: [],
+            args: []
+        )
+        let result = Utils.typeHash(from: script)
+        XCTAssertEqual("0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", result)
+    }
 }
