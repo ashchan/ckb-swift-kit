@@ -26,27 +26,18 @@ public struct Utils {
     }
 
     public static func publicToAddress(_ publicKey: String) -> String {
-        return typeHash(from: verifyScript(for: publicKey))
+        let api = APIClient()
+        // TODO: provide a way to set/load mruby contract cell
+        api.setMrubyConfig(
+            outPoint: OutPoint(hash: "0xfde51bd2a599de95c7d3353cad906d24da3db0e7840bdb4d405124d090098281", index: 0),
+            cellHash: "0x6970dcf970e1a76aa6f493d69969a3c2455122e84dc6d1653a0dbcba465c330e"
+        )
+        return typeHash(from: api.verifyScript(for: publicKey))
     }
 
     public static func privateToAddress(_ privateKey: String) -> String {
         let publicKey = privateToPublic(privateKey)
         return publicToAddress(publicKey)
-    }
-
-    static func verifyScript(for publicKey: String) -> Script {
-        let client = APIClient()
-        let signedArgs = [
-            VerifyScript.script.content,
-            publicKey.data(using: .utf8)!.bytes
-        ]
-        return Script(
-            version: 0,
-            binary: nil,
-            reference: try! client.mrubyCellHash(),
-            signedArgs: signedArgs,
-            args: []
-        )
     }
 
     static func typeHash(from script: Script) -> String {
