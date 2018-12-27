@@ -12,6 +12,8 @@ import CryptoSwift
 /// JSON RPC API client.
 public class APIClient {
     private var url: URL
+    var mrubyOutPoint: OutPoint!
+    var mrubyCellHash: String!
 
     public init(url: URL = URL(string: "http://localhost:8114")!) {
         self.url = url
@@ -117,12 +119,36 @@ extension APIClient {
 // MARK: - Info for mruby script and verify cell
 
 extension APIClient {
-    func mrubyCellHash() throws -> String {
+    func setMrubyConfig(outPoint: OutPoint, cellHash: String) {
+        mrubyOutPoint = outPoint
+        mrubyCellHash = cellHash
+    }
+
+    func verifyScript(for publicKey: String) -> Script {
+        let signedArgs = [
+            VerifyScript.script.content,
+            publicKey.data(using: .utf8)!.bytes
+        ]
+        return Script(
+            version: 0,
+            binary: nil,
+            reference: mrubyCellHash,
+            signedArgs: signedArgs,
+            args: []
+        )
+    }
+
+    func alwaysSuccessCellHash() throws -> String {
         let systemCells = try genesisBlock().transactions.first!.transaction.outputs
-        if systemCells.count < 3 {
-            throw APIError.genericError("Cannot find mruby contract cell")
+        guard let cell = systemCells.first else {
+            throw APIError.genericError("Cannot find always success cell")
         }
-        let hash = Data(bytes: systemCells[2].data).sha3(.sha256)
+        let hash = Data(bytes: cell.data).sha3(.sha256)
         return Utils.prefixHex(hash.toHexString())
+    }
+
+    func alwaysSuccessScriptOutPoint() throws -> OutPoint {
+        let hash = try genesisBlock().transactions.first!.hash
+        return OutPoint(hash: hash, index: 0)
     }
 }
