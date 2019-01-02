@@ -66,7 +66,7 @@ class APIClientTests: XCTestCase {
     func testGetCurrentCell() throws {
         let client = APIClient()
         let cells = try client.getCellsByTypeHash(typeHash: "0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", from: 1, to: 100)
-        let result = try client.getCurrentCell(outPoint: cells.first!.outPoint)
+        let result = try client.getLiveCell(outPoint: cells.first!.outPoint)
         XCTAssertNotNil(result)
     }
 
