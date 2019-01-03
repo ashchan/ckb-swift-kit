@@ -99,8 +99,8 @@ extension APIClient {
         return try load(APIRequest<[CellOutputWithOutPoint]>(method: "get_cells_by_type_hash", params: [typeHash, from, to]))
     }
 
-    public func getCurrentCell(outPoint: OutPoint) throws -> CellWithStatus {
-        return try load(APIRequest<CellWithStatus>(method: "get_current_cell", params: [outPoint.param]))
+    public func getLiveCell(outPoint: OutPoint) throws -> CellWithStatus {
+        return try load(APIRequest<CellWithStatus>(method: "get_live_cell", params: [outPoint.param]))
     }
 
     public func getTipBlockNumber() throws -> BlockNumber {

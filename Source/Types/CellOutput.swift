@@ -12,7 +12,7 @@ public struct CellOutput: Codable, Param {
     let capacity: Capacity
     let data: [UInt8]
     let lock: H256
-    let contract: Script?
+    let type: Script?
 
     public var param: [String: Any] {
         var result: [String: Any] = [
@@ -20,8 +20,8 @@ public struct CellOutput: Codable, Param {
             "data": data,
             "lock": lock
         ]
-        if let contract = contract {
-            result["contract"] = contract
+        if let type = type {
+            result["type"] = type
         }
         return result
     }
