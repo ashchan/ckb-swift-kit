@@ -12,8 +12,8 @@ final class VerifyScript {
     static let script = VerifyScript()
     private let data: Data
 
-    var content: [UInt8] {
-        return data.bytes
+    var content: HexString {
+        return Utils.prefixHex(data.toHexString())
     }
 
     private init() {
