@@ -13,6 +13,15 @@ public struct Transaction: Codable, Param {
     let deps: [OutPoint]
     let inputs: [CellInput]
     let outputs: [CellOutput]
+    let hash: H256
+
+    public init(version: UInt32 = 0, deps: [OutPoint] = [], inputs: [CellInput] = [], outputs: [CellOutput] = [], hash: H256 = "") {
+        self.version = version
+        self.deps = deps
+        self.inputs = inputs
+        self.outputs = outputs
+        self.hash = hash
+    }
 
     public var param: [String: Any] {
         return [
@@ -22,9 +31,4 @@ public struct Transaction: Codable, Param {
             "outputs": outputs.map { $0.param }
         ]
     }
-}
-
-public struct TransactionWithHash: Codable {
-    let hash: H256
-    let transaction: Transaction
 }

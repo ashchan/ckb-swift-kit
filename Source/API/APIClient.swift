@@ -71,7 +71,7 @@ extension APIClient {
         return try getBlockHash(number: 0)
     }
 
-    public func genesisBlock() throws -> BlockWithHash {
+    public func genesisBlock() throws -> Block {
         return try getBlock(hash: try genesisBlockHash())
     }
 }
@@ -79,12 +79,12 @@ extension APIClient {
 // MARK: - Chain RPC Methods
 
 extension APIClient {
-    public func getBlock(hash: H256) throws -> BlockWithHash {
-        return try load(APIRequest<BlockWithHash>(method: "get_block", params: [hash]))
+    public func getBlock(hash: H256) throws -> Block {
+        return try load(APIRequest<Block>(method: "get_block", params: [hash]))
     }
 
-    public func getTransaction(hash: H256) throws -> TransactionWithHash {
-        return try load(APIRequest<TransactionWithHash>(method: "get_transaction", params: [hash]))
+    public func getTransaction(hash: H256) throws -> Transaction {
+        return try load(APIRequest<Transaction>(method: "get_transaction", params: [hash]))
     }
 
     public func getBlockHash(number: BlockNumber) throws -> H256 {
@@ -127,7 +127,8 @@ extension APIClient {
     func verifyScript(for publicKey: String) -> Script {
         let signedArgs = [
             VerifyScript.script.content,
-            publicKey.data(using: .utf8)!.bytes
+            Utils.prefixHex(publicKey.data(using: .utf8)!.toHexString())
+            // Although public key itself is a hex string, when loaded as binary the format is ignored.
         ]
         return Script(
             version: 0,
@@ -139,16 +140,16 @@ extension APIClient {
     }
 
     func alwaysSuccessCellHash() throws -> String {
-        let systemCells = try genesisBlock().transactions.first!.transaction.outputs
+        let systemCells = try genesisBlock().commitTransactions.first!.outputs
         guard let cell = systemCells.first else {
             throw APIError.genericError("Cannot find always success cell")
         }
-        let hash = Data(bytes: cell.data).sha3(.sha256)
+        let hash = Data(hex: cell.data).sha3(.sha256)
         return Utils.prefixHex(hash.toHexString())
     }
 
     func alwaysSuccessScriptOutPoint() throws -> OutPoint {
-        let hash = try genesisBlock().transactions.first!.hash
+        let hash = try genesisBlock().commitTransactions.first!.hash
         return OutPoint(hash: hash, index: 0)
     }
 }
