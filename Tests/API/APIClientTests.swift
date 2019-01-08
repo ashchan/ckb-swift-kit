@@ -25,7 +25,7 @@ class APIClientTests: XCTestCase {
         let hash = try client.genesisBlockHash()
         let result = try client.getBlock(hash: hash)
         XCTAssertNotNil(result)
-        XCTAssertEqual(hash, result.hash)
+        XCTAssertEqual(hash, result.header.hash)
     }
 
     func testGetBlockPerformance() throws {
@@ -38,7 +38,7 @@ class APIClientTests: XCTestCase {
     func testGetTransaction() throws {
         let client = APIClient()
         let genesisBlock = try client.genesisBlock()
-        if let tx = genesisBlock.transactions.first {
+        if let tx = genesisBlock.commitTransactions.first {
             let result = try client.getTransaction(hash: tx.hash)
             XCTAssertNotNil(result)
             XCTAssertEqual(tx.hash, result.hash)
@@ -54,7 +54,7 @@ class APIClientTests: XCTestCase {
         let client = APIClient()
         let result = try client.getTipHeader()
         XCTAssertNotNil(result)
-        XCTAssertTrue(result.raw.number > 0)
+        XCTAssertTrue(result.number > 0)
     }
 
     func testGetCellsByTypeHash() throws {
@@ -77,7 +77,7 @@ class APIClientTests: XCTestCase {
     }
 
     func testSendTransaction() throws {
-        let tx = Transaction(version: 0, deps: [], inputs: [], outputs: [])
+        let tx = Transaction()
         let client = APIClient()
         let result = try client.sendTransaction(transaction: tx)
         XCTAssertNotNil(result)

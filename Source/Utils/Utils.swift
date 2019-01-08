@@ -15,7 +15,7 @@ public struct Utils {
         return SECP256K1.privateToPublic(privateKey: privateKey, compressed: true)!
     }
 
-    /// Convert private key to public key.
+    /// Generate compressed public key from private key.
     ///
     /// - Parameters:
     ///   - privateKey: 64-char hex string.
@@ -29,8 +29,8 @@ public struct Utils {
         let api = APIClient()
         // TODO: provide a way to set/load mruby contract cell
         api.setMrubyConfig(
-            outPoint: OutPoint(hash: "0xfde51bd2a599de95c7d3353cad906d24da3db0e7840bdb4d405124d090098281", index: 0),
-            cellHash: "0x6970dcf970e1a76aa6f493d69969a3c2455122e84dc6d1653a0dbcba465c330e"
+            outPoint: OutPoint(hash: "0x5fd07886b1f08456d00c09d2330645994c547fdccc50c2fe8568327ae71c89fc", index: 0),
+            cellHash: "0x4318dc7651886873ed1c7465b69878b22207f41901001824f30e5f7cf19db5f4"
         )
         return api.verifyScript(for: publicKey).typeHash
     }
