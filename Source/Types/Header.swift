@@ -8,7 +8,12 @@
 
 import Foundation
 
-public struct RawHeader: Codable {
+public struct Seal: Codable {
+    let nonce: UInt64
+    let proof: [UInt8]
+}
+
+public struct Header: Codable {
     let version: UInt32
     let parentHash: H256
     let timestamp: UInt64
@@ -19,6 +24,9 @@ public struct RawHeader: Codable {
     let cellbaseId: H256
     let unclesHash: H256
     let unclesCount: UInt32
+    let hash: H256
+
+    let seal: Seal
 
     enum CodingKeys: String, CodingKey {
         case version
@@ -31,15 +39,7 @@ public struct RawHeader: Codable {
         case cellbaseId = "cellbase_id"
         case unclesHash = "uncles_hash"
         case unclesCount = "uncles_count"
+        case hash
+        case seal
     }
-}
-
-public struct Seal: Codable {
-    let nonce: UInt64
-    let proof: [UInt8]
-}
-
-public struct Header: Codable {
-    let raw: RawHeader
-    let seal: Seal
 }

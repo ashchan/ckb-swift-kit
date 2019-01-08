@@ -22,12 +22,6 @@ public struct Block: Codable {
     }
 }
 
-public struct BlockWithHash: Codable {
-    let hash: H256
-    let header: Header
-    let transactions: [TransactionWithHash]
-}
-
 public struct UncleBlock: Codable {
     let header: Header
     let cellbase: Transaction
