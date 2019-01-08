@@ -10,7 +10,7 @@ import Foundation
 
 public struct CellOutput: Codable, Param {
     let capacity: Capacity
-    let data: [UInt8]
+    let data: HexString
     let lock: H256
     let type: Script?
 

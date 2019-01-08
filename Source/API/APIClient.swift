@@ -143,7 +143,7 @@ extension APIClient {
         guard let cell = systemCells.first else {
             throw APIError.genericError("Cannot find always success cell")
         }
-        let hash = Data(bytes: cell.data).sha3(.sha256)
+        let hash = Data(hex: cell.data).sha3(.sha256)
         return Utils.prefixHex(hash.toHexString())
     }
 

@@ -10,7 +10,7 @@ import Foundation
 
 public struct Seal: Codable {
     let nonce: UInt64
-    let proof: [UInt8]
+    let proof: HexString
 }
 
 public struct Header: Codable {
