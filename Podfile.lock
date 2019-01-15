@@ -1,0 +1,20 @@
+PODS:
+  - CryptoSwift (0.13.1)
+  - secp256k1_swift (1.0.3)
+
+DEPENDENCIES:
+  - CryptoSwift (~> 0.13.1)
+  - secp256k1_swift (~> 1.0.3)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CryptoSwift
+    - secp256k1_swift
+
+SPEC CHECKSUMS:
+  CryptoSwift: ff68c35a53e03177d31aaa2c1e8b3e010aeed6cb
+  secp256k1_swift: 4fc5c4b2d2c6d21ee8ccb868cdc92da12f38bed9
+
+PODFILE CHECKSUM: 11c3c280029eeb46692d8af076e39911d92a95ee
+
+COCOAPODS: 1.5.3

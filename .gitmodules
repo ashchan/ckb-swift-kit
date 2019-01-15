@@ -1,0 +1,3 @@
+[submodule "ckb-demo-ruby-sdk"]
+	path = ckb-demo-ruby-sdk
+	url = https://github.com/nervosnetwork/ckb-demo-ruby-sdk.git
