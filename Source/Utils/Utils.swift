@@ -29,8 +29,8 @@ public struct Utils {
         let api = APIClient()
         // TODO: provide a way to set/load mruby contract cell
         api.setMrubyConfig(
-            outPoint: OutPoint(hash: "0x5fd07886b1f08456d00c09d2330645994c547fdccc50c2fe8568327ae71c89fc", index: 0),
-            cellHash: "0x4318dc7651886873ed1c7465b69878b22207f41901001824f30e5f7cf19db5f4"
+            outPoint: OutPoint(hash: "0x816c68f83e495a9e1ca083bcc81cefe4515a5e472d68909328db0a580979f538", index: 0),
+            cellHash: "0x2165b10c4f6c55302158a17049b9dad4fef0acaf1065c63c02ddeccbce97ac47"
         )
         return api.verifyScript(for: publicKey).typeHash
     }
