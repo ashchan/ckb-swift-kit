@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
-		1A3B979F21C9CBB700FC1C54 /* bitcoin_unlock.rb in Resources */ = {isa = PBXBuildFile; fileRef = 1A3B979E21C9CBB700FC1C54 /* bitcoin_unlock.rb */; };
 		1A3B97A121C9CC0200FC1C54 /* VerifyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */; };
 		1A3B97A321C9CD2700FC1C54 /* UnlockScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */; };
 		1A414A6A21C2226E00B28C09 /* CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A414A6021C2226E00B28C09 /* CKB.framework */; };
@@ -28,6 +27,7 @@
 		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
 		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
+		1A8CAEC021F0282E00E99A1C /* bitcoin_unlock.rb in Resources */ = {isa = PBXBuildFile; fileRef = 1A8CAEBF21F0282E00E99A1C /* bitcoin_unlock.rb */; };
 		2D6EA000E9B8936CB81356CC /* Pods_CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4BD554CBEED5D384A1C737 /* Pods_CKB.framework */; };
 		591DADB7D11BC8F71DBF4902 /* Pods_CKBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		1A28119621D3805800E7CEC5 /* ScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTests.swift; sourceTree = "<group>"; };
-		1A3B979E21C9CBB700FC1C54 /* bitcoin_unlock.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = bitcoin_unlock.rb; path = "ckb-demo-ruby-sdk/contracts/bitcoin_unlock.rb"; sourceTree = SOURCE_ROOT; };
 		1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyScript.swift; sourceTree = "<group>"; };
 		1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockScriptTests.swift; sourceTree = "<group>"; };
 		1A414A6021C2226E00B28C09 /* CKB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CKB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +66,7 @@
 		1A414A9921C3879500B28C09 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1A414A9F21C770DD00B28C09 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		1A8CAEBF21F0282E00E99A1C /* bitcoin_unlock.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = bitcoin_unlock.rb; path = "ckb-ruby-scripts/bitcoin_unlock.rb"; sourceTree = SOURCE_ROOT; };
 		3280C4848C7A8236CA5F4CD8 /* Pods-CKBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5CAEE4335089142E8F3ECC55 /* Pods-CKBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.release.xcconfig"; sourceTree = "<group>"; };
 		5CD9DB4E09DDB6450D81BC6F /* Pods-CKB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKB/Pods-CKB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 		1A414A6221C2226E00B28C09 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1A8CAEBE21F027D300E99A1C /* RubyScripts */,
 				1A414A8621C36FAA00B28C09 /* Types */,
 				1A414A7E21C32D1D00B28C09 /* API */,
 				1A414A9E21C770CF00B28C09 /* Utils */,
@@ -184,7 +185,6 @@
 		1A414A9E21C770CF00B28C09 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				1A3B979E21C9CBB700FC1C54 /* bitcoin_unlock.rb */,
 				1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */,
 				1A414A9F21C770DD00B28C09 /* Utils.swift */,
 			);
@@ -198,6 +198,14 @@
 				1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		1A8CAEBE21F027D300E99A1C /* RubyScripts */ = {
+			isa = PBXGroup;
+			children = (
+				1A8CAEBF21F0282E00E99A1C /* bitcoin_unlock.rb */,
+			);
+			path = RubyScripts;
 			sourceTree = "<group>";
 		};
 		4F766494AD6DB6539413DFD4 /* Frameworks */ = {
@@ -316,7 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A3B979F21C9CBB700FC1C54 /* bitcoin_unlock.rb in Resources */,
+				1A8CAEC021F0282E00E99A1C /* bitcoin_unlock.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

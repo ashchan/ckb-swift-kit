@@ -27,11 +27,11 @@ public class APIClient {
         URLSession.shared.dataTask(with: try createRequest(request)) { (data, _, err) in
             error = err
 
-            if data == nil {
-                error = APIError.emptyResponse
-            }
-
             do {
+                guard data != nil else {
+                    throw APIError.emptyResponse
+                }
+
                 result = try request.decode(data!)
             } catch let err {
                 error = err
