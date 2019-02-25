@@ -8,6 +8,7 @@ target 'CKB' do
 
   pod "CryptoSwift", "~> 0.13.1"
   pod "secp256k1_swift", "~> 1.0.3", modular_headers: true
+  pod "SwiftLint"
 
   target "CKBTests" do
     inherit! :search_paths
