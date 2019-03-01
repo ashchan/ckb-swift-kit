@@ -6,11 +6,11 @@ target 'CKB' do
   use_modular_headers!
   inhibit_all_warnings!
 
-  pod "CryptoSwift", "~> 0.13.1"
-  pod "secp256k1_swift", "~> 1.0.3", modular_headers: true
+  pod "CryptoSwift", "~> 0.14.0"
+  pod "secp256k1_swift", modular_headers: true, git: "https://github.com/cryptape/secp256k1_swift.git", branch: "swift-4.2", submodules: true
   pod "SwiftLint"
+end
 
-  target "CKBTests" do
-    inherit! :search_paths
-  end
+target "CKBTests" do
+  use_frameworks!
 end
