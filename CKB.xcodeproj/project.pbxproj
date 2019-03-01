@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* LocalNode.swift */; };
 		1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
 		1A3B97A121C9CC0200FC1C54 /* VerifyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */; };
 		1A3B97A321C9CD2700FC1C54 /* UnlockScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A11347D2228D14300840EE8 /* LocalNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNode.swift; sourceTree = "<group>"; };
 		1A28119621D3805800E7CEC5 /* ScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTests.swift; sourceTree = "<group>"; };
 		1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyScript.swift; sourceTree = "<group>"; };
 		1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockScriptTests.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				1A414A8721C36FCF00B28C09 /* Header.swift */,
 				1A414A8921C36FE900B28C09 /* Block.swift */,
 				1A414A8B21C3714E00B28C09 /* Transaction.swift */,
+				1A11347D2228D14300840EE8 /* LocalNode.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				1A414A9221C3725300B28C09 /* OutPoint.swift in Sources */,
 				1A414A8821C36FCF00B28C09 /* Header.swift in Sources */,
 				1A3B97A121C9CC0200FC1C54 /* VerifyScript.swift in Sources */,
+				1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,

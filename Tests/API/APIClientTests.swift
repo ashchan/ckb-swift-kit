@@ -82,4 +82,11 @@ class APIClientTests: XCTestCase {
         let result = try client.sendTransaction(transaction: tx)
         XCTAssertNotNil(result)
     }
+
+    func testLocalNodeInfo() throws {
+        let client = APIClient()
+        let result = try client.localNodeInfo()
+        XCTAssertFalse(result.addresses.isEmpty)
+        XCTAssertFalse(result.nodeId.isEmpty)
+    }
 }
