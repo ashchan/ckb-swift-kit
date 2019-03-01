@@ -116,6 +116,26 @@ extension APIClient {
     }
 }
 
+// MARK: - Network RPC Methods
+
+extension APIClient {
+    public func localNodeInfo() throws -> LocalNode {
+        return try load(APIRequest<LocalNode>(method: "local_node_info", params: []))
+    }
+}
+
+// MARK: - Trace RPC Methods
+
+extension APIClient {
+    public func traceTransaction(transaction: Transaction) throws -> H256 {
+        return try load(APIRequest<H256>(method: "trace_transaction", params: [transaction.param]))
+    }
+
+    public func getTransactionTrace(hash: H256) throws -> [TxTrace]? {
+        return try load(APIRequest<[TxTrace]?>(method: "get_transaction_trace", params: [hash]))
+    }
+}
+
 // MARK: - Info for mruby script and verify cell
 
 extension APIClient {

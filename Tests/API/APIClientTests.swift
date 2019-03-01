@@ -82,4 +82,25 @@ class APIClientTests: XCTestCase {
         let result = try client.sendTransaction(transaction: tx)
         XCTAssertNotNil(result)
     }
+
+    func testLocalNodeInfo() throws {
+        let client = APIClient()
+        let result = try client.localNodeInfo()
+        XCTAssertFalse(result.addresses.isEmpty)
+        XCTAssertFalse(result.nodeId.isEmpty)
+    }
+
+    func testGetTransactionTrace() throws {
+        let client = APIClient()
+        if let result = try client.getTransactionTrace(hash: "0xd91110fe20b7137c884d5c515f591ceda89a177bf06c1a3eb99c8a970dda2cf5") {
+            XCTAssertEqual(result.first!.action, Action.addPending)
+        }
+    }
+
+    func testTraceTransaction() throws {
+        let client = APIClient()
+        let tx = Transaction(version: 2, deps: [], inputs: [], outputs: [])
+        let result = try client.traceTransaction(transaction: tx)
+        XCTAssertFalse(result.isEmpty)
+    }
 }
