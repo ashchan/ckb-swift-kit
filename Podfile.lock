@@ -1,35 +1,24 @@
 PODS:
   - CryptoSwift (0.14.0)
-  - secp256k1_swift (1.0.3)
+  - secp256k1.swift (0.1.4)
   - SwiftLint (0.29.1)
 
 DEPENDENCIES:
   - CryptoSwift (~> 0.14.0)
-  - secp256k1_swift (from `https://github.com/cryptape/secp256k1_swift.git`, branch `swift-4.2`)
+  - secp256k1.swift (~> 0.1.4)
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CryptoSwift
+    - secp256k1.swift
     - SwiftLint
-
-EXTERNAL SOURCES:
-  secp256k1_swift:
-    :branch: swift-4.2
-    :git: https://github.com/cryptape/secp256k1_swift.git
-    :submodules: true
-
-CHECKOUT OPTIONS:
-  secp256k1_swift:
-    :commit: db0f48a853f5c4240194853d8d87601d47852f7f
-    :git: https://github.com/cryptape/secp256k1_swift.git
-    :submodules: true
 
 SPEC CHECKSUMS:
   CryptoSwift: 35a10419f4dbf0619c13f8c1c180037e115323fa
-  secp256k1_swift: 4fc5c4b2d2c6d21ee8ccb868cdc92da12f38bed9
+  secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 0bba1951d87fd9729c71d9aa3ca10a413779652e
+PODFILE CHECKSUM: 51fd394a2435f43eaa833dbcd8cecd9893e4a85b
 
 COCOAPODS: 1.6.1
