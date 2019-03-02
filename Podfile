@@ -7,7 +7,7 @@ target 'CKB' do
   inhibit_all_warnings!
 
   pod "CryptoSwift", "~> 0.14.0"
-  pod "secp256k1_swift", modular_headers: true, git: "https://github.com/cryptape/secp256k1_swift.git", branch: "swift-4.2", submodules: true
+  pod "secp256k1.swift", "~> 0.1.4"
   pod "SwiftLint"
 end
 

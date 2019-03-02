@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import secp256k1_swift
 import CryptoSwift
 
 public struct Utils {
     public static func privateToPublic(_ privateKey: Data) -> Data {
-        return SECP256K1.privateToPublic(privateKey: privateKey, compressed: true)!
+        return Secp256k1.privateToPublic(privateKey: privateKey)
     }
 
     /// Generate compressed public key from private key.
