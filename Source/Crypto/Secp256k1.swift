@@ -9,7 +9,14 @@
 import Foundation
 import secp256k1
 
+/// Thin wrapper of [C Secp256k1 library](https://github.com/bitcoin-core/secp256k1).
 final class Secp256k1 {
+    /// Compute the public key for a secret key.
+    /// - Parameters:
+    ///   - privateKey: The 32-byte private key data.
+    ///   - compressed: Specify if the public key should be compressed. Default is true.
+    ///
+    /// - Returns: The computed public key data. It's 33-byte if `compressed` is true, 65-byte otherwise.
     static func privateToPublic(privateKey: Data, compressed: Bool = true) -> Data {
         let context = secp256k1_context_create(UInt32(SECP256K1_CONTEXT_SIGN))!
         defer {
