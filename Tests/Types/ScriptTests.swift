@@ -10,6 +10,13 @@ import XCTest
 @testable import CKB
 
 class ScriptTests: XCTestCase {
+    override func invokeTest() {
+        if let _ = ProcessInfo().environment["SKIP_RPC_TESTS"] {
+            return
+        }
+        super.invokeTest()
+    }
+
     func testTypeHash() throws {
         let client = APIClient()
         let script = Script(
