@@ -10,6 +10,13 @@ import XCTest
 @testable import CKB
 
 class APIClientTests: XCTestCase {
+    override func invokeTest() {
+        if let _ = ProcessInfo().environment["SKIP_RPC_TESTS"] {
+            return
+        }
+        super.invokeTest()
+    }
+
     func testGenesisBlockHash() throws {
         let result = try APIClient().genesisBlockHash()
         XCTAssertNotNil(result)
