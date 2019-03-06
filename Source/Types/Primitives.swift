@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 public typealias H256 = String // No strict typing for now.
 public typealias UInt256 = String // e.g. 0x400, TODO: Define a custom type?

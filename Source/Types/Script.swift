@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CryptoSwift
 
 public struct Script: Codable, Param {
     /// Used to resolve incompatible upgrades.
