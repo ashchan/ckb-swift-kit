@@ -28,18 +28,18 @@ public struct Script: Codable, Param {
     }
 
     public var typeHash: String {
-        var sha3 = SHA3(variant: .sha256)
+        var bytes = [UInt8]()
         if let reference = reference {
-            _ = try! sha3.update(withBytes: Data(hex: reference).bytes)
+            bytes.append(contentsOf: Data(hex: reference).bytes)
         }
-        _ = try! sha3.update(withBytes: "|".data(using: .utf8)!.bytes)
+        bytes.append(contentsOf: "|".data(using: .utf8)!.bytes)
         if let binary = binary {
-            _ = try! sha3.update(withBytes: Data(hex: binary).bytes)
+            bytes.append(contentsOf: Data(hex: binary).bytes)
         }
         signedArgs.forEach { (arg) in
-            _ = try! sha3.update(withBytes: Data(hex: arg).bytes)
+            bytes.append(contentsOf: Data(hex: arg).bytes)
         }
-        let hash = try! sha3.finish()
+        let hash = Blake2b().hash(bytes: bytes)!
         return Utils.prefixHex(Data(bytes: hash).toHexString())
     }
 

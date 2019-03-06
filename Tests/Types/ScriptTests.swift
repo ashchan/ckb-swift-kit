@@ -10,14 +10,8 @@ import XCTest
 @testable import CKB
 
 class ScriptTests: XCTestCase {
-    override func invokeTest() {
-        if let _ = ProcessInfo().environment["SKIP_RPC_TESTS"] {
-            return
-        }
-        super.invokeTest()
-    }
-
-    func testTypeHash() throws {
+    // Skipped
+    func x_testTypeHashAlwaysSuccessCell() throws {
         let client = APIClient()
         let script = Script(
             version: 0,
@@ -26,7 +20,17 @@ class ScriptTests: XCTestCase {
             signedArgs: [],
             args: []
         )
-        let result = script.typeHash
-        XCTAssertEqual("0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", result)
+        XCTAssertEqual("0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", script.typeHash)
+    }
+
+    func testTypeHash() throws {
+        let script = Script(
+            version: 0,
+            binary: nil,
+            reference: nil,
+            signedArgs: [],
+            args: []
+        )
+        XCTAssertEqual("0xfabf6ebecf2a3fca37f42d27298ca2af064acfa050b0454dab6da29d1a121f69", script.typeHash)
     }
 }

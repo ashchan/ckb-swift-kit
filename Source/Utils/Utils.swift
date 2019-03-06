@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CryptoSwift
 
 public struct Utils {
     public static func privateToPublic(_ privateKey: Data) -> Data {

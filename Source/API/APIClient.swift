@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CryptoSwift
 
 /// JSON RPC API client.
 public class APIClient {
