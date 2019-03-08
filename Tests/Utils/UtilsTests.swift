@@ -18,7 +18,7 @@ class UtilsTests: XCTestCase {
 
     func testPrivateToAddress() {
         let privateKey = "e79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3"
-        let address = "0xc6acd8c9a165e882be671793dfef2947c9f4d2a8e241498ae805d9a21a9d5960"
+        let address = "0x838c79bc31170b0886a9ec27354b77193ddbb3d3d7f6596a311c12a0433a2fc8"
         XCTAssertEqual(address, Utils.privateToAddress(privateKey))
     }
 }
