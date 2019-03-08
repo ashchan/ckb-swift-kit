@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* LocalNode.swift */; };
 		1A1134802229063F00840EE8 /* TxTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347F2229063F00840EE8 /* TxTrace.swift */; };
+		1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C8269222F5D5D0053EC32 /* Blake2b.swift */; };
+		1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */; };
 		1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
 		1A3B97A121C9CC0200FC1C54 /* VerifyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */; };
 		1A3B97A321C9CD2700FC1C54 /* UnlockScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		1A11347D2228D14300840EE8 /* LocalNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNode.swift; sourceTree = "<group>"; };
 		1A11347F2229063F00840EE8 /* TxTrace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxTrace.swift; sourceTree = "<group>"; };
+		1A1C8269222F5D5D0053EC32 /* Blake2b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2b.swift; sourceTree = "<group>"; };
+		1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2bTests.swift; sourceTree = "<group>"; };
 		1A28119621D3805800E7CEC5 /* ScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTests.swift; sourceTree = "<group>"; };
 		1A3B97A021C9CC0200FC1C54 /* VerifyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyScript.swift; sourceTree = "<group>"; };
 		1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockScriptTests.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB45ED6222AA558009B395B /* Secp256k1.swift */,
+				1A1C8269222F5D5D0053EC32 /* Blake2b.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */,
+				1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CKBTests/Pods-CKBTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Sodium/Sodium.framework",
 				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -445,6 +452,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sodium.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +480,7 @@
 				1A414A9A21C3879500B28C09 /* Cell.swift in Sources */,
 				1A414A8C21C3714E00B28C09 /* Transaction.swift in Sources */,
 				1A414A9021C3723E00B28C09 /* CellOutput.swift in Sources */,
+				1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */,
 				1A414A8A21C36FE900B28C09 /* Block.swift in Sources */,
 				1A414A9421C3789000B28C09 /* Primitives.swift in Sources */,
 				1A414A8321C334EB00B28C09 /* APIRequest.swift in Sources */,
@@ -488,6 +497,7 @@
 				1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */,
 				1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */,
 				1A3B97A321C9CD2700FC1C54 /* UnlockScriptTests.swift in Sources */,
+				1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

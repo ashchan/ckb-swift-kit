@@ -7,6 +7,7 @@ target 'CKB' do
   inhibit_all_warnings!
 
   pod "CryptoSwift", "~> 0.14.0"
+  pod "Sodium", "~> 0.7.0"
   pod "secp256k1.swift", "~> 0.1.4"
   pod "SwiftLint"
 end
