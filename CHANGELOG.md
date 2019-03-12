@@ -18,9 +18,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **rpc:** implement local_node_info RPC method ([7c05644](https://github.com/nervosnetwork/ckb-sdk-swift/commit/7c05644))
 * **rpc:** implement trace rpc trace_transaction and get_transaction_trace ([744d8b5](https://github.com/nervosnetwork/ckb-sdk-swift/commit/744d8b5))
 
+
 ### BREAKING CHANGES
 
 * Repalce SHA3 with Blake2b.
+
 
 # [v0.6.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.5.0...v0.6.0) (2019-02-25)
 
