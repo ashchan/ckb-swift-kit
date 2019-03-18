@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13BB0ACB8854A091F41FC2EFEA6E9AC7"
+               BlueprintIdentifier = "34D9D0DD7C487ECE502C48A55D8975F3"
                BuildableName = "SwiftLint"
                BlueprintName = "SwiftLint"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1986E2EC5727FAC256EF14B61580F99A"
+               BlueprintIdentifier = "6A73FED5B6567B1B6B08506CEC9694D4"
                BuildableName = "secp256k1.framework"
                BlueprintName = "secp256k1.swift"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
