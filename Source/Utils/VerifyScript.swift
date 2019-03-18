@@ -17,7 +17,9 @@ final class VerifyScript {
     }
 
     private init() {
-        let scriptPath = Bundle(for: type(of: self)).path(forResource: "bitcoin_unlock", ofType: "rb")!
-        data = try! Data(contentsOf: URL(fileURLWithPath: scriptPath))
+        // Not using bitcoin_unlock.rb script.
+        // let scriptPath = Bundle(for: type(of: self)).path(forResource: "bitcoin_unlock", ofType: "rb")!
+        // data = try! Data(contentsOf: URL(fileURLWithPath: scriptPath))
+        data = "This will fail!".data(using: .utf8)!
     }
 }

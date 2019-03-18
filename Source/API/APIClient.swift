@@ -145,7 +145,6 @@ extension APIClient {
 
     func verifyScript(for publicKey: String) -> Script {
         let signedArgs = [
-            VerifyScript.script.content,
             Utils.prefixHex(publicKey.data(using: .utf8)!.toHexString())
             // Although public key itself is a hex string, when loaded as binary the format is ignored.
         ]

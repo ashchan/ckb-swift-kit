@@ -31,7 +31,6 @@
 		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
 		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
-		1A8CAEC021F0282E00E99A1C /* bitcoin_unlock.rb in Resources */ = {isa = PBXBuildFile; fileRef = 1A8CAEBF21F0282E00E99A1C /* bitcoin_unlock.rb */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
 		1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
 		2D6EA000E9B8936CB81356CC /* Pods_CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4BD554CBEED5D384A1C737 /* Pods_CKB.framework */; };
@@ -76,7 +75,6 @@
 		1A414A9921C3879500B28C09 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1A414A9F21C770DD00B28C09 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
-		1A8CAEBF21F0282E00E99A1C /* bitcoin_unlock.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = bitcoin_unlock.rb; path = "ckb-ruby-scripts/bitcoin_unlock.rb"; sourceTree = SOURCE_ROOT; };
 		1AB45ED6222AA558009B395B /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
 		1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1Tests.swift; sourceTree = "<group>"; };
 		3280C4848C7A8236CA5F4CD8 /* Pods-CKBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 		1A414A6221C2226E00B28C09 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				1A8CAEBE21F027D300E99A1C /* RubyScripts */,
 				1AB45ED5222AA53F009B395B /* Crypto */,
 				1A414A8621C36FAA00B28C09 /* Types */,
 				1A414A7E21C32D1D00B28C09 /* API */,
@@ -214,14 +211,6 @@
 				1A3B97A221C9CD2700FC1C54 /* UnlockScriptTests.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		1A8CAEBE21F027D300E99A1C /* RubyScripts */ = {
-			isa = PBXGroup;
-			children = (
-				1A8CAEBF21F0282E00E99A1C /* bitcoin_unlock.rb */,
-			);
-			path = RubyScripts;
 			sourceTree = "<group>";
 		};
 		1AB45ED5222AA53F009B395B /* Crypto */ = {
@@ -358,7 +347,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A8CAEC021F0282E00E99A1C /* bitcoin_unlock.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
