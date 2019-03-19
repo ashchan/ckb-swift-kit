@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode10.1
 env:
-  - SKIP_RPC_TESTS=true
+  - SKIP_RPC_TESTS=1
 
 xcode_workspace: CKB.xcworkspace
 xcode_scheme: CKB
