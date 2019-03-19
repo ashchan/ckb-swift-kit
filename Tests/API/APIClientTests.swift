@@ -11,7 +11,7 @@ import XCTest
 
 class APIClientTests: XCTestCase {
     override func invokeTest() {
-        if let _ = ProcessInfo().environment["SKIP_RPC_TESTS"] {
+        if ProcessInfo().environment["SKIP_RPC_TESTS"] == "1" {
             return
         }
         super.invokeTest()
@@ -66,13 +66,13 @@ class APIClientTests: XCTestCase {
 
     func testGetCellsByTypeHash() throws {
         let client = APIClient()
-        let result = try client.getCellsByTypeHash(typeHash: "0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", from: 1, to: 100)
+        let result = try client.getCellsByTypeHash(typeHash: "0x8954a4ac5e5c33eb7aa8bb91e0a000179708157729859bd8cf7e2278e1e12980", from: 1, to: 100)
         XCTAssertNotNil(result)
     }
 
     func testGetCurrentCell() throws {
         let client = APIClient()
-        let cells = try client.getCellsByTypeHash(typeHash: "0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", from: 1, to: 100)
+        let cells = try client.getCellsByTypeHash(typeHash: "0x8954a4ac5e5c33eb7aa8bb91e0a000179708157729859bd8cf7e2278e1e12980", from: 1, to: 100)
         let result = try client.getLiveCell(outPoint: cells.first!.outPoint)
         XCTAssertNotNil(result)
     }
@@ -99,7 +99,7 @@ class APIClientTests: XCTestCase {
 
     func testGetTransactionTrace() throws {
         let client = APIClient()
-        if let result = try client.getTransactionTrace(hash: "0xd91110fe20b7137c884d5c515f591ceda89a177bf06c1a3eb99c8a970dda2cf5") {
+        if let result = try client.getTransactionTrace(hash: "0x1704f772f11c4c2fcb543f22cad66adad5a555e21f14c975c37d1d4bad096d47") {
             XCTAssertEqual(result.first!.action, Action.addPending)
         }
     }
