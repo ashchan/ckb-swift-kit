@@ -12,6 +12,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
+* add SPM support
 * add tests for compressed/umcopressed public key computing ([89f2f42](https://github.com/nervosnetwork/ckb-sdk-swift/commit/89f2f42))
 * replace secp256k1_swift with secp256k1.swift and implement Secp256k1.privateToPublic ([f1911b8](https://github.com/nervosnetwork/ckb-sdk-swift/commit/f1911b8))
 * **lint:** use SwiftLint installed via CocoaPods ([3f06d86](https://github.com/nervosnetwork/ckb-sdk-swift/commit/3f06d86))
@@ -22,6 +23,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### BREAKING CHANGES
 
 * Repalce SHA3 with Blake2b.
+* Remove bitcoin_unblock.rb.
 
 
 # [v0.6.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.5.0...v0.6.0) (2019-02-25)
