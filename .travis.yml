@@ -1,9 +1,12 @@
 language: objective-c
-osx_image: xcode10
+osx_image: xcode10.1
+env:
+  - SKIP_RPC_TESTS=1
+
 xcode_workspace: CKB.xcworkspace
 xcode_scheme: CKB
-xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
 before_install:
   - travis_wait pod repo update --silent
-script:
-  - swiftlint --reporter junit
+after_success:
+  - sleep 5

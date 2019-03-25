@@ -10,6 +10,13 @@ import XCTest
 @testable import CKB
 
 class APIClientTests: XCTestCase {
+    override func invokeTest() {
+        if ProcessInfo().environment["SKIP_RPC_TESTS"] == "1" {
+            return
+        }
+        super.invokeTest()
+    }
+
     func testGenesisBlockHash() throws {
         let result = try APIClient().genesisBlockHash()
         XCTAssertNotNil(result)
@@ -59,13 +66,13 @@ class APIClientTests: XCTestCase {
 
     func testGetCellsByTypeHash() throws {
         let client = APIClient()
-        let result = try client.getCellsByTypeHash(typeHash: "0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", from: 1, to: 100)
+        let result = try client.getCellsByTypeHash(typeHash: "0x8954a4ac5e5c33eb7aa8bb91e0a000179708157729859bd8cf7e2278e1e12980", from: 1, to: 100)
         XCTAssertNotNil(result)
     }
 
     func testGetCurrentCell() throws {
         let client = APIClient()
-        let cells = try client.getCellsByTypeHash(typeHash: "0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", from: 1, to: 100)
+        let cells = try client.getCellsByTypeHash(typeHash: "0x8954a4ac5e5c33eb7aa8bb91e0a000179708157729859bd8cf7e2278e1e12980", from: 1, to: 100)
         let result = try client.getLiveCell(outPoint: cells.first!.outPoint)
         XCTAssertNotNil(result)
     }
@@ -81,5 +88,26 @@ class APIClientTests: XCTestCase {
         let client = APIClient()
         let result = try client.sendTransaction(transaction: tx)
         XCTAssertNotNil(result)
+    }
+
+    func testLocalNodeInfo() throws {
+        let client = APIClient()
+        let result = try client.localNodeInfo()
+        XCTAssertFalse(result.addresses.isEmpty)
+        XCTAssertFalse(result.nodeId.isEmpty)
+    }
+
+    func testGetTransactionTrace() throws {
+        let client = APIClient()
+        if let result = try client.getTransactionTrace(hash: "0x1704f772f11c4c2fcb543f22cad66adad5a555e21f14c975c37d1d4bad096d47") {
+            XCTAssertEqual(result.first!.action, Action.addPending)
+        }
+    }
+
+    func testTraceTransaction() throws {
+        let client = APIClient()
+        let tx = Transaction(version: 2, deps: [], inputs: [], outputs: [])
+        let result = try client.traceTransaction(transaction: tx)
+        XCTAssertFalse(result.isEmpty)
     }
 }
