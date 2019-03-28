@@ -33,6 +33,8 @@
 		1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
 		2D6EA000E9B8936CB81356CC /* Pods_CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4BD554CBEED5D384A1C737 /* Pods_CKB.framework */; };
 		591DADB7D11BC8F71DBF4902 /* Pods_CKBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */; };
+		D5C22523224B9C2100797539 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C22522224B9C2100797539 /* Wallet.swift */; };
+		D5C22525224B9C6F00797539 /* AlwaysSuccessWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C22524224B9C6F00797539 /* AlwaysSuccessWallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		6F4BD554CBEED5D384A1C737 /* Pods_CKB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CKB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CKBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE51456FD8F0F3CCE586B41 /* Pods-CKB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKB.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKB/Pods-CKB.release.xcconfig"; sourceTree = "<group>"; };
+		D5C22522224B9C2100797539 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		D5C22524224B9C6F00797539 /* AlwaysSuccessWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysSuccessWallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		1A414A6221C2226E00B28C09 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D5C22521224B9C1600797539 /* Wallet */,
 				1AB45ED5222AA53F009B395B /* Crypto */,
 				1A414A8621C36FAA00B28C09 /* Types */,
 				1A414A7E21C32D1D00B28C09 /* API */,
@@ -232,6 +237,15 @@
 				6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5C22521224B9C1600797539 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				D5C22522224B9C2100797539 /* Wallet.swift */,
+				D5C22524224B9C6F00797539 /* AlwaysSuccessWallet.swift */,
+			);
+			path = Wallet;
 			sourceTree = "<group>";
 		};
 		D8E741B1A7B0D4DFBEDB15BE /* Pods */ = {
@@ -455,6 +469,8 @@
 				1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
+				D5C22523224B9C2100797539 /* Wallet.swift in Sources */,
+				D5C22525224B9C6F00797539 /* AlwaysSuccessWallet.swift in Sources */,
 				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
 				1A414AA021C770DD00B28C09 /* Utils.swift in Sources */,
