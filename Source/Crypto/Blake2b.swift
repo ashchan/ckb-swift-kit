@@ -34,6 +34,6 @@ final class Blake2b {
             personal
         ) else { return nil }
 
-        return Data(bytes: output)
+        return Data(output)
     }
 }
