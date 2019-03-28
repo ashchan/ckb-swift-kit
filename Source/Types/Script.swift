@@ -39,7 +39,7 @@ public struct Script: Codable, Param {
             bytes.append(contentsOf: Data(hex: arg).bytes)
         }
         let hash = Blake2b().hash(bytes: bytes)!
-        return Utils.prefixHex(Data(bytes: hash).toHexString())
+        return Utils.prefixHex(Data(hash).toHexString())
     }
 
     public var param: [String: Any] {

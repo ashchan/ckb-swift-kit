@@ -29,9 +29,10 @@ final class Secp256k1 {
 
         var length = compressed ? 33 : 65
         var data = Data(count: length)
-        data.withUnsafeMutableBytes { (bytes: UnsafeMutablePointer<UInt8>) in
+        data.withUnsafeMutableBytes { (bytes: UnsafeMutableRawBufferPointer) in
             let flag = compressed ? UInt32(SECP256K1_EC_COMPRESSED) : UInt32(SECP256K1_EC_UNCOMPRESSED)
-            _ = secp256k1_ec_pubkey_serialize(context, bytes, &length, &publicKey, flag)
+            let mutableBytes = bytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
+            _ = secp256k1_ec_pubkey_serialize(context, mutableBytes, &length, &publicKey, flag)
         }
         return data
     }
