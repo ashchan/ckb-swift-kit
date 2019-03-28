@@ -27,11 +27,8 @@ public class APIClient {
             error = err
 
             do {
-                guard data != nil else {
-                    throw APIError.emptyResponse
-                }
-
-                result = try request.decode(data!)
+                guard let data = data else { throw APIError.emptyResponse }
+                result = try request.decode(data)
             } catch let err {
                 error = err
             }

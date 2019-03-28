@@ -35,6 +35,7 @@
 		591DADB7D11BC8F71DBF4902 /* Pods_CKBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */; };
 		D5C22523224B9C2100797539 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C22522224B9C2100797539 /* Wallet.swift */; };
 		D5C22525224B9C6F00797539 /* AlwaysSuccessWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C22524224B9C6F00797539 /* AlwaysSuccessWallet.swift */; };
+		D5C22527224C6BBF00797539 /* WalletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C22526224C6BBF00797539 /* WalletError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		ABE51456FD8F0F3CCE586B41 /* Pods-CKB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKB.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKB/Pods-CKB.release.xcconfig"; sourceTree = "<group>"; };
 		D5C22522224B9C2100797539 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		D5C22524224B9C6F00797539 /* AlwaysSuccessWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysSuccessWallet.swift; sourceTree = "<group>"; };
+		D5C22526224C6BBF00797539 /* WalletError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			children = (
 				D5C22522224B9C2100797539 /* Wallet.swift */,
 				D5C22524224B9C6F00797539 /* AlwaysSuccessWallet.swift */,
+				D5C22526224C6BBF00797539 /* WalletError.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				1A414A9221C3725300B28C09 /* OutPoint.swift in Sources */,
 				1A414A8821C36FCF00B28C09 /* Header.swift in Sources */,
 				1A1134802229063F00840EE8 /* TxTrace.swift in Sources */,
+				D5C22527224C6BBF00797539 /* WalletError.swift in Sources */,
 				1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,

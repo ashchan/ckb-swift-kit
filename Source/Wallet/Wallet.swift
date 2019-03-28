@@ -10,45 +10,80 @@ import Foundation
 
 let minCellCapacity: Capacity = 40
 
-enum WalletError: Error {
-    case invalidCapacity
-    case notEnoughCapacity
-}
+public class Wallet {
+    public let privateKey: H256
+    public let api: APIClient
 
-class Wallet {
-    let privateKey: H256
-    let api: APIClient
-
-    init(privateKey: String, api: APIClient) {
-        self.privateKey = privateKey
-        self.api = api
-    }
-
-    func sendCapacity(targetAddress: H256, capacity: Capacity) throws -> H256 {
-        let tx = try generateTx(targetAddress: targetAddress, capacity: capacity)
-        return try api.sendTransaction(transaction: tx)
-    }
-
-    func getUnspentCells() throws -> [CellOutputWithOutPoint] {
-        return try api.getCellsByTypeHash(typeHash: address, from: 1, to: try api.getTipBlockNumber())
-    }
-
-    func getBalance() throws -> Capacity {
-        return try getUnspentCells().reduce(0, { $0 + $1.capacity })
-    }
-}
-
-extension Wallet {
-    var publicKey: H256 {
+    public var publicKey: H256 {
         return Utils.privateToPublic(privateKey)
+    }
+
+    public var address: H256 {
+        return unlockScript.typeHash
     }
 
     var unlockScript: Script {
         return api.verifyScript(for: publicKey)
     }
 
-    var address: H256 {
-        return unlockScript.typeHash
+    var deps: [OutPoint] {
+        return [api.mrubyOutPoint]
+    }
+
+    public init(privateKey: H256, api: APIClient) {
+        self.privateKey = privateKey
+        self.api = api
+    }
+
+    public func getBalance() throws -> Capacity {
+        return try getUnspentCells().reduce(0, { $0 + $1.capacity })
+    }
+
+    public func sendCapacity(targetAddress: H256, capacity: Capacity) throws -> H256 {
+        let tx = try generateTransaction(targetAddress: targetAddress, capacity: capacity)
+        return try api.sendTransaction(transaction: tx)
+    }
+}
+
+extension Wallet {
+    typealias Element = CellOutputWithOutPoint
+
+    struct UnspentCellsIterator: IteratorProtocol {
+        let api: APIClient
+        let address: H256
+        var fromBlockNumber: BlockNumber
+        var tipBlockNumber: BlockNumber
+        var cells = [CellOutputWithOutPoint]()
+
+        init(api: APIClient, address: H256) throws {
+            self.api = api
+            self.address = address
+            fromBlockNumber = 1
+            tipBlockNumber = try api.getTipBlockNumber()
+        }
+
+        mutating func next() -> CellOutputWithOutPoint? {
+            guard cells.count == 0 else {
+                return cells.removeFirst()
+            }
+            while fromBlockNumber <= tipBlockNumber {
+                let toBlockNumber = min(fromBlockNumber + 800, tipBlockNumber)
+                defer {
+                    fromBlockNumber = toBlockNumber + 1
+                }
+                if var cells = try? api.getCellsByTypeHash(typeHash: address, from: fromBlockNumber, to: toBlockNumber), cells.count > 0 {
+                    defer {
+                        self.cells = cells
+                    }
+                    return cells.removeFirst()
+                }
+            }
+            return nil
+        }
+    }
+
+    func getUnspentCells() throws -> IteratorSequence<UnspentCellsIterator> {
+        return IteratorSequence(try UnspentCellsIterator(api: api, address: address))
     }
 }
 
@@ -58,8 +93,10 @@ extension Wallet {
         let capacity: Capacity
     }
 
-    func gatherInputs(address: H256, capacity: Capacity, minCapacity: Capacity = minCellCapacity) throws -> ValidInputs {
-        guard capacity < minCapacity else { throw WalletError.invalidCapacity }
+    func gatherInputs(capacity: Capacity, minCapacity: Capacity = minCellCapacity) throws -> ValidInputs {
+        guard capacity > minCapacity else {
+            throw WalletError.tooLowCapacity(min: minCapacity)
+        }
         var inputCapacities: Capacity = 0
         var inputs = [CellInput]()
         for cell in try getUnspentCells() {
@@ -70,20 +107,20 @@ extension Wallet {
                 break
             }
         }
-        guard inputCapacities > capacity else { throw WalletError.notEnoughCapacity }
+        guard inputCapacities > capacity else {
+            throw WalletError.notEnoughCapacity(required: capacity, available: inputCapacities)
+        }
         return ValidInputs(cellInputs: inputs, capacity: inputCapacities)
     }
-}
 
-extension Wallet {
-    func generateTx(targetAddress: H256, capacity: Capacity) throws -> Transaction {
-        let validInputs = try gatherInputs(address: address, capacity: capacity, minCapacity: 0)
+    func generateTransaction(targetAddress: H256, capacity: Capacity) throws -> Transaction {
+        let validInputs = try gatherInputs(capacity: capacity, minCapacity: minCellCapacity)
         var outputs: [CellOutput] = [
-            CellOutput(capacity: capacity, data: "", lock: targetAddress, type: nil)
+            CellOutput(capacity: capacity, data: "0x", lock: targetAddress, type: nil)
         ]
         if validInputs.capacity > capacity {
-            outputs.append(CellOutput(capacity: validInputs.capacity - capacity, data: "", lock: address, type: nil))
+            outputs.append(CellOutput(capacity: validInputs.capacity - capacity, data: "0x", lock: address, type: nil))
         }
-        return Transaction(version: 0, deps: [api.mrubyOutPoint], inputs: validInputs.cellInputs, outputs: outputs, hash: privateKey)
+        return Transaction(deps: deps, inputs: validInputs.cellInputs, outputs: outputs, hash: privateKey)
     }
 }
