@@ -52,7 +52,7 @@ extension Wallet {
         let api: APIClient
         let address: H256
         var fromBlockNumber: BlockNumber
-        var tipBlockNumber: BlockNumber
+        let tipBlockNumber: BlockNumber
         var cells = [CellOutputWithOutPoint]()
 
         init(api: APIClient, address: H256) throws {
