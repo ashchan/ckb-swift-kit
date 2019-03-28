@@ -9,6 +9,12 @@
 import Foundation
 
 public struct Utils {
+    public static func generatePrivateKey() -> String {
+        var data = Data(repeating: 0, count: 32)
+        data.withUnsafeMutableBytes({ _ = SecRandomCopyBytes(kSecRandomDefault, 32, $0.baseAddress!) })
+        return data.toHexString()
+    }
+
     public static func privateToPublic(_ privateKey: Data) -> Data {
         return Secp256k1.privateToPublic(privateKey: privateKey)
     }

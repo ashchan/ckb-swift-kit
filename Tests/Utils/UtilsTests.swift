@@ -21,4 +21,9 @@ class UtilsTests: XCTestCase {
         let address = "0xbc374983430db3686ab181138bb510cb8f83aa136d833ac18fc3e73a3ad54b8b"
         XCTAssertEqual(address, Utils.privateToAddress(privateKey))
     }
+
+    func testGeneratePrivateKey() {
+        let privateKey = Utils.generatePrivateKey()
+        XCTAssertEqual(privateKey.lengthOfBytes(using: .utf8), 64)
+    }
 }
