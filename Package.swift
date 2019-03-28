@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/Boilertalk/secp256k1.swift.git", from: "0.1.4"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "0.15.0"),
-        .package(url: "https://github.com/jedisct1/swift-sodium.git", from: "0.7.0"),
+        .package(url: "https://github.com/jedisct1/swift-sodium.git", .revision("adc2c117bedf186cb4cdcd64c5b93b7f1f55e185")),
     ],
     targets: [
         .target(
