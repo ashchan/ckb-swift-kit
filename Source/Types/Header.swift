@@ -9,24 +9,24 @@
 import Foundation
 
 public struct Seal: Codable {
-    let nonce: UInt64
-    let proof: HexString
+    public let nonce: UInt64
+    public let proof: HexString
 }
 
 public struct Header: Codable {
-    let version: UInt32
-    let parentHash: H256
-    let timestamp: UInt64
-    let number: BlockNumber
-    let txsCommit: H256
-    let txsProposal: H256
-    let difficulty: UInt256
-    let cellbaseId: H256
-    let unclesHash: H256
-    let unclesCount: UInt32
-    let hash: H256
+    public let version: UInt32
+    public let parentHash: H256
+    public let timestamp: UInt64
+    public let number: BlockNumber
+    public let txsCommit: H256
+    public let txsProposal: H256
+    public let difficulty: UInt256
+    public let cellbaseId: H256
+    public let unclesHash: H256
+    public let unclesCount: UInt32
+    public let hash: H256
 
-    let seal: Seal
+    public let seal: Seal
 
     enum CodingKeys: String, CodingKey {
         case version

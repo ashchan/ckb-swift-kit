@@ -18,7 +18,7 @@ public enum Action: String, Codable {
 }
 
 public struct TxTrace: Codable {
-    let action: Action
-    let info: String
-    let time: UInt64
+    public let action: Action
+    public let info: String
+    public let time: UInt64
 }
