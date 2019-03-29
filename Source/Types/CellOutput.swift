@@ -9,14 +9,14 @@
 import Foundation
 
 public struct CellOutput: Codable, Param {
-    let capacity: Capacity
-    let data: HexString
-    let lock: H256
-    let type: Script?
+    public let capacity: Capacity
+    public let data: HexString
+    public let lock: H256
+    public let type: Script?
 
     public var param: [String: Any] {
         var result: [String: Any] = [
-            "capicity": capacity,
+            "capacity": capacity,
             "data": data,
             "lock": lock
         ]
@@ -28,9 +28,9 @@ public struct CellOutput: Codable, Param {
 }
 
 public struct CellOutputWithOutPoint: Codable {
-    let outPoint: OutPoint
-    let capacity: Capacity
-    let lock: H256
+    public let outPoint: OutPoint
+    public let capacity: Capacity
+    public let lock: H256
 
     enum CodingKeys: String, CodingKey {
         case outPoint = "out_point"

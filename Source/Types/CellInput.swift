@@ -9,8 +9,8 @@
 import Foundation
 
 public struct CellInput: Codable, Param {
-    let previousOutput: OutPoint
-    let unlock: Script
+    public let previousOutput: OutPoint
+    public let unlock: Script
 
     enum CodingKeys: String, CodingKey {
         case previousOutput = "previous_output"

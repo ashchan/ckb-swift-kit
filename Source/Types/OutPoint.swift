@@ -9,8 +9,8 @@
 import Foundation
 
 public struct OutPoint: Codable, Param {
-    let hash: H256
-    let index: UInt32
+    public let hash: H256
+    public let index: UInt32
 
     public var param: [String: Any] {
         return [

@@ -9,14 +9,14 @@
 import Foundation
 
 public struct NodeAddress: Codable {
-    let address: String
-    let score: UInt8
+    public let address: String
+    public let score: UInt8
 }
 
 public struct LocalNode: Codable {
-    let version: String
-    let nodeId: String
-    let addresses: [NodeAddress]
+    public let version: String
+    public let nodeId: String
+    public let addresses: [NodeAddress]
 
     enum CodingKeys: String, CodingKey {
         case version

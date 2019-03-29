@@ -9,11 +9,11 @@
 import Foundation
 
 public struct Transaction: Codable, Param {
-    let version: UInt32
-    let deps: [OutPoint]
-    let inputs: [CellInput]
-    let outputs: [CellOutput]
-    let hash: H256
+    public let version: UInt32
+    public let deps: [OutPoint]
+    public let inputs: [CellInput]
+    public let outputs: [CellOutput]
+    public let hash: H256
 
     public init(version: UInt32 = 0, deps: [OutPoint] = [], inputs: [CellInput] = [], outputs: [CellOutput] = [], hash: H256 = "") {
         self.version = version
