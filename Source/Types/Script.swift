@@ -10,16 +10,16 @@ import Foundation
 
 public struct Script: Codable, Param {
     /// Used to resolve incompatible upgrades.
-    let version: UInt8
+    public let version: UInt8
     /// ELF formatted binary containing the actual RISC-V based contract.
-    var binary: HexString?
+    public var binary: HexString?
     /// If your contract already exists on CKB, you can use this field to reference the contract instead of including it again.
     /// You can just put the script hash(will explain later how this is calculated) in this reference field, then list the cell containing the contract as a dep in current transaction.
     /// CKB would automatically locate cell, load the binary from there and use it as script binary part.
     /// Notice this only works when you don't provide a binary field value, otherwise the value in binary field always take precedence.
-    var reference: H256?
-    let signedArgs: [HexString]
-    let args: [HexString]
+    public var reference: H256?
+    public let signedArgs: [HexString]
+    public let args: [HexString]
 
     enum CodingKeys: String, CodingKey {
         case version, args, reference, binary
