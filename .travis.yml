@@ -7,6 +7,8 @@ xcode_workspace: CKB.xcworkspace
 xcode_scheme: CKB
 xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
 before_install:
+  - gem uninstall cocoapods -a
+  - gem install cocoapods --pre
   - travis_wait pod repo update --silent
 after_success:
   - sleep 5
