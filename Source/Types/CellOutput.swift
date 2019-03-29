@@ -16,7 +16,7 @@ public struct CellOutput: Codable, Param {
 
     public var param: [String: Any] {
         var result: [String: Any] = [
-            "capicity": capacity,
+            "capacity": capacity,
             "data": data,
             "lock": lock
         ]
