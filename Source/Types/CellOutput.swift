@@ -11,7 +11,7 @@ import Foundation
 public struct CellOutput: Codable, Param {
     public let capacity: Capacity
     public let data: HexString
-    public let lock: H256
+    public let lock: Script
     public let type: Script?
 
     public var param: [String: Any] {
