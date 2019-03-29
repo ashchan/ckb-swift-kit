@@ -12,6 +12,11 @@ public struct CellInput: Codable, Param {
     public let previousOutput: OutPoint
     public let unlock: Script
 
+    public init(previousOutput: OutPoint, unlock: Script) {
+        self.previousOutput = previousOutput
+        self.unlock = unlock
+    }
+
     enum CodingKeys: String, CodingKey {
         case previousOutput = "previous_output"
         case unlock

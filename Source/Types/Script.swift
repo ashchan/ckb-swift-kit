@@ -21,6 +21,14 @@ public struct Script: Codable, Param {
     public let signedArgs: [HexString]
     public let args: [HexString]
 
+    public init(version: UInt8, binary: HexString?, reference: H256?, signedArgs: [HexString], args: [HexString]) {
+        self.version = version
+        self.binary = binary
+        self.reference = reference
+        self.signedArgs = signedArgs
+        self.args = args
+    }
+
     enum CodingKeys: String, CodingKey {
         case version, args, reference, binary
         case signedArgs = "signed_args"
