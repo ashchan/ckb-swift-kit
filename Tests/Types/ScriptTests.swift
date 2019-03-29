@@ -10,50 +10,17 @@ import XCTest
 @testable import CKB
 
 class ScriptTests: XCTestCase {
-    // Skipped
-    func x_testAlwaysSuccessScriptTypeHash() throws {
-        let client = APIClient()
-        let script = Script(
-            version: 0,
-            binary: nil,
-            reference: try client.alwaysSuccessCellHash(),
-            signedArgs: [],
-            args: []
-        )
-        XCTAssertEqual("0x0da2fe99fe549e082d4ed483c2e968a89ea8d11aabf5d79e5cbf06522de6e674", script.typeHash)
-    }
-
-    func testAlwaysSuccessScriptTypeHash() throws {
-        let client = APIClient()
-        let script = Script(
-            version: 0,
-            binary: client.alwaysSuccessCellBytes.toHexString(),
-            reference: nil,
-            signedArgs: [],
-            args: []
-        )
-        XCTAssertEqual("0x9f94d2511b787387638faa4a5bfd448baf21aa5fde3afaa54bb791188b5cf002", script.typeHash)
-    }
-
     func testEmptyScriptTypeHash() throws {
-        let script = Script(
-            version: 0,
-            binary: nil,
-            reference: nil,
-            signedArgs: [],
-            args: []
-        )
-        XCTAssertEqual("0x4b29eb5168ba6f74bff824b15146246109c732626abd3c0578cbf147d8e28479", script.typeHash)
+        let script = Script()
+        XCTAssertEqual("0x266cec97cbede2cfbce73666f08deed9560bdf7841a7a5a51b3a3f09da249e21", script.typeHash)
     }
 
     func testScriptTypeHash() throws {
         let script = Script(
             version: 0,
-            binary: "0x01",
-            reference: "0x0000000000000000000000000000000000000000000000000000000000000000",
-            signedArgs: ["0x01"],
-            args: ["0x01"]
+            args: ["0x01"],
+            binaryHash: H256.zeroHash
         )
-        XCTAssertEqual("0xafb140d0673571ed5710d220d6146d41bd8bc18a3a4ff723dad4331da5af5bb6", script.typeHash)
+        XCTAssertEqual("0xdade0e507e27e2a5995cf39c8cf454b6e70fa80d03c1187db7a4cb2c9eab79da", script.typeHash)
     }
 }

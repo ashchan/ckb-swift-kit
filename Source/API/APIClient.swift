@@ -141,37 +141,14 @@ extension APIClient {
     }
 
     public func verifyScript(for publicKey: String) -> Script {
-        let signedArgs = [
+        let args = [
             Utils.prefixHex(publicKey.data(using: .utf8)!.toHexString())
             // Although public key itself is a hex string, when loaded as binary the format is ignored.
         ]
         return Script(
             version: 0,
-            binary: nil,
-            reference: mrubyCellHash,
-            signedArgs: signedArgs,
-            args: []
+            args: args,
+            binaryHash: mrubyCellHash
         )
-    }
-
-    // https://github.com/nervosnetwork/ckb/blob/master/nodes_template/spec/cells/always_success
-    public var alwaysSuccessCellBytes: [UInt8] {
-        // swiftlint:disable:next line_length
-        let hex = "7F454C46 02010100 00000000 00000000 0200F300 01000000 78000100 00000000 40000000 00000000 98000000 00000000 05000000 40003800 01004000 03000200 01000000 05000000 00000000 00000000 00000100 00000000 00000100 00000000 82000000 00000000 82000000 00000000 00100000 00000000 01459308 D0057300 0000002E 73687374 72746162 002E7465 78740000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 0B000000 01000000 06000000 00000000 78000100 00000000 78000000 00000000 0A000000 00000000 00000000 00000000 02000000 00000000 00000000 00000000 01000000 03000000 00000000 00000000 00000000 00000000 82000000 00000000 11000000 00000000 00000000 00000000 01000000 00000000 00000000 00000000"
-        return [UInt8](hex: hex.replacingOccurrences(of: " ", with: ""))
-    }
-
-    public func alwaysSuccessCellHash() throws -> String {
-        let systemCells = try genesisBlock().commitTransactions.first!.outputs
-        guard let cell = systemCells.first else {
-            throw APIError.genericError("Cannot find always success cell")
-        }
-        let hash = Blake2b().hash(data: Data(hex: cell.data))!
-        return Utils.prefixHex(hash.toHexString())
-    }
-
-    public func alwaysSuccessScriptOutPoint() throws -> OutPoint {
-        let hash = try genesisBlock().commitTransactions.first!.hash
-        return OutPoint(hash: hash, index: 0)
     }
 }
