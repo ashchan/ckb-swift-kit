@@ -14,7 +14,7 @@ public struct CellOutput: Codable, Param {
     public let lock: Script
     public let type: Script?
 
-    public init(capacity: Capacity, data: HexString, lock: H256, type: Script?) {
+    public init(capacity: Capacity, data: HexString, lock: Script, type: Script?) {
         self.capacity = capacity
         self.data = data
         self.lock = lock
