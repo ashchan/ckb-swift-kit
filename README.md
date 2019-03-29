@@ -15,3 +15,7 @@ To build CKB SDK, you'll need:
 ## License
 
 Nervos CKB SDK is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) file.

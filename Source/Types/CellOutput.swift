@@ -14,6 +14,13 @@ public struct CellOutput: Codable, Param {
     public let lock: H256
     public let type: Script?
 
+    public init(capacity: Capacity, data: HexString, lock: H256, type: Script?) {
+        self.capacity = capacity
+        self.data = data
+        self.lock = lock
+        self.type = type
+    }
+
     public var param: [String: Any] {
         var result: [String: Any] = [
             "capacity": capacity,
