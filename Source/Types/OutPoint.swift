@@ -12,6 +12,11 @@ public struct OutPoint: Codable, Param {
     public let hash: H256
     public let index: UInt32
 
+    public init(hash: String, index: UInt32) {
+        self.hash = hash
+        self.index = index
+    }
+
     public var param: [String: Any] {
         return [
             "hash": hash,
