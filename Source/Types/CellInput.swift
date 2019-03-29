@@ -12,9 +12,9 @@ public struct CellInput: Codable, Param {
     public let previousOutput: OutPoint
     public let args: [HexString]
 
-    public init(previousOutput: OutPoint, unlock: Script) {
+    public init(previousOutput: OutPoint, args: [HexString]) {
         self.previousOutput = previousOutput
-        self.unlock = unlock
+        self.args = args
     }
 
     enum CodingKeys: String, CodingKey {

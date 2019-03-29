@@ -13,14 +13,6 @@ public struct Script: Codable, Param {
     public let args: [HexString]
     public var binaryHash: H256
 
-    public init(version: UInt8, binary: HexString?, reference: H256?, signedArgs: [HexString], args: [HexString]) {
-        self.version = version
-        self.binary = binary
-        self.reference = reference
-        self.signedArgs = signedArgs
-        self.args = args
-    }
-
     enum CodingKeys: String, CodingKey {
         case version, args
         case binaryHash = "binary_hash"
