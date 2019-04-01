@@ -13,13 +13,22 @@ public struct Transaction: Codable, Param {
     public let deps: [OutPoint]
     public let inputs: [CellInput]
     public let outputs: [CellOutput]
+    public let witnesses: [Witness]
     public let hash: H256
 
-    public init(version: UInt32 = 0, deps: [OutPoint] = [], inputs: [CellInput] = [], outputs: [CellOutput] = [], hash: H256 = "") {
+    public init(
+        version: UInt32 = 0,
+        deps: [OutPoint] = [],
+        inputs: [CellInput] = [],
+        outputs: [CellOutput] = [],
+        witnesses: [Witness] = [],
+        hash: H256 = ""
+    ) {
         self.version = version
         self.deps = deps
         self.inputs = inputs
         self.outputs = outputs
+        self.witnesses = witnesses
         self.hash = hash
     }
 
@@ -28,7 +37,8 @@ public struct Transaction: Codable, Param {
             "version": version,
             "deps": deps.map { $0.param },
             "inputs": inputs.map { $0.param },
-            "outputs": outputs.map { $0.param }
+            "outputs": outputs.map { $0.param },
+            "witnesses": witnesses.map { $0.param }
         ]
     }
 }
