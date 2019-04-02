@@ -24,13 +24,9 @@ public struct Utils {
     }
 
     public static func publicToAddress(_ publicKey: String) -> String {
-        let api = APIClient()
-        // TODO: provide a way to set/load mruby contract cell
-        api.setMrubyConfig(
-            outPoint: OutPoint(hash: "0x765273ea8ca662eb38c66b307779968a031cf5242f72972a7352dbaed6e9fecb", index: 0),
-            cellHash: "0x828d1e109a79964521bf5fbbedb4f6e695a9c4b6b674a58887f30c7398e93a76"
-        )
-        return api.verifyScript(for: publicKey).typeHash
+        // TODO: save/load (cell) binary hash info
+        let binaryHash = "0x828d1e109a79964521bf5fbbedb4f6e695a9c4b6b674a58887f30c7398e93a76"
+        return Script.verifyScript(for: publicKey, binaryHash: binaryHash).typeHash
     }
 
     public static func privateToAddress(_ privateKey: String) -> String {

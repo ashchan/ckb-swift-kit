@@ -47,3 +47,17 @@ public struct Script: Codable, Param {
         self.binaryHash = binaryHash
     }
 }
+
+public extension Script {
+    static func verifyScript(for publicKey: String, binaryHash: String) -> Script {
+        let args = [
+            Utils.prefixHex(publicKey.data(using: .utf8)!.toHexString())
+            // Although public key itself is a hex string, when loaded as binary the format is ignored.
+        ]
+        return Script(
+            version: 0,
+            args: args,
+            binaryHash: binaryHash
+        )
+    }
+}

@@ -11,8 +11,6 @@ import Foundation
 /// JSON RPC API client.
 public class APIClient {
     private var url: URL
-    public private(set) var mrubyOutPoint: OutPoint!
-    public private(set) var mrubyCellHash: String!
 
     public init(url: URL = URL(string: "http://localhost:8114")!) {
         self.url = url
@@ -129,26 +127,5 @@ extension APIClient {
 
     public func getTransactionTrace(hash: H256) throws -> [TxTrace]? {
         return try load(APIRequest<[TxTrace]?>(method: "get_transaction_trace", params: [hash]))
-    }
-}
-
-// MARK: - Info for mruby script and verify cell
-
-extension APIClient {
-    public func setMrubyConfig(outPoint: OutPoint, cellHash: String) {
-        mrubyOutPoint = outPoint
-        mrubyCellHash = cellHash
-    }
-
-    public func verifyScript(for publicKey: String) -> Script {
-        let args = [
-            Utils.prefixHex(publicKey.data(using: .utf8)!.toHexString())
-            // Although public key itself is a hex string, when loaded as binary the format is ignored.
-        ]
-        return Script(
-            version: 0,
-            args: args,
-            binaryHash: mrubyCellHash
-        )
     }
 }
