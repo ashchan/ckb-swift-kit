@@ -9,12 +9,10 @@
 import Foundation
 
 public struct Witness: Codable, Param {
-    public let index: UInt32
     public let data: [HexString]
 
     public var param: [String: Any] {
         return [
-            "index": index,
             "data": data
         ]
     }
