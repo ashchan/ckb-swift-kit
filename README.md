@@ -5,4 +5,17 @@
 
 Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
 
-Note: this is at very early stage, treat it as a PoC implementation.
+## Prerequisites
+
+To build CKB SDK, you'll need:
+
+* Xcode 10.2 with Swift 5, and later
+* CocoaPods or SPM
+
+## License
+
+Nervos CKB SDK is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) file.

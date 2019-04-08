@@ -1,28 +1,37 @@
 PODS:
-  - CryptoSwift (0.14.0)
+  - CryptoSwift (1.0.0)
   - secp256k1.swift (0.1.4)
   - Sodium (0.7.0)
   - SwiftLint (0.29.1)
 
 DEPENDENCIES:
-  - CryptoSwift (~> 0.14.0)
+  - CryptoSwift (~> 1.0.0)
   - secp256k1.swift (~> 0.1.4)
-  - Sodium (~> 0.7.0)
+  - Sodium (from `https://github.com/jedisct1/swift-sodium.git`, commit `adc2c117bedf186cb4cdcd64c5b93b7f1f55e185`)
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CryptoSwift
     - secp256k1.swift
-    - Sodium
     - SwiftLint
 
+EXTERNAL SOURCES:
+  Sodium:
+    :commit: adc2c117bedf186cb4cdcd64c5b93b7f1f55e185
+    :git: https://github.com/jedisct1/swift-sodium.git
+
+CHECKOUT OPTIONS:
+  Sodium:
+    :commit: adc2c117bedf186cb4cdcd64c5b93b7f1f55e185
+    :git: https://github.com/jedisct1/swift-sodium.git
+
 SPEC CHECKSUMS:
-  CryptoSwift: 35a10419f4dbf0619c13f8c1c180037e115323fa
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
-  Sodium: c5510cc6f5e1b27858e5f260b5cac80d4a3f9379
+  Sodium: c9f8ec9fd5f1754f354f06dbbb32d44337f6661e
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 90aedf9284df8118904131f33b14a0470256f639
+PODFILE CHECKSUM: a025bbb8ba4e3153fc51912661a1f3d55a7e0bd7
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.0.beta.3

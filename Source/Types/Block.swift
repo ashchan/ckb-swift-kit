@@ -9,10 +9,10 @@
 import Foundation
 
 public struct Block: Codable {
-    let header: Header
-    let uncles: [UncleBlock]
-    let commitTransactions: [Transaction]
-    let proposalTransactions: [ProposalShortId]
+    public let header: Header
+    public let uncles: [UncleBlock]
+    public let commitTransactions: [Transaction]
+    public let proposalTransactions: [ProposalShortId]
 
     enum CodingKeys: String, CodingKey {
         case header
@@ -23,9 +23,9 @@ public struct Block: Codable {
 }
 
 public struct UncleBlock: Codable {
-    let header: Header
-    let cellbase: Transaction
-    let proposalTransactions: [ProposalShortId]
+    public let header: Header
+    public let cellbase: Transaction
+    public let proposalTransactions: [ProposalShortId]
 
     enum CodingKeys: String, CodingKey {
         case header

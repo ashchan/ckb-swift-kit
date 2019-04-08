@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CKB"
-  s.version      = "0.7.0"
+  s.version      = "0.8.0"
   s.summary      = "Swift SDK for Nervos CKB"
 
   s.description  = <<-DESC
@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
   s.public_header_files = "Source/**/*.{h}"
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 
-  s.dependency 'CryptoSwift', '~> 0.13.1'
-  s.dependency 'secp256k1_swift', '~> 1.0.3' # https://github.com/shamatar/secp256k1_swift
+  s.dependency 'CryptoSwift', '~> 0.14.1'
+  s.dependency 'Sodium', '~> 0.7.0'
+  s.dependency 'secp256k1.swift', '~> 0.1.4'
 end

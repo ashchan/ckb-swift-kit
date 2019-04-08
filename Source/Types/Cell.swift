@@ -9,6 +9,6 @@
 import Foundation
 
 public struct CellWithStatus: Codable {
-    let cell: CellOutput?
-    let status: String
+    public let cell: CellOutput?
+    public let status: String
 }
