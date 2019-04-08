@@ -8,6 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * Update to Swift 5 ([6b07458](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6b07458))
+* Make more interfaces/properties public
 
 
 ### BREAKING CHANGES
