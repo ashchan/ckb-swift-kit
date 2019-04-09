@@ -2,6 +2,19 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+# [v0.9.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.8.0...v0.9.0) (2019-04-22)
+
+
+### Bug Fixes
+
+* fix public initializers ([37368f0](https://github.com/nervosnetwork/ckb-sdk-swift/commit/37368f0))
+
+
+### Features
+
+* change get_cells_by_type_hash to get_cells_by_lock_hash ([6a4f973](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6a4f973))
+
+
 # [v0.8.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.7.0...v0.8.0) (2019-04-08)
 
 
