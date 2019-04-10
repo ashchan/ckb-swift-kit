@@ -24,12 +24,10 @@ public struct Block: Codable {
 
 public struct UncleBlock: Codable {
     public let header: Header
-    public let cellbase: Transaction
     public let proposalTransactions: [ProposalShortId]
 
     enum CodingKeys: String, CodingKey {
         case header
-        case cellbase
         case proposalTransactions = "proposal_transactions"
     }
 }
