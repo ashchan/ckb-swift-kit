@@ -31,11 +31,8 @@ class AddressGenerator {
     }
 
     func address(for publicKey: Data) -> String {
-        // TODO: implement bech32
-        let bench32: (String, String) -> String = { prefix, payload in
-            return prefix + payload
-        }
-        return bench32(prefix, "002" + hash(for: publicKey).toHexString())
+        let data = "002".data(using: .utf8)! + hash(for: publicKey)
+        return Bech32().encode(hrp: prefix, data: data)
     }
 
     func hash(for publicKey: Data) -> Data {

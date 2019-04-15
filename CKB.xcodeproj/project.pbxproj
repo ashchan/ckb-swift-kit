@@ -31,6 +31,8 @@
 		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
 		1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
+		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
+		1AC180932264672B00D243D9 /* Bech32Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180922264672B00D243D9 /* Bech32Tests.swift */; };
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
 		1AD3195F225DBCB300F41790 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195E225DBCB300F41790 /* Network.swift */; };
 		1AD31961225DBD8A00F41790 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */; };
@@ -76,6 +78,8 @@
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		1AB45ED6222AA558009B395B /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
 		1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1Tests.swift; sourceTree = "<group>"; };
+		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
+		1AC180922264672B00D243D9 /* Bech32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32Tests.swift; sourceTree = "<group>"; };
 		1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGenerator.swift; sourceTree = "<group>"; };
 		1AD3195E225DBCB300F41790 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeneratorTests.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 			children = (
 				1AB45ED6222AA558009B395B /* Secp256k1.swift */,
 				1A1C8269222F5D5D0053EC32 /* Blake2b.swift */,
+				1AC180902264634E00D243D9 /* Bech32.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			children = (
 				1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */,
 				1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */,
+				1AC180922264672B00D243D9 /* Bech32Tests.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 			files = (
 				1A414A9221C3725300B28C09 /* OutPoint.swift in Sources */,
 				1A414A8821C36FCF00B28C09 /* Header.swift in Sources */,
+				1AC180912264634E00D243D9 /* Bech32.swift in Sources */,
 				1A1134802229063F00840EE8 /* TxTrace.swift in Sources */,
 				1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
@@ -480,6 +487,7 @@
 				1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */,
 				1A414A7D21C23A3900B28C09 /* APIClientTests.swift in Sources */,
 				1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */,
+				1AC180932264672B00D243D9 /* Bech32Tests.swift in Sources */,
 				1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */,
 				1AD31961225DBD8A00F41790 /* AddressGeneratorTests.swift in Sources */,
 				1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */,
