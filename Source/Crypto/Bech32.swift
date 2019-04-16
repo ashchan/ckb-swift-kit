@@ -51,9 +51,8 @@ class Bech32 {
 // MARK: - Encode & Decode
 extension Bech32 {
     func encode(hrp: String, data: Data) -> String {
-        let convertedData = convertBits(data: data, fromBits: 8, toBits: 5, pad: true)!
-        let checksum = createChecksum(hrp: hrp, data: convertedData)
-        return hrp + separator + (convertedData + checksum).map { characters[Int($0)] }.joined()
+        let checksum = createChecksum(hrp: hrp, data: data)
+        return hrp + separator + (data + checksum).map { characters[Int($0)] }.joined()
     }
 
     func decode(bech32: String) -> (hrp: String, data: Data)? {
@@ -90,41 +89,6 @@ extension Bech32 {
             return nil
         }
 
-        guard let convertedData = convertBits(
-            data: data.dropLast(checksumLength),
-            fromBits: 5,
-            toBits: 8,
-            pad: false
-        ) else {
-            return nil
-        }
-        return (hrp: hrp, data: convertedData)
-    }
-
-    private func convertBits(data: Data, fromBits: Int, toBits: Int, pad: Bool) -> Data? {
-        var ret = Data()
-        var acc = 0
-        var bits = 0
-        let maxv = (1 << toBits) - 1
-        for p in 0..<data.count {
-            let value = data[p]
-            if value < 0 || (value >> fromBits) != 0 {
-                return nil
-            }
-            acc = (acc << fromBits) | Int(value)
-            bits += fromBits
-            while bits >= toBits {
-                bits -= toBits
-                ret.append(UInt8((acc >> bits) & maxv))
-            }
-        }
-        if pad {
-            if bits > 0 {
-                ret.append(UInt8((acc << (toBits - bits)) & maxv))
-            }
-        } else if bits >= fromBits || ((acc << (toBits - bits)) & maxv) > 0 {
-            return nil
-        }
-        return ret
+        return (hrp: hrp, data: data.dropLast(checksumLength))
     }
 }
