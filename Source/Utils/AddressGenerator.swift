@@ -31,11 +31,18 @@ class AddressGenerator {
     }
 
     func address(for publicKey: Data) -> String {
-        let data = "002".data(using: .utf8)! + hash(for: publicKey)
-        return Bech32().encode(hrp: prefix, data: data)
+        // Payload: type(01) | bin-idx("P2PH") | pubkey blake160
+        let type = Data([0x01])
+        let binIdx = "P2PH".data(using: .ascii)!
+        let payload = type + binIdx + hash(for: publicKey)
+        return Bech32().encode(hrp: prefix, data: payload)
     }
 
     func hash(for publicKey: Data) -> Data {
-        return Blake2b().hash(data: publicKey)!
+        return blake160(publicKey)
+    }
+
+    private func blake160(_ data: Data) -> Data {
+        return Blake2b().hash(data: data)!.prefix(upTo: 20)
     }
 }

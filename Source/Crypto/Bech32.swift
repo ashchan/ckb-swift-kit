@@ -31,7 +31,8 @@ class Bech32 {
     }
 
     func expand(hrp: String) -> Data {
-        let bytes = hrp.utf8.map { $0 >> 5 } + [0] + hrp.utf8.map { $0 & 31 }
+        let data = hrp.data(using: .utf8)!
+        let bytes = data.map { $0 >> 5 } + [0] + data.map { $0 & 31 }
         return Data(bytes)
     }
 
@@ -50,8 +51,9 @@ class Bech32 {
 // MARK: - Encode & Decode
 extension Bech32 {
     func encode(hrp: String, data: Data) -> String {
-        let checksum = createChecksum(hrp: hrp, data: data)
-        return hrp + separator + (data + checksum).map { characters[Int($0)] }.joined()
+        let convertedData = convertBits(data: data, fromBits: 8, toBits: 5, pad: true)!
+        let checksum = createChecksum(hrp: hrp, data: convertedData)
+        return hrp + separator + (convertedData + checksum).map { characters[Int($0)] }.joined()
     }
 
     func decode(bech32: String) -> (hrp: String, data: Data)? {
@@ -77,7 +79,7 @@ extension Bech32 {
 
         let hrp = String(bech32.prefix(posOfSeparator)).lowercased()
         var data = Data()
-        for char in bech32.suffix(bech32.count - hrp.count - 1) {
+        for char in bech32.dropFirst(hrp.count + 1) {
             guard let pos = characters.firstIndex(of: String(char).lowercased()) else {
                 return nil
             }
@@ -88,6 +90,41 @@ extension Bech32 {
             return nil
         }
 
-        return (hrp: hrp, data: data[..<(data.count - checksumLength)])
+        guard let convertedData = convertBits(
+            data: data.dropLast(checksumLength),
+            fromBits: 5,
+            toBits: 8,
+            pad: false
+        ) else {
+            return nil
+        }
+        return (hrp: hrp, data: convertedData)
+    }
+
+    private func convertBits(data: Data, fromBits: Int, toBits: Int, pad: Bool) -> Data? {
+        var ret = Data()
+        var acc = 0
+        var bits = 0
+        let maxv = (1 << toBits) - 1
+        for p in 0..<data.count {
+            let value = data[p]
+            if value < 0 || (value >> fromBits) != 0 {
+                return nil
+            }
+            acc = (acc << fromBits) | Int(value)
+            bits += fromBits
+            while bits >= toBits {
+                bits -= toBits
+                ret.append(UInt8((acc >> bits) & maxv))
+            }
+        }
+        if pad {
+            if bits > 0 {
+                ret.append(UInt8((acc << (toBits - bits)) & maxv))
+            }
+        } else if bits >= fromBits || ((acc << (toBits - bits)) & maxv) > 0 {
+            return nil
+        }
+        return ret
     }
 }
