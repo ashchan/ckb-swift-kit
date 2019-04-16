@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/7f26d6528d770618a160e2856982221ec394749f/rfcs/0000-address-format/0000-address-format.md),
+/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/4f87099a0b1a02a8bc077fc7bea15ce3d9def120/rfcs/0000-address-format/0000-address-format.md),
 /// and [Common Address Format](https://github.com/nervosnetwork/ckb/wiki/Common-Address-Format).
 class AddressGenerator {
     let network: Network
