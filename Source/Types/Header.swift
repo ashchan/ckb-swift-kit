@@ -9,14 +9,14 @@
 import Foundation
 
 public struct Seal: Codable {
-    public let nonce: UInt64
+    public let nonce: String
     public let proof: HexString
 }
 
 public struct Header: Codable {
     public let version: UInt32
     public let parentHash: H256
-    public let timestamp: UInt64
+    public let timestamp: String
     public let number: BlockNumber
     public let txsCommit: H256
     public let txsProposal: H256
