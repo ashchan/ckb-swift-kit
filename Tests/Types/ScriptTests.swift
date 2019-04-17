@@ -17,7 +17,6 @@ class ScriptTests: XCTestCase {
 
     func testScriptTypeHash() throws {
         let script = Script(
-            version: 0,
             args: ["0x01"],
             binaryHash: H256.zeroHash
         )

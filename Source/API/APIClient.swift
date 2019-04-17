@@ -11,8 +11,9 @@ import Foundation
 /// JSON RPC API client.
 public class APIClient {
     private var url: URL
+    public static let defaultLocalURL = URL(string: "http://localhost:8114")!
 
-    public init(url: URL = URL(string: "http://localhost:8114")!) {
+    public init(url: URL = APIClient.defaultLocalURL) {
         self.url = url
     }
 
@@ -62,7 +63,7 @@ public class APIClient {
 
 extension APIClient {
     public func genesisBlockHash() throws -> H256 {
-        return try getBlockHash(number: 0)
+        return try getBlockHash(number: "0")
     }
 
     public func genesisBlock() throws -> Block {
