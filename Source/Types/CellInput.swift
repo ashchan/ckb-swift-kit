@@ -10,22 +10,22 @@ import Foundation
 
 public struct CellInput: Codable, Param {
     public let previousOutput: OutPoint
-    public let unlock: Script
+    public let args: [HexString]
 
-    public init(previousOutput: OutPoint, unlock: Script) {
+    public init(previousOutput: OutPoint, args: [HexString]) {
         self.previousOutput = previousOutput
-        self.unlock = unlock
+        self.args = args
     }
 
     enum CodingKeys: String, CodingKey {
         case previousOutput = "previous_output"
-        case unlock
+        case args
     }
 
     public var param: [String: Any] {
         return [
             CodingKeys.previousOutput.rawValue: previousOutput.param,
-            "unlock": unlock.param
+            CodingKeys.args.rawValue: args
         ]
     }
 }

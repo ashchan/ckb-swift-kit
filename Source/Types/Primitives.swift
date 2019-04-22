@@ -16,6 +16,10 @@ public typealias ProposalShortId = [UInt8] // Fixed 10-element array representin
 public typealias Capacity = UInt64
 public typealias BlockNumber = UInt64
 
+extension H256 {
+    public static let zeroHash: H256 = "0000000000000000000000000000000000000000000000000000000000000000"
+}
+
 /// Able to convert to API parameters just like toJSON.
 public protocol Param {
     var param: [String: Any] { get }

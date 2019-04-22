@@ -64,17 +64,19 @@ class APIClientTests: XCTestCase {
         XCTAssertTrue(result.number > 0)
     }
 
-    func testGetCellsByTypeHash() throws {
+    func testGetCellsByLockHash() throws {
         let client = APIClient()
-        let result = try client.getCellsByTypeHash(typeHash: "0x8954a4ac5e5c33eb7aa8bb91e0a000179708157729859bd8cf7e2278e1e12980", from: 1, to: 100)
+        let result = try client.getCellsByLockHash(lockHash: "0x321c1ca2887fb8eddaaa7e917399f71e63e03a1c83ff75ed12099a01115ea2ff", from: 1, to: 100)
         XCTAssertNotNil(result)
     }
 
-    func testGetCurrentCell() throws {
+    func testGetLiveCell() throws {
         let client = APIClient()
-        let cells = try client.getCellsByTypeHash(typeHash: "0x8954a4ac5e5c33eb7aa8bb91e0a000179708157729859bd8cf7e2278e1e12980", from: 1, to: 100)
-        let result = try client.getLiveCell(outPoint: cells.first!.outPoint)
-        XCTAssertNotNil(result)
+        let cells = try client.getCellsByLockHash(lockHash: "0x321c1ca2887fb8eddaaa7e917399f71e63e03a1c83ff75ed12099a01115ea2ff", from: 1, to: 100)
+        if let cell = cells.first {
+            let result = try client.getLiveCell(outPoint: cell.outPoint)
+            XCTAssertNotNil(result)
+        }
     }
 
     func testGetTipBlockNumber() throws {

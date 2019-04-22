@@ -20,8 +20,8 @@ public struct Header: Codable {
     public let number: BlockNumber
     public let txsCommit: H256
     public let txsProposal: H256
+    public let witnessesRoot: H256
     public let difficulty: UInt256
-    public let cellbaseId: H256
     public let unclesHash: H256
     public let unclesCount: UInt32
     public let hash: H256
@@ -35,8 +35,8 @@ public struct Header: Codable {
         case number
         case txsCommit = "txs_commit"
         case txsProposal = "txs_proposal"
+        case witnessesRoot = "witnesses_root"
         case difficulty
-        case cellbaseId = "cellbase_id"
         case unclesHash = "uncles_hash"
         case unclesCount = "uncles_count"
         case hash

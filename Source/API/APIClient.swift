@@ -11,8 +11,6 @@ import Foundation
 /// JSON RPC API client.
 public class APIClient {
     private var url: URL
-    public private(set) var mrubyOutPoint: OutPoint!
-    public private(set) var mrubyCellHash: String!
 
     public init(url: URL = URL(string: "http://localhost:8114")!) {
         self.url = url
@@ -91,8 +89,8 @@ extension APIClient {
         return try load(APIRequest<Header>(method: "get_tip_header"))
     }
 
-    public func getCellsByTypeHash(typeHash: H256, from: BlockNumber, to: BlockNumber) throws -> [CellOutputWithOutPoint] {
-        return try load(APIRequest<[CellOutputWithOutPoint]>(method: "get_cells_by_type_hash", params: [typeHash, from, to]))
+    public func getCellsByLockHash(lockHash: H256, from: BlockNumber, to: BlockNumber) throws -> [CellOutputWithOutPoint] {
+        return try load(APIRequest<[CellOutputWithOutPoint]>(method: "get_cells_by_lock_hash", params: [lockHash, from, to]))
     }
 
     public func getLiveCell(outPoint: OutPoint) throws -> CellWithStatus {
@@ -129,49 +127,5 @@ extension APIClient {
 
     public func getTransactionTrace(hash: H256) throws -> [TxTrace]? {
         return try load(APIRequest<[TxTrace]?>(method: "get_transaction_trace", params: [hash]))
-    }
-}
-
-// MARK: - Info for mruby script and verify cell
-
-extension APIClient {
-    public func setMrubyConfig(outPoint: OutPoint, cellHash: String) {
-        mrubyOutPoint = outPoint
-        mrubyCellHash = cellHash
-    }
-
-    public func verifyScript(for publicKey: String) -> Script {
-        let signedArgs = [
-            Utils.prefixHex(publicKey.data(using: .utf8)!.toHexString())
-            // Although public key itself is a hex string, when loaded as binary the format is ignored.
-        ]
-        return Script(
-            version: 0,
-            binary: nil,
-            reference: mrubyCellHash,
-            signedArgs: signedArgs,
-            args: []
-        )
-    }
-
-    // https://github.com/nervosnetwork/ckb/blob/master/nodes_template/spec/cells/always_success
-    public var alwaysSuccessCellBytes: [UInt8] {
-        // swiftlint:disable:next line_length
-        let hex = "7F454C46 02010100 00000000 00000000 0200F300 01000000 78000100 00000000 40000000 00000000 98000000 00000000 05000000 40003800 01004000 03000200 01000000 05000000 00000000 00000000 00000100 00000000 00000100 00000000 82000000 00000000 82000000 00000000 00100000 00000000 01459308 D0057300 0000002E 73687374 72746162 002E7465 78740000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 0B000000 01000000 06000000 00000000 78000100 00000000 78000000 00000000 0A000000 00000000 00000000 00000000 02000000 00000000 00000000 00000000 01000000 03000000 00000000 00000000 00000000 00000000 82000000 00000000 11000000 00000000 00000000 00000000 01000000 00000000 00000000 00000000"
-        return [UInt8](hex: hex.replacingOccurrences(of: " ", with: ""))
-    }
-
-    public func alwaysSuccessCellHash() throws -> String {
-        let systemCells = try genesisBlock().commitTransactions.first!.outputs
-        guard let cell = systemCells.first else {
-            throw APIError.genericError("Cannot find always success cell")
-        }
-        let hash = Blake2b().hash(data: Data(hex: cell.data))!
-        return Utils.prefixHex(hash.toHexString())
-    }
-
-    public func alwaysSuccessScriptOutPoint() throws -> OutPoint {
-        let hash = try genesisBlock().commitTransactions.first!.hash
-        return OutPoint(hash: hash, index: 0)
     }
 }
