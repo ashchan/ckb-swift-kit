@@ -2,6 +2,24 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+# [v0.9.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.8.0...v0.9.0) (2019-04-22)
+
+
+### Bug Fixes
+
+* Fix public initializers ([37368f0](https://github.com/nervosnetwork/ckb-sdk-swift/commit/37368f0))
+
+
+### Features
+
+* Change get_cells_by_type_hash to get_cells_by_lock_hash ([6a4f973](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6a4f973))
+* Implement Bech32 and address format ([3c38ae3](https://github.com/nervosnetwork/ckb-sdk-swift/commit/3c38ae3))
+* Update Bench32 to convert data between 5 bits and 8 bits ([7e46334](https://github.com/nervosnetwork/ckb-sdk-swift/commit/7e46334))
+* Remove cellbase from header and uncle block ([931d2ae](https://github.com/nervosnetwork/ckb-sdk-swift/commit/931d2ae))
+* Add segregated witness structure ([a418daf](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a418daf))
+* Remove index field from witness ([e0f3da2](https://github.com/nervosnetwork/ckb-sdk-swift/commit/e0f3da2))
+
+
 # [v0.8.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.7.0...v0.8.0) (2019-04-08)
 
 

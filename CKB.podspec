@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CKB"
-  s.version      = "0.8.0"
+  s.version      = "0.9.0"
   s.summary      = "Swift SDK for Nervos CKB"
 
   s.description  = <<-DESC
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { git: "https://github.com/nervosnetwork/ckb-sdk-swift.git" } #, tag: "v#{s.version.to_s}" }
   s.social_media_url = 'https://twitter.com/nervosnetwork'
 
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.module_name = 'CKB'
   s.ios.deployment_target = "11.0"
   s.source_files = "Source/**/*.{h,swift}"
