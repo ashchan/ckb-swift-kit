@@ -10,11 +10,11 @@ import Foundation
 
 public struct Script: Codable, Param {
     public let args: [HexString]
-    public var binaryHash: H256
+    public var codeHash: H256
 
     enum CodingKeys: String, CodingKey {
         case args
-        case binaryHash = "binary_hash"
+        case codeHash = "code_hash"
     }
 
     static let alwaysSuccessHash: H256 = "0000000000000000000000000000000000000000000000000000000000000001"
@@ -24,7 +24,7 @@ public struct Script: Codable, Param {
 
     public var typeHash: String {
         var bytes = [UInt8]()
-        bytes.append(contentsOf: Data(hex: binaryHash).bytes)
+        bytes.append(contentsOf: Data(hex: codeHash).bytes)
         args.forEach { (arg) in
             bytes.append(contentsOf: Data(hex: arg).bytes)
         }
@@ -35,13 +35,13 @@ public struct Script: Codable, Param {
     public var param: [String: Any] {
         return [
             CodingKeys.args.rawValue: args,
-            CodingKeys.binaryHash.rawValue: binaryHash
+            CodingKeys.codeHash.rawValue: codeHash
         ]
     }
 
     public init(args: [HexString] = [], binaryHash: H256 = H256.zeroHash) {
         self.args = args
-        self.binaryHash = binaryHash
+        self.codeHash = binaryHash
     }
 }
 
