@@ -44,7 +44,7 @@ class APIClientTests: XCTestCase {
 
     func testGetTransaction() throws {
         let genesisBlock = try client.genesisBlock()
-        if let tx = genesisBlock.commitTransactions.first {
+        if let tx = genesisBlock.transactions.first {
             let result = try client.getTransaction(hash: tx.hash)
             XCTAssertNotNil(result)
             XCTAssertEqual(tx.hash, result.hash)
