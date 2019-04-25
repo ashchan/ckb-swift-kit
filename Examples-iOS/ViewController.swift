@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Example-iOS
+//  Examples-iOS
 //
 //  Created by 翟泉 on 2019/4/25.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
