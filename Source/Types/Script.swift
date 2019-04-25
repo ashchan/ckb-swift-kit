@@ -19,7 +19,7 @@ public struct Script: Codable, Param {
 
     static let alwaysSuccessHash: H256 = "0000000000000000000000000000000000000000000000000000000000000001"
     public static var alwaysSuccess: Script {
-        return Script(args: [], binaryHash: alwaysSuccessHash)
+        return Script(args: [], codeHash: alwaysSuccessHash)
     }
 
     public var typeHash: String {
@@ -39,21 +39,21 @@ public struct Script: Codable, Param {
         ]
     }
 
-    public init(args: [HexString] = [], binaryHash: H256 = H256.zeroHash) {
+    public init(args: [HexString] = [], codeHash: H256 = H256.zeroHash) {
         self.args = args
-        self.codeHash = binaryHash
+        self.codeHash = codeHash
     }
 }
 
 public extension Script {
-    static func verifyScript(for publicKey: String, binaryHash: String) -> Script {
+    static func verifyScript(for publicKey: String, codeHash: String) -> Script {
         let args = [
             Utils.prefixHex(publicKey.data(using: .utf8)!.toHexString())
             // Although public key itself is a hex string, when loaded as binary the format is ignored.
         ]
         return Script(
             args: args,
-            binaryHash: binaryHash
+            codeHash: codeHash
         )
     }
 }
