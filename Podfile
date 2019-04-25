@@ -15,3 +15,12 @@ end
 target "CKBTests" do
   use_frameworks!
 end
+
+target "Example-iOS" do
+  use_frameworks!
+  use_modular_headers!
+  inhibit_all_warnings!
+
+  pod "CKB", :path => './CKB.podspec'
+end
+

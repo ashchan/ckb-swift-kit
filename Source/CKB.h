@@ -11,3 +11,4 @@
 FOUNDATION_EXPORT double CKBVersionNumber;
 
 FOUNDATION_EXPORT const unsigned char CKBVersionString[];
+
