@@ -18,7 +18,7 @@ class ScriptTests: XCTestCase {
     func testScriptTypeHash() throws {
         let script = Script(
             args: ["0x01"],
-            binaryHash: H256.zeroHash
+            codeHash: H256.zeroHash
         )
         XCTAssertEqual("0xdade0e507e27e2a5995cf39c8cf454b6e70fa80d03c1187db7a4cb2c9eab79da", script.typeHash)
     }

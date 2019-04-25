@@ -9,17 +9,22 @@
 import Foundation
 
 public struct OutPoint: Codable, Param {
-    public let hash: H256
+    public let txHash: H256
     public let index: UInt32
 
-    public init(hash: String, index: UInt32) {
-        self.hash = hash
+    enum CodingKeys: String, CodingKey {
+        case txHash = "tx_hash"
+        case index
+    }
+
+    public init(txHash: H256, index: UInt32) {
+        self.txHash = txHash
         self.index = index
     }
 
     public var param: [String: Any] {
         return [
-            "hash": hash,
+            "tx_hash": txHash,
             "index": index
         ]
     }

@@ -11,23 +11,11 @@ import Foundation
 public struct Block: Codable {
     public let header: Header
     public let uncles: [UncleBlock]
-    public let commitTransactions: [Transaction]
-    public let proposalTransactions: [ProposalShortId]
-
-    enum CodingKeys: String, CodingKey {
-        case header
-        case uncles
-        case commitTransactions = "commit_transactions"
-        case proposalTransactions = "proposal_transactions"
-    }
+    public let transactions: [Transaction]
+    public let proposals: [ProposalShortId]
 }
 
 public struct UncleBlock: Codable {
     public let header: Header
-    public let proposalTransactions: [ProposalShortId]
-
-    enum CodingKeys: String, CodingKey {
-        case header
-        case proposalTransactions = "proposal_transactions"
-    }
+    public let proposals: [ProposalShortId]
 }

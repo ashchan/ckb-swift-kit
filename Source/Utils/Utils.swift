@@ -25,8 +25,8 @@ public struct Utils {
 
     public static func publicToAddress(_ publicKey: String) -> String {
         // TODO: save/load (cell) binary hash info
-        let binaryHash = "0x828d1e109a79964521bf5fbbedb4f6e695a9c4b6b674a58887f30c7398e93a76"
-        return Script.verifyScript(for: publicKey, binaryHash: binaryHash).typeHash
+        let codeHash = "0x828d1e109a79964521bf5fbbedb4f6e695a9c4b6b674a58887f30c7398e93a76"
+        return Script.verifyScript(for: publicKey, codeHash: codeHash).typeHash
     }
 
     public static func privateToAddress(_ privateKey: String) -> String {
