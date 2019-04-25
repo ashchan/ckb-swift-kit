@@ -23,15 +23,14 @@ public struct Utils {
         return publicKey.toHexString()
     }
 
-    public static func publicToAddress(_ publicKey: String) -> String {
-        // TODO: save/load (cell) binary hash info
-        let codeHash = "0x828d1e109a79964521bf5fbbedb4f6e695a9c4b6b674a58887f30c7398e93a76"
-        return Script.verifyScript(for: publicKey, codeHash: codeHash).typeHash
+    public static func publicToAddress(_ publicKey: String, network: Network = .testnet) -> String {
+        let generator = AddressGenerator(network: network)
+        return generator.address(for: publicKey)
     }
 
-    public static func privateToAddress(_ privateKey: String) -> String {
+    public static func privateToAddress(_ privateKey: String, network: Network = .testnet) -> String {
         let publicKey = privateToPublic(privateKey)
-        return publicToAddress(publicKey)
+        return publicToAddress(publicKey, network: network)
     }
 }
 
