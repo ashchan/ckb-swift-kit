@@ -42,3 +42,29 @@ public struct Transaction: Codable, Param {
         ]
     }
 }
+
+public struct TxStatus: Codable {
+    public enum Status: String, Codable {
+        case pending
+        case proposed
+        case committed
+    }
+
+    public let status: Status
+    public let blockHash: H256?
+
+    enum CodingKeys: String, CodingKey {
+        case status
+        case blockHash = "block_hash"
+    }
+}
+
+public struct TransactionWithStatus: Codable {
+    public let transaction: Transaction
+    public let txStatus: TxStatus
+
+    enum CodingKeys: String, CodingKey {
+        case transaction
+        case txStatus = "tx_status"
+    }
+}

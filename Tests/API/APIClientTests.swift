@@ -47,7 +47,7 @@ class APIClientTests: XCTestCase {
         if let tx = genesisBlock.transactions.first {
             let result = try client.getTransaction(hash: tx.hash)
             XCTAssertNotNil(result)
-            XCTAssertEqual(tx.hash, result.hash)
+            XCTAssertEqual(tx.hash, result.transaction.hash)
         }
 
         XCTAssertNil(try? client.getTransaction(hash: nonexistentHash))

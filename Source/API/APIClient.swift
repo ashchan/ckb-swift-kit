@@ -78,8 +78,8 @@ extension APIClient {
         return try load(APIRequest<Block>(method: "get_block", params: [hash]))
     }
 
-    public func getTransaction(hash: H256) throws -> Transaction {
-        return try load(APIRequest<Transaction>(method: "get_transaction", params: [hash]))
+    public func getTransaction(hash: H256) throws -> TransactionWithStatus {
+        return try load(APIRequest<TransactionWithStatus>(method: "get_transaction", params: [hash]))
     }
 
     public func getBlockHash(number: BlockNumber) throws -> H256 {
