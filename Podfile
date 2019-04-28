@@ -21,6 +21,6 @@ target "Examples-iOS" do
   use_modular_headers!
   inhibit_all_warnings!
 
-  pod "CKB", :path => './CKB.podspec'
+  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", branch: "rc/v0.10.0"
 end
 
