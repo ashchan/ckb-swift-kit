@@ -1,17 +1,21 @@
 //
 //  ViewController.swift
-//  Examples-iOS
+//  Example-iOS
 //
-//  Created by 翟泉 on 2019/4/25.
+//  Created by James Chen on 2019/04/28.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 
 import UIKit
+import CKB
 
 class ViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
+
 }
 

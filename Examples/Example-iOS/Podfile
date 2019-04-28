@@ -1,0 +1,11 @@
+source "https://github.com/CocoaPods/Specs.git"
+platform :ios, "11.0"
+
+target "Example-iOS" do
+  use_frameworks!
+  use_modular_headers!
+  inhibit_all_warnings!
+
+  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", branch: "rc/v0.10.0"
+end
+
