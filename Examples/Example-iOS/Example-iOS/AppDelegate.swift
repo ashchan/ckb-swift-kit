@@ -1,17 +1,18 @@
 //
 //  AppDelegate.swift
-//  Examples-iOS
+//  Example-iOS
 //
-//  Created by 翟泉 on 2019/4/25.
+//  Created by James Chen on 2019/04/28.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 
 import UIKit
-import CKB
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
     var window: UIWindow?
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -39,5 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
+
 }
 

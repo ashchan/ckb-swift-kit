@@ -1,15 +1,10 @@
 PODS:
-  - CKB (0.10.0):
-    - CryptoSwift (~> 1.0.0)
-    - secp256k1.swift (~> 0.1.4)
-    - Sodium (~> 0.8.0)
   - CryptoSwift (1.0.0)
   - secp256k1.swift (0.1.4)
   - Sodium (0.8.0)
   - SwiftLint (0.29.1)
 
 DEPENDENCIES:
-  - CKB (from `https://github.com/nervosnetwork/ckb-sdk-swift.git`, branch `rc/v0.10.0`)
   - CryptoSwift (~> 1.0.0)
   - secp256k1.swift (~> 0.1.4)
   - Sodium (~> 0.8.0)
@@ -22,23 +17,12 @@ SPEC REPOS:
     - Sodium
     - SwiftLint
 
-EXTERNAL SOURCES:
-  CKB:
-    :branch: rc/v0.10.0
-    :git: https://github.com/nervosnetwork/ckb-sdk-swift.git
-
-CHECKOUT OPTIONS:
-  CKB:
-    :commit: c12451275375836b4bbab599ee49cb27d2d8c773
-    :git: https://github.com/nervosnetwork/ckb-sdk-swift.git
-
 SPEC CHECKSUMS:
-  CKB: be209a16985e4886a317968ace27f99cd8134967
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   Sodium: 63c0ca312a932e6da481689537d4b35568841bdc
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 6fe0d702252e02f1ba76f87085392190514c224a
+PODFILE CHECKSUM: 5978f26ebe4696936b6c0dfb0bd50bcaf013d6ad
 
 COCOAPODS: 1.7.0.beta.3
