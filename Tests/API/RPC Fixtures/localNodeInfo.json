@@ -1,0 +1,19 @@
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "addresses": [
+            {
+                "address": "/ip4/47.245.29.58/tcp/8111/p2p/QmYWiwxHasuyou5ztw5uQkHbhm6gs6RB84sbgYxZNGHgaW",
+                "score": 255
+            },
+            {
+                "address": "/ip4/0.0.0.0/tcp/8111/p2p/QmYWiwxHasuyou5ztw5uQkHbhm6gs6RB84sbgYxZNGHgaW",
+                "score": 1
+            }
+        ],
+        "is_outbound": null,
+        "node_id": "QmYWiwxHasuyou5ztw5uQkHbhm6gs6RB84sbgYxZNGHgaW",
+        "version": "0.11.0"
+    },
+    "id": 1
+}

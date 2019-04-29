@@ -105,7 +105,7 @@ class APIClientTests: XCTestCase {
     func testTraceTransactionEmpty() throws {
         let tx = Transaction(deps: [], inputs: [], outputs: [], witnesses: [])
         let result = try? client.traceTransaction(transaction: tx)
-        XCTAssertNil(result)
+        XCTAssertNotNil(result)
     }
 }
 

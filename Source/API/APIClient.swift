@@ -26,7 +26,9 @@ public class APIClient {
             error = err
 
             do {
-                guard let data = data else { throw APIError.emptyResponse }
+                guard let data = data else {
+                    throw APIError.emptyResponse
+                }
                 result = try request.decode(data)
             } catch let err {
                 error = err

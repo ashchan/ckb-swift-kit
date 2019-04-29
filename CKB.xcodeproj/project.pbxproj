@@ -12,6 +12,7 @@
 		1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C8269222F5D5D0053EC32 /* Blake2b.swift */; };
 		1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */; };
 		1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
+		1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */; };
 		1A414A6A21C2226E00B28C09 /* CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A414A6021C2226E00B28C09 /* CKB.framework */; };
 		1A414A7121C2226E00B28C09 /* CKB.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A414A6321C2226E00B28C09 /* CKB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A7A21C22A9300B28C09 /* APIClient.swift */; };
@@ -29,6 +30,16 @@
 		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
 		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
+		1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F4362276904900C6546F /* APIMockingTests.swift */; };
+		1A58F4392276939D00C6546F /* genesisBlockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4382276939D00C6546F /* genesisBlockHash.json */; };
+		1A58F43B227694D400C6546F /* genesisBlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43A227694D400C6546F /* genesisBlock.json */; };
+		1A58F43D2276981700C6546F /* transaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43C2276981700C6546F /* transaction.json */; };
+		1A58F43F2276994000C6546F /* tipHeader.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43E2276994000C6546F /* tipHeader.json */; };
+		1A58F4412276998900C6546F /* tipBlockNumber.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4402276998900C6546F /* tipBlockNumber.json */; };
+		1A58F443227699D400C6546F /* sendTransactionEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F442227699D400C6546F /* sendTransactionEmpty.json */; };
+		1A58F44522769A0600C6546F /* localNodeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44422769A0600C6546F /* localNodeInfo.json */; };
+		1A58F44722769A3700C6546F /* traceTransactionEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44622769A3700C6546F /* traceTransactionEmpty.json */; };
+		1A58F44922769C7900C6546F /* liveCellEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44822769C7900C6546F /* liveCellEmpty.json */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
 		1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
@@ -57,6 +68,7 @@
 		1A1C8269222F5D5D0053EC32 /* Blake2b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2b.swift; sourceTree = "<group>"; };
 		1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2bTests.swift; sourceTree = "<group>"; };
 		1A28119621D3805800E7CEC5 /* ScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTests.swift; sourceTree = "<group>"; };
+		1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingClient.swift; sourceTree = "<group>"; };
 		1A414A6021C2226E00B28C09 /* CKB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CKB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A414A6321C2226E00B28C09 /* CKB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKB.h; sourceTree = "<group>"; };
 		1A414A6421C2226E00B28C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +89,16 @@
 		1A414A9921C3879500B28C09 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1A414A9F21C770DD00B28C09 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		1A58F4362276904900C6546F /* APIMockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingTests.swift; sourceTree = "<group>"; };
+		1A58F4382276939D00C6546F /* genesisBlockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlockHash.json; sourceTree = "<group>"; };
+		1A58F43A227694D400C6546F /* genesisBlock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlock.json; sourceTree = "<group>"; };
+		1A58F43C2276981700C6546F /* transaction.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = transaction.json; sourceTree = "<group>"; };
+		1A58F43E2276994000C6546F /* tipHeader.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tipHeader.json; sourceTree = "<group>"; };
+		1A58F4402276998900C6546F /* tipBlockNumber.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tipBlockNumber.json; sourceTree = "<group>"; };
+		1A58F442227699D400C6546F /* sendTransactionEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sendTransactionEmpty.json; sourceTree = "<group>"; };
+		1A58F44422769A0600C6546F /* localNodeInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = localNodeInfo.json; sourceTree = "<group>"; };
+		1A58F44622769A3700C6546F /* traceTransactionEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = traceTransactionEmpty.json; sourceTree = "<group>"; };
+		1A58F44822769C7900C6546F /* liveCellEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = liveCellEmpty.json; sourceTree = "<group>"; };
 		1AB45ED6222AA558009B395B /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
 		1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1Tests.swift; sourceTree = "<group>"; };
 		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
@@ -122,6 +144,22 @@
 				1A28119621D3805800E7CEC5 /* ScriptTests.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		1A38CA6522768FDD00BEA1F3 /* RPC Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				1A58F4382276939D00C6546F /* genesisBlockHash.json */,
+				1A58F43A227694D400C6546F /* genesisBlock.json */,
+				1A58F43C2276981700C6546F /* transaction.json */,
+				1A58F43E2276994000C6546F /* tipHeader.json */,
+				1A58F4402276998900C6546F /* tipBlockNumber.json */,
+				1A58F442227699D400C6546F /* sendTransactionEmpty.json */,
+				1A58F44422769A0600C6546F /* localNodeInfo.json */,
+				1A58F44622769A3700C6546F /* traceTransactionEmpty.json */,
+				1A58F44822769C7900C6546F /* liveCellEmpty.json */,
+			);
+			path = "RPC Fixtures";
 			sourceTree = "<group>";
 		};
 		1A414A5621C2226E00B28C09 = {
@@ -175,6 +213,7 @@
 				1A414A8021C32D4B00B28C09 /* APIResult.swift */,
 				1A414A8221C334EB00B28C09 /* APIRequest.swift */,
 				1A414A7A21C22A9300B28C09 /* APIClient.swift */,
+				1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -182,7 +221,9 @@
 		1A414A7F21C32D2500B28C09 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1A38CA6522768FDD00BEA1F3 /* RPC Fixtures */,
 				1A414A7C21C23A3900B28C09 /* APIClientTests.swift */,
+				1A58F4362276904900C6546F /* APIMockingTests.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -365,6 +406,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A58F44522769A0600C6546F /* localNodeInfo.json in Resources */,
+				1A58F43F2276994000C6546F /* tipHeader.json in Resources */,
+				1A58F43B227694D400C6546F /* genesisBlock.json in Resources */,
+				1A58F4392276939D00C6546F /* genesisBlockHash.json in Resources */,
+				1A58F43D2276981700C6546F /* transaction.json in Resources */,
+				1A58F443227699D400C6546F /* sendTransactionEmpty.json in Resources */,
+				1A58F44722769A3700C6546F /* traceTransactionEmpty.json in Resources */,
+				1A58F4412276998900C6546F /* tipBlockNumber.json in Resources */,
+				1A58F44922769C7900C6546F /* liveCellEmpty.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +534,7 @@
 				1A414A8A21C36FE900B28C09 /* Block.swift in Sources */,
 				1A414A9421C3789000B28C09 /* Primitives.swift in Sources */,
 				1A414A8321C334EB00B28C09 /* APIRequest.swift in Sources */,
+				1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */,
 				1A414A8121C32D4B00B28C09 /* APIResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +546,7 @@
 				1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */,
 				1A414A7D21C23A3900B28C09 /* APIClientTests.swift in Sources */,
 				1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */,
+				1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */,
 				1AC180932264672B00D243D9 /* Bech32Tests.swift in Sources */,
 				1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */,
 				1AD31961225DBD8A00F41790 /* AddressGeneratorTests.swift in Sources */,
