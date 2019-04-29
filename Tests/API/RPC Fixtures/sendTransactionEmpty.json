@@ -1,0 +1,8 @@
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": -3,
+        "message": "InvalidTx(Empty)"
+    },
+    "id": 1
+}
