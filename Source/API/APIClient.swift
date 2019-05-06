@@ -69,7 +69,7 @@ extension APIClient {
     }
 
     public func genesisBlock() throws -> Block {
-        return try getBlock(hash: try genesisBlockHash())
+        return try getBlockByNumber(number: "0")
     }
 }
 
@@ -78,6 +78,10 @@ extension APIClient {
 extension APIClient {
     public func getBlock(hash: H256) throws -> Block {
         return try load(APIRequest<Block>(method: "get_block", params: [hash]))
+    }
+
+    public func getBlockByNumber(number: BlockNumber) throws -> Block {
+        return try load(APIRequest<Block>(method: "get_block_by_number", params: [number]))
     }
 
     public func getTransaction(hash: H256) throws -> TransactionWithStatus {

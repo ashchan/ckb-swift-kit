@@ -2,6 +2,19 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+# [v0.10.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.9.0...v0.10.0) (2019-05-06)
+
+
+### Features
+
+* Change RPC types per CKB change ([c2f79ab](https://github.com/nervosnetwork/ckb-sdk-swift/commit/c2f79ab))
+
+
+### BREAKING CHANGES
+
+* RPC types and fields are changed and client needs to update to adapt.
+
+
 # [v0.9.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.8.0...v0.9.0) (2019-04-22)
 
 
