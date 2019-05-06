@@ -36,6 +36,6 @@ public struct Utils {
 
 extension Utils {
     static func prefixHex(_ string: String) -> String {
-        return "0x" + string
+        return string.hasPrefix("0x") ? string : "0x" + string
     }
 }
