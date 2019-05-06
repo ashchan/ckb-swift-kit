@@ -9,18 +9,17 @@
 import Foundation
 
 public struct Script: Codable, Param {
-    public let version: UInt8
     public let args: [HexString]
     public var binaryHash: H256
 
     enum CodingKeys: String, CodingKey {
-        case version, args
+        case args
         case binaryHash = "binary_hash"
     }
 
     static let alwaysSuccessHash: H256 = "0000000000000000000000000000000000000000000000000000000000000001"
     public static var alwaysSuccess: Script {
-        return Script(version: 0, args: [], binaryHash: alwaysSuccessHash)
+        return Script(args: [], binaryHash: alwaysSuccessHash)
     }
 
     public var typeHash: String {
@@ -35,14 +34,12 @@ public struct Script: Codable, Param {
 
     public var param: [String: Any] {
         return [
-            CodingKeys.version.rawValue: version,
             CodingKeys.args.rawValue: args,
             CodingKeys.binaryHash.rawValue: binaryHash
         ]
     }
 
-    public init(version: UInt8 = 0, args: [HexString] = [], binaryHash: H256 = H256.zeroHash) {
-        self.version = version
+    public init(args: [HexString] = [], binaryHash: H256 = H256.zeroHash) {
         self.args = args
         self.binaryHash = binaryHash
     }
@@ -55,7 +52,6 @@ public extension Script {
             // Although public key itself is a hex string, when loaded as binary the format is ignored.
         ]
         return Script(
-            version: 0,
             args: args,
             binaryHash: binaryHash
         )
