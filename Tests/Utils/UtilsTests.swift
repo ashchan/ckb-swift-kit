@@ -21,4 +21,9 @@ class UtilsTests: XCTestCase {
         let address = "ckt1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6v234ygf"
         XCTAssertEqual(address, Utils.privateToAddress(privateKey))
     }
+
+    func testPrefixHex() {
+        XCTAssertEqual("0x0001", Utils.prefixHex("0001"))
+        XCTAssertEqual("0x0001", Utils.prefixHex("0x0001"))
+    }
 }

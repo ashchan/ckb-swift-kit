@@ -17,7 +17,7 @@ public typealias Capacity = String
 public typealias BlockNumber = String
 
 extension H256 {
-    public static let zeroHash: H256 = "0000000000000000000000000000000000000000000000000000000000000000"
+    public static let zeroHash: H256 = "0x0000000000000000000000000000000000000000000000000000000000000000"
 }
 
 /// Able to convert to API parameters just like toJSON.

@@ -17,7 +17,7 @@ public struct Script: Codable, Param {
         case codeHash = "code_hash"
     }
 
-    static let alwaysSuccessHash: H256 = "0000000000000000000000000000000000000000000000000000000000000001"
+    static let alwaysSuccessHash: H256 = "0x0000000000000000000000000000000000000000000000000000000000000001"
     public static var alwaysSuccess: Script {
         return Script(args: [], codeHash: alwaysSuccessHash)
     }
@@ -41,7 +41,7 @@ public struct Script: Codable, Param {
 
     public init(args: [HexString] = [], codeHash: H256 = H256.zeroHash) {
         self.args = args
-        self.codeHash = codeHash
+        self.codeHash = Utils.prefixHex(codeHash)
     }
 }
 
