@@ -36,6 +36,12 @@ class APIClientTests: XCTestCase {
         XCTAssertNil(try? client.getBlock(hash: nonexistentHash))
     }
 
+    func testGetBlockByNumber() throws {
+        let result = try client.getBlockByNumber(number: "0")
+        XCTAssertNotNil(result)
+        XCTAssertEqual("0", result.header.number)
+    }
+
     func testGetBlockPerformance() throws {
         measure {
             _ = try! client.genesisBlock()

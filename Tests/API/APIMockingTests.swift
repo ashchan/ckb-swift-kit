@@ -22,6 +22,12 @@ class APIMockingTests: XCTestCase {
         XCTAssertEqual(hash, result.header.hash)
     }
 
+    func testGetBlockByNumber() throws {
+        let result = try getClient(json: "genesisBlock").getBlockByNumber(number: "0")
+        XCTAssertNotNil(result)
+        XCTAssertEqual("0", result.header.number)
+    }
+
     func testGetTransaction() throws {
         let result = try getClient(json: "transaction").getTransaction(hash: "0x2505abd12b6353da33152014cabdf68566fea3976986b5da2fd5980940191ef5")
         XCTAssertNotNil(result)
