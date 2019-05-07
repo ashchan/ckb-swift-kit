@@ -18,6 +18,7 @@ public struct Header: Codable {
     public let parentHash: H256
     public let timestamp: String
     public let number: BlockNumber
+    public let epoch: EpochNumber
     public let transactionsRoot: H256
     public let proposalsRoot: H256
     public let witnessesRoot: H256
@@ -33,6 +34,7 @@ public struct Header: Codable {
         case parentHash = "parent_hash"
         case timestamp
         case number
+        case epoch
         case transactionsRoot = "transactions_root"
         case proposalsRoot = "proposals_root"
         case witnessesRoot = "witnesses_root"

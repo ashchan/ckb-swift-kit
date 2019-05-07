@@ -12,6 +12,8 @@
 		1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C8269222F5D5D0053EC32 /* Blake2b.swift */; };
 		1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */; };
 		1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
+		1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE0228171180024CA71 /* Epoch.swift */; };
+		1A2CDAE32281796D0024CA71 /* epoch.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE22281796D0024CA71 /* epoch.json */; };
 		1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */; };
 		1A414A6A21C2226E00B28C09 /* CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A414A6021C2226E00B28C09 /* CKB.framework */; };
 		1A414A7121C2226E00B28C09 /* CKB.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A414A6321C2226E00B28C09 /* CKB.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,6 +70,8 @@
 		1A1C8269222F5D5D0053EC32 /* Blake2b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2b.swift; sourceTree = "<group>"; };
 		1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2bTests.swift; sourceTree = "<group>"; };
 		1A28119621D3805800E7CEC5 /* ScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTests.swift; sourceTree = "<group>"; };
+		1A2CDAE0228171180024CA71 /* Epoch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epoch.swift; sourceTree = "<group>"; };
+		1A2CDAE22281796D0024CA71 /* epoch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = epoch.json; sourceTree = "<group>"; };
 		1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingClient.swift; sourceTree = "<group>"; };
 		1A414A6021C2226E00B28C09 /* CKB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CKB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A414A6321C2226E00B28C09 /* CKB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKB.h; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			children = (
 				1A58F4382276939D00C6546F /* genesisBlockHash.json */,
 				1A58F43A227694D400C6546F /* genesisBlock.json */,
+				1A2CDAE22281796D0024CA71 /* epoch.json */,
 				1A58F43C2276981700C6546F /* transaction.json */,
 				1A58F43E2276994000C6546F /* tipHeader.json */,
 				1A58F4402276998900C6546F /* tipBlockNumber.json */,
@@ -240,6 +245,7 @@
 				1AE7C62B2251BCA9003FA254 /* Witness.swift */,
 				1A414A8721C36FCF00B28C09 /* Header.swift */,
 				1A414A8921C36FE900B28C09 /* Block.swift */,
+				1A2CDAE0228171180024CA71 /* Epoch.swift */,
 				1A414A8B21C3714E00B28C09 /* Transaction.swift */,
 				1A11347D2228D14300840EE8 /* LocalNode.swift */,
 				1A11347F2229063F00840EE8 /* TxTrace.swift */,
@@ -413,6 +419,7 @@
 				1A58F43D2276981700C6546F /* transaction.json in Resources */,
 				1A58F443227699D400C6546F /* sendTransactionEmpty.json in Resources */,
 				1A58F44722769A3700C6546F /* traceTransactionEmpty.json in Resources */,
+				1A2CDAE32281796D0024CA71 /* epoch.json in Resources */,
 				1A58F4412276998900C6546F /* tipBlockNumber.json in Resources */,
 				1A58F44922769C7900C6546F /* liveCellEmpty.json in Resources */,
 			);
@@ -521,6 +528,7 @@
 				1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
+				1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */,
 				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
 				1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
