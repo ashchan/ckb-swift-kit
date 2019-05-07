@@ -107,6 +107,10 @@ extension APIClient {
     public func getTipBlockNumber() throws -> BlockNumber {
         return try load(APIRequest<BlockNumber>(method: "get_tip_block_number"))
     }
+
+    public func getCurrentEpoch() throws -> Epoch {
+        return try load(APIRequest<Epoch>(method: "get_current_epoch"))
+    }
 }
 
 // MARK: - Pool RPC Methods

@@ -28,6 +28,11 @@ class APIMockingTests: XCTestCase {
         XCTAssertEqual("0", result.header.number)
     }
 
+    func testGetCurrentEpoch() throws {
+        let result = try getClient(json: "epoch").getCurrentEpoch()
+        XCTAssertTrue(UInt64(result.difficulty.dropFirst(2), radix: 16)! >= 0)
+    }
+
     func testGetTransaction() throws {
         let result = try getClient(json: "transaction").getTransaction(hash: "0x2505abd12b6353da33152014cabdf68566fea3976986b5da2fd5980940191ef5")
         XCTAssertNotNil(result)

@@ -92,6 +92,11 @@ class APIClientTests: XCTestCase {
         XCTAssertTrue(Int64(result)! > 0)
     }
 
+    func testGetCurrentEpoch() throws {
+        let result = try client.getCurrentEpoch()
+        XCTAssertTrue(UInt64(result.difficulty.dropFirst(2), radix: 16)! >= 0)
+    }
+
     func testSendTransactionEmpty() throws {
         let tx = Transaction()
         let result = try? client.sendTransaction(transaction: tx)

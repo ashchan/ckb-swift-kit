@@ -15,6 +15,7 @@ public typealias HexString = String // Present hex format data
 public typealias ProposalShortId = [UInt8] // Fixed 10-element array representing short hash.
 public typealias Capacity = String
 public typealias BlockNumber = String
+public typealias EpochNumber = String
 
 extension H256 {
     public static let zeroHash: H256 = "0x0000000000000000000000000000000000000000000000000000000000000000"
