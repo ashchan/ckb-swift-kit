@@ -27,7 +27,7 @@
             "addresses": [],
             "node_id": "QmUddxwRqgTmT6tFujXbYPMLGLAE2Tciyv6uHGfdYFyDVa",
             "version": "unknown",
-            "is_outbound": true
+            "is_outbound": false
         }
     ],
     "id": 1
