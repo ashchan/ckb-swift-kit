@@ -4,7 +4,7 @@
         "header": {
             "difficulty": "0x100",
             "epoch": "0",
-            "hash": "0x6448adcb403733f7976576eeffcdfa6929cd7af07d25fb925e0d9236dcc0c6f5",
+            "hash": "0x4c2f8ba5f5a0104eaf84fcbb16af4b0e7ca2f2fdb076e748d54ef876d085d49e",
             "number": "0",
             "parent_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
             "proposals_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -13,7 +13,7 @@
                 "proof": "0x00"
             },
             "timestamp": "0",
-            "transactions_root": "0x013d8bd8c65e22655cc907c146c8ca8eaa2cfef46bf5b5f08dc145d72bf65a60",
+            "transactions_root": "0xf8532f2ed92aad146878dca1d5ad9840e9c803ab85d1361652500eaee09c9038",
             "uncles_count": 0,
             "uncles_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
             "version": 0,
@@ -23,15 +23,15 @@
         "transactions": [
             {
                 "deps": [],
-                "hash": "0x013d8bd8c65e22655cc907c146c8ca8eaa2cfef46bf5b5f08dc145d72bf65a60",
+                "hash": "0xf8532f2ed92aad146878dca1d5ad9840e9c803ab85d1361652500eaee09c9038",
                 "inputs": [
                     {
                         "args": [
                             "0x0000000000000000"
                         ],
                         "previous_output": {
-                            "index": 4294967295,
-                            "tx_hash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                            "block_hash": null,
+                            "cell": null
                         },
                         "since": "0"
                     }
