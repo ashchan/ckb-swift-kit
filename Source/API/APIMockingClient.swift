@@ -11,7 +11,7 @@ import Foundation
 class APIMockingClient: APIClient {
     var mockingData: Data?
 
-    public override func load<R: Codable>(_ request: APIRequest<R>, id: Int = 1) throws -> R {
+    public override func load<R: Codable>(_ request: APIRequest<R>) throws -> R {
         var result: R?
 
         guard let data = mockingData else {

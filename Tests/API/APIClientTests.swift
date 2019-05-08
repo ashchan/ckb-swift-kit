@@ -17,6 +17,11 @@ class APIClientTests: XCTestCase {
         super.invokeTest()
     }
 
+    func testSettingId() throws {
+        let result = try client.load(APIRequest<H256>(id: 10, method: "get_block_hash", params: ["0"]))
+        XCTAssertNotNil(result)
+    }
+
     func testGenesisBlockHash() {
         let result = try? client.genesisBlockHash()
         XCTAssertNotNil(result)
