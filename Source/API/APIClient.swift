@@ -132,8 +132,12 @@ extension APIClient {
 // MARK: - Network RPC Methods
 
 extension APIClient {
-    public func localNodeInfo() throws -> LocalNode {
-        return try load(APIRequest<LocalNode>(method: "local_node_info", params: []))
+    public func localNodeInfo() throws -> Node {
+        return try load(APIRequest<Node>(method: "local_node_info", params: []))
+    }
+
+    public func getPeers() throws -> [Node] {
+        return try load(APIRequest<[Node]>(method: "get_peers", params: []))
     }
 }
 

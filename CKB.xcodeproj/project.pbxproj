@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* LocalNode.swift */; };
+		1A11347E2228D14300840EE8 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* Node.swift */; };
 		1A1134802229063F00840EE8 /* TxTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347F2229063F00840EE8 /* TxTrace.swift */; };
 		1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C8269222F5D5D0053EC32 /* Blake2b.swift */; };
 		1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */; };
@@ -32,6 +32,7 @@
 		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
 		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
+		1A4AEBDF2282EF7500F0D576 /* peers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDE2282EF7500F0D576 /* peers.json */; };
 		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
 		1A4AEBDD2282EC9700F0D576 /* txPoolInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */; };
 		1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F4362276904900C6546F /* APIMockingTests.swift */; };
@@ -67,7 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A11347D2228D14300840EE8 /* LocalNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNode.swift; sourceTree = "<group>"; };
+		1A11347D2228D14300840EE8 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		1A11347F2229063F00840EE8 /* TxTrace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxTrace.swift; sourceTree = "<group>"; };
 		1A1C8269222F5D5D0053EC32 /* Blake2b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2b.swift; sourceTree = "<group>"; };
 		1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2bTests.swift; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		1A414A9921C3879500B28C09 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1A414A9F21C770DD00B28C09 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		1A4AEBDE2282EF7500F0D576 /* peers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peers.json; sourceTree = "<group>"; };
 		1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxPoolInfo.swift; sourceTree = "<group>"; };
 		1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = txPoolInfo.json; sourceTree = "<group>"; };
 		1A58F4362276904900C6546F /* APIMockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingTests.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				1A58F4402276998900C6546F /* tipBlockNumber.json */,
 				1A58F442227699D400C6546F /* sendTransactionEmpty.json */,
 				1A58F44422769A0600C6546F /* localNodeInfo.json */,
+				1A4AEBDE2282EF7500F0D576 /* peers.json */,
 				1A58F44622769A3700C6546F /* traceTransactionEmpty.json */,
 				1A58F44822769C7900C6546F /* liveCellEmpty.json */,
 				1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */,
@@ -252,7 +255,7 @@
 				1A414A8921C36FE900B28C09 /* Block.swift */,
 				1A2CDAE0228171180024CA71 /* Epoch.swift */,
 				1A414A8B21C3714E00B28C09 /* Transaction.swift */,
-				1A11347D2228D14300840EE8 /* LocalNode.swift */,
+				1A11347D2228D14300840EE8 /* Node.swift */,
 				1A11347F2229063F00840EE8 /* TxTrace.swift */,
 				1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */,
 			);
@@ -429,6 +432,7 @@
 				1A2CDAE32281796D0024CA71 /* epoch.json in Resources */,
 				1A58F4412276998900C6546F /* tipBlockNumber.json in Resources */,
 				1A58F44922769C7900C6546F /* liveCellEmpty.json in Resources */,
+				1A4AEBDF2282EF7500F0D576 /* peers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +536,7 @@
 				1A414A8821C36FCF00B28C09 /* Header.swift in Sources */,
 				1AC180912264634E00D243D9 /* Bech32.swift in Sources */,
 				1A1134802229063F00840EE8 /* TxTrace.swift in Sources */,
-				1A11347E2228D14300840EE8 /* LocalNode.swift in Sources */,
+				1A11347E2228D14300840EE8 /* Node.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
 				1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */,

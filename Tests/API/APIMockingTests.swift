@@ -86,6 +86,12 @@ class APIMockingTests: XCTestCase {
         XCTAssertFalse(result.nodeId.isEmpty)
     }
 
+    func testGetPeers() throws {
+        let result = try getClient(json: "peers").getPeers()
+        XCTAssertNotNil(result)
+        XCTAssertFalse(result.first!.addresses.isEmpty)
+    }
+
     func testTraceTransactionEmpty() throws {
         let tx = Transaction(deps: [], inputs: [], outputs: [], witnesses: [])
         let result = try? getClient(json: "traceTransactionEmpty").traceTransaction(transaction: tx)

@@ -128,6 +128,11 @@ class APIClientTests: XCTestCase {
         XCTAssertFalse(result.nodeId.isEmpty)
     }
 
+    func testGetPeers() throws {
+        let result = try client.getPeers()
+        XCTAssertNotNil(result)
+    }
+
     func testGetTransactionTraceNioneExistence() throws {
         XCTAssertNil(try? client.getTransactionTrace(hash: nonexistentHash))
     }
