@@ -17,7 +17,7 @@ public class APIClient {
         self.url = url
     }
 
-    public func load<R: Codable>(_ request: APIRequest<R>, id: Int = 1) throws -> R {
+    public func load<R: Codable>(_ request: APIRequest<R>) throws -> R {
         var result: R?
         var error: Error?
 
@@ -48,12 +48,12 @@ public class APIClient {
         return result!
     }
 
-    private func createRequest<R>(_ request: APIRequest<R>, id: Int = 1) throws -> URLRequest {
+    private func createRequest<R>(_ request: APIRequest<R>) throws -> URLRequest {
         var req = URLRequest(url: url)
         req.httpMethod = "POST"
         req.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let jsonObject: Any = [ "jsonrpc": "2.0", "id": id, "method": request.method, "params": request.params ]
+        let jsonObject: Any = [ "jsonrpc": "2.0", "id": request.id, "method": request.method, "params": request.params ]
         if !JSONSerialization.isValidJSONObject(jsonObject) {
             throw APIError.invalidParameters
         }
