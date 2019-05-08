@@ -20,7 +20,7 @@ public struct Header: Codable {
     public let number: BlockNumber
     public let epoch: EpochNumber
     public let transactionsRoot: H256
-    public let proposalsRoot: H256
+    public let proposalsHash: H256
     public let witnessesRoot: H256
     public let difficulty: UInt256
     public let unclesHash: H256
@@ -36,7 +36,7 @@ public struct Header: Codable {
         case number
         case epoch
         case transactionsRoot = "transactions_root"
-        case proposalsRoot = "proposals_root"
+        case proposalsHash = "proposals_hash"
         case witnessesRoot = "witnesses_root"
         case difficulty
         case unclesHash = "uncles_hash"
