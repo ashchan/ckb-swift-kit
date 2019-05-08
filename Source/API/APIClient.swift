@@ -111,6 +111,10 @@ extension APIClient {
     public func getCurrentEpoch() throws -> Epoch {
         return try load(APIRequest<Epoch>(method: "get_current_epoch"))
     }
+
+    public func getEpochByNumber(number: EpochNumber) throws -> Epoch {
+        return try load(APIRequest<Epoch>(method: "get_epoch_by_number", params: [number]))
+    }
 }
 
 // MARK: - Pool RPC Methods
