@@ -74,6 +74,12 @@ class APIMockingTests: XCTestCase {
         XCTAssertNil(result)
     }
 
+    func testTxPoolInfo() throws {
+        let result = try getClient(json: "txPoolInfo").txPoolInfo()
+        XCTAssertNotNil(result)
+        XCTAssert(result.pending >= 0)
+    }
+
     func testLocalNodeInfo() throws {
         let result = try getClient(json: "localNodeInfo").localNodeInfo()
         XCTAssertFalse(result.addresses.isEmpty)

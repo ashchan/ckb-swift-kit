@@ -33,6 +33,8 @@
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
 		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
 		1A4AEBDF2282EF7500F0D576 /* peers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDE2282EF7500F0D576 /* peers.json */; };
+		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
+		1A4AEBDD2282EC9700F0D576 /* txPoolInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */; };
 		1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F4362276904900C6546F /* APIMockingTests.swift */; };
 		1A58F4392276939D00C6546F /* genesisBlockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4382276939D00C6546F /* genesisBlockHash.json */; };
 		1A58F43B227694D400C6546F /* genesisBlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43A227694D400C6546F /* genesisBlock.json */; };
@@ -95,6 +97,8 @@
 		1A414A9F21C770DD00B28C09 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		1A4AEBDE2282EF7500F0D576 /* peers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peers.json; sourceTree = "<group>"; };
+		1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxPoolInfo.swift; sourceTree = "<group>"; };
+		1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = txPoolInfo.json; sourceTree = "<group>"; };
 		1A58F4362276904900C6546F /* APIMockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingTests.swift; sourceTree = "<group>"; };
 		1A58F4382276939D00C6546F /* genesisBlockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlockHash.json; sourceTree = "<group>"; };
 		1A58F43A227694D400C6546F /* genesisBlock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlock.json; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				1A4AEBDE2282EF7500F0D576 /* peers.json */,
 				1A58F44622769A3700C6546F /* traceTransactionEmpty.json */,
 				1A58F44822769C7900C6546F /* liveCellEmpty.json */,
+				1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */,
 			);
 			path = "RPC Fixtures";
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				1A414A8B21C3714E00B28C09 /* Transaction.swift */,
 				1A11347D2228D14300840EE8 /* Node.swift */,
 				1A11347F2229063F00840EE8 /* TxTrace.swift */,
+				1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 			files = (
 				1A58F44522769A0600C6546F /* localNodeInfo.json in Resources */,
 				1A58F43F2276994000C6546F /* tipHeader.json in Resources */,
+				1A4AEBDD2282EC9700F0D576 /* txPoolInfo.json in Resources */,
 				1A58F43B227694D400C6546F /* genesisBlock.json in Resources */,
 				1A58F4392276939D00C6546F /* genesisBlockHash.json in Resources */,
 				1A58F43D2276981700C6546F /* transaction.json in Resources */,
@@ -538,6 +545,7 @@
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
 				1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */,
 				1A414AA021C770DD00B28C09 /* Utils.swift in Sources */,
+				1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */,
 				1A414A9A21C3879500B28C09 /* Cell.swift in Sources */,
 				1A414A8C21C3714E00B28C09 /* Transaction.swift in Sources */,
 				1AD3195F225DBCB300F41790 /* Network.swift in Sources */,

@@ -123,6 +123,10 @@ extension APIClient {
     public func sendTransaction(transaction: Transaction) throws -> H256 {
         return try load(APIRequest<H256>(method: "send_transaction", params: [transaction.param]))
     }
+
+    public func txPoolInfo() throws -> TxPoolInfo {
+        return try load(APIRequest<TxPoolInfo>(method: "tx_pool_info", params: []))
+    }
 }
 
 // MARK: - Network RPC Methods
