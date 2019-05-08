@@ -12,7 +12,7 @@ public struct TxPoolInfo: Codable {
     public let pending: UInt32
     public let staging: UInt32
     public let orphan: UInt32
-    public let lastTxsUpdatedAt: String
+    public let lastTxsUpdatedAt: Timestamp
 
     enum CodingKeys: String, CodingKey {
         case pending

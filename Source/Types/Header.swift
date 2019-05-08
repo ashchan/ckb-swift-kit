@@ -16,7 +16,7 @@ public struct Seal: Codable {
 public struct Header: Codable {
     public let version: UInt32
     public let parentHash: H256
-    public let timestamp: String
+    public let timestamp: Timestamp
     public let number: BlockNumber
     public let epoch: EpochNumber
     public let transactionsRoot: H256

@@ -12,6 +12,7 @@ import CryptoSwift
 public typealias H256 = String // No strict typing for now.
 public typealias UInt256 = String // e.g. 0x400, TODO: Define a custom type?
 public typealias HexString = String // Present hex format data
+public typealias Timestamp = String
 public typealias ProposalShortId = [UInt8] // Fixed 10-element array representing short hash.
 public typealias Capacity = String
 public typealias BlockNumber = String
