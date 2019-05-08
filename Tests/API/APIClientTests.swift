@@ -116,6 +116,12 @@ class APIClientTests: XCTestCase {
         XCTAssertNil(result)
     }
 
+    func testTxPoolInfo() throws {
+        let result = try client.txPoolInfo()
+        XCTAssertNotNil(result)
+        XCTAssert(result.pending >= 0)
+    }
+
     func testLocalNodeInfo() throws {
         let result = try client.localNodeInfo()
         XCTAssertFalse(result.addresses.isEmpty)

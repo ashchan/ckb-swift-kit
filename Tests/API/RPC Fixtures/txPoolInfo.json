@@ -1,0 +1,10 @@
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "last_txs_updated_at": "0",
+        "orphan": 0,
+        "pending": 0,
+        "staging": 0
+    },
+    "id": 1
+}
