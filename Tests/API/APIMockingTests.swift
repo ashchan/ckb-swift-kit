@@ -50,7 +50,10 @@ class APIMockingTests: XCTestCase {
     }
 
     func testGetLiveCell() throws {
-        let outPoint = OutPoint(txHash: "0xda27a795e14067e18a0cfc0951571aaca47bd9851adc9bf5baa22cf27c8bcde8", index: 0)
+        let outPoint = OutPoint(
+            blockHash: "0x4c2f8ba5f5a0104eaf84fcbb16af4b0e7ca2f2fdb076e748d54ef876d085d49e",
+            cell: CellOutPoint(txHash: "0xda27a795e14067e18a0cfc0951571aaca47bd9851adc9bf5baa22cf27c8bcde8", index: 0)
+        )
         let result = try getClient(json: "liveCellEmpty").getLiveCell(outPoint: outPoint)
         XCTAssertNotNil(result)
     }
