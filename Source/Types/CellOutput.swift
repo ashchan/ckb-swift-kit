@@ -25,7 +25,7 @@ public struct CellOutput: Codable, Param {
         var result: [String: Any] = [
             "capacity": capacity,
             "data": data,
-            "lock": lock
+            "lock": lock.param
         ]
         if let type = type {
             result["type"] = type
@@ -37,7 +37,7 @@ public struct CellOutput: Codable, Param {
 public struct CellOutputWithOutPoint: Codable {
     public let outPoint: OutPoint
     public let capacity: Capacity
-    public let lock: H256
+    public let lock: Script
 
     enum CodingKeys: String, CodingKey {
         case outPoint = "out_point"
