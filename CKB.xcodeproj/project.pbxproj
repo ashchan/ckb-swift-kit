@@ -32,9 +32,9 @@
 		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
 		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
-		1A4AEBDF2282EF7500F0D576 /* peers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDE2282EF7500F0D576 /* peers.json */; };
 		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
 		1A4AEBDD2282EC9700F0D576 /* txPoolInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */; };
+		1A4AEBDF2282EF7500F0D576 /* peers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDE2282EF7500F0D576 /* peers.json */; };
 		1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F4362276904900C6546F /* APIMockingTests.swift */; };
 		1A58F4392276939D00C6546F /* genesisBlockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4382276939D00C6546F /* genesisBlockHash.json */; };
 		1A58F43B227694D400C6546F /* genesisBlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43A227694D400C6546F /* genesisBlock.json */; };
@@ -45,6 +45,10 @@
 		1A58F44522769A0600C6546F /* localNodeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44422769A0600C6546F /* localNodeInfo.json */; };
 		1A58F44722769A3700C6546F /* traceTransactionEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44622769A3700C6546F /* traceTransactionEmpty.json */; };
 		1A58F44922769C7900C6546F /* liveCellEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44822769C7900C6546F /* liveCellEmpty.json */; };
+		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
+		1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6852283CE4500C116B2 /* PeerState.swift */; };
+		1AA9B6882283D10E00C116B2 /* blockchainInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6872283D10E00C116B2 /* blockchainInfo.json */; };
+		1AA9B68A2283D15600C116B2 /* peersState.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6892283D15600C116B2 /* peersState.json */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
 		1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
@@ -96,9 +100,9 @@
 		1A414A9921C3879500B28C09 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1A414A9F21C770DD00B28C09 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
-		1A4AEBDE2282EF7500F0D576 /* peers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peers.json; sourceTree = "<group>"; };
 		1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxPoolInfo.swift; sourceTree = "<group>"; };
 		1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = txPoolInfo.json; sourceTree = "<group>"; };
+		1A4AEBDE2282EF7500F0D576 /* peers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peers.json; sourceTree = "<group>"; };
 		1A58F4362276904900C6546F /* APIMockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingTests.swift; sourceTree = "<group>"; };
 		1A58F4382276939D00C6546F /* genesisBlockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlockHash.json; sourceTree = "<group>"; };
 		1A58F43A227694D400C6546F /* genesisBlock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlock.json; sourceTree = "<group>"; };
@@ -109,6 +113,10 @@
 		1A58F44422769A0600C6546F /* localNodeInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = localNodeInfo.json; sourceTree = "<group>"; };
 		1A58F44622769A3700C6546F /* traceTransactionEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = traceTransactionEmpty.json; sourceTree = "<group>"; };
 		1A58F44822769C7900C6546F /* liveCellEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = liveCellEmpty.json; sourceTree = "<group>"; };
+		1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainInfo.swift; sourceTree = "<group>"; };
+		1AA9B6852283CE4500C116B2 /* PeerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerState.swift; sourceTree = "<group>"; };
+		1AA9B6872283D10E00C116B2 /* blockchainInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockchainInfo.json; sourceTree = "<group>"; };
+		1AA9B6892283D15600C116B2 /* peersState.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peersState.json; sourceTree = "<group>"; };
 		1AB45ED6222AA558009B395B /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
 		1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1Tests.swift; sourceTree = "<group>"; };
 		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
@@ -171,6 +179,8 @@
 				1A58F44622769A3700C6546F /* traceTransactionEmpty.json */,
 				1A58F44822769C7900C6546F /* liveCellEmpty.json */,
 				1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */,
+				1AA9B6872283D10E00C116B2 /* blockchainInfo.json */,
+				1AA9B6892283D15600C116B2 /* peersState.json */,
 			);
 			path = "RPC Fixtures";
 			sourceTree = "<group>";
@@ -258,6 +268,8 @@
 				1A11347D2228D14300840EE8 /* Node.swift */,
 				1A11347F2229063F00840EE8 /* TxTrace.swift */,
 				1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */,
+				1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */,
+				1AA9B6852283CE4500C116B2 /* PeerState.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -430,6 +442,8 @@
 				1A58F443227699D400C6546F /* sendTransactionEmpty.json in Resources */,
 				1A58F44722769A3700C6546F /* traceTransactionEmpty.json in Resources */,
 				1A2CDAE32281796D0024CA71 /* epoch.json in Resources */,
+				1AA9B68A2283D15600C116B2 /* peersState.json in Resources */,
+				1AA9B6882283D10E00C116B2 /* blockchainInfo.json in Resources */,
 				1A58F4412276998900C6546F /* tipBlockNumber.json in Resources */,
 				1A58F44922769C7900C6546F /* liveCellEmpty.json in Resources */,
 				1A4AEBDF2282EF7500F0D576 /* peers.json in Resources */,
@@ -541,6 +555,7 @@
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
 				1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */,
 				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
+				1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */,
 				1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
 				1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */,
@@ -556,6 +571,7 @@
 				1A414A8321C334EB00B28C09 /* APIRequest.swift in Sources */,
 				1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */,
 				1A414A8121C32D4B00B28C09 /* APIResult.swift in Sources */,
+				1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
