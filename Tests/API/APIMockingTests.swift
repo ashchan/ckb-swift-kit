@@ -80,6 +80,18 @@ class APIMockingTests: XCTestCase {
         XCTAssert(result.pending >= 0)
     }
 
+    func testGetBlockchainInfo() throws {
+        let result = try getClient(json: "blockchainInfo").getBlockchainInfo()
+        XCTAssertNotNil(result)
+        XCTAssertFalse(result.chain.isEmpty)
+    }
+
+    func testGetPeersState() throws {
+        let result = try getClient(json: "peersState").getPeersState()
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
+
     func testLocalNodeInfo() throws {
         let result = try getClient(json: "localNodeInfo").localNodeInfo()
         XCTAssertFalse(result.addresses.isEmpty)

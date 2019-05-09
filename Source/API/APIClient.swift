@@ -129,6 +129,18 @@ extension APIClient {
     }
 }
 
+// MARK: - Stats RPC Methods
+
+extension APIClient {
+    public func getBlockchainInfo() throws -> ChainInfo {
+        return try load(APIRequest<ChainInfo>(method: "get_blockchain_info", params: []))
+    }
+
+    public func getPeersState() throws -> [PeerState] {
+        return try load(APIRequest<[PeerState]>(method: "get_peers_state", params: []))
+    }
+}
+
 // MARK: - Network RPC Methods
 
 extension APIClient {
