@@ -11,14 +11,17 @@ import Sodium
 import Clibsodium
 
 // Blake2b-256 Hash, with CKB's personalization.
-final class Blake2b {
+public final class Blake2b {
     static let hashPersonalization = "ckb-default-hash"
 
-    func hash(data: Data) -> Data? {
+    public init() {
+    }
+
+    public func hash(data: Data) -> Data? {
         return hash(bytes: data.bytes)
     }
 
-    func hash(bytes: [UInt8]) -> Data? {
+    public func hash(bytes: [UInt8]) -> Data? {
         let outputLength = Int(crypto_generichash_bytes())
         var output = [UInt8](repeating: 0, count: outputLength)
         let personal = [UInt8](Blake2b.hashPersonalization.utf8)
