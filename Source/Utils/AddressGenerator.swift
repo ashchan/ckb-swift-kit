@@ -26,6 +26,11 @@ public class AddressGenerator {
         }
     }
 
+    public func publicKeyHash(for address: String) -> String? {
+        guard let data = parse(address: address)?.data else { return nil }
+        return Data(data.bytes.suffix(20)).toHexString()
+    }
+
     public func address(for publicKey: String) -> String {
         return address(for: Data(hex: publicKey))
     }
