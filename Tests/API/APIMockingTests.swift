@@ -103,12 +103,6 @@ class APIMockingTests: XCTestCase {
         XCTAssertNotNil(result)
         XCTAssertFalse(result.first!.addresses.isEmpty)
     }
-
-    func testTraceTransactionEmpty() throws {
-        let tx = Transaction(deps: [], inputs: [], outputs: [], witnesses: [])
-        let result = try? getClient(json: "traceTransactionEmpty").traceTransaction(transaction: tx)
-        XCTAssertNotNil(result)
-    }
 }
 
 extension APIMockingClient {
