@@ -144,16 +144,6 @@ class APIClientTests: XCTestCase {
         let result = try client.getPeers()
         XCTAssertNotNil(result)
     }
-
-    func testGetTransactionTraceNioneExistence() throws {
-        XCTAssertNil(try? client.getTransactionTrace(hash: nonexistentHash))
-    }
-
-    func testTraceTransactionEmpty() throws {
-        let tx = Transaction(deps: [], inputs: [], outputs: [], witnesses: [])
-        let result = try? client.traceTransaction(transaction: tx)
-        XCTAssertNotNil(result)
-    }
 }
 
 private extension APIClientTests {
