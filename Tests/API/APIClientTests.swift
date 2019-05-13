@@ -119,7 +119,7 @@ class APIClientTests: XCTestCase {
     func testTxPoolInfo() throws {
         let result = try client.txPoolInfo()
         XCTAssertNotNil(result)
-        XCTAssert(result.pending >= 0)
+        XCTAssert(UInt32(result.pending)! >= 0)
     }
 
     func testGetBlockchainInfo() throws {

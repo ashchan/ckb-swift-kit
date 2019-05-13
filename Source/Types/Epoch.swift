@@ -14,7 +14,7 @@ public struct Epoch: Codable {
     public let lastBlockHashInPreviousEpoch: H256
     public let startNumber: BlockNumber
     public let length: BlockNumber
-    public let difficulty: UInt256
+    public let difficulty: HexNumber
     public let remainderReward: String
 
     enum CodingKeys: String, CodingKey {

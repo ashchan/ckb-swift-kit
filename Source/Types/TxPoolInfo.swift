@@ -9,14 +9,14 @@
 import Foundation
 
 public struct TxPoolInfo: Codable {
-    public let pending: UInt32
-    public let staging: UInt32
-    public let orphan: UInt32
+    public let pending: Number
+    public let proposed: Number
+    public let orphan: Number
     public let lastTxsUpdatedAt: Timestamp
 
     enum CodingKeys: String, CodingKey {
         case pending
-        case staging
+        case proposed
         case orphan
         case lastTxsUpdatedAt = "last_txs_updated_at"
     }
