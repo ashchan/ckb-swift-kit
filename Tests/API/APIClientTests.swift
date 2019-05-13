@@ -144,6 +144,18 @@ class APIClientTests: XCTestCase {
         let result = try client.getPeers()
         XCTAssertNotNil(result)
     }
+
+    func testComputeTransactionHash() throws {
+        let tx = Transaction()
+        let result = try client.computeTransactionHash(transaction: tx)
+        XCTAssertNotNil(result)
+    }
+
+    func testDryRunTransaction() throws {
+        let tx = Transaction()
+        let result = try client.dryRunTransaction(transaction: tx)
+        XCTAssertNotNil(result)
+    }
 }
 
 private extension APIClientTests {

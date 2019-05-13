@@ -18,6 +18,7 @@ public typealias Number = String // Unsigned (UInt64)
 public typealias HexNumber = String
 public typealias BlockNumber = String
 public typealias EpochNumber = String
+public typealias Cycle = String
 
 extension H256 {
     public static let zeroHash: H256 = "0x0000000000000000000000000000000000000000000000000000000000000000"
