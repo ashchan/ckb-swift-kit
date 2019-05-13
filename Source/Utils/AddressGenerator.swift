@@ -43,7 +43,7 @@ public class AddressGenerator {
         return Bech32().encode(hrp: prefix, data: convertBits(data: payload, fromBits: 8, toBits: 5, pad: true)!)
     }
 
-    func hash(for publicKey: Data) -> Data {
+    public func hash(for publicKey: Data) -> Data {
         return blake160(publicKey)
     }
 
