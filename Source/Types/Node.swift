@@ -10,11 +10,11 @@ import Foundation
 
 public struct NodeAddress: Codable {
     public let address: String
-    public let score: UInt8
+    public let score: Number
 }
 
 public struct Node: Codable {
-    public let version: String
+    public let version: Number
     public let nodeId: String
     public let addresses: [NodeAddress]
     public let isOutbound: Bool?

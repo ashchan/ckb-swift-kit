@@ -36,14 +36,14 @@ public struct OutPoint: Codable, Param {
 
 public struct CellOutPoint: Codable, Param {
     public let txHash: H256
-    public let index: UInt32
+    public let index: Number
 
     enum CodingKeys: String, CodingKey {
         case txHash = "tx_hash"
         case index
     }
 
-    public init(txHash: H256, index: UInt32) {
+    public init(txHash: H256, index: Number) {
         self.txHash = txHash
         self.index = index
     }

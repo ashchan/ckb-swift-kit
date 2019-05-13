@@ -12,7 +12,7 @@ public struct ChainInfo: Codable {
     public let chain: String
     public let medianTime: Timestamp
     public let epoch: EpochNumber
-    public let difficulty: UInt256
+    public let difficulty: HexNumber
     public let isInitialBlockDownload: Bool
     public let warnings: String
 

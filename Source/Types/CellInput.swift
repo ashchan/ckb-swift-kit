@@ -11,9 +11,9 @@ import Foundation
 public struct CellInput: Codable, Param {
     public let previousOutput: OutPoint
     public let args: [HexString]
-    public let since: String
+    public let since: Number
 
-    public init(previousOutput: OutPoint, args: [HexString], since: String) {
+    public init(previousOutput: OutPoint, args: [HexString], since: Number) {
         self.previousOutput = previousOutput
         self.args = args
         self.since = since
