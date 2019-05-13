@@ -31,4 +31,14 @@ class AddressGeneratorTests: XCTestCase {
             generator.address(for: "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01")
         )
     }
+
+    func testAddressToPubkeyHash() {
+        let publicKey = "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01"
+        let generator = AddressGenerator(network: .testnet)
+        let address = generator.address(for: publicKey)
+        XCTAssertEqual(
+            generator.hash(for: Data(hex: publicKey)).toHexString(),
+            generator.publicKeyHash(for: address)
+        )
+    }
 }
