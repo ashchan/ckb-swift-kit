@@ -9,6 +9,7 @@
 import Foundation
 
 /// JSON RPC API client.
+/// Implement CKB [JSON-RPC](https://github.com/nervosnetwork/ckb/tree/develop/rpc#json-rpc) interfaces.
 public class APIClient {
     private var url: URL
     public static let defaultLocalURL = URL(string: "http://localhost:8114")!
@@ -150,5 +151,17 @@ extension APIClient {
 
     public func getPeers() throws -> [Node] {
         return try load(APIRequest<[Node]>(method: "get_peers", params: []))
+    }
+}
+
+// MARK: - Experiment RPC Methods
+
+extension APIClient {
+    public func computeTransactionHash(transaction: Transaction) throws -> H256 {
+        return try load(APIRequest<H256>(method: "_compute_transaction_hash", params: [transaction.param]))
+    }
+
+    public func dryRunTransaction(transaction: Transaction) throws -> DryRunResult {
+        return try load(APIRequest<DryRunResult>(method: "dry_run_transaction", params: [transaction.param]))
     }
 }
