@@ -26,7 +26,9 @@ public class APIClient {
             error = err
 
             do {
-                guard let data = data else { throw APIError.emptyResponse }
+                guard let data = data else {
+                    throw APIError.emptyResponse
+                }
                 result = try request.decode(data)
             } catch let err {
                 error = err
@@ -67,7 +69,7 @@ extension APIClient {
     }
 
     public func genesisBlock() throws -> Block {
-        return try getBlock(hash: try genesisBlockHash())
+        return try getBlockByNumber(number: "0")
     }
 }
 
@@ -78,8 +80,12 @@ extension APIClient {
         return try load(APIRequest<Block>(method: "get_block", params: [hash]))
     }
 
-    public func getTransaction(hash: H256) throws -> Transaction {
-        return try load(APIRequest<Transaction>(method: "get_transaction", params: [hash]))
+    public func getBlockByNumber(number: BlockNumber) throws -> Block {
+        return try load(APIRequest<Block>(method: "get_block_by_number", params: [number]))
+    }
+
+    public func getTransaction(hash: H256) throws -> TransactionWithStatus {
+        return try load(APIRequest<TransactionWithStatus>(method: "get_transaction", params: [hash]))
     }
 
     public func getBlockHash(number: BlockNumber) throws -> H256 {

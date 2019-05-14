@@ -15,3 +15,4 @@ end
 target "CKBTests" do
   use_frameworks!
 end
+
