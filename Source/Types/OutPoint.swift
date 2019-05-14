@@ -28,7 +28,7 @@ public struct OutPoint: Codable, Param {
             result["block_hash"] = blockHash
         }
         if let cell = cell {
-            result["cell"] = cell
+            result["cell"] = cell.param
         }
         return result
     }
