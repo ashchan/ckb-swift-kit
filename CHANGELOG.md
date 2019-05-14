@@ -2,6 +2,20 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+# [v0.11.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.10.0...v0.11.0) (2019-05-14)
+
+
+### Bug Fixes
+
+* Fix test ([607512f](https://github.com/nervosnetwork/ckb-sdk-swift/commit/607512f))
+
+
+### Features
+
+* Add an empty example iOS app ([3bf41b2](https://github.com/nervosnetwork/ckb-sdk-swift/commit/3bf41b2))
+* Implement get_block_by_number RPC method ([cc3e3a1](https://github.com/nervosnetwork/ckb-sdk-swift/commit/cc3e3a1))
+
+
 # [v0.10.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.9.0...v0.10.0) (2019-05-06)
 
 
