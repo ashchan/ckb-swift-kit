@@ -51,6 +51,8 @@
 		1A5BCBAC228C49D600157426 /* computeTransactionHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188772288FEC800F613CF /* computeTransactionHash.json */; };
 		1A5BCBAD228C49D900157426 /* ecdsa_sig.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCB99228C3C4C00157426 /* ecdsa_sig.json */; };
 		1A5BCBB0228C53C000157426 /* pubkey.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCBAF228C53C000157426 /* pubkey.json */; };
+		1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB2228C571200157426 /* Transaction+Sign.swift */; };
+		1A5BCBB6228C6BB400157426 /* TransactionSignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */; };
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
 		1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6852283CE4500C116B2 /* PeerState.swift */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
@@ -121,6 +123,8 @@
 		1A5BCB99228C3C4C00157426 /* ecdsa_sig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ecdsa_sig.json; sourceTree = "<group>"; };
 		1A5BCB9B228C474200157426 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		1A5BCBAF228C53C000157426 /* pubkey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pubkey.json; sourceTree = "<group>"; };
+		1A5BCBB2228C571200157426 /* Transaction+Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Sign.swift"; sourceTree = "<group>"; };
+		1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSignTests.swift; sourceTree = "<group>"; };
 		1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainInfo.swift; sourceTree = "<group>"; };
 		1AA9B6852283CE4500C116B2 /* PeerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerState.swift; sourceTree = "<group>"; };
 		1AA9B6872283D10E00C116B2 /* blockchainInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockchainInfo.json; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				1AB45ED5222AA53F009B395B /* Crypto */,
 				1A414A8621C36FAA00B28C09 /* Types */,
 				1A414A7E21C32D1D00B28C09 /* API */,
+				1A5BCBB1228C56DC00157426 /* Signers */,
 				1A414A9E21C770CF00B28C09 /* Utils */,
 				1A414A6321C2226E00B28C09 /* CKB.h */,
 				1A414A6421C2226E00B28C09 /* Info.plist */,
@@ -233,6 +238,7 @@
 				1AB45ED8222AA624009B395B /* Crypto */,
 				1A28119521D3804600E7CEC5 /* Types */,
 				1A414A7F21C32D2500B28C09 /* API */,
+				1A5BCBB4228C6B9200157426 /* Signers */,
 				1A414AA121C7711200B28C09 /* Utils */,
 				1A5BCB9B228C474200157426 /* TestHelper.swift */,
 				1A414A7021C2226E00B28C09 /* Info.plist */,
@@ -310,6 +316,22 @@
 				1A5BCBAF228C53C000157426 /* pubkey.json */,
 			);
 			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		1A5BCBB1228C56DC00157426 /* Signers */ = {
+			isa = PBXGroup;
+			children = (
+				1A5BCBB2228C571200157426 /* Transaction+Sign.swift */,
+			);
+			path = Signers;
+			sourceTree = "<group>";
+		};
+		1A5BCBB4228C6B9200157426 /* Signers */ = {
+			isa = PBXGroup;
+			children = (
+				1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */,
+			);
+			path = Signers;
 			sourceTree = "<group>";
 		};
 		1AB45ED5222AA53F009B395B /* Crypto */ = {
@@ -575,6 +597,7 @@
 				1A11347E2228D14300840EE8 /* Node.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
+				1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */,
 				1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */,
 				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
 				1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */,
@@ -611,6 +634,7 @@
 				1A5BCB9D228C475600157426 /* TestHelper.swift in Sources */,
 				1AD31961225DBD8A00F41790 /* AddressGeneratorTests.swift in Sources */,
 				1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */,
+				1A5BCBB6228C6BB400157426 /* TransactionSignTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
