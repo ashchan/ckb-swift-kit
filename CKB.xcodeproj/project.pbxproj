@@ -11,11 +11,8 @@
 		1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C8269222F5D5D0053EC32 /* Blake2b.swift */; };
 		1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */; };
 		1A2188742288FC1700F613CF /* DryRunResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2188732288FC1700F613CF /* DryRunResult.swift */; };
-		1A2188762288FC7B00F613CF /* dryRunTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188752288FC7B00F613CF /* dryRunTransaction.json */; };
-		1A2188782288FEC800F613CF /* computeTransactionHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188772288FEC800F613CF /* computeTransactionHash.json */; };
 		1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
 		1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE0228171180024CA71 /* Epoch.swift */; };
-		1A2CDAE32281796D0024CA71 /* epoch.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE22281796D0024CA71 /* epoch.json */; };
 		1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */; };
 		1A414A6A21C2226E00B28C09 /* CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A414A6021C2226E00B28C09 /* CKB.framework */; };
 		1A414A7121C2226E00B28C09 /* CKB.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A414A6321C2226E00B28C09 /* CKB.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,21 +32,27 @@
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
 		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
 		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
-		1A4AEBDD2282EC9700F0D576 /* txPoolInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */; };
-		1A4AEBDF2282EF7500F0D576 /* peers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDE2282EF7500F0D576 /* peers.json */; };
 		1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F4362276904900C6546F /* APIMockingTests.swift */; };
-		1A58F4392276939D00C6546F /* genesisBlockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4382276939D00C6546F /* genesisBlockHash.json */; };
-		1A58F43B227694D400C6546F /* genesisBlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43A227694D400C6546F /* genesisBlock.json */; };
-		1A58F43D2276981700C6546F /* transaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43C2276981700C6546F /* transaction.json */; };
-		1A58F43F2276994000C6546F /* tipHeader.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43E2276994000C6546F /* tipHeader.json */; };
-		1A58F4412276998900C6546F /* tipBlockNumber.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4402276998900C6546F /* tipBlockNumber.json */; };
-		1A58F443227699D400C6546F /* sendTransactionEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F442227699D400C6546F /* sendTransactionEmpty.json */; };
-		1A58F44522769A0600C6546F /* localNodeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44422769A0600C6546F /* localNodeInfo.json */; };
-		1A58F44922769C7900C6546F /* liveCellEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44822769C7900C6546F /* liveCellEmpty.json */; };
+		1A5BCB9D228C475600157426 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCB9B228C474200157426 /* TestHelper.swift */; };
+		1A5BCB9E228C49D600157426 /* genesisBlockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4382276939D00C6546F /* genesisBlockHash.json */; };
+		1A5BCB9F228C49D600157426 /* genesisBlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43A227694D400C6546F /* genesisBlock.json */; };
+		1A5BCBA0228C49D600157426 /* epoch.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE22281796D0024CA71 /* epoch.json */; };
+		1A5BCBA1228C49D600157426 /* transaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43C2276981700C6546F /* transaction.json */; };
+		1A5BCBA2228C49D600157426 /* tipHeader.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43E2276994000C6546F /* tipHeader.json */; };
+		1A5BCBA3228C49D600157426 /* tipBlockNumber.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4402276998900C6546F /* tipBlockNumber.json */; };
+		1A5BCBA4228C49D600157426 /* sendTransactionEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F442227699D400C6546F /* sendTransactionEmpty.json */; };
+		1A5BCBA5228C49D600157426 /* localNodeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44422769A0600C6546F /* localNodeInfo.json */; };
+		1A5BCBA6228C49D600157426 /* peers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDE2282EF7500F0D576 /* peers.json */; };
+		1A5BCBA7228C49D600157426 /* liveCellEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44822769C7900C6546F /* liveCellEmpty.json */; };
+		1A5BCBA8228C49D600157426 /* txPoolInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */; };
+		1A5BCBA9228C49D600157426 /* blockchainInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6872283D10E00C116B2 /* blockchainInfo.json */; };
+		1A5BCBAA228C49D600157426 /* peersState.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6892283D15600C116B2 /* peersState.json */; };
+		1A5BCBAB228C49D600157426 /* dryRunTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188752288FC7B00F613CF /* dryRunTransaction.json */; };
+		1A5BCBAC228C49D600157426 /* computeTransactionHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188772288FEC800F613CF /* computeTransactionHash.json */; };
+		1A5BCBAD228C49D900157426 /* ecdsa_sig.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCB99228C3C4C00157426 /* ecdsa_sig.json */; };
+		1A5BCBB0228C53C000157426 /* pubkey.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCBAF228C53C000157426 /* pubkey.json */; };
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
 		1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6852283CE4500C116B2 /* PeerState.swift */; };
-		1AA9B6882283D10E00C116B2 /* blockchainInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6872283D10E00C116B2 /* blockchainInfo.json */; };
-		1AA9B68A2283D15600C116B2 /* peersState.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6892283D15600C116B2 /* peersState.json */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
 		1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
@@ -115,6 +118,9 @@
 		1A58F442227699D400C6546F /* sendTransactionEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sendTransactionEmpty.json; sourceTree = "<group>"; };
 		1A58F44422769A0600C6546F /* localNodeInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = localNodeInfo.json; sourceTree = "<group>"; };
 		1A58F44822769C7900C6546F /* liveCellEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = liveCellEmpty.json; sourceTree = "<group>"; };
+		1A5BCB99228C3C4C00157426 /* ecdsa_sig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ecdsa_sig.json; sourceTree = "<group>"; };
+		1A5BCB9B228C474200157426 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		1A5BCBAF228C53C000157426 /* pubkey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pubkey.json; sourceTree = "<group>"; };
 		1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainInfo.swift; sourceTree = "<group>"; };
 		1AA9B6852283CE4500C116B2 /* PeerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerState.swift; sourceTree = "<group>"; };
 		1AA9B6872283D10E00C116B2 /* blockchainInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockchainInfo.json; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 				1A28119521D3804600E7CEC5 /* Types */,
 				1A414A7F21C32D2500B28C09 /* API */,
 				1A414AA121C7711200B28C09 /* Utils */,
+				1A5BCB9B228C474200157426 /* TestHelper.swift */,
 				1A414A7021C2226E00B28C09 /* Info.plist */,
 			);
 			path = Tests;
@@ -296,6 +303,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		1A5BCB98228C3C0900157426 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				1A5BCB99228C3C4C00157426 /* ecdsa_sig.json */,
+				1A5BCBAF228C53C000157426 /* pubkey.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		1AB45ED5222AA53F009B395B /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +325,7 @@
 		1AB45ED8222AA624009B395B /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				1A5BCB98228C3C0900157426 /* Fixtures */,
 				1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */,
 				1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */,
 				1AC180922264672B00D243D9 /* Bech32Tests.swift */,
@@ -436,21 +453,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A58F44522769A0600C6546F /* localNodeInfo.json in Resources */,
-				1A58F43F2276994000C6546F /* tipHeader.json in Resources */,
-				1A2188782288FEC800F613CF /* computeTransactionHash.json in Resources */,
-				1A4AEBDD2282EC9700F0D576 /* txPoolInfo.json in Resources */,
-				1A58F43B227694D400C6546F /* genesisBlock.json in Resources */,
-				1A58F4392276939D00C6546F /* genesisBlockHash.json in Resources */,
-				1A58F43D2276981700C6546F /* transaction.json in Resources */,
-				1A2188762288FC7B00F613CF /* dryRunTransaction.json in Resources */,
-				1A58F443227699D400C6546F /* sendTransactionEmpty.json in Resources */,
-				1A2CDAE32281796D0024CA71 /* epoch.json in Resources */,
-				1AA9B68A2283D15600C116B2 /* peersState.json in Resources */,
-				1AA9B6882283D10E00C116B2 /* blockchainInfo.json in Resources */,
-				1A58F4412276998900C6546F /* tipBlockNumber.json in Resources */,
-				1A58F44922769C7900C6546F /* liveCellEmpty.json in Resources */,
-				1A4AEBDF2282EF7500F0D576 /* peers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +460,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5BCBA6228C49D600157426 /* peers.json in Resources */,
+				1A5BCBA4228C49D600157426 /* sendTransactionEmpty.json in Resources */,
+				1A5BCBAC228C49D600157426 /* computeTransactionHash.json in Resources */,
+				1A5BCBAA228C49D600157426 /* peersState.json in Resources */,
+				1A5BCBA8228C49D600157426 /* txPoolInfo.json in Resources */,
+				1A5BCBA3228C49D600157426 /* tipBlockNumber.json in Resources */,
+				1A5BCBA7228C49D600157426 /* liveCellEmpty.json in Resources */,
+				1A5BCBB0228C53C000157426 /* pubkey.json in Resources */,
+				1A5BCBAB228C49D600157426 /* dryRunTransaction.json in Resources */,
+				1A5BCBAD228C49D900157426 /* ecdsa_sig.json in Resources */,
+				1A5BCBA9228C49D600157426 /* blockchainInfo.json in Resources */,
+				1A5BCB9F228C49D600157426 /* genesisBlock.json in Resources */,
+				1A5BCBA2228C49D600157426 /* tipHeader.json in Resources */,
+				1A5BCBA0228C49D600157426 /* epoch.json in Resources */,
+				1A5BCBA1228C49D600157426 /* transaction.json in Resources */,
+				1A5BCB9E228C49D600157426 /* genesisBlockHash.json in Resources */,
+				1A5BCBA5228C49D600157426 /* localNodeInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +608,7 @@
 				1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */,
 				1AC180932264672B00D243D9 /* Bech32Tests.swift in Sources */,
 				1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */,
+				1A5BCB9D228C475600157426 /* TestHelper.swift in Sources */,
 				1AD31961225DBD8A00F41790 /* AddressGeneratorTests.swift in Sources */,
 				1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */,
 			);
