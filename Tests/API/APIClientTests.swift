@@ -9,14 +9,7 @@
 import XCTest
 @testable import CKB
 
-class APIClientTests: XCTestCase {
-    override func invokeTest() {
-        if ProcessInfo().environment["SKIP_RPC_TESTS"] == "1" {
-            return
-        }
-        super.invokeTest()
-    }
-
+class APIClientTests: RPCTestSkippable {
     func testSettingId() throws {
         let result = try client.load(APIRequest<H256>(id: 10, method: "get_block_hash", params: ["0"]))
         XCTAssertNotNil(result)
