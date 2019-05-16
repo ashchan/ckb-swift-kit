@@ -9,8 +9,8 @@
 import Foundation
 
 public struct SystemScript {
-    let outPoint: OutPoint
-    let codeHash: H256
+    public let outPoint: OutPoint
+    public let codeHash: H256
 
     public init(outPoint: OutPoint, codeHash: H256) {
         self.outPoint = outPoint
