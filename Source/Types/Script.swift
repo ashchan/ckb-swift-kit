@@ -17,7 +17,7 @@ public struct Script: Codable, Param {
         case codeHash = "code_hash"
     }
 
-    public var typeHash: String {
+    public var hash: String {
         var bytes = [UInt8]()
         bytes.append(contentsOf: Data(hex: codeHash).bytes)
         args.forEach { (arg) in
