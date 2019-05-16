@@ -62,6 +62,8 @@
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
 		1AD3195F225DBCB300F41790 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195E225DBCB300F41790 /* Network.swift */; };
 		1AD31961225DBD8A00F41790 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */; };
+		1AD96320228D24FB00684FBB /* SystemScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9631F228D24FB00684FBB /* SystemScript.swift */; };
+		1AD96322228D2BF400684FBB /* SystemScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD96321228D2BF400684FBB /* SystemScriptTests.swift */; };
 		1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7C62B2251BCA9003FA254 /* Witness.swift */; };
 		2D6EA000E9B8936CB81356CC /* Pods_CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4BD554CBEED5D384A1C737 /* Pods_CKB.framework */; };
 		591DADB7D11BC8F71DBF4902 /* Pods_CKBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */; };
@@ -136,6 +138,8 @@
 		1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGenerator.swift; sourceTree = "<group>"; };
 		1AD3195E225DBCB300F41790 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeneratorTests.swift; sourceTree = "<group>"; };
+		1AD9631F228D24FB00684FBB /* SystemScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemScript.swift; sourceTree = "<group>"; };
+		1AD96321228D2BF400684FBB /* SystemScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemScriptTests.swift; sourceTree = "<group>"; };
 		1AE7C62B2251BCA9003FA254 /* Witness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Witness.swift; sourceTree = "<group>"; };
 		3280C4848C7A8236CA5F4CD8 /* Pods-CKBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5CAEE4335089142E8F3ECC55 /* Pods-CKBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 				1A414A9F21C770DD00B28C09 /* Utils.swift */,
 				1AD3195E225DBCB300F41790 /* Network.swift */,
 				1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */,
+				1AD9631F228D24FB00684FBB /* SystemScript.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			children = (
 				1A414AA421C7713800B28C09 /* UtilsTests.swift */,
 				1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */,
+				1AD96321228D2BF400684FBB /* SystemScriptTests.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -594,6 +600,7 @@
 				1A414A9221C3725300B28C09 /* OutPoint.swift in Sources */,
 				1A414A8821C36FCF00B28C09 /* Header.swift in Sources */,
 				1AC180912264634E00D243D9 /* Bech32.swift in Sources */,
+				1AD96320228D24FB00684FBB /* SystemScript.swift in Sources */,
 				1A11347E2228D14300840EE8 /* Node.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
@@ -629,6 +636,7 @@
 				1A414A7D21C23A3900B28C09 /* APIClientTests.swift in Sources */,
 				1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */,
 				1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */,
+				1AD96322228D2BF400684FBB /* SystemScriptTests.swift in Sources */,
 				1AC180932264672B00D243D9 /* Bech32Tests.swift in Sources */,
 				1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */,
 				1A5BCB9D228C475600157426 /* TestHelper.swift in Sources */,
