@@ -121,8 +121,7 @@ extension APIMockingClient {
     convenience init(_ jsonPath: String) {
         self.init(url: APIClient.defaultLocalURL)
 
-        let path = Bundle(for: type(of: self)).path(forResource: jsonPath, ofType: "json")!
-        mockingData = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        mockingData = TestHelper.load(json: jsonPath)
     }
 }
 
