@@ -17,11 +17,6 @@ public struct Script: Codable, Param {
         case codeHash = "code_hash"
     }
 
-    static let alwaysSuccessHash: H256 = "0x0000000000000000000000000000000000000000000000000000000000000001"
-    public static var alwaysSuccess: Script {
-        return Script(args: [], codeHash: alwaysSuccessHash)
-    }
-
     public var typeHash: String {
         var bytes = [UInt8]()
         bytes.append(contentsOf: Data(hex: codeHash).bytes)
