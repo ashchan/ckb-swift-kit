@@ -1,0 +1,11 @@
+{
+    "result" : [
+        {
+            "last_updated" : "1557289448237",
+            "blocks_in_flight" : "86",
+            "peer" : "1"
+        }
+    ],
+    "jsonrpc" : "2.0",
+    "id" : 1
+}

@@ -9,6 +9,7 @@
 import Foundation
 
 /// JSON RPC API client.
+/// Implement CKB [JSON-RPC](https://github.com/nervosnetwork/ckb/tree/develop/rpc#json-rpc) interfaces.
 public class APIClient {
     private var url: URL
     public static let defaultLocalURL = URL(string: "http://localhost:8114")!
@@ -17,7 +18,7 @@ public class APIClient {
         self.url = url
     }
 
-    public func load<R: Codable>(_ request: APIRequest<R>, id: Int = 1) throws -> R {
+    public func load<R: Codable>(_ request: APIRequest<R>) throws -> R {
         var result: R?
         var error: Error?
 
@@ -48,12 +49,12 @@ public class APIClient {
         return result!
     }
 
-    private func createRequest<R>(_ request: APIRequest<R>, id: Int = 1) throws -> URLRequest {
+    private func createRequest<R>(_ request: APIRequest<R>) throws -> URLRequest {
         var req = URLRequest(url: url)
         req.httpMethod = "POST"
         req.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let jsonObject: Any = [ "jsonrpc": "2.0", "id": id, "method": request.method, "params": request.params ]
+        let jsonObject: Any = [ "jsonrpc": "2.0", "id": request.id, "method": request.method, "params": request.params ]
         if !JSONSerialization.isValidJSONObject(jsonObject) {
             throw APIError.invalidParameters
         }
@@ -107,6 +108,14 @@ extension APIClient {
     public func getTipBlockNumber() throws -> BlockNumber {
         return try load(APIRequest<BlockNumber>(method: "get_tip_block_number"))
     }
+
+    public func getCurrentEpoch() throws -> Epoch {
+        return try load(APIRequest<Epoch>(method: "get_current_epoch"))
+    }
+
+    public func getEpochByNumber(number: EpochNumber) throws -> Epoch {
+        return try load(APIRequest<Epoch>(method: "get_epoch_by_number", params: [number]))
+    }
 }
 
 // MARK: - Pool RPC Methods
@@ -115,24 +124,44 @@ extension APIClient {
     public func sendTransaction(transaction: Transaction) throws -> H256 {
         return try load(APIRequest<H256>(method: "send_transaction", params: [transaction.param]))
     }
+
+    public func txPoolInfo() throws -> TxPoolInfo {
+        return try load(APIRequest<TxPoolInfo>(method: "tx_pool_info", params: []))
+    }
+}
+
+// MARK: - Stats RPC Methods
+
+extension APIClient {
+    public func getBlockchainInfo() throws -> ChainInfo {
+        return try load(APIRequest<ChainInfo>(method: "get_blockchain_info", params: []))
+    }
+
+    public func getPeersState() throws -> [PeerState] {
+        return try load(APIRequest<[PeerState]>(method: "get_peers_state", params: []))
+    }
 }
 
 // MARK: - Network RPC Methods
 
 extension APIClient {
-    public func localNodeInfo() throws -> LocalNode {
-        return try load(APIRequest<LocalNode>(method: "local_node_info", params: []))
+    public func localNodeInfo() throws -> Node {
+        return try load(APIRequest<Node>(method: "local_node_info", params: []))
+    }
+
+    public func getPeers() throws -> [Node] {
+        return try load(APIRequest<[Node]>(method: "get_peers", params: []))
     }
 }
 
-// MARK: - Trace RPC Methods
+// MARK: - Experiment RPC Methods
 
 extension APIClient {
-    public func traceTransaction(transaction: Transaction) throws -> H256 {
-        return try load(APIRequest<H256>(method: "trace_transaction", params: [transaction.param]))
+    public func computeTransactionHash(transaction: Transaction) throws -> H256 {
+        return try load(APIRequest<H256>(method: "_compute_transaction_hash", params: [transaction.param]))
     }
 
-    public func getTransactionTrace(hash: H256) throws -> [TxTrace]? {
-        return try load(APIRequest<[TxTrace]?>(method: "get_transaction_trace", params: [hash]))
+    public func dryRunTransaction(transaction: Transaction) throws -> DryRunResult {
+        return try load(APIRequest<DryRunResult>(method: "dry_run_transaction", params: [transaction.param]))
     }
 }

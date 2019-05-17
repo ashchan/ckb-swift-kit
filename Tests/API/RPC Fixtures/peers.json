@@ -1,0 +1,33 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "addresses": [
+                {
+                    "address": "/ip4/192.168.0.3/tcp/8115",
+                    "score": "1"
+                }
+            ],
+            "is_outbound": true,
+            "node_id": "QmaaaLB4uPyDpZwTQGhV63zuYrKm4reyN2tF1j2ain4oE7",
+            "version": "unknown"
+        },
+        {
+            "addresses": [
+                {
+                    "address": "/ip4/192.168.0.4/tcp/8113",
+                    "score": "255"
+                }
+            ],
+            "is_outbound": false,
+            "node_id": "QmRuGcpVC3vE7aEoB6fhUdq9uzdHbyweCnn1sDBSjfmcbM",
+            "version": "unknown"
+        },
+        {
+            "addresses": [],
+            "node_id": "QmUddxwRqgTmT6tFujXbYPMLGLAE2Tciyv6uHGfdYFyDVa",
+            "version": "unknown"
+        }
+    ]
+}

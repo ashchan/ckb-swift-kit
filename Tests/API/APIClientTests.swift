@@ -9,12 +9,10 @@
 import XCTest
 @testable import CKB
 
-class APIClientTests: XCTestCase {
-    override func invokeTest() {
-        if ProcessInfo().environment["SKIP_RPC_TESTS"] == "1" {
-            return
-        }
-        super.invokeTest()
+class APIClientTests: RPCTestSkippable {
+    func testSettingId() throws {
+        let result = try client.load(APIRequest<H256>(id: 10, method: "get_block_hash", params: ["0"]))
+        XCTAssertNotNil(result)
     }
 
     func testGenesisBlockHash() {
@@ -92,10 +90,41 @@ class APIClientTests: XCTestCase {
         XCTAssertTrue(Int64(result)! > 0)
     }
 
+    func testGetCurrentEpoch() throws {
+        let result = try client.getCurrentEpoch()
+        XCTAssertTrue(UInt64(result.difficulty.dropFirst(2), radix: 16)! >= 0)
+    }
+
+    func testGetEpochByNumber() throws {
+        let number = try client.getCurrentEpoch().number
+        let result = try client.getEpochByNumber(number: number)
+        XCTAssertNotNil(result)
+
+        XCTAssertNil(try? client.getEpochByNumber(number: String(UInt64(number)! + 10_000)))
+    }
+
     func testSendTransactionEmpty() throws {
         let tx = Transaction()
         let result = try? client.sendTransaction(transaction: tx)
         XCTAssertNil(result)
+    }
+
+    func testTxPoolInfo() throws {
+        let result = try client.txPoolInfo()
+        XCTAssertNotNil(result)
+        XCTAssert(UInt32(result.pending)! >= 0)
+    }
+
+    func testGetBlockchainInfo() throws {
+        let result = try client.getBlockchainInfo()
+        XCTAssertNotNil(result)
+        XCTAssertFalse(result.chain.isEmpty)
+    }
+
+    func testGetPeersState() throws {
+        let result = try client.getPeersState()
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
     }
 
     func testLocalNodeInfo() throws {
@@ -104,13 +133,20 @@ class APIClientTests: XCTestCase {
         XCTAssertFalse(result.nodeId.isEmpty)
     }
 
-    func testGetTransactionTraceNioneExistence() throws {
-        XCTAssertNil(try? client.getTransactionTrace(hash: nonexistentHash))
+    func testGetPeers() throws {
+        let result = try client.getPeers()
+        XCTAssertNotNil(result)
     }
 
-    func testTraceTransactionEmpty() throws {
-        let tx = Transaction(deps: [], inputs: [], outputs: [], witnesses: [])
-        let result = try? client.traceTransaction(transaction: tx)
+    func testComputeTransactionHash() throws {
+        let tx = Transaction()
+        let result = try client.computeTransactionHash(transaction: tx)
+        XCTAssertNotNil(result)
+    }
+
+    func testDryRunTransaction() throws {
+        let tx = Transaction()
+        let result = try client.dryRunTransaction(transaction: tx)
         XCTAssertNotNil(result)
     }
 }

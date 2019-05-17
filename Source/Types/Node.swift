@@ -1,5 +1,5 @@
 //
-//  LocalNode.swift
+//  Node.swift
 //  CKB
 //
 //  Created by James Chen on 2019/03/01.
@@ -10,17 +10,19 @@ import Foundation
 
 public struct NodeAddress: Codable {
     public let address: String
-    public let score: UInt8
+    public let score: Number
 }
 
-public struct LocalNode: Codable {
-    public let version: String
+public struct Node: Codable {
+    public let version: Version
     public let nodeId: String
     public let addresses: [NodeAddress]
+    public let isOutbound: Bool?
 
     enum CodingKeys: String, CodingKey {
         case version
         case nodeId = "node_id"
         case addresses
+        case isOutbound = "is_outbound"
     }
 }

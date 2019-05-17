@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Transaction: Codable, Param {
-    public let version: UInt32
+    public let version: Version
     public let deps: [OutPoint]
     public let inputs: [CellInput]
     public let outputs: [CellOutput]
@@ -17,7 +17,7 @@ public struct Transaction: Codable, Param {
     public let hash: H256
 
     public init(
-        version: UInt32 = 0,
+        version: Number = "0",
         deps: [OutPoint] = [],
         inputs: [CellInput] = [],
         outputs: [CellOutput] = [],

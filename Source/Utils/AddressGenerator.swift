@@ -10,10 +10,10 @@ import Foundation
 
 /// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/4f87099a0b1a02a8bc077fc7bea15ce3d9def120/rfcs/0000-address-format/0000-address-format.md),
 /// and [Common Address Format](https://github.com/nervosnetwork/ckb/wiki/Common-Address-Format).
-class AddressGenerator {
+public class AddressGenerator {
     let network: Network
 
-    init(network: Network = .testnet) {
+    public init(network: Network = .testnet) {
         self.network = network
     }
 
@@ -26,7 +26,12 @@ class AddressGenerator {
         }
     }
 
-    func address(for publicKey: String) -> String {
+    public func publicKeyHash(for address: String) -> String? {
+        guard let data = parse(address: address)?.data else { return nil }
+        return Data(data.bytes.suffix(20)).toHexString()
+    }
+
+    public func address(for publicKey: String) -> String {
         return address(for: Data(hex: publicKey))
     }
 
@@ -38,7 +43,7 @@ class AddressGenerator {
         return Bech32().encode(hrp: prefix, data: convertBits(data: payload, fromBits: 8, toBits: 5, pad: true)!)
     }
 
-    func hash(for publicKey: Data) -> Data {
+    public func hash(for publicKey: Data) -> Data {
         return blake160(publicKey)
     }
 

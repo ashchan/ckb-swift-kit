@@ -2,6 +2,42 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+# [v0.12.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.11.0...v0.12.0) (2019-05-18)
+
+
+### Features
+
+* Add address to publicKeyHash ([ae42882](https://github.com/nervosnetwork/ckb-sdk-swift/commit/ae42882))
+* Add system script loading ([c9f06bb](https://github.com/nervosnetwork/ckb-sdk-swift/commit/c9f06bb))
+* Generalize OutPoint struct to reference headers ([28bf93a](https://github.com/nervosnetwork/ckb-sdk-swift/commit/28bf93a))
+* Implement experiment RPC methods ([f9d389d](https://github.com/nervosnetwork/ckb-sdk-swift/commit/f9d389d))
+* Implement get_current_epoch RPC method ([be20881](https://github.com/nervosnetwork/ckb-sdk-swift/commit/be20881))
+* Implement get_epoch_by_number RPC method ([2e7a96a](https://github.com/nervosnetwork/ckb-sdk-swift/commit/2e7a96a))
+* Implement get_peers RPC method ([abecb54](https://github.com/nervosnetwork/ckb-sdk-swift/commit/abecb54))
+* Implement Stats RPC methods ([52ad9f5](https://github.com/nervosnetwork/ckb-sdk-swift/commit/52ad9f5))
+* Implement transaction sign ([bfcb656](https://github.com/nervosnetwork/ckb-sdk-swift/commit/bfcb656))
+* Remove always success script ([96a80c9](https://github.com/nervosnetwork/ckb-sdk-swift/commit/96a80c9))
+* **secp256k1:** Implement ECDSA sign, add test JSON fixture ([fa28824](https://github.com/nervosnetwork/ckb-sdk-swift/commit/fa28824))
+* Implement tx_pool_info RPC method ([6432afc](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6432afc))
+* Stringify RPC number type ([43c2fa9](https://github.com/nervosnetwork/ckb-sdk-swift/commit/43c2fa9))
+* Update Header.proposalsRoot to Header.proposalsHash ([5311a0c](https://github.com/nervosnetwork/ckb-sdk-swift/commit/5311a0c))
+* Update the `param` function of `OutPoint` ([df1c1d0](https://github.com/nervosnetwork/ckb-sdk-swift/commit/df1c1d0))
+
+
+* Remove trace RPC methods ([b0f70b6](https://github.com/nervosnetwork/ckb-sdk-swift/commit/b0f70b6))
+
+
+### Bug Fixes
+
+* Modify data type of `CellOutputWithOutPoint.lock` ([6a5f6c9](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6a5f6c9))
+* RPC request/response id unmatch issue ([8872a85](https://github.com/nervosnetwork/ckb-sdk-swift/commit/8872a85))
+
+
+### BREAKING CHANGES
+
+* Trace RPC methods are removed.
+
+
 # [v0.11.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.10.0...v0.11.0) (2019-05-14)
 
 
