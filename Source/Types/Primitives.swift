@@ -15,6 +15,7 @@ public typealias Timestamp = String
 public typealias ProposalShortId = [UInt8] // Fixed 10-element array representing short hash.
 public typealias Capacity = String
 public typealias Number = String // Unsigned (UInt64)
+public typealias Version = String
 public typealias HexNumber = String
 public typealias BlockNumber = String
 public typealias EpochNumber = String
