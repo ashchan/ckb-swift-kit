@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Transaction: Codable, Param {
-    public let version: Number
+    public let version: Version
     public let deps: [OutPoint]
     public let inputs: [CellInput]
     public let outputs: [CellOutput]

@@ -14,7 +14,7 @@ public struct Seal: Codable {
 }
 
 public struct Header: Codable {
-    public let version: Number
+    public let version: Version
     public let parentHash: H256
     public let timestamp: Timestamp
     public let number: BlockNumber
