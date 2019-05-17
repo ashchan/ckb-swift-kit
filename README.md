@@ -42,7 +42,7 @@ dependencies: [
 
 ## Getting Started
 
-*Note: Many API would throw exception on failure, the following examples all assume there's a surrounding `try {} catch {}` block or throwing function.*
+*Note: Many API methods would throw exception on failure. The following examples all assume that there's a surrounding `do {} catch {}` block or throwing function.*
 
 The `APIClient` class provides JSONRPC access to a CKB node.
 
@@ -59,7 +59,7 @@ print(nodeInfo.version)                        // "0.12.0-pre (rylai30-1-g3e7655
 
 // Get current height
 let height = try apiClient.getTipBlockNumber() // Numbers are represented as strings
-print(height)                                // "10420"
+print(height)                                  // "10420"
 ```
 
 ### Send Capacity Example
@@ -74,7 +74,8 @@ let privateKey: Data = Data(hex: "your private key (hex string)")
 // Push system script's out point into deps
 let deps = [systemScript.outPoint]
 
-// Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's [wallet module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/develop/faucet-server/Sources/App/Services/Wallet/Wallet.swift#L60).
+// Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's
+// [CellService module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/68205ac338fa3ea3a3f007d8485c15de52cb3abd/faucet-server/Sources/App/Services/CellService.swift#L30-L48).
 let inputs: [CellInput] = [/*...*/]
 
 // Generate lock script for the receiver's address
