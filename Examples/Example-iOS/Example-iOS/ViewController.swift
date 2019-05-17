@@ -40,7 +40,7 @@ extension ViewController {
         // Fetch system script which we'll use to generate lock for address
         let nodeUrl = URL(string: "http://localhost:8114")!
         let systemScript = try SystemScript.loadFromGenesisBlock(nodeUrl: nodeUrl)
-        // Fill in with the sender's private key
+        // Fill in the sender's private key
         let privateKey: Data = Data(hex: "your private key (hex string)")
 
         // Push system script's out point into deps
