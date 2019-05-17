@@ -14,7 +14,7 @@ public struct NodeAddress: Codable {
 }
 
 public struct Node: Codable {
-    public let version: Number
+    public let version: Version
     public let nodeId: String
     public let addresses: [NodeAddress]
     public let isOutbound: Bool?
