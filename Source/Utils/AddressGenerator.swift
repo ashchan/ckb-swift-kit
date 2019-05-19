@@ -35,11 +35,19 @@ public class AddressGenerator {
         return address(for: Data(hex: publicKey))
     }
 
-    func address(for publicKey: Data) -> String {
+    public func address(for publicKey: Data) -> String {
+        return address(publicKeyHash: hash(for: publicKey))
+    }
+
+    public func address(publicKeyHash: String) -> String {
+        return address(publicKeyHash: Data(hex: publicKeyHash))
+    }
+
+    public func address(publicKeyHash: Data) -> String {
         // Payload: type(01) | bin-idx("P2PH") | pubkey blake160
         let type = Data([0x01])
         let binIdx = "P2PH".data(using: .ascii)!
-        let payload = type + binIdx + hash(for: publicKey)
+        let payload = type + binIdx + publicKeyHash
         return Bech32().encode(hrp: prefix, data: convertBits(data: payload, fromBits: 8, toBits: 5, pad: true)!)
     }
 
