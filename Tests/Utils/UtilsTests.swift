@@ -22,6 +22,18 @@ class UtilsTests: XCTestCase {
         XCTAssertEqual(address, Utils.privateToAddress(privateKey))
     }
 
+    func testPublicToAddress() {
+        let publicKey = "024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01"
+        let address = "ckt1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6v234ygf"
+        XCTAssertEqual(address, Utils.publicToAddress(publicKey))
+    }
+
+    func testPublicKeyHashToAddress() {
+        let publicKeyHash = "0x36c329ed630d6ce750712a477543672adab57f4c"
+        let address = "ckt1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6v234ygf"
+        XCTAssertEqual(address, Utils.publicKeyHashToAddress(publicKeyHash))
+    }
+
     func testPrefixHex() {
         XCTAssertEqual("0x0001", Utils.prefixHex("0001"))
         XCTAssertEqual("0x0001", Utils.prefixHex("0x0001"))

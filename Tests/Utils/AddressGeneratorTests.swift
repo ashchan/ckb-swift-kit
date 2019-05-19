@@ -16,7 +16,7 @@ class AddressGeneratorTests: XCTestCase {
         XCTAssertEqual(Data(hex: "0x36c329ed630d6ce750712a477543672adab57f4c"), hash)
     }
 
-    func testPubkeyHashToAddressTestnet() {
+    func testPubkeyToAddressTestnet() {
         let generator = AddressGenerator(network: .testnet)
         XCTAssertEqual(
             "ckt1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6v234ygf",
@@ -24,11 +24,35 @@ class AddressGeneratorTests: XCTestCase {
         )
     }
 
-    func testPubkeyHashToAddressMainnet() {
+    func testPubkeyToAddressMainnet() {
         let generator = AddressGenerator(network: .mainnet)
         XCTAssertEqual(
             "ckb1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6vqdd7em",
             generator.address(for: "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01")
+        )
+    }
+
+    func testPubkeyHashToAddressTestnet() {
+        let generator = AddressGenerator(network: .testnet)
+        XCTAssertEqual(
+            "ckt1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6v234ygf",
+            generator.address(publicKeyHash: "0x36c329ed630d6ce750712a477543672adab57f4c")
+        )
+        XCTAssertEqual(
+            "ckt1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6v234ygf",
+            generator.address(publicKeyHash: Data(hex: "0x36c329ed630d6ce750712a477543672adab57f4c"))
+        )
+    }
+
+    func testPubkeyHashToAddressMainnet() {
+        let generator = AddressGenerator(network: .mainnet)
+        XCTAssertEqual(
+            "ckb1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6vqdd7em",
+            generator.address(publicKeyHash: "0x36c329ed630d6ce750712a477543672adab57f4c")
+        )
+        XCTAssertEqual(
+            "ckb1q9gry5zgxmpjnmtrp4kww5r39frh2sm89tdt2l6vqdd7em",
+            generator.address(publicKeyHash: Data(hex: "0x36c329ed630d6ce750712a477543672adab57f4c"))
         )
     }
 
