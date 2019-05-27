@@ -58,14 +58,14 @@ class APIClientTests: RPCTestSkippable {
     }
 
     func testGetBlockHash() throws {
-        let result = try client.getBlockHash(number: "1")
+        let result = try client.getBlockHash(number: "0")
         XCTAssertNotNil(result)
     }
 
     func testGetTipHeader() throws {
         let result = try client.getTipHeader()
         XCTAssertNotNil(result)
-        XCTAssertTrue(Int64(result.number)! > 0)
+        XCTAssertTrue(Int64(result.number)! >= 0)
     }
 
     func testGetCellsByLockHash() throws {
@@ -87,7 +87,7 @@ class APIClientTests: RPCTestSkippable {
 
     func testGetTipBlockNumber() throws {
         let result = try client.getTipBlockNumber()
-        XCTAssertTrue(Int64(result)! > 0)
+        XCTAssertTrue(Int64(result)! >= 0)
     }
 
     func testGetCurrentEpoch() throws {
