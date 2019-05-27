@@ -2,6 +2,14 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 
+# [v0.13.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.12.0...v0.13.0) (2019-06-01)
+
+
+### Features
+
+* Add public key hash (blake160) to address methods ([0759ed7](https://github.com/nervosnetwork/ckb-sdk-swift/commit/0759ed7))
+
+
 # [v0.12.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.11.0...v0.12.0) (2019-05-18)
 
 
