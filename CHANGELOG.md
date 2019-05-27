@@ -8,6 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * Add public key hash (blake160) to address methods ([0759ed7](https://github.com/nervosnetwork/ckb-sdk-swift/commit/0759ed7))
+* Add total_tx_cycles/total_tx_size to tx_pool_info RPC response ([7c3a191](https://github.com/nervosnetwork/ckb-sdk-swift/commit/7c3a191))
 
 
 # [v0.12.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.11.0...v0.12.0) (2019-05-18)
