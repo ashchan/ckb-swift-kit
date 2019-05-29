@@ -15,7 +15,7 @@ Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
 
 ### CocoaPods
 
-Install [CocoaPods](http://cocoapods.org/?q=cryptoSwift) 1.7.0.rc.2 or later.
+Install [CocoaPods](http://cocoapods.org/?q=cryptoSwift) 1.7.0 or later.
 
 Add this to your `Podfile`:
 
