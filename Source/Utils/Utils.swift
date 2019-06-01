@@ -28,6 +28,11 @@ public struct Utils {
         return generator.address(for: publicKey)
     }
 
+    public static func publicKeyHashToAddress(_ publicKeyHash: String, network: Network = .testnet) -> String {
+        let generator = AddressGenerator(network: network)
+        return generator.address(publicKeyHash: publicKeyHash)
+    }
+
     public static func privateToAddress(_ privateKey: String, network: Network = .testnet) -> String {
         let publicKey = privateToPublic(privateKey)
         return publicToAddress(publicKey, network: network)

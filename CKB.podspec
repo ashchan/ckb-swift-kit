@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CKB"
-  s.version      = "0.12.0"
+  s.version      = "0.13.0"
   s.summary      = "Swift SDK for Nervos CKB"
 
   s.description  = <<-DESC
@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.module_name = 'CKB'
   s.ios.deployment_target = "11.0"
+  s.osx.deployment_target = "10.13"
   s.source_files = "Source/**/*.{h,swift}"
   s.public_header_files = "Source/**/*.{h}"
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
