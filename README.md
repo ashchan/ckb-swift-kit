@@ -8,7 +8,7 @@ Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
 ## Prerequisites
 
 * Xcode 10.2 with Swift 5, or higher
-* Target of iOS 11 or higher(we have plan to add macOS support in the near future)
+* Target of iOS 11 or higher / macOS 10.13 or higher
 * CocoaPods or SPM
 
 ## Installation
@@ -26,7 +26,7 @@ target "MyApp" do
   use_frameworks!
   use_modular_headers!
 
-  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.12.0"
+  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.13.0"
 end
 ```
 
@@ -36,7 +36,7 @@ You can also use [Swift Package Manager](https://swift.org/package-manager/). In
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.12.0")
+  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.13.0")
 ]
 ```
 
