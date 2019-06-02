@@ -3,21 +3,46 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1A11347E2228D14300840EE8 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* Node.swift */; };
 		1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C8269222F5D5D0053EC32 /* Blake2b.swift */; };
-		1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */; };
 		1A2188742288FC1700F613CF /* DryRunResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2188732288FC1700F613CF /* DryRunResult.swift */; };
-		1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
 		1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE0228171180024CA71 /* Epoch.swift */; };
+		1A2D6B1C22A35C3500724E66 /* CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A414A6021C2226E00B28C09 /* CKB.framework */; };
+		1A2D6B2222A35C4800724E66 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D6B1B22A35C3500724E66 /* Info.plist */; };
+		1A2D6B2322A35C4B00724E66 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCB9B228C474200157426 /* TestHelper.swift */; };
+		1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
+		1A2D6B2522A35C4F00724E66 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */; };
+		1A2D6B2622A35C4F00724E66 /* SystemScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD96321228D2BF400684FBB /* SystemScriptTests.swift */; };
+		1A2D6B2722A35C5300724E66 /* TransactionSignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */; };
+		1A2D6B2822A35C5A00724E66 /* genesisBlockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4382276939D00C6546F /* genesisBlockHash.json */; };
+		1A2D6B2922A35C5A00724E66 /* genesisBlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43A227694D400C6546F /* genesisBlock.json */; };
+		1A2D6B2A22A35C5A00724E66 /* epoch.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE22281796D0024CA71 /* epoch.json */; };
+		1A2D6B2B22A35C5A00724E66 /* transaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43C2276981700C6546F /* transaction.json */; };
+		1A2D6B2C22A35C5A00724E66 /* tipHeader.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43E2276994000C6546F /* tipHeader.json */; };
+		1A2D6B2D22A35C5A00724E66 /* tipBlockNumber.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4402276998900C6546F /* tipBlockNumber.json */; };
+		1A2D6B2E22A35C5A00724E66 /* sendTransactionEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F442227699D400C6546F /* sendTransactionEmpty.json */; };
+		1A2D6B2F22A35C5A00724E66 /* localNodeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44422769A0600C6546F /* localNodeInfo.json */; };
+		1A2D6B3022A35C5A00724E66 /* peers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDE2282EF7500F0D576 /* peers.json */; };
+		1A2D6B3122A35C5A00724E66 /* liveCellEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44822769C7900C6546F /* liveCellEmpty.json */; };
+		1A2D6B3222A35C5A00724E66 /* txPoolInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */; };
+		1A2D6B3322A35C5A00724E66 /* blockchainInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6872283D10E00C116B2 /* blockchainInfo.json */; };
+		1A2D6B3422A35C5A00724E66 /* peersState.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6892283D15600C116B2 /* peersState.json */; };
+		1A2D6B3522A35C5A00724E66 /* dryRunTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188752288FC7B00F613CF /* dryRunTransaction.json */; };
+		1A2D6B3622A35C5A00724E66 /* computeTransactionHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188772288FEC800F613CF /* computeTransactionHash.json */; };
+		1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A7C21C23A3900B28C09 /* APIClientTests.swift */; };
+		1A2D6B3822A35C5A00724E66 /* APIMockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F4362276904900C6546F /* APIMockingTests.swift */; };
+		1A2D6B3922A35C5D00724E66 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28119621D3805800E7CEC5 /* ScriptTests.swift */; };
+		1A2D6B3A22A35C6400724E66 /* ecdsa_sig.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCB99228C3C4C00157426 /* ecdsa_sig.json */; };
+		1A2D6B3B22A35C6400724E66 /* pubkey.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCBAF228C53C000157426 /* pubkey.json */; };
+		1A2D6B3C22A35C6400724E66 /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
+		1A2D6B3D22A35C6400724E66 /* Blake2bTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */; };
 		1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */; };
-		1A414A6A21C2226E00B28C09 /* CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A414A6021C2226E00B28C09 /* CKB.framework */; };
 		1A414A7121C2226E00B28C09 /* CKB.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A414A6321C2226E00B28C09 /* CKB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A7A21C22A9300B28C09 /* APIClient.swift */; };
-		1A414A7D21C23A3900B28C09 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A7C21C23A3900B28C09 /* APIClientTests.swift */; };
 		1A414A8121C32D4B00B28C09 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8021C32D4B00B28C09 /* APIResult.swift */; };
 		1A414A8321C334EB00B28C09 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8221C334EB00B28C09 /* APIRequest.swift */; };
 		1A414A8821C36FCF00B28C09 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A8721C36FCF00B28C09 /* Header.swift */; };
@@ -30,47 +55,22 @@
 		1A414A9621C37AA000B28C09 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9521C37AA000B28C09 /* Script.swift */; };
 		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
-		1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
 		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
-		1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A58F4362276904900C6546F /* APIMockingTests.swift */; };
-		1A5BCB9D228C475600157426 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCB9B228C474200157426 /* TestHelper.swift */; };
-		1A5BCB9E228C49D600157426 /* genesisBlockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4382276939D00C6546F /* genesisBlockHash.json */; };
-		1A5BCB9F228C49D600157426 /* genesisBlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43A227694D400C6546F /* genesisBlock.json */; };
-		1A5BCBA0228C49D600157426 /* epoch.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE22281796D0024CA71 /* epoch.json */; };
-		1A5BCBA1228C49D600157426 /* transaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43C2276981700C6546F /* transaction.json */; };
-		1A5BCBA2228C49D600157426 /* tipHeader.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43E2276994000C6546F /* tipHeader.json */; };
-		1A5BCBA3228C49D600157426 /* tipBlockNumber.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4402276998900C6546F /* tipBlockNumber.json */; };
-		1A5BCBA4228C49D600157426 /* sendTransactionEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F442227699D400C6546F /* sendTransactionEmpty.json */; };
-		1A5BCBA5228C49D600157426 /* localNodeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44422769A0600C6546F /* localNodeInfo.json */; };
-		1A5BCBA6228C49D600157426 /* peers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDE2282EF7500F0D576 /* peers.json */; };
-		1A5BCBA7228C49D600157426 /* liveCellEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44822769C7900C6546F /* liveCellEmpty.json */; };
-		1A5BCBA8228C49D600157426 /* txPoolInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */; };
-		1A5BCBA9228C49D600157426 /* blockchainInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6872283D10E00C116B2 /* blockchainInfo.json */; };
-		1A5BCBAA228C49D600157426 /* peersState.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AA9B6892283D15600C116B2 /* peersState.json */; };
-		1A5BCBAB228C49D600157426 /* dryRunTransaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188752288FC7B00F613CF /* dryRunTransaction.json */; };
-		1A5BCBAC228C49D600157426 /* computeTransactionHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2188772288FEC800F613CF /* computeTransactionHash.json */; };
-		1A5BCBAD228C49D900157426 /* ecdsa_sig.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCB99228C3C4C00157426 /* ecdsa_sig.json */; };
-		1A5BCBB0228C53C000157426 /* pubkey.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCBAF228C53C000157426 /* pubkey.json */; };
 		1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB2228C571200157426 /* Transaction+Sign.swift */; };
-		1A5BCBB6228C6BB400157426 /* TransactionSignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */; };
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
 		1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6852283CE4500C116B2 /* PeerState.swift */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
-		1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
-		1AC180932264672B00D243D9 /* Bech32Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180922264672B00D243D9 /* Bech32Tests.swift */; };
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
 		1AD3195F225DBCB300F41790 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195E225DBCB300F41790 /* Network.swift */; };
-		1AD31961225DBD8A00F41790 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */; };
 		1AD96320228D24FB00684FBB /* SystemScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9631F228D24FB00684FBB /* SystemScript.swift */; };
-		1AD96322228D2BF400684FBB /* SystemScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD96321228D2BF400684FBB /* SystemScriptTests.swift */; };
 		1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7C62B2251BCA9003FA254 /* Witness.swift */; };
 		2D6EA000E9B8936CB81356CC /* Pods_CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4BD554CBEED5D384A1C737 /* Pods_CKB.framework */; };
-		591DADB7D11BC8F71DBF4902 /* Pods_CKBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */; };
+		C5FC62F40419407D3FC2BB33 /* Pods_CKBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A414A6B21C2226E00B28C09 /* PBXContainerItemProxy */ = {
+		1A2D6B1D22A35C3500724E66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A414A5721C2226E00B28C09 /* Project object */;
 			proxyType = 1;
@@ -89,12 +89,12 @@
 		1A28119621D3805800E7CEC5 /* ScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTests.swift; sourceTree = "<group>"; };
 		1A2CDAE0228171180024CA71 /* Epoch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epoch.swift; sourceTree = "<group>"; };
 		1A2CDAE22281796D0024CA71 /* epoch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = epoch.json; sourceTree = "<group>"; };
+		1A2D6B1722A35C3500724E66 /* CKBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CKBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2D6B1B22A35C3500724E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingClient.swift; sourceTree = "<group>"; };
 		1A414A6021C2226E00B28C09 /* CKB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CKB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A414A6321C2226E00B28C09 /* CKB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKB.h; sourceTree = "<group>"; };
 		1A414A6421C2226E00B28C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A414A6921C2226E00B28C09 /* CKBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CKBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A414A7021C2226E00B28C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A414A7A21C22A9300B28C09 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		1A414A7C21C23A3900B28C09 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		1A414A8021C32D4B00B28C09 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
@@ -152,20 +152,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1A2D6B1422A35C3500724E66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2D6B1C22A35C3500724E66 /* CKB.framework in Frameworks */,
+				C5FC62F40419407D3FC2BB33 /* Pods_CKBTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A414A5D21C2226E00B28C09 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2D6EA000E9B8936CB81356CC /* Pods_CKB.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A414A6621C2226E00B28C09 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1A414A6A21C2226E00B28C09 /* CKB.framework in Frameworks */,
-				591DADB7D11BC8F71DBF4902 /* Pods_CKBTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +178,20 @@
 				1A28119621D3805800E7CEC5 /* ScriptTests.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		1A2D6AE022A35B3100724E66 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1AB45ED8222AA624009B395B /* Crypto */,
+				1A28119521D3804600E7CEC5 /* Types */,
+				1A414A7F21C32D2500B28C09 /* API */,
+				1A5BCBB4228C6B9200157426 /* Signers */,
+				1A414AA121C7711200B28C09 /* Utils */,
+				1A5BCB9B228C474200157426 /* TestHelper.swift */,
+				1A2D6B1B22A35C3500724E66 /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		1A38CA6522768FDD00BEA1F3 /* RPC Fixtures */ = {
@@ -206,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				1A414A6221C2226E00B28C09 /* Source */,
-				1A414A6D21C2226E00B28C09 /* Tests */,
+				1A2D6AE022A35B3100724E66 /* Tests */,
 				1A414A6121C2226E00B28C09 /* Products */,
 				D8E741B1A7B0D4DFBEDB15BE /* Pods */,
 				4F766494AD6DB6539413DFD4 /* Frameworks */,
@@ -217,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				1A414A6021C2226E00B28C09 /* CKB.framework */,
-				1A414A6921C2226E00B28C09 /* CKBTests.xctest */,
+				1A2D6B1722A35C3500724E66 /* CKBTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,20 +248,6 @@
 				1A414A6421C2226E00B28C09 /* Info.plist */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		1A414A6D21C2226E00B28C09 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				1AB45ED8222AA624009B395B /* Crypto */,
-				1A28119521D3804600E7CEC5 /* Types */,
-				1A414A7F21C32D2500B28C09 /* API */,
-				1A5BCBB4228C6B9200157426 /* Signers */,
-				1A414AA121C7711200B28C09 /* Utils */,
-				1A5BCB9B228C474200157426 /* TestHelper.swift */,
-				1A414A7021C2226E00B28C09 /* Info.plist */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		1A414A7E21C32D1D00B28C09 /* API */ = {
@@ -397,6 +397,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1A2D6B1622A35C3500724E66 /* CKBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2D6B1F22A35C3500724E66 /* Build configuration list for PBXNativeTarget "CKBTests" */;
+			buildPhases = (
+				2A7F5DC7E2FF901D89A17A03 /* [CP] Check Pods Manifest.lock */,
+				1A2D6B1322A35C3500724E66 /* Sources */,
+				1A2D6B1422A35C3500724E66 /* Frameworks */,
+				1A2D6B1522A35C3500724E66 /* Resources */,
+				E865072303470127BD22A421 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A2D6B1E22A35C3500724E66 /* PBXTargetDependency */,
+			);
+			name = CKBTests;
+			productName = CKBTests;
+			productReference = 1A2D6B1722A35C3500724E66 /* CKBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1A414A5F21C2226E00B28C09 /* CKB */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A414A7421C2226E00B28C09 /* Build configuration list for PBXNativeTarget "CKB" */;
@@ -417,26 +437,6 @@
 			productReference = 1A414A6021C2226E00B28C09 /* CKB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		1A414A6821C2226E00B28C09 /* CKBTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1A414A7721C2226E00B28C09 /* Build configuration list for PBXNativeTarget "CKBTests" */;
-			buildPhases = (
-				2D5F8B67D567011B86AD7F8D /* [CP] Check Pods Manifest.lock */,
-				1A414A6521C2226E00B28C09 /* Sources */,
-				1A414A6621C2226E00B28C09 /* Frameworks */,
-				1A414A6721C2226E00B28C09 /* Resources */,
-				9ECFF0691DD0F1617C072ED9 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1A414A6C21C2226E00B28C09 /* PBXTargetDependency */,
-			);
-			name = CKBTests;
-			productName = CKBTests;
-			productReference = 1A414A6921C2226E00B28C09 /* CKBTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -447,11 +447,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Nervos Foundation";
 				TargetAttributes = {
-					1A414A5F21C2226E00B28C09 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1020;
+					1A2D6B1622A35C3500724E66 = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
-					1A414A6821C2226E00B28C09 = {
+					1A414A5F21C2226E00B28C09 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 					};
@@ -471,40 +470,41 @@
 			projectRoot = "";
 			targets = (
 				1A414A5F21C2226E00B28C09 /* CKB */,
-				1A414A6821C2226E00B28C09 /* CKBTests */,
+				1A2D6B1622A35C3500724E66 /* CKBTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1A2D6B1522A35C3500724E66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2D6B2E22A35C5A00724E66 /* sendTransactionEmpty.json in Resources */,
+				1A2D6B3222A35C5A00724E66 /* txPoolInfo.json in Resources */,
+				1A2D6B2C22A35C5A00724E66 /* tipHeader.json in Resources */,
+				1A2D6B2922A35C5A00724E66 /* genesisBlock.json in Resources */,
+				1A2D6B2D22A35C5A00724E66 /* tipBlockNumber.json in Resources */,
+				1A2D6B2A22A35C5A00724E66 /* epoch.json in Resources */,
+				1A2D6B3022A35C5A00724E66 /* peers.json in Resources */,
+				1A2D6B3122A35C5A00724E66 /* liveCellEmpty.json in Resources */,
+				1A2D6B2B22A35C5A00724E66 /* transaction.json in Resources */,
+				1A2D6B3522A35C5A00724E66 /* dryRunTransaction.json in Resources */,
+				1A2D6B3622A35C5A00724E66 /* computeTransactionHash.json in Resources */,
+				1A2D6B3B22A35C6400724E66 /* pubkey.json in Resources */,
+				1A2D6B3422A35C5A00724E66 /* peersState.json in Resources */,
+				1A2D6B3322A35C5A00724E66 /* blockchainInfo.json in Resources */,
+				1A2D6B2822A35C5A00724E66 /* genesisBlockHash.json in Resources */,
+				1A2D6B2222A35C4800724E66 /* Info.plist in Resources */,
+				1A2D6B3A22A35C6400724E66 /* ecdsa_sig.json in Resources */,
+				1A2D6B2F22A35C5A00724E66 /* localNodeInfo.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A414A5E21C2226E00B28C09 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A414A6721C2226E00B28C09 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1A5BCBA6228C49D600157426 /* peers.json in Resources */,
-				1A5BCBA4228C49D600157426 /* sendTransactionEmpty.json in Resources */,
-				1A5BCBAC228C49D600157426 /* computeTransactionHash.json in Resources */,
-				1A5BCBAA228C49D600157426 /* peersState.json in Resources */,
-				1A5BCBA8228C49D600157426 /* txPoolInfo.json in Resources */,
-				1A5BCBA3228C49D600157426 /* tipBlockNumber.json in Resources */,
-				1A5BCBA7228C49D600157426 /* liveCellEmpty.json in Resources */,
-				1A5BCBB0228C53C000157426 /* pubkey.json in Resources */,
-				1A5BCBAB228C49D600157426 /* dryRunTransaction.json in Resources */,
-				1A5BCBAD228C49D900157426 /* ecdsa_sig.json in Resources */,
-				1A5BCBA9228C49D600157426 /* blockchainInfo.json in Resources */,
-				1A5BCB9F228C49D600157426 /* genesisBlock.json in Resources */,
-				1A5BCBA2228C49D600157426 /* tipHeader.json in Resources */,
-				1A5BCBA0228C49D600157426 /* epoch.json in Resources */,
-				1A5BCBA1228C49D600157426 /* transaction.json in Resources */,
-				1A5BCB9E228C49D600157426 /* genesisBlockHash.json in Resources */,
-				1A5BCBA5228C49D600157426 /* localNodeInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +529,28 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		2A7F5DC7E2FF901D89A17A03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CKBTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2BD14A1EEA7F2D04671DE503 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -551,29 +573,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D5F8B67D567011B86AD7F8D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CKBTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9ECFF0691DD0F1617C072ED9 /* [CP] Embed Pods Frameworks */ = {
+		E865072303470127BD22A421 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -593,6 +593,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1A2D6B1322A35C3500724E66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2D6B2322A35C4B00724E66 /* TestHelper.swift in Sources */,
+				1A2D6B3D22A35C6400724E66 /* Blake2bTests.swift in Sources */,
+				1A2D6B3C22A35C6400724E66 /* Secp256k1Tests.swift in Sources */,
+				1A2D6B2522A35C4F00724E66 /* AddressGeneratorTests.swift in Sources */,
+				1A2D6B3822A35C5A00724E66 /* APIMockingTests.swift in Sources */,
+				1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */,
+				1A2D6B3922A35C5D00724E66 /* ScriptTests.swift in Sources */,
+				1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */,
+				1A2D6B2622A35C4F00724E66 /* SystemScriptTests.swift in Sources */,
+				1A2D6B2722A35C5300724E66 /* TransactionSignTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A414A5C21C2226E00B28C09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -628,35 +645,59 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1A414A6521C2226E00B28C09 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1A28119721D3805800E7CEC5 /* ScriptTests.swift in Sources */,
-				1A414A7D21C23A3900B28C09 /* APIClientTests.swift in Sources */,
-				1A414AA521C7713800B28C09 /* UtilsTests.swift in Sources */,
-				1A58F4372276904A00C6546F /* APIMockingTests.swift in Sources */,
-				1AD96322228D2BF400684FBB /* SystemScriptTests.swift in Sources */,
-				1AC180932264672B00D243D9 /* Bech32Tests.swift in Sources */,
-				1AB45EDA222AA644009B395B /* Secp256k1Tests.swift in Sources */,
-				1A5BCB9D228C475600157426 /* TestHelper.swift in Sources */,
-				1AD31961225DBD8A00F41790 /* AddressGeneratorTests.swift in Sources */,
-				1A1C826C222F5D7B0053EC32 /* Blake2bTests.swift in Sources */,
-				1A5BCBB6228C6BB400157426 /* TransactionSignTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1A414A6C21C2226E00B28C09 /* PBXTargetDependency */ = {
+		1A2D6B1E22A35C3500724E66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1A414A5F21C2226E00B28C09 /* CKB */;
-			targetProxy = 1A414A6B21C2226E00B28C09 /* PBXContainerItemProxy */;
+			targetProxy = 1A2D6B1D22A35C3500724E66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1A2D6B2022A35C3500724E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3280C4848C7A8236CA5F4CD8 /* Pods-CKBTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB.CKBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1A2D6B2122A35C3500724E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CAEE4335089142E8F3ECC55 /* Pods-CKBTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB.CKBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		1A414A7221C2226E00B28C09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -800,6 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -828,43 +870,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		1A414A7821C2226E00B28C09 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3280C4848C7A8236CA5F4CD8 /* Pods-CKBTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKBTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1A414A7921C2226E00B28C09 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CAEE4335089142E8F3ECC55 /* Pods-CKBTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKBTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -873,6 +880,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1A2D6B1F22A35C3500724E66 /* Build configuration list for PBXNativeTarget "CKBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2D6B2022A35C3500724E66 /* Debug */,
+				1A2D6B2122A35C3500724E66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1A414A5A21C2226E00B28C09 /* Build configuration list for PBXProject "CKB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -887,15 +903,6 @@
 			buildConfigurations = (
 				1A414A7521C2226E00B28C09 /* Debug */,
 				1A414A7621C2226E00B28C09 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1A414A7721C2226E00B28C09 /* Build configuration list for PBXNativeTarget "CKBTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1A414A7821C2226E00B28C09 /* Debug */,
-				1A414A7921C2226E00B28C09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

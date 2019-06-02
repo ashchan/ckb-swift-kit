@@ -20,7 +20,7 @@ Install [CocoaPods](http://cocoapods.org/?q=cryptoSwift) 1.7.0 or later.
 Add this to your `Podfile`:
 
 ```ruby
-platform :ios, "11.0"
+platform :osx, "10.13"
 
 target "MyApp" do
   use_frameworks!
