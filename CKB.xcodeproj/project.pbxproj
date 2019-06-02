@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		1A2188742288FC1700F613CF /* DryRunResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2188732288FC1700F613CF /* DryRunResult.swift */; };
 		1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE0228171180024CA71 /* Epoch.swift */; };
 		1A2D6B1C22A35C3500724E66 /* CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A414A6021C2226E00B28C09 /* CKB.framework */; };
-		1A2D6B2222A35C4800724E66 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D6B1B22A35C3500724E66 /* Info.plist */; };
 		1A2D6B2322A35C4B00724E66 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCB9B228C474200157426 /* TestHelper.swift */; };
 		1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414AA421C7713800B28C09 /* UtilsTests.swift */; };
 		1A2D6B2522A35C4F00724E66 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */; };
@@ -495,7 +494,6 @@
 				1A2D6B3422A35C5A00724E66 /* peersState.json in Resources */,
 				1A2D6B3322A35C5A00724E66 /* blockchainInfo.json in Resources */,
 				1A2D6B2822A35C5A00724E66 /* genesisBlockHash.json in Resources */,
-				1A2D6B2222A35C4800724E66 /* Info.plist in Resources */,
 				1A2D6B3A22A35C6400724E66 /* ecdsa_sig.json in Resources */,
 				1A2D6B2F22A35C5A00724E66 /* localNodeInfo.json in Resources */,
 			);
