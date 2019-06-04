@@ -78,6 +78,7 @@ let deps = [systemScript.outPoint]
 // Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's
 // [CellService module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/68205ac338fa3ea3a3f007d8485c15de52cb3abd/faucet-server/Sources/App/Services/CellService.swift#L30-L48).
 let inputs: [CellInput] = [/*...*/]
+let witnesses: [Witness] = [/*...*/]
 
 // Generate lock script for the receiver's address
 let toAddress = "ckt1q9gry5zgw2q74lpmm03tw9snpqph2myqkkpyfss95qs228"
@@ -87,7 +88,7 @@ let lockScript = Script(args: [addressHash], codeHash: systemScript.codeHash)
 let outputs = [CellOutput(capacity: 500_00_000_000.description, data: "0x", lock: lockScript, type: nil)]
 
 // Generate the transaction
-let tx = Transaction(deps: deps, inputs: inputs, outputs: outputs)
+let tx = Transaction(deps: deps, inputs: inputs, outputs: outputs, witnesses: witnesses)
 // For now we need to call the `computeTransactionHash` to get the tx hash
 let apiClient = APIClient(url: nodeUrl)
 let txHash = try apiClient.computeTransactionHash(transaction: tx)
