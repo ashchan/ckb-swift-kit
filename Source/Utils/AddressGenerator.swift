@@ -27,7 +27,9 @@ public class AddressGenerator {
     }
 
     public func publicKeyHash(for address: String) -> String? {
-        guard let data = parse(address: address)?.data else { return nil }
+        guard let data = parse(address: address)?.data else {
+            return nil
+        }
         return Data(data.bytes.suffix(20)).toHexString()
     }
 
