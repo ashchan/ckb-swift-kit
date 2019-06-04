@@ -12,7 +12,7 @@ public struct CellInput: Codable, Param {
     public let previousOutput: OutPoint
     public let since: Number
 
-    public init(previousOutput: OutPoint, args: [HexString], since: Number) {
+    public init(previousOutput: OutPoint, since: Number) {
         self.previousOutput = previousOutput
         self.since = since
     }
