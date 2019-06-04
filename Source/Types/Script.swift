@@ -39,16 +39,3 @@ public struct Script: Codable, Param {
         self.codeHash = Utils.prefixHex(codeHash)
     }
 }
-
-public extension Script {
-    static func verifyScript(for publicKey: String, codeHash: String) -> Script {
-        let args = [
-            Utils.prefixHex(publicKey.data(using: .utf8)!.toHexString())
-            // Although public key itself is a hex string, when loaded as binary the format is ignored.
-        ]
-        return Script(
-            args: args,
-            codeHash: codeHash
-        )
-    }
-}
