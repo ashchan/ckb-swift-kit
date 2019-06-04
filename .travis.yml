@@ -1,4 +1,4 @@
-language: objective-c
+language: swift
 osx_image: xcode10.2
 env:
   - SKIP_RPC_TESTS=1
@@ -11,5 +11,4 @@ before_install:
   - pod --version
   - travis_wait pod repo update --silent
 after_success:
-  - sleep 5
   - bash <(curl -s https://codecov.io/bash) -J 'CKB'

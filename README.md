@@ -2,6 +2,7 @@
 
 [![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20Linux-4e4e4e.svg?colorA=28a745)](#installation)
 [![TravisCI](https://travis-ci.com/nervosnetwork/ckb-sdk-swift.svg?branch=develop)](https://travis-ci.com/nervosnetwork/ckb-sdk-swift)
+[![Codecov](https://codecov.io/gh/nervosnetwork/ckb-sdk-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/nervosnetwork/ckb-sdk-swift/branch/develop)
 [![Telegram Group](https://cdn.rawgit.com/Patrolavia/telegram-badge/8fe3382b/chat.svg)](https://t.me/nervos_ckb_dev)
 
 Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
