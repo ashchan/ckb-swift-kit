@@ -2,7 +2,7 @@ PODS:
   - CryptoSwift (1.0.0)
   - secp256k1.swift (0.1.4)
   - Sodium (0.8.0)
-  - SwiftLint (0.29.1)
+  - SwiftLint (0.33.0)
 
 DEPENDENCIES:
   - CryptoSwift (~> 1.0.0)
@@ -21,7 +21,7 @@ SPEC CHECKSUMS:
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   Sodium: 63c0ca312a932e6da481689537d4b35568841bdc
-  SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
 PODFILE CHECKSUM: 5c4c4a4a60743a7925b0294f5a96868be334a95c
 
