@@ -54,6 +54,7 @@
 		1A414A9621C37AA000B28C09 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9521C37AA000B28C09 /* Script.swift */; };
 		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
+		1A4A4BAB22A6BF40003DC827 /* CellOutputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */; };
 		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
 		1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB2228C571200157426 /* Transaction+Sign.swift */; };
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
@@ -109,6 +110,7 @@
 		1A414A9921C3879500B28C09 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1A414A9F21C770DD00B28C09 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOutputTests.swift; sourceTree = "<group>"; };
 		1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxPoolInfo.swift; sourceTree = "<group>"; };
 		1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = txPoolInfo.json; sourceTree = "<group>"; };
 		1A4AEBDE2282EF7500F0D576 /* peers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peers.json; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				1A28119621D3805800E7CEC5 /* ScriptTests.swift */,
+				1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				1A2D6B3C22A35C6400724E66 /* Secp256k1Tests.swift in Sources */,
 				1A2D6B2522A35C4F00724E66 /* AddressGeneratorTests.swift in Sources */,
 				1A2D6B3822A35C5A00724E66 /* APIMockingTests.swift in Sources */,
+				1A4A4BAB22A6BF40003DC827 /* CellOutputTests.swift in Sources */,
 				1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */,
 				1A2D6B3922A35C5D00724E66 /* ScriptTests.swift in Sources */,
 				1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */,
