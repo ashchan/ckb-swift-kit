@@ -36,6 +36,9 @@ class TransactionSignTests: XCTestCase {
                     lock: Script(args: ["0x36c329ed630d6ce750712a477543672adab57f4c"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 )
+            ],
+            witnesses: [
+                Witness(data: [])
             ]
         )
         let privateKey = Data(hex: "0xe79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
@@ -47,8 +50,7 @@ class TransactionSignTests: XCTestCase {
             signed.witnesses.first!.data,
             [
                 "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01",
-                 "0x304402207c82346909c13b86a97c38a50b4868b52735ca2e7e59b14f99102159c12ff25f0220511ef5974060510e8cb363877843bd85550805f668676771bfc47e36bc5b8aa2",
-                 "0x4600000000000000"
+                "0x304402202c643579e47045be050d3842ed9270151af8885e33954bddad0e53e81d1c2dbe02202dc637877a8302110846ebc6a16d9148c106e25f945063ad1c4d4db2b6952408"
             ]
         )
     }
