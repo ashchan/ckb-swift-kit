@@ -17,12 +17,15 @@ matrix:
       env: SKIP_RPC_TESTS=1
     - name: Tests with RPC
       if: branch = master
-      env: SKIP_RPC_TESTS=0
+      env:
+        - SKIP_RPC_TESTS=0
+        - CKB_VERSION=v0.13.0
+        - CKB_FILENAME=ckb_${CKB_VERSION}_x86_64-apple-darwin
       before_script:
         - mkdir ckb
-        - curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
-        - unzip ckb_v0.13.0_x86_64-apple-darwin.zip
-        - export PATH=$PATH:$PWD/ckb_v0.13.0_x86_64-apple-darwin/
+        - curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
+        - unzip $CKB_FILENAME.zip
+        - export PATH=$PATH:$PWD/$CKB_FILENAME/
         - ckb init
         - ckb run&
 
