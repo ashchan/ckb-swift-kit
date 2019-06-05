@@ -1,14 +1,31 @@
 language: swift
 osx_image: xcode10.2
-env:
-  - SKIP_RPC_TESTS=1
 
 xcode_workspace: CKB.xcworkspace
 xcode_scheme: CKB
 xcode_destination: platform=OS X,arch=x86_64
+
 before_install:
   - gem install cocoapods -N
   - pod --version
   - travis_wait pod repo update --silent
+
+matrix:
+  include:
+    - name: Tests without RPC
+      if: NOT branch = master
+      env: SKIP_RPC_TESTS=1
+    - name: Tests with RPC
+      if: branch = master
+      env: SKIP_RPC_TESTS=0
+      before_script:
+        - mkdir ckb
+        - curl -O -L https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0.13.0_x86_64-apple-darwin.zip
+        - unzip ckb_v0.13.0_x86_64-apple-darwin.zip
+        - export PATH=$PATH:$PWD/ckb_v0.13.0_x86_64-apple-darwin/
+        - ckb init
+        - ckb run&
+
+
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'CKB'
