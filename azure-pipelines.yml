@@ -21,11 +21,11 @@ steps:
     cd $CKB_FILENAME
     ./ckb init
     ./ckb run&
-  displayName: 'Download CKB Binary $(CKB_FILENAME)'
+  displayName: 'Download CKB Binary'
   env: { CKB_FILENAME: 'ckb_$(CKB_VERSION)_x86_64-apple-darwin' }
 
 - task: Xcode@5
-  displayName: 'CKB Swift SDK Tests (no RPC)'
+  displayName: 'CKB Swift SDK Full Tests'
   inputs:
     actions: 'build test'
     sdk: '$(sdk)'
@@ -38,3 +38,5 @@ steps:
     publishJUnitResults: true
     # packageApp: false
 
+- script: bash <(curl https://codecov.io/bash)
+  displayName: 'Codecov'
