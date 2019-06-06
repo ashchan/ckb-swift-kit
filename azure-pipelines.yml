@@ -12,6 +12,17 @@ steps:
   displayName: 'pod install using the CocoaPods task with defaults'
   inputs:
     forceRepoUpdate: true
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'mkdir ckb
+      curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
+      unzip $CKB_FILENAME.zip
+      export PATH=$PATH:$PWD/$CKB_FILENAME/
+      ckb init
+      ckb run&'
+
 - task: Xcode@5
   displayName: 'CKB Swift SDK Tests (no RPC)'
   inputs:
@@ -25,3 +36,4 @@ steps:
     useXcpretty: true
     publishJUnitResults: true
     # packageApp: false
+
