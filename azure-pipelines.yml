@@ -6,6 +6,8 @@ variables:
   sdk: 'macosx10.14'
   configuration: 'Debug'
   skip_rpc_tests: 1
+  ckb_version: 'v0.13.0'
+  ckb_file_name: 'ckb_${CKB_VERSION}_x86_64-apple-darwin'
 
 steps:
 - task: CocoaPods@0
@@ -16,12 +18,12 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'mkdir ckb
-      curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
-      unzip $CKB_FILENAME.zip
-      export PATH=$PATH:$PWD/$CKB_FILENAME/
-      ckb init
-      ckb run&'
+    script: 'mkdir ckb;
+      curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$(CKB_VERSION)/$(CKB_FILENAME).zip;
+      unzip $(CKB_FILENAME).zip;
+      cd $(CKB_FILENAME);
+      ./ckb init;
+      ./ckb run&'
 
 - task: Xcode@5
   displayName: 'CKB Swift SDK Tests (no RPC)'
