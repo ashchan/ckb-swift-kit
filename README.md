@@ -1,6 +1,7 @@
 # CKB SDK Swift
 
 [![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20Linux-4e4e4e.svg?colorA=28a745)](#installation)
+[![Azure Pipelines](https://dev.azure.com/nervosnetwork/ckb-sdk-swift/_apis/build/status/nervosnetwork.ckb-sdk-swift?branchName=develop)](https://dev.azure.com/nervosnetwork/ckb-sdk-swift/_build/latest?definitionId=7&branchName=develop)
 [![TravisCI](https://travis-ci.com/nervosnetwork/ckb-sdk-swift.svg?branch=develop)](https://travis-ci.com/nervosnetwork/ckb-sdk-swift)
 [![Codecov](https://codecov.io/gh/nervosnetwork/ckb-sdk-swift/branch/master/graph/badge.svg)](https://codecov.io/gh/nervosnetwork/ckb-sdk-swift/branch/master)
 [![Telegram Group](https://cdn.rawgit.com/Patrolavia/telegram-badge/8fe3382b/chat.svg)](https://t.me/nervos_ckb_dev)
