@@ -18,13 +18,13 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: '
-      mkdir ckb;
-      curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$(CKB_VERSION)/$(CKB_FILENAME).zip;
-      unzip $(CKB_FILENAME).zip;
-      cd $(CKB_FILENAME);
-      ./ckb init;
-      ./ckb run&'
+    script: |
+      mkdir ckb
+      curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$(CKB_VERSION)/$(CKB_FILENAME).zip
+      unzip $(CKB_FILENAME).zip
+      cd $(CKB_FILENAME)
+      ./ckb init
+      ./ckb run&
 
 - task: Xcode@5
   displayName: 'CKB Swift SDK Tests (no RPC)'
