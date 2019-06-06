@@ -1,0 +1,24 @@
+pool:
+  vmImage: 'macos-10.14'
+
+variables:
+  scheme: 'CKB'
+  sdk: 'macosx10.14'
+  configuration: 'Debug'
+
+steps:
+- task: CocoaPods@0
+  displayName: 'pod install using the CocoaPods task with defaults'
+- task: Xcode@5
+  displayName: 'CKB Swift SDK Tests (no RPC)'
+  inputs:
+    actions: 'build test'
+    sdk: '$(sdk)'
+    scheme: '$(scheme)'
+    configuration: '$(configuration)'
+    xcWorkspacePath: 'CKB.xcworkspace'
+    xcodeVersion: '10' # Options: 8, 9, 10, default, specifyPath
+    signingOption: 'nosign'
+    useXcpretty: true
+    publishJUnitResults: true
+    packageApp: false
