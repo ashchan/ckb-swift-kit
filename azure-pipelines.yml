@@ -5,10 +5,13 @@ variables:
   scheme: 'CKB'
   sdk: 'macosx10.14'
   configuration: 'Debug'
+  skip_rpc_tests: 1
 
 steps:
 - task: CocoaPods@0
   displayName: 'pod install using the CocoaPods task with defaults'
+  inputs:
+    forceRepoUpdate: true
 - task: Xcode@5
   displayName: 'CKB Swift SDK Tests (no RPC)'
   inputs:
@@ -21,4 +24,4 @@ steps:
     signingOption: 'nosign'
     useXcpretty: true
     publishJUnitResults: true
-    packageApp: false
+    # packageApp: false
