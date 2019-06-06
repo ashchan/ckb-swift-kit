@@ -38,5 +38,5 @@ steps:
     publishJUnitResults: true
     # packageApp: false
 
-- script: bash <(curl https://codecov.io/bash)
+- script: bash <(curl -s https://codecov.io/bash) -J 'CKB'
   displayName: 'Codecov'
