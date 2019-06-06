@@ -16,12 +16,12 @@ steps:
 
 - bash: |
     mkdir ckb
-    curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$(CKB_VERSION)/$(CKB_FILENAME).zip
-    unzip $(CKB_FILENAME).zip
-    cd $(CKB_FILENAME)
+    curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
+    unzip $CKB_FILENAME.zip
+    cd $CKB_FILENAME
     ./ckb init
     ./ckb run&
-  env: { ckb_filename: 'ckb_$(CKB_VERSION)_x86_64-apple-darwin' }
+  env: { CKB_FILENAME: 'ckb_$CKB_VERSION_x86_64-apple-darwin' }
 
 - task: Xcode@5
   displayName: 'CKB Swift SDK Tests (no RPC)'
