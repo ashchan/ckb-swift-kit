@@ -26,5 +26,5 @@ matrix:
         - ckb run&
 
 
-#after_success:
-#  - bash <(curl -s https://codecov.io/bash) -J 'CKB'
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J 'CKB'

@@ -37,6 +37,3 @@ steps:
     useXcpretty: true
     publishJUnitResults: true
     # packageApp: false
-
-- script: bash <(curl -s https://codecov.io/bash) -J 'CKB'
-  displayName: 'Codecov'
