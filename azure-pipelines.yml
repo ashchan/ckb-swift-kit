@@ -18,8 +18,8 @@ variables:
 
 steps:
 - bash: |
-  ckb init
-  ckb run
+    ckb init
+    ckb run
 
 - task: CocoaPods@0
   displayName: 'pod install using the CocoaPods task with defaults'
