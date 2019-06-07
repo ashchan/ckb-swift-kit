@@ -1,6 +1,14 @@
 pool:
   vmImage: 'macos-10.14'
 
+services:
+  ckb:
+    image: nervos/ckb:v0.14.0-rc1
+    volumes:
+    - ckb-dev:/var/lib/ckb
+    ports:
+    - 8114:8114
+
 variables:
   scheme: 'CKB'
   sdk: 'macosx10.14'
@@ -9,6 +17,10 @@ variables:
   ckb_version: 'v0.14.0-rc1'
 
 steps:
+- bash: |
+  ckb init
+  ckb run
+
 - task: CocoaPods@0
   displayName: 'pod install using the CocoaPods task with defaults'
   inputs:
@@ -19,8 +31,8 @@ steps:
     curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
     unzip $CKB_FILENAME.zip
     cd $CKB_FILENAME
-    ./ckb init
-    ./ckb run&
+    #./ckb init
+    #./ckb run&
   displayName: 'Download CKB Binary'
   env: { CKB_FILENAME: 'ckb_$(CKB_VERSION)_x86_64-apple-darwin' }
 
