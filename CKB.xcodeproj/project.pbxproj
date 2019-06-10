@@ -54,6 +54,14 @@
 		1A414A9621C37AA000B28C09 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9521C37AA000B28C09 /* Script.swift */; };
 		1A414A9A21C3879500B28C09 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9921C3879500B28C09 /* Cell.swift */; };
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
+		1A4A4BAB22A6BF40003DC827 /* CellOutputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */; };
+		1A4A4BAD22A6C154003DC827 /* CellInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BAC22A6C154003DC827 /* CellInputTests.swift */; };
+		1A4A4BAF22A6C2EB003DC827 /* WitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BAE22A6C2EB003DC827 /* WitnessTests.swift */; };
+		1A4A4BB122A6C445003DC827 /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BB022A6C445003DC827 /* TransactionTests.swift */; };
+		1A4A4BB322A6C5F0003DC827 /* APIErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BB222A6C5F0003DC827 /* APIErrorTests.swift */; };
+		1A4A4BB522A6C64B003DC827 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BB422A6C64B003DC827 /* APIError.swift */; };
+		1A4A4BB722A6CA4C003DC827 /* APIMockingClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BB622A6CA4C003DC827 /* APIMockingClientTests.swift */; };
+		1A4A4BBB22A6D152003DC827 /* APIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BBA22A6D152003DC827 /* APIRequestTests.swift */; };
 		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
 		1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB2228C571200157426 /* Transaction+Sign.swift */; };
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
@@ -109,6 +117,14 @@
 		1A414A9921C3879500B28C09 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1A414A9F21C770DD00B28C09 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOutputTests.swift; sourceTree = "<group>"; };
+		1A4A4BAC22A6C154003DC827 /* CellInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInputTests.swift; sourceTree = "<group>"; };
+		1A4A4BAE22A6C2EB003DC827 /* WitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessTests.swift; sourceTree = "<group>"; };
+		1A4A4BB022A6C445003DC827 /* TransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTests.swift; sourceTree = "<group>"; };
+		1A4A4BB222A6C5F0003DC827 /* APIErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorTests.swift; sourceTree = "<group>"; };
+		1A4A4BB422A6C64B003DC827 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		1A4A4BB622A6CA4C003DC827 /* APIMockingClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingClientTests.swift; sourceTree = "<group>"; };
+		1A4A4BBA22A6D152003DC827 /* APIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestTests.swift; sourceTree = "<group>"; };
 		1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxPoolInfo.swift; sourceTree = "<group>"; };
 		1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = txPoolInfo.json; sourceTree = "<group>"; };
 		1A4AEBDE2282EF7500F0D576 /* peers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peers.json; sourceTree = "<group>"; };
@@ -175,6 +191,10 @@
 			isa = PBXGroup;
 			children = (
 				1A28119621D3805800E7CEC5 /* ScriptTests.swift */,
+				1A4A4BAC22A6C154003DC827 /* CellInputTests.swift */,
+				1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */,
+				1A4A4BAE22A6C2EB003DC827 /* WitnessTests.swift */,
+				1A4A4BB022A6C445003DC827 /* TransactionTests.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -252,6 +272,7 @@
 		1A414A7E21C32D1D00B28C09 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1A4A4BB422A6C64B003DC827 /* APIError.swift */,
 				1A414A8021C32D4B00B28C09 /* APIResult.swift */,
 				1A414A8221C334EB00B28C09 /* APIRequest.swift */,
 				1A414A7A21C22A9300B28C09 /* APIClient.swift */,
@@ -264,7 +285,10 @@
 			isa = PBXGroup;
 			children = (
 				1A38CA6522768FDD00BEA1F3 /* RPC Fixtures */,
+				1A4A4BB222A6C5F0003DC827 /* APIErrorTests.swift */,
 				1A414A7C21C23A3900B28C09 /* APIClientTests.swift */,
+				1A4A4BBA22A6D152003DC827 /* APIRequestTests.swift */,
+				1A4A4BB622A6CA4C003DC827 /* APIMockingClientTests.swift */,
 				1A58F4362276904900C6546F /* APIMockingTests.swift */,
 			);
 			path = API;
@@ -597,9 +621,16 @@
 			files = (
 				1A2D6B2322A35C4B00724E66 /* TestHelper.swift in Sources */,
 				1A2D6B3D22A35C6400724E66 /* Blake2bTests.swift in Sources */,
+				1A4A4BAF22A6C2EB003DC827 /* WitnessTests.swift in Sources */,
+				1A4A4BAD22A6C154003DC827 /* CellInputTests.swift in Sources */,
+				1A4A4BB122A6C445003DC827 /* TransactionTests.swift in Sources */,
 				1A2D6B3C22A35C6400724E66 /* Secp256k1Tests.swift in Sources */,
 				1A2D6B2522A35C4F00724E66 /* AddressGeneratorTests.swift in Sources */,
+				1A4A4BBB22A6D152003DC827 /* APIRequestTests.swift in Sources */,
+				1A4A4BB322A6C5F0003DC827 /* APIErrorTests.swift in Sources */,
 				1A2D6B3822A35C5A00724E66 /* APIMockingTests.swift in Sources */,
+				1A4A4BAB22A6BF40003DC827 /* CellOutputTests.swift in Sources */,
+				1A4A4BB722A6CA4C003DC827 /* APIMockingClientTests.swift in Sources */,
 				1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */,
 				1A2D6B3922A35C5D00724E66 /* ScriptTests.swift in Sources */,
 				1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */,
@@ -637,6 +668,7 @@
 				1A414A8A21C36FE900B28C09 /* Block.swift in Sources */,
 				1A414A9421C3789000B28C09 /* Primitives.swift in Sources */,
 				1A414A8321C334EB00B28C09 /* APIRequest.swift in Sources */,
+				1A4A4BB522A6C64B003DC827 /* APIError.swift in Sources */,
 				1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */,
 				1A414A8121C32D4B00B28C09 /* APIResult.swift in Sources */,
 				1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */,
