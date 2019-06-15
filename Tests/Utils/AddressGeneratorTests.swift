@@ -64,5 +64,6 @@ class AddressGeneratorTests: XCTestCase {
             generator.hash(for: Data(hex: publicKey)).toHexString(),
             generator.publicKeyHash(for: address)
         )
+        XCTAssertNil(generator.publicKeyHash(for: "bbbbb"))
     }
 }

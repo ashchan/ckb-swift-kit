@@ -1,6 +1,9 @@
 # CKB SDK Swift
 
+[![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20Linux-4e4e4e.svg?colorA=28a745)](#installation)
+[![Azure Pipelines](https://dev.azure.com/nervosnetwork/ckb-sdk-swift/_apis/build/status/nervosnetwork.ckb-sdk-swift?branchName=develop)](https://dev.azure.com/nervosnetwork/ckb-sdk-swift/_build/latest?definitionId=7&branchName=develop)
 [![TravisCI](https://travis-ci.com/nervosnetwork/ckb-sdk-swift.svg?branch=develop)](https://travis-ci.com/nervosnetwork/ckb-sdk-swift)
+[![Codecov](https://codecov.io/gh/nervosnetwork/ckb-sdk-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/nervosnetwork/ckb-sdk-swift/branch/develop)
 [![Telegram Group](https://cdn.rawgit.com/Patrolavia/telegram-badge/8fe3382b/chat.svg)](https://t.me/nervos_ckb_dev)
 
 Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
@@ -20,7 +23,7 @@ Install [CocoaPods](http://cocoapods.org/?q=cryptoSwift) 1.7.0 or later.
 Add this to your `Podfile`:
 
 ```ruby
-platform :ios, "11.0"
+platform :osx, "10.13"
 
 target "MyApp" do
   use_frameworks!
@@ -77,6 +80,7 @@ let deps = [systemScript.outPoint]
 // Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's
 // [CellService module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/68205ac338fa3ea3a3f007d8485c15de52cb3abd/faucet-server/Sources/App/Services/CellService.swift#L30-L48).
 let inputs: [CellInput] = [/*...*/]
+let witnesses: [Witness] = [/*...*/]
 
 // Generate lock script for the receiver's address
 let toAddress = "ckt1q9gry5zgw2q74lpmm03tw9snpqph2myqkkpyfss95qs228"
@@ -86,7 +90,7 @@ let lockScript = Script(args: [addressHash], codeHash: systemScript.codeHash)
 let outputs = [CellOutput(capacity: 500_00_000_000.description, data: "0x", lock: lockScript, type: nil)]
 
 // Generate the transaction
-let tx = Transaction(deps: deps, inputs: inputs, outputs: outputs)
+let tx = Transaction(deps: deps, inputs: inputs, outputs: outputs, witnesses: witnesses)
 // For now we need to call the `computeTransactionHash` to get the tx hash
 let apiClient = APIClient(url: nodeUrl)
 let txHash = try apiClient.computeTransactionHash(transaction: tx)

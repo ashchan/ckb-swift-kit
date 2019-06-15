@@ -17,7 +17,7 @@ public struct OutPoint: Codable, Param {
         case cell
     }
 
-    public init(blockHash: H256? = nil, cell: CellOutPoint) {
+    public init(blockHash: H256? = nil, cell: CellOutPoint? = nil) {
         self.blockHash = blockHash
         self.cell = cell
     }

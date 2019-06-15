@@ -1,14 +1,30 @@
-language: objective-c
+language: swift
 osx_image: xcode10.2
-env:
-  - SKIP_RPC_TESTS=1
 
 xcode_workspace: CKB.xcworkspace
 xcode_scheme: CKB
-xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
+xcode_destination: platform=OS X,arch=x86_64
+
 before_install:
   - gem install cocoapods -N
   - pod --version
   - travis_wait pod repo update --silent
+
+matrix:
+  include:
+    - name: Tests with RPC
+      env:
+        - SKIP_RPC_TESTS=0
+        - CKB_VERSION=v0.14.0
+        - CKB_FILENAME=ckb_${CKB_VERSION}_x86_64-apple-darwin
+      before_script:
+        - mkdir ckb
+        - curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
+        - unzip $CKB_FILENAME.zip
+        - export PATH=$PATH:$PWD/$CKB_FILENAME/
+        - ckb init
+        - ckb run&
+
+
 after_success:
-  - sleep 5
+  - bash <(curl -s https://codecov.io/bash) -J 'CKB'
