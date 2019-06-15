@@ -6,7 +6,7 @@ variables:
   sdk: 'macosx10.14'
   configuration: 'Debug'
   skip_rpc_tests: 0
-  ckb_version: 'v0.14.0-rc1'
+  ckb_version: 'v0.14.0-rc2'
 
 steps:
 - task: CocoaPods@0
