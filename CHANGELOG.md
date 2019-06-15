@@ -1,5 +1,13 @@
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+# [v0.14.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.13.0...v0.14.0) (2019-06-15)
+
+
+### Features
+
+* Add total_tx_cycles/total_tx_size to tx_pool_info RPC response ([8257cfd](https://github.com/nervosnetwork/ckb-sdk-swift/commit/8257cfd))
+* Change base project type from iOS to macOS ([675ad86](https://github.com/nervosnetwork/ckb-sdk-swift/commit/675ad86))
+* Remove args property from CellInput ([947c89b](https://github.com/nervosnetwork/ckb-sdk-swift/commit/947c89b))
+* Throw exception when transaction sign fails ([a344a98](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a344a98))
+* Update transaction signing based on new verification model ([ab81c6d](https://github.com/nervosnetwork/ckb-sdk-swift/commit/ab81c6d))
 
 
 # [v0.13.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.12.0...v0.13.0) (2019-06-01)
