@@ -104,11 +104,12 @@ private extension ViewController {
         let outputs = [CellOutput(capacity: 500_00_000_000.description, data: "0x", lock: lockScript, type: nil)]
 
         // Generate the transaction
-        let tx = Transaction(deps: deps, inputs: inputs, outputs: outputs)
+        let tx = Transaction(deps: deps, inputs: inputs, outputs: outputs, witnesses: [Witness(data: [])])
         // For now we need to call the `computeTransactionHash` to get the tx hash
         let apiClient = APIClient(url: nodeUrl)
         let txHash = try apiClient.computeTransactionHash(transaction: tx)
-        let signedTx = Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
+        let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
+
 
         // Now send out the capacity
         let hash = try apiClient.sendTransaction(transaction: signedTx)
