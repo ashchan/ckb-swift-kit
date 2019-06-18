@@ -11,6 +11,10 @@ import Foundation
 public struct Witness: Codable, Param {
     public let data: [HexString]
 
+    public init(data: [HexString] = []) {
+        self.data = data
+    }
+
     public var param: [String: Any] {
         return [
             "data": data
