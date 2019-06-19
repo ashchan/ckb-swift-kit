@@ -68,3 +68,25 @@ public struct TransactionWithStatus: Codable {
         case txStatus = "tx_status"
     }
 }
+
+public struct TransactionPoint: Codable {
+    public let blockNumber: BlockNumber
+    public let txHash: H256
+    public let index: Number
+
+    enum CodingKeys: String, CodingKey {
+        case blockNumber = "block_number"
+        case txHash = "tx_hash"
+        case index
+    }
+}
+
+public struct CellTransaction: Codable {
+    public let createdBy: TransactionPoint
+    public let consumedBy: TransactionPoint?
+
+    enum CodingKeys: String, CodingKey {
+        case createdBy = "created_by"
+        case consumedBy = "consumed_by"
+    }
+}

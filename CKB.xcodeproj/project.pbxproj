@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1A11347E2228D14300840EE8 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* Node.swift */; };
+		1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */; };
+		1A199DEC22BA3526000C0C34 /* getLiveCellsByLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */; };
+		1A199DED22BA352D000C0C34 /* getTransactionsByLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */; };
+		1A199DEE22BA352D000C0C34 /* indexLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A199DE422BA2809000C0C34 /* indexLockHash.json */; };
+		1A199DEF22BA352D000C0C34 /* deindexLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A199DE622BA281D000C0C34 /* deindexLockHash.json */; };
+		1A199DF022BA352D000C0C34 /* getLockHashIndexStates.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A199DE822BA283B000C0C34 /* getLockHashIndexStates.json */; };
 		1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C8269222F5D5D0053EC32 /* Blake2b.swift */; };
 		1A2188742288FC1700F613CF /* DryRunResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2188732288FC1700F613CF /* DryRunResult.swift */; };
 		1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE0228171180024CA71 /* Epoch.swift */; };
@@ -73,6 +79,7 @@
 		1AB7516A22B9F30200AC9F63 /* APIClient+Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516922B9F30200AC9F63 /* APIClient+Stats.swift */; };
 		1AB7516C22B9F32700AC9F63 /* APIClient+Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */; };
 		1AB7516E22BA0F7100AC9F63 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */; };
+		1AB7517022BA263C00AC9F63 /* APIClient+Indexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516F22BA263C00AC9F63 /* APIClient+Indexer.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
 		1AD3195F225DBCB300F41790 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195E225DBCB300F41790 /* Network.swift */; };
@@ -94,6 +101,11 @@
 
 /* Begin PBXFileReference section */
 		1A11347D2228D14300840EE8 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getTransactionsByLockHash.json; sourceTree = "<group>"; };
+		1A199DE422BA2809000C0C34 /* indexLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = indexLockHash.json; sourceTree = "<group>"; };
+		1A199DE622BA281D000C0C34 /* deindexLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = deindexLockHash.json; sourceTree = "<group>"; };
+		1A199DE822BA283B000C0C34 /* getLockHashIndexStates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getLockHashIndexStates.json; sourceTree = "<group>"; };
+		1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockHashIndexState.swift; sourceTree = "<group>"; };
 		1A1C8269222F5D5D0053EC32 /* Blake2b.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2b.swift; sourceTree = "<group>"; };
 		1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blake2bTests.swift; sourceTree = "<group>"; };
 		1A2188732288FC1700F613CF /* DryRunResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryRunResult.swift; sourceTree = "<group>"; };
@@ -160,6 +172,8 @@
 		1AB7516922B9F30200AC9F63 /* APIClient+Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Stats.swift"; sourceTree = "<group>"; };
 		1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Experiment.swift"; sourceTree = "<group>"; };
 		1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		1AB7516F22BA263C00AC9F63 /* APIClient+Indexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Indexer.swift"; sourceTree = "<group>"; };
+		1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getLiveCellsByLockHash.json; sourceTree = "<group>"; };
 		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
 		1AC180922264672B00D243D9 /* Bech32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32Tests.swift; sourceTree = "<group>"; };
 		1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGenerator.swift; sourceTree = "<group>"; };
@@ -243,6 +257,11 @@
 				1AA9B6892283D15600C116B2 /* peersState.json */,
 				1A2188752288FC7B00F613CF /* dryRunTransaction.json */,
 				1A2188772288FEC800F613CF /* computeTransactionHash.json */,
+				1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */,
+				1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */,
+				1A199DE422BA2809000C0C34 /* indexLockHash.json */,
+				1A199DE622BA281D000C0C34 /* deindexLockHash.json */,
+				1A199DE822BA283B000C0C34 /* getLockHashIndexStates.json */,
 			);
 			path = "RPC Fixtures";
 			sourceTree = "<group>";
@@ -292,6 +311,7 @@
 				1AB7516722B9F2DB00AC9F63 /* APIClient+Pool.swift */,
 				1AB7516322B9F25F00AC9F63 /* APIClient+Chain.swift */,
 				1AB7516922B9F30200AC9F63 /* APIClient+Stats.swift */,
+				1AB7516F22BA263C00AC9F63 /* APIClient+Indexer.swift */,
 				1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */,
 				1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */,
 			);
@@ -303,8 +323,8 @@
 			children = (
 				1A38CA6522768FDD00BEA1F3 /* RPC Fixtures */,
 				1A4A4BB222A6C5F0003DC827 /* APIErrorTests.swift */,
-				1A414A7C21C23A3900B28C09 /* APIClientTests.swift */,
 				1A4A4BBA22A6D152003DC827 /* APIRequestTests.swift */,
+				1A414A7C21C23A3900B28C09 /* APIClientTests.swift */,
 				1A4A4BB622A6CA4C003DC827 /* APIMockingClientTests.swift */,
 				1A58F4362276904900C6546F /* APIMockingTests.swift */,
 			);
@@ -331,6 +351,7 @@
 				1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */,
 				1AA9B6852283CE4500C116B2 /* PeerState.swift */,
 				1A2188732288FC1700F613CF /* DryRunResult.swift */,
+				1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -523,13 +544,18 @@
 			files = (
 				1A2D6B2E22A35C5A00724E66 /* sendTransactionEmpty.json in Resources */,
 				1A2D6B3222A35C5A00724E66 /* txPoolInfo.json in Resources */,
+				1A199DEF22BA352D000C0C34 /* deindexLockHash.json in Resources */,
 				1A2D6B2C22A35C5A00724E66 /* tipHeader.json in Resources */,
+				1A199DF022BA352D000C0C34 /* getLockHashIndexStates.json in Resources */,
 				1A2D6B2922A35C5A00724E66 /* genesisBlock.json in Resources */,
 				1A2D6B2D22A35C5A00724E66 /* tipBlockNumber.json in Resources */,
 				1A2D6B2A22A35C5A00724E66 /* epoch.json in Resources */,
+				1A199DEC22BA3526000C0C34 /* getLiveCellsByLockHash.json in Resources */,
 				1A2D6B3022A35C5A00724E66 /* peers.json in Resources */,
 				1A2D6B3122A35C5A00724E66 /* liveCellEmpty.json in Resources */,
 				1A2D6B2B22A35C5A00724E66 /* transaction.json in Resources */,
+				1A199DED22BA352D000C0C34 /* getTransactionsByLockHash.json in Resources */,
+				1A199DEE22BA352D000C0C34 /* indexLockHash.json in Resources */,
 				1A2D6B3522A35C5A00724E66 /* dryRunTransaction.json in Resources */,
 				1A2D6B3622A35C5A00724E66 /* computeTransactionHash.json in Resources */,
 				1A2D6B3B22A35C6400724E66 /* pubkey.json in Resources */,
@@ -674,7 +700,9 @@
 				1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */,
 				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
 				1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */,
+				1AB7517022BA263C00AC9F63 /* APIClient+Indexer.swift in Sources */,
 				1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */,
+				1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
 				1AB7516822B9F2DB00AC9F63 /* APIClient+Pool.swift in Sources */,
 				1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */,

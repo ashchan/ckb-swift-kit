@@ -1,0 +1,22 @@
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "consumed_by": null,
+            "created_by": {
+                "block_number": "1",
+                "index": "0",
+                "tx_hash": "0x41524669872de0ce874f926a9799b6944198571094fe94dc7ffa623a97c4f19f"
+            }
+        },
+        {
+            "consumed_by": null,
+            "created_by": {
+                "block_number": "2",
+                "index": "0",
+                "tx_hash": "0x46ab01ddbbabef1af701f0843e11c7cfc0ce53f9aa9b554af74cadf8e3257d89"
+            }
+        }
+    ],
+    "id": 1
+}

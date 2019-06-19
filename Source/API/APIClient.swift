@@ -19,6 +19,14 @@ public class APIClient {
     }
 
     public func load<R: Codable>(_ request: APIRequest<R>) throws -> R {
+        let result = try loadNullable(request)
+        if let result = result {
+            return result
+        }
+        throw APIError.emptyResponse
+    }
+
+    public func loadNullable<R: Codable>(_ request: APIRequest<R>) throws -> R? {
         var result: R?
         var error: Error?
 
@@ -43,10 +51,7 @@ public class APIClient {
             throw error
         }
 
-        if result == nil {
-            throw APIError.emptyResponse
-        }
-        return result!
+        return result
     }
 
     private func createRequest<R>(_ request: APIRequest<R>) throws -> URLRequest {

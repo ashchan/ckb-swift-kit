@@ -115,6 +115,37 @@ class APIMockingTests: XCTestCase {
         let result = try? getClient(json: "dryRunTransaction").dryRunTransaction(transaction: tx)
         XCTAssertNotNil(result)
     }
+
+    func testIndexLockHash() throws {
+        let lockHash = "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510"
+        let result = try getClient(json: "indexLockHash").indexLockHash(lockHash: lockHash, indexFrom: "1024")
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.lockHash, lockHash)
+    }
+
+    func testDeindexLockHash() throws {
+        let lockHash = "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510"
+        let result = try getClient(json: "deindexLockHash").deindexLockHash(lockHash: lockHash)
+        XCTAssertNil(result)
+    }
+
+    func testGetLockHashIndexStates() throws {
+        let result = try getClient(json: "getLockHashIndexStates").getLockHashIndexStates()
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
+
+    func testGetLiveCellsByLockHash() throws {
+        let result = try getClient(json: "getLiveCellsByLockHash").getLiveCellsByLockHash(lockHash: "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510", page: "0", pageSize: "2", reverseOrder: false)
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
+
+    func testGetTransactionssByLockHash() throws {
+        let result = try getClient(json: "getTransactionsByLockHash").getTransactionsByLockHash(lockHash: "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510", page: "0", pageSize: "2", reverseOrder: false)
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
 }
 
 extension APIMockingClient {
