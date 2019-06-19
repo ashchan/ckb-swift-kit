@@ -1,39 +1,66 @@
-pool:
-  vmImage: 'macos-10.14'
+jobs:
+  - job: UnitTests
+    pool:
+      vmImage: 'macos-10.14'
+    variables:
+      scheme: 'CKB'
+      sdk: 'macosx10.14'
+      configuration: 'Debug'
+      skip_rpc_tests: 1
+    steps:
+      - task: CocoaPods@0
+        displayName: 'pod install using the CocoaPods task with defaults'
+        inputs:
+          forceRepoUpdate: true
+      - task: Xcode@5
+        displayName: 'CKB Swift SDK Unit Tests'
+        inputs:
+          actions: 'build test'
+          sdk: '$(sdk)'
+          scheme: '$(scheme)'
+          configuration: '$(configuration)'
+          xcWorkspacePath: 'CKB.xcworkspace'
+          xcodeVersion: '10'
+          signingOption: 'nosign'
+          useXcpretty: true
+          publishJUnitResults: true
 
-variables:
-  scheme: 'CKB'
-  sdk: 'macosx10.14'
-  configuration: 'Debug'
-  skip_rpc_tests: 0
-  ckb_version: 'v0.14.1'
-
-steps:
-- task: CocoaPods@0
-  displayName: 'pod install using the CocoaPods task with defaults'
-  inputs:
-    forceRepoUpdate: true
-
-- bash: |
-    mkdir ckb
-    curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
-    unzip $CKB_FILENAME.zip
-    cd $CKB_FILENAME
-    ./ckb init
-    ./ckb run&
-  displayName: 'Download CKB Binary'
-  env: { CKB_FILENAME: 'ckb_$(CKB_VERSION)_x86_64-apple-darwin' }
-
-- task: Xcode@5
-  displayName: 'CKB Swift SDK Full Tests'
-  inputs:
-    actions: 'build test'
-    sdk: '$(sdk)'
-    scheme: '$(scheme)'
-    configuration: '$(configuration)'
-    xcWorkspacePath: 'CKB.xcworkspace'
-    xcodeVersion: '10' # Options: 8, 9, 10, default, specifyPath
-    signingOption: 'nosign'
-    useXcpretty: true
-    publishJUnitResults: true
-    # packageApp: false
+  - job: RPCTests
+    condition: |
+      and(
+        eq(variables['build.sourceBranch'], 'refs/heads/master')
+      )
+    pool:
+      vmImage: 'macos-10.14'
+    variables:
+      scheme: 'CKB'
+      sdk: 'macosx10.14'
+      configuration: 'Debug'
+      skip_rpc_tests: 0
+      ckb_version: 'v0.14.1'
+    steps:
+      - task: CocoaPods@0
+        displayName: 'pod install using the CocoaPods task with defaults'
+        inputs:
+          forceRepoUpdate: true
+      - bash: |
+          mkdir ckb
+          curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
+          unzip $CKB_FILENAME.zip
+          cd $CKB_FILENAME
+          ./ckb init
+          ./ckb run&
+        displayName: 'Download CKB Binary'
+        env: { CKB_FILENAME: 'ckb_$(CKB_VERSION)_x86_64-apple-darwin' }
+      - task: Xcode@5
+        displayName: 'CKB Swift SDK RPc Tests'
+        inputs:
+          actions: 'build test'
+          sdk: '$(sdk)'
+          scheme: '$(scheme)'
+          configuration: '$(configuration)'
+          xcWorkspacePath: 'CKB.xcworkspace'
+          xcodeVersion: '10'
+          signingOption: 'nosign'
+          useXcpretty: true
+          publishJUnitResults: true
