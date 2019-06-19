@@ -27,9 +27,7 @@ jobs:
 
   - job: RPCTests
     condition: |
-      and(
-        eq(variables['build.sourceBranch'], 'refs/heads/master')
-      )
+      eq(variables['build.sourceBranch'], 'refs/heads/master')
     pool:
       vmImage: 'macos-10.14'
     variables:
