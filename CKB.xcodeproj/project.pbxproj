@@ -67,6 +67,11 @@
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
 		1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6852283CE4500C116B2 /* PeerState.swift */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
+		1AB7516422B9F25F00AC9F63 /* APIClient+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516322B9F25F00AC9F63 /* APIClient+Chain.swift */; };
+		1AB7516622B9F2A100AC9F63 /* APIClient+Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516522B9F2A100AC9F63 /* APIClient+Net.swift */; };
+		1AB7516822B9F2DB00AC9F63 /* APIClient+Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516722B9F2DB00AC9F63 /* APIClient+Pool.swift */; };
+		1AB7516A22B9F30200AC9F63 /* APIClient+Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516922B9F30200AC9F63 /* APIClient+Stats.swift */; };
+		1AB7516C22B9F32700AC9F63 /* APIClient+Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
 		1AD3195F225DBCB300F41790 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195E225DBCB300F41790 /* Network.swift */; };
@@ -148,6 +153,11 @@
 		1AA9B6892283D15600C116B2 /* peersState.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peersState.json; sourceTree = "<group>"; };
 		1AB45ED6222AA558009B395B /* Secp256k1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1.swift; sourceTree = "<group>"; };
 		1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secp256k1Tests.swift; sourceTree = "<group>"; };
+		1AB7516322B9F25F00AC9F63 /* APIClient+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Chain.swift"; sourceTree = "<group>"; };
+		1AB7516522B9F2A100AC9F63 /* APIClient+Net.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Net.swift"; sourceTree = "<group>"; };
+		1AB7516722B9F2DB00AC9F63 /* APIClient+Pool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Pool.swift"; sourceTree = "<group>"; };
+		1AB7516922B9F30200AC9F63 /* APIClient+Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Stats.swift"; sourceTree = "<group>"; };
+		1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Experiment.swift"; sourceTree = "<group>"; };
 		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
 		1AC180922264672B00D243D9 /* Bech32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32Tests.swift; sourceTree = "<group>"; };
 		1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGenerator.swift; sourceTree = "<group>"; };
@@ -276,6 +286,11 @@
 				1A414A8021C32D4B00B28C09 /* APIResult.swift */,
 				1A414A8221C334EB00B28C09 /* APIRequest.swift */,
 				1A414A7A21C22A9300B28C09 /* APIClient.swift */,
+				1AB7516522B9F2A100AC9F63 /* APIClient+Net.swift */,
+				1AB7516722B9F2DB00AC9F63 /* APIClient+Pool.swift */,
+				1AB7516322B9F25F00AC9F63 /* APIClient+Chain.swift */,
+				1AB7516922B9F30200AC9F63 /* APIClient+Stats.swift */,
+				1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */,
 				1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */,
 			);
 			path = API;
@@ -651,17 +666,21 @@
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
 				1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */,
+				1AB7516C22B9F32700AC9F63 /* APIClient+Experiment.swift in Sources */,
 				1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */,
 				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
 				1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */,
 				1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
+				1AB7516822B9F2DB00AC9F63 /* APIClient+Pool.swift in Sources */,
 				1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */,
 				1A414AA021C770DD00B28C09 /* Utils.swift in Sources */,
 				1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */,
 				1A414A9A21C3879500B28C09 /* Cell.swift in Sources */,
 				1A414A8C21C3714E00B28C09 /* Transaction.swift in Sources */,
+				1AB7516A22B9F30200AC9F63 /* APIClient+Stats.swift in Sources */,
 				1A2188742288FC1700F613CF /* DryRunResult.swift in Sources */,
+				1AB7516622B9F2A100AC9F63 /* APIClient+Net.swift in Sources */,
 				1AD3195F225DBCB300F41790 /* Network.swift in Sources */,
 				1A414A9021C3723E00B28C09 /* CellOutput.swift in Sources */,
 				1A1C826A222F5D5D0053EC32 /* Blake2b.swift in Sources */,
@@ -672,6 +691,7 @@
 				1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */,
 				1A414A8121C32D4B00B28C09 /* APIResult.swift in Sources */,
 				1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */,
+				1AB7516422B9F25F00AC9F63 /* APIClient+Chain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
