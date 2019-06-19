@@ -12,7 +12,8 @@ before_install:
 
 matrix:
   include:
-    - name: Tests with RPC
+    - if: branch =~ ^master
+      name: Tests with RPC
       env:
         - SKIP_RPC_TESTS=0
         - CKB_VERSION=v0.14.1
@@ -24,7 +25,10 @@ matrix:
         - export PATH=$PATH:$PWD/$CKB_FILENAME/
         - ckb init
         - ckb run&
-
+  include:
+    - name: Tests without RPC
+      env:
+        - SKIP_RPC_TESTS=1
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'CKB'
