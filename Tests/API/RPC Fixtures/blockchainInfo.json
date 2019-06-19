@@ -6,7 +6,7 @@
         "epoch": "0",
         "is_initial_block_download": false,
         "median_time": "1557368872854",
-        "warnings": ""
+        "alerts": []
     },
     "id": 1
 }

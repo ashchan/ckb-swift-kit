@@ -72,6 +72,7 @@
 		1AB7516822B9F2DB00AC9F63 /* APIClient+Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516722B9F2DB00AC9F63 /* APIClient+Pool.swift */; };
 		1AB7516A22B9F30200AC9F63 /* APIClient+Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516922B9F30200AC9F63 /* APIClient+Stats.swift */; };
 		1AB7516C22B9F32700AC9F63 /* APIClient+Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */; };
+		1AB7516E22BA0F7100AC9F63 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
 		1AD3195F225DBCB300F41790 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195E225DBCB300F41790 /* Network.swift */; };
@@ -158,6 +159,7 @@
 		1AB7516722B9F2DB00AC9F63 /* APIClient+Pool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Pool.swift"; sourceTree = "<group>"; };
 		1AB7516922B9F30200AC9F63 /* APIClient+Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Stats.swift"; sourceTree = "<group>"; };
 		1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Experiment.swift"; sourceTree = "<group>"; };
+		1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
 		1AC180922264672B00D243D9 /* Bech32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32Tests.swift; sourceTree = "<group>"; };
 		1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGenerator.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				1A11347D2228D14300840EE8 /* Node.swift */,
 				1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */,
 				1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */,
+				1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */,
 				1AA9B6852283CE4500C116B2 /* PeerState.swift */,
 				1A2188732288FC1700F613CF /* DryRunResult.swift */,
 			);
@@ -664,6 +667,7 @@
 				1AD96320228D24FB00684FBB /* SystemScript.swift in Sources */,
 				1A11347E2228D14300840EE8 /* Node.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
+				1AB7516E22BA0F7100AC9F63 /* AlertMessage.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
 				1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */,
 				1AB7516C22B9F32700AC9F63 /* APIClient+Experiment.swift in Sources */,
