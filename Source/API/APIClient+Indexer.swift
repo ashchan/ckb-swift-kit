@@ -9,9 +9,11 @@
 import Foundation
 
 public extension APIClient {
-    // FIXME: indexFrom `null` has different meaning!
-    func indexLockHash(lockHash: H256, indexFrom: BlockNumber = "0") throws -> LockHashIndexState {
-        return try load(APIRequest<LockHashIndexState>(method: "index_lock_hash", params: [lockHash, indexFrom]))
+    func indexLockHash(lockHash: H256, indexFrom: BlockNumber? = nil) throws -> LockHashIndexState {
+        return try load(APIRequest<LockHashIndexState>(
+            method: "index_lock_hash",
+            params: [lockHash, indexFrom].compactMap { $0 }
+        ))
     }
 
     // Although this declares to return `H256`, the RPC actually always returns nil.
