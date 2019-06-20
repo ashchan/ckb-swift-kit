@@ -29,7 +29,7 @@ target "MyApp" do
   use_frameworks!
   use_modular_headers!
 
-  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.13.0"
+  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.14.0"
 end
 ```
 
@@ -39,7 +39,7 @@ You can also use [Swift Package Manager](https://swift.org/package-manager/). In
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.13.0")
+  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.14.0")
 ]
 ```
 
@@ -106,10 +106,10 @@ print(hash) // hash should equal to txHash
 * More Nervos CKB documentations can be found at the document website [docs.nervos.org](https://docs.nervos.org).
 * Join [CKB Dev](https://t.me/nervos_ckb_dev) Telegram group, or [Nervos Talk](https://talk.nervos.org/) forum.
 
-## License
-
-Nervos CKB SDK is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
-
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) file.
+
+## License
+
+Nervos CKB SDK is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
