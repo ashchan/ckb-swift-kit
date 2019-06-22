@@ -12,7 +12,7 @@ before_install:
 
 matrix:
   include:
-    - if: branch =~ ^master
+    - if: branch =~ /^(master|rc\/)/
       name: Tests with RPC
       env:
         - SKIP_RPC_TESTS=0
