@@ -1,13 +1,11 @@
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "block_reward": "5000000000000",
-        "difficulty": "0x1000",
-        "last_block_hash_in_previous_epoch": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "length": "1000",
+        "difficulty": "0x3e8",
+        "epoch_reward": "125000000000000",
+        "length": "1250",
         "number": "0",
-        "remainder_reward": "5000000000000",
         "start_number": "0"
-    },
-    "id": 1
+    }
 }
