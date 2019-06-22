@@ -24,6 +24,8 @@ matrix:
         - unzip $CKB_FILENAME.zip
         - export PATH=$PATH:$PWD/$CKB_FILENAME/
         - ckb init
+        - sed -i '' '/modules =/d' ckb.toml
+        - sed -i '' 's/# List of API modules: /modules = /g' ckb.toml
         - ckb run&
   include:
     - name: Tests without RPC

@@ -47,6 +47,8 @@ jobs:
           unzip $CKB_FILENAME.zip
           cd $CKB_FILENAME
           ./ckb init
+          sed -i '' '/modules =/d' ckb.toml
+          sed -i '' 's/# List of API modules: /modules = /g' ckb.toml
           ./ckb run&
         displayName: 'Download CKB Binary'
         env: { CKB_FILENAME: 'ckb_$(CKB_VERSION)_x86_64-apple-darwin' }
