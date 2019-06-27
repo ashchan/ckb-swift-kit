@@ -6,7 +6,14 @@
         "epoch": "0",
         "is_initial_block_download": false,
         "median_time": "1557368872854",
-        "alerts": []
+        "alerts": [
+            {
+                "id": "42",
+                "message": "An example alert message!",
+                "notice_until": "2524579200000",
+                "priority": "1"
+            }
+        ]
     },
     "id": 1
 }
