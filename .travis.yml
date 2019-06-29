@@ -29,7 +29,6 @@ matrix:
         - ckb run&
       after_success:
         - bash <(curl -s https://codecov.io/bash) -J 'CKB'
-  include:
     - name: Tests without RPC
       env:
         - SKIP_RPC_TESTS=1
