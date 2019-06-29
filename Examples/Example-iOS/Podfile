@@ -6,6 +6,6 @@ target "Example-iOS" do
   use_modular_headers!
   inhibit_all_warnings!
 
-  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.13.0"
+  pod 'CKB', :path =>'../../'
 end
 

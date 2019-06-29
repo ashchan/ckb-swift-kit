@@ -11,7 +11,7 @@ import Foundation
 class APIMockingClient: APIClient {
     var mockingData: Data?
 
-    public override func load<R: Codable>(_ request: APIRequest<R>) throws -> R {
+    public override func loadNullable<R: Codable>(_ request: APIRequest<R>) throws -> R? {
         var result: R?
 
         guard let data = mockingData else {
@@ -23,9 +23,6 @@ class APIMockingClient: APIClient {
             throw err
         }
 
-        if result == nil {
-            throw APIError.emptyResponse
-        }
-        return result!
+        return result
     }
 }

@@ -149,6 +149,42 @@ class APIClientTests: RPCTestSkippable {
         let result = try client.dryRunTransaction(transaction: tx)
         XCTAssertNotNil(result)
     }
+
+    func testIndexLockHash() throws {
+        let lockHash = "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510"
+        var result = try client.indexLockHash(lockHash: lockHash, indexFrom: "0")
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.lockHash, lockHash)
+        XCTAssertEqual(result.blockNumber, "0")
+
+        result = try client.indexLockHash(lockHash: lockHash)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.lockHash, lockHash)
+    }
+
+    func testDeindexLockHash() throws {
+        let lockHash = "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510"
+        let result = try client.deindexLockHash(lockHash: lockHash)
+        XCTAssertNil(result)
+    }
+
+    func testGetLockHashIndexStates() throws {
+        let result = try client.getLockHashIndexStates()
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
+
+    func testGetLiveCellsByLockHash() throws {
+        let result = try client.getLiveCellsByLockHash(lockHash: "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510", page: "0", pageSize: "2", reverseOrder: false)
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
+
+    func testGetTransactionssByLockHash() throws {
+        let result = try client.getTransactionsByLockHash(lockHash: "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510", page: "0", pageSize: "2", reverseOrder: false)
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
 }
 
 private extension APIClientTests {

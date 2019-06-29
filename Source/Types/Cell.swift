@@ -12,3 +12,13 @@ public struct CellWithStatus: Codable {
     public let cell: CellOutput?
     public let status: String
 }
+
+public struct LiveCell: Codable {
+    public let createdBy: TransactionPoint
+    public let cellOutput: CellOutput
+
+    enum CodingKeys: String, CodingKey {
+        case createdBy = "created_by"
+        case cellOutput = "cell_output"
+    }
+}

@@ -14,7 +14,7 @@ public struct ChainInfo: Codable {
     public let epoch: EpochNumber
     public let difficulty: HexNumber
     public let isInitialBlockDownload: Bool
-    public let warnings: String
+    public let alerts: [AlertMessage]
 
     enum CodingKeys: String, CodingKey {
         case chain
@@ -22,6 +22,6 @@ public struct ChainInfo: Codable {
         case epoch
         case difficulty
         case isInitialBlockDownload = "is_initial_block_download"
-        case warnings
+        case alerts
     }
 }

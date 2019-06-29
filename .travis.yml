@@ -12,10 +12,11 @@ before_install:
 
 matrix:
   include:
-    - name: Tests with RPC
+    - if: branch =~ /^(master|rc\/)/
+      name: Tests with RPC
       env:
         - SKIP_RPC_TESTS=0
-        - CKB_VERSION=v0.14.0
+        - CKB_VERSION=v0.15.0
         - CKB_FILENAME=ckb_${CKB_VERSION}_x86_64-apple-darwin
       before_script:
         - mkdir ckb
@@ -23,8 +24,12 @@ matrix:
         - unzip $CKB_FILENAME.zip
         - export PATH=$PATH:$PWD/$CKB_FILENAME/
         - ckb init
+        - sed -i '' '/modules =/d' ckb.toml
+        - sed -i '' 's/# List of API modules:/modules =/g' ckb.toml
         - ckb run&
-
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash) -J 'CKB'
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -J 'CKB'
+  include:
+    - name: Tests without RPC
+      env:
+        - SKIP_RPC_TESTS=1
