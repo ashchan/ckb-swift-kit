@@ -1,3 +1,28 @@
+# [v0.15.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.14.0...v0.15.0) (2019-06-29)
+
+
+### Bug Fixes
+
+* Condition for azure pipelines rpc tests job ([a201c0a](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a201c0a))
+* Add missing AlertMessage source file ([b007aed](https://github.com/nervosnetwork/ckb-sdk-swift/commit/b007aed))
+* Optional block number param for index_lock_hash rpc method ([fc4a56d](https://github.com/nervosnetwork/ckb-sdk-swift/commit/fc4a56d))
+
+
+### Features
+
+* Implement indexer RPC ([93b09b6](https://github.com/nervosnetwork/ckb-sdk-swift/commit/93b09b6))
+* Implement Secp256k1 recoverable sign ([a5f490c](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a5f490c))
+* RPC get_blockchain_info show alerts ([5213e6a](https://github.com/nervosnetwork/ckb-sdk-swift/commit/5213e6a))
+* Update Epoch schema ([b98fc04](https://github.com/nervosnetwork/ckb-sdk-swift/commit/b98fc04))
+* **example:** Update send tx ([602bdad](https://github.com/nervosnetwork/ckb-sdk-swift/commit/602bdad))
+* Use recoverable sign for tx ([be88790](https://github.com/nervosnetwork/ckb-sdk-swift/commit/be88790))
+
+
+### BREAKING CHANGES
+
+* get_blockchain_info change warnings to alerts
+
+
 # [v0.14.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.13.0...v0.14.0) (2019-06-15)
 
 
