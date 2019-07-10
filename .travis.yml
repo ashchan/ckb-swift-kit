@@ -16,7 +16,7 @@ matrix:
       name: Tests with RPC
       env:
         - SKIP_RPC_TESTS=0
-        - CKB_VERSION=v0.15.3
+        - CKB_VERSION=v0.15.6
         - CKB_FILENAME=ckb_${CKB_VERSION}_x86_64-apple-darwin
       before_script:
         - mkdir ckb
