@@ -1,3 +1,9 @@
+# [v0.16.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.15.0...v0.16.0) (2019-07-13)
+
+
+* Update to support CKB v0.16.0.
+
+
 # [v0.15.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.14.0...v0.15.0) (2019-06-29)
 
 
