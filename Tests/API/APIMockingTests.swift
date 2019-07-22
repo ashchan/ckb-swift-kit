@@ -51,7 +51,7 @@ class APIMockingTests: XCTestCase {
     func testGetTipHeader() throws {
         let result = try getClient(json: "tipHeader").getTipHeader()
         XCTAssertNotNil(result)
-        XCTAssertTrue(Int64(result.number)! > 0)
+        XCTAssertTrue(Int64(result.number)! >= 0)
     }
 
     func testGetLiveCell() throws {
