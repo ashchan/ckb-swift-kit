@@ -3,6 +3,7 @@
 
 ### Features
 
+* Add dao field of Header ([6c884dd](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6c884dd))
 * Add hash type support ([6b01ab8](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6b01ab8))
 
 
