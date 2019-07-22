@@ -1,3 +1,11 @@
+# [v0.17.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.16.0...v0.17.0) (2019-07-27)
+
+
+### Features
+
+* Add hash type support ([6b01ab8](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6b01ab8))
+
+
 # [v0.16.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.15.0...v0.16.0) (2019-07-13)
 
 
