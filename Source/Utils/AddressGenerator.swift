@@ -8,8 +8,9 @@
 
 import Foundation
 
-/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/4f87099a0b1a02a8bc077fc7bea15ce3d9def120/rfcs/0000-address-format/0000-address-format.md),
+/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/c6b74309e071fd631c12c5f7152a265d7db833f6/rfcs/0000-address-format/0000-address-format.md),
 /// and [Common Address Format](https://github.com/nervosnetwork/ckb/wiki/Common-Address-Format).
+/// Currently we implement the predefined format for type 0x01 and code hash index 0x00.
 public class AddressGenerator {
     let network: Network
 
@@ -46,10 +47,10 @@ public class AddressGenerator {
     }
 
     public func address(publicKeyHash: Data) -> String {
-        // Payload: type(01) | bin-idx("P2PH") | pubkey blake160
+        // Payload: type(01) | code hash index(00, P2PH) | pubkey blake160
         let type = Data([0x01])
-        let binIdx = "P2PH".data(using: .ascii)!
-        let payload = type + binIdx + publicKeyHash
+        let codeHashIndex = Data([0x00])
+        let payload = type + codeHashIndex + publicKeyHash
         return Bech32().encode(hrp: prefix, data: convertBits(data: payload, fromBits: 8, toBits: 5, pad: true)!)
     }
 
