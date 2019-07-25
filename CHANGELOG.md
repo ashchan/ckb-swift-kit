@@ -5,6 +5,14 @@
 
 * Add dao field of Header ([6c884dd](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6c884dd))
 * Add hash type support ([6b01ab8](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6b01ab8))
+* Update address generator as per recent RFC 21 change ([b5e73bb](https://github.com/nervosnetwork/ckb-sdk-swift/commit/b5e73bb))
+
+
+### BREAKING CHANGES
+
+* A public key will derive different address from previous implementation.
+As the code hash index has been changed from 4 bytes to 1 byte, the first serveral fixed
+characters will become ckt1qyq from ckb1q9gry5zg and be shorter.
 
 
 # [v0.16.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.15.0...v0.16.0) (2019-07-13)
