@@ -1,8 +1,6 @@
 //
 //  Header.swift
-//  CKB
 //
-//  Created by James Chen on 2018/12/14.
 //  Copyright © 2018 Nervos Foundation. All rights reserved.
 //
 
@@ -25,6 +23,7 @@ public struct Header: Codable {
     public let difficulty: HexNumber
     public let unclesHash: H256
     public let unclesCount: Number
+    public let dao: String
     public let hash: H256
 
     public let seal: Seal
@@ -42,6 +41,7 @@ public struct Header: Codable {
         case unclesHash = "uncles_hash"
         case unclesCount = "uncles_count"
         case hash
+        case dao
         case seal
     }
 }

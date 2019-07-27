@@ -1,8 +1,6 @@
 //
 //  UtilsTests.swift
-//  CKBTests
 //
-//  Created by James Chen on 2018/12/17.
 //  Copyright © 2018 Nervos Foundation. All rights reserved.
 //
 

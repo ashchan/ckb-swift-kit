@@ -1,8 +1,6 @@
 //
 //  SystemScriptTests.swift
-//  CKBTests
 //
-//  Created by James Chen on 2019/05/16.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 

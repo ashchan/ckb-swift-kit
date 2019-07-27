@@ -1,8 +1,6 @@
 //
 //  APIMockingClientTests.swift
-//  CKBTests
 //
-//  Created by James Chen on 2019/06/05.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 
