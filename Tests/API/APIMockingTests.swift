@@ -1,8 +1,6 @@
 //
 //  APIMockingTests.swift
-//  CKBTests
 //
-//  Created by James Chen on 2019/04/29.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 
@@ -51,7 +49,7 @@ class APIMockingTests: XCTestCase {
     func testGetTipHeader() throws {
         let result = try getClient(json: "tipHeader").getTipHeader()
         XCTAssertNotNil(result)
-        XCTAssertTrue(Int64(result.number)! > 0)
+        XCTAssertTrue(Int64(result.number)! >= 0)
     }
 
     func testGetLiveCell() throws {

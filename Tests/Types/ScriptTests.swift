@@ -1,8 +1,6 @@
 //
 //  ScriptTests.swift
-//  CKBTests
 //
-//  Created by James Chen on 2018/12/26.
 //  Copyright © 2018 Nervos Foundation. All rights reserved.
 //
 
@@ -12,7 +10,7 @@ import XCTest
 class ScriptTests: XCTestCase {
     func testEmptyScriptHash() {
         let script = Script()
-        XCTAssertEqual("0x266cec97cbede2cfbce73666f08deed9560bdf7841a7a5a51b3a3f09da249e21", script.hash)
+        XCTAssertEqual("0xc371c8d6a0aed6018e91202d047c35055cfb0228e6709f1cd1d5f756525628b9", script.hash)
     }
 
     func testScriptHash() {
@@ -20,7 +18,7 @@ class ScriptTests: XCTestCase {
             args: ["0x01"],
             codeHash: H256.zeroHash
         )
-        XCTAssertEqual("0xdade0e507e27e2a5995cf39c8cf454b6e70fa80d03c1187db7a4cb2c9eab79da", script.hash)
+        XCTAssertEqual("0xcd5b0c29b8f5528d3a75e3918576db4d962a1d4b315dff7d3c50818cc373b3f5", script.hash)
     }
 
     func testCodeHashHasPrefix() {

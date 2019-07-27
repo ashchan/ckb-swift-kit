@@ -1,22 +1,23 @@
 {
     "jsonrpc": "2.0",
     "result": {
-        "difficulty": "0x100",
+        "dao": "0x01000000000000000000c16ff286230000830205b3b9350000da24a04b6f0000",
+        "difficulty": "0x1000",
         "epoch": "0",
-        "hash": "0x69afdefff8701c6c321c71fa83d66897b96336cd7128dd183107cd38f20c5cca",
-        "number": "10",
-        "parent_hash": "0x760328f32872ff0a11c5f308a8f888eb5cf6b92f5723156fd9971bb3bddc0180",
+        "hash": "0x0848ebfee918574890c3fd806af1b6c82296f89a8f608015999ae4db7eb674be",
+        "number": "0",
+        "parent_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "proposals_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "seal": {
-            "nonce": "7106112070777819202",
-            "proof": "0x3e020000e62b0000733d0000b8420000e6450000ed4a0000115b0000935d00007160000059640000557500004b790000"
+            "nonce": "0",
+            "proof": "0x00"
         },
-        "timestamp": "1557706427545",
-        "transactions_root": "0x8b2529e9966ec3a7a3d53590e4067e334418a9b8e813c7c4a55566f4fc6d26a0",
+        "timestamp": "1561788000134",
+        "transactions_root": "0x1726e4f89d78e8e221a841c2531d2e12c45262fb968735d1b875bb2487d9e0be",
         "uncles_count": "0",
         "uncles_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
         "version": "0",
-        "witnesses_root": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        "witnesses_root": "0xd05df7bd25c06f79149cbdfdf7261f55394c3bd0ee890ccc9e486088d80fda7d"
     },
     "id": 1
 }
