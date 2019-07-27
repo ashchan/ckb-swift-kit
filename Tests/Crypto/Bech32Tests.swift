@@ -1,8 +1,6 @@
 //
 //  Bech32Tests.swift
-//  CKBTests
 //
-//  Created by James Chen on 2019/04/15.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 

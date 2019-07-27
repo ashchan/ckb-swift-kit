@@ -1,8 +1,6 @@
 //
 //  Witness.swift
-//  CKB
 //
-//  Created by James Chen on 2019/04/01.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 

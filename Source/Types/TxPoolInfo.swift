@@ -1,8 +1,6 @@
 //
 //  TxPoolInfo.swift
-//  CKB
 //
-//  Created by James Chen on 2019/05/08.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 

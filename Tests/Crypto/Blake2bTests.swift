@@ -1,8 +1,6 @@
 //
 //  Blake2bTests.swift
-//  CKBTests
 //
-//  Created by James Chen on 2019/03/06.
 //  Copyright © 2019 Nervos Foundation. All rights reserved.
 //
 
