@@ -37,7 +37,7 @@ public struct Script: Codable, Param {
         return [
             CodingKeys.args.rawValue: args,
             CodingKeys.codeHash.rawValue: codeHash,
-            CodingKeys.hashType.rawValue: hashType
+            CodingKeys.hashType.rawValue: hashType.rawValue
         ]
     }
 
