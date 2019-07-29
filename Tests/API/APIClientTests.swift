@@ -66,6 +66,22 @@ class APIClientTests: RPCTestSkippable {
         XCTAssertTrue(Int64(result.number)! >= 0)
     }
 
+    func testGetHeader() throws {
+        let tipHeader = try client.getTipHeader()
+        let hash = tipHeader.hash
+        let result = try client.getHeader(blockHash: hash)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.hash, hash)
+    }
+
+    func testGetHeaderByNumber() throws {
+        let tipHeader = try client.getTipHeader()
+        let number = tipHeader.number
+        let result = try client.getHeaderByNumber(number: number)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.number, number)
+    }
+
     func testGetCellsByLockHash() throws {
         let result = try client.getCellsByLockHash(lockHash: "0x321c1ca2887fb8eddaaa7e917399f71e63e03a1c83ff75ed12099a01115ea2ff", from: "1", to: "100")
         XCTAssertNotNil(result)

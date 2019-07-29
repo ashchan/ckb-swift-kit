@@ -47,9 +47,23 @@ class APIMockingTests: XCTestCase {
     }
 
     func testGetTipHeader() throws {
-        let result = try getClient(json: "tipHeader").getTipHeader()
+        let result = try getClient(json: "header").getTipHeader()
         XCTAssertNotNil(result)
         XCTAssertTrue(Int64(result.number)! >= 0)
+    }
+
+    func testGetHeader() throws {
+        let hash = "0xba0d878d2c3711d38b5ddc2bc917312ca3898cad98457cc7960e28ec31f26e7f"
+        let result = try getClient(json: "header").getHeader(blockHash: hash)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.hash, hash)
+    }
+
+    func testGetHeaderByNumber() throws {
+        let number = "1024"
+        let result = try getClient(json: "header").getHeaderByNumber(number: number)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.number, number)
     }
 
     func testGetLiveCell() throws {

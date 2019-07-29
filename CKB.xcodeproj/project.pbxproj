@@ -27,7 +27,7 @@
 		1A2D6B2922A35C5A00724E66 /* genesisBlock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43A227694D400C6546F /* genesisBlock.json */; };
 		1A2D6B2A22A35C5A00724E66 /* epoch.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2CDAE22281796D0024CA71 /* epoch.json */; };
 		1A2D6B2B22A35C5A00724E66 /* transaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43C2276981700C6546F /* transaction.json */; };
-		1A2D6B2C22A35C5A00724E66 /* tipHeader.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43E2276994000C6546F /* tipHeader.json */; };
+		1A2D6B2C22A35C5A00724E66 /* header.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F43E2276994000C6546F /* header.json */; };
 		1A2D6B2D22A35C5A00724E66 /* tipBlockNumber.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F4402276998900C6546F /* tipBlockNumber.json */; };
 		1A2D6B2E22A35C5A00724E66 /* sendTransactionEmpty.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F442227699D400C6546F /* sendTransactionEmpty.json */; };
 		1A2D6B2F22A35C5A00724E66 /* localNodeInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A58F44422769A0600C6546F /* localNodeInfo.json */; };
@@ -156,7 +156,7 @@
 		1A58F4382276939D00C6546F /* genesisBlockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlockHash.json; sourceTree = "<group>"; };
 		1A58F43A227694D400C6546F /* genesisBlock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlock.json; sourceTree = "<group>"; };
 		1A58F43C2276981700C6546F /* transaction.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = transaction.json; sourceTree = "<group>"; };
-		1A58F43E2276994000C6546F /* tipHeader.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tipHeader.json; sourceTree = "<group>"; };
+		1A58F43E2276994000C6546F /* header.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = header.json; sourceTree = "<group>"; };
 		1A58F4402276998900C6546F /* tipBlockNumber.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tipBlockNumber.json; sourceTree = "<group>"; };
 		1A58F442227699D400C6546F /* sendTransactionEmpty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sendTransactionEmpty.json; sourceTree = "<group>"; };
 		1A58F44422769A0600C6546F /* localNodeInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = localNodeInfo.json; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 				1A58F43A227694D400C6546F /* genesisBlock.json */,
 				1A2CDAE22281796D0024CA71 /* epoch.json */,
 				1A58F43C2276981700C6546F /* transaction.json */,
-				1A58F43E2276994000C6546F /* tipHeader.json */,
+				1A58F43E2276994000C6546F /* header.json */,
 				1A58F4402276998900C6546F /* tipBlockNumber.json */,
 				1A58F442227699D400C6546F /* sendTransactionEmpty.json */,
 				1A58F44422769A0600C6546F /* localNodeInfo.json */,
@@ -554,7 +554,7 @@
 				1A2D6B2E22A35C5A00724E66 /* sendTransactionEmpty.json in Resources */,
 				1A2D6B3222A35C5A00724E66 /* txPoolInfo.json in Resources */,
 				1A199DEF22BA352D000C0C34 /* deindexLockHash.json in Resources */,
-				1A2D6B2C22A35C5A00724E66 /* tipHeader.json in Resources */,
+				1A2D6B2C22A35C5A00724E66 /* header.json in Resources */,
 				1A199DF022BA352D000C0C34 /* getLockHashIndexStates.json in Resources */,
 				1A2D6B2922A35C5A00724E66 /* genesisBlock.json in Resources */,
 				1A2D6B2D22A35C5A00724E66 /* tipBlockNumber.json in Resources */,

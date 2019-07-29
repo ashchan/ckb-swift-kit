@@ -27,6 +27,14 @@ public extension APIClient {
         return try load(APIRequest<Header>(method: "get_tip_header"))
     }
 
+    func getHeader(blockHash: H256) throws -> Header {
+        return try load(APIRequest<Header>(method: "get_header", params: [blockHash]))
+    }
+
+    func getHeaderByNumber(number: BlockNumber) throws -> Header {
+        return try load(APIRequest<Header>(method: "get_header_by_number", params: [number]))
+    }
+
     func getCellsByLockHash(lockHash: H256, from: BlockNumber, to: BlockNumber) throws -> [CellOutputWithOutPoint] {
         return try load(APIRequest<[CellOutputWithOutPoint]>(method: "get_cells_by_lock_hash", params: [lockHash, from, to]))
     }
