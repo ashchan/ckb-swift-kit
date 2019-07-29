@@ -71,10 +71,10 @@
 		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
 		1A54E26122EEA9DE008CF6C3 /* setBan.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A55D39C22EEA7CC00E2B8DE /* setBan.json */; };
 		1A54E26222EEA9E1008CF6C3 /* getBannedAddresses.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A55D39E22EEA7F300E2B8DE /* getBannedAddresses.json */; };
-		1A54E26622EEB4D4008CF6C3 /* BlockReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A54E26522EEB4D4008CF6C3 /* BlockReward.swift */; };
 		1A54E26822EEB5BA008CF6C3 /* blockReward.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A54E26722EEB5BA008CF6C3 /* blockReward.json */; };
-		1A55D39B22EEA69F00E2B8DE /* BannedAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55D39A22EEA69F00E2B8DE /* BannedAddress.swift */; };
 		1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB2228C571200157426 /* Transaction+Sign.swift */; };
+		1AA3B83F22EEBAFA00027520 /* BannedAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3B83D22EEBAFA00027520 /* BannedAddress.swift */; };
+		1AA3B84222EEBB4800027520 /* BlockReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3B84122EEBB4800027520 /* BlockReward.swift */; };
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
 		1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6852283CE4500C116B2 /* PeerState.swift */; };
 		1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED6222AA558009B395B /* Secp256k1.swift */; };
@@ -151,11 +151,9 @@
 		1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxPoolInfo.swift; sourceTree = "<group>"; };
 		1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = txPoolInfo.json; sourceTree = "<group>"; };
 		1A4AEBDE2282EF7500F0D576 /* peers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peers.json; sourceTree = "<group>"; };
-		1A54E26522EEB4D4008CF6C3 /* BlockReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlockReward.swift; path = "../../../../../../System/Volumes/Data/Users/james/Projects/ckb-sdk-swift/Source/Types/BlockReward.swift"; sourceTree = "<group>"; };
-		1A54E26722EEB5BA008CF6C3 /* blockReward.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = blockReward.json; path = "../../../../../../../System/Volumes/Data/Users/james/Projects/ckb-sdk-swift/Tests/API/RPC Fixtures/blockReward.json"; sourceTree = "<group>"; };
-		1A55D39A22EEA69F00E2B8DE /* BannedAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannedAddress.swift; path = "../../../../../../System/Volumes/Data/Users/james/Projects/ckb-sdk-swift/Source/Types/BannedAddress.swift"; sourceTree = "<group>"; };
-		1A55D39C22EEA7CC00E2B8DE /* setBan.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = setBan.json; path = "../../../../../../../System/Volumes/Data/Users/james/Projects/ckb-sdk-swift/Tests/API/RPC Fixtures/setBan.json"; sourceTree = "<group>"; };
-		1A55D39E22EEA7F300E2B8DE /* getBannedAddresses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = getBannedAddresses.json; path = "../../../../../../../System/Volumes/Data/Users/james/Projects/ckb-sdk-swift/Tests/API/RPC Fixtures/getBannedAddresses.json"; sourceTree = "<group>"; };
+		1A54E26722EEB5BA008CF6C3 /* blockReward.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = blockReward.json; path = blockReward.json; sourceTree = "<group>"; };
+		1A55D39C22EEA7CC00E2B8DE /* setBan.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = setBan.json; path = setBan.json; sourceTree = "<group>"; };
+		1A55D39E22EEA7F300E2B8DE /* getBannedAddresses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = getBannedAddresses.json; path = getBannedAddresses.json; sourceTree = "<group>"; };
 		1A58F4362276904900C6546F /* APIMockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingTests.swift; sourceTree = "<group>"; };
 		1A58F4382276939D00C6546F /* genesisBlockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlockHash.json; sourceTree = "<group>"; };
 		1A58F43A227694D400C6546F /* genesisBlock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlock.json; sourceTree = "<group>"; };
@@ -170,6 +168,8 @@
 		1A5BCBAF228C53C000157426 /* pubkey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pubkey.json; sourceTree = "<group>"; };
 		1A5BCBB2228C571200157426 /* Transaction+Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Sign.swift"; sourceTree = "<group>"; };
 		1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSignTests.swift; sourceTree = "<group>"; };
+		1AA3B83D22EEBAFA00027520 /* BannedAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannedAddress.swift; path = BannedAddress.swift; sourceTree = "<group>"; };
+		1AA3B84122EEBB4800027520 /* BlockReward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockReward.swift; path = BlockReward.swift; sourceTree = "<group>"; };
 		1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainInfo.swift; sourceTree = "<group>"; };
 		1AA9B6852283CE4500C116B2 /* PeerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerState.swift; sourceTree = "<group>"; };
 		1AA9B6872283D10E00C116B2 /* blockchainInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockchainInfo.json; sourceTree = "<group>"; };
@@ -365,8 +365,8 @@
 				1AA9B6852283CE4500C116B2 /* PeerState.swift */,
 				1A2188732288FC1700F613CF /* DryRunResult.swift */,
 				1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */,
-				1A55D39A22EEA69F00E2B8DE /* BannedAddress.swift */,
-				1A54E26522EEB4D4008CF6C3 /* BlockReward.swift */,
+				1AA3B83D22EEBAFA00027520 /* BannedAddress.swift */,
+				1AA3B84122EEBB4800027520 /* BlockReward.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -723,8 +723,8 @@
 				1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
 				1AB7516822B9F2DB00AC9F63 /* APIClient+Pool.swift in Sources */,
-				1A54E26622EEB4D4008CF6C3 /* BlockReward.swift in Sources */,
-				1A55D39B22EEA69F00E2B8DE /* BannedAddress.swift in Sources */,
+				1AA3B84222EEBB4800027520 /* BlockReward.swift in Sources */,
+				1AA3B83F22EEBAFA00027520 /* BannedAddress.swift in Sources */,
 				1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */,
 				1A414AA021C770DD00B28C09 /* Utils.swift in Sources */,
 				1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */,
