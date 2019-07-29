@@ -102,6 +102,17 @@ class APIMockingTests: XCTestCase {
         XCTAssertFalse(result.first!.addresses.isEmpty)
     }
 
+    func testSetBan() throws {
+        let result = try getClient(json: "setBan").setBan(address: "192.168.0.1", command: "insert", banTime: nil, absolute: nil, reason: "a reason")
+        XCTAssertTrue(result)
+    }
+
+    func testGetBannedAddress() throws {
+        let result = try getClient(json: "getBannedAddresses").getBannedAddresses()
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
+
     func testComputeTransactionHash() throws {
         let tx = Transaction()
         let result = try? getClient(json: "computeTransactionHash").computeTransactionHash(transaction: tx)

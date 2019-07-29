@@ -69,6 +69,9 @@
 		1A4A4BB722A6CA4C003DC827 /* APIMockingClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BB622A6CA4C003DC827 /* APIMockingClientTests.swift */; };
 		1A4A4BBB22A6D152003DC827 /* APIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BBA22A6D152003DC827 /* APIRequestTests.swift */; };
 		1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */; };
+		1A54E26122EEA9DE008CF6C3 /* setBan.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A55D39C22EEA7CC00E2B8DE /* setBan.json */; };
+		1A54E26222EEA9E1008CF6C3 /* getBannedAddresses.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A55D39E22EEA7F300E2B8DE /* getBannedAddresses.json */; };
+		1A55D39B22EEA69F00E2B8DE /* BannedAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55D39A22EEA69F00E2B8DE /* BannedAddress.swift */; };
 		1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB2228C571200157426 /* Transaction+Sign.swift */; };
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
 		1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6852283CE4500C116B2 /* PeerState.swift */; };
@@ -146,6 +149,9 @@
 		1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxPoolInfo.swift; sourceTree = "<group>"; };
 		1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = txPoolInfo.json; sourceTree = "<group>"; };
 		1A4AEBDE2282EF7500F0D576 /* peers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = peers.json; sourceTree = "<group>"; };
+		1A55D39A22EEA69F00E2B8DE /* BannedAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannedAddress.swift; path = "../../../../../../System/Volumes/Data/Users/james/Projects/ckb-sdk-swift/Source/Types/BannedAddress.swift"; sourceTree = "<group>"; };
+		1A55D39C22EEA7CC00E2B8DE /* setBan.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = setBan.json; path = "../../../../../../../System/Volumes/Data/Users/james/Projects/ckb-sdk-swift/Tests/API/RPC Fixtures/setBan.json"; sourceTree = "<group>"; };
+		1A55D39E22EEA7F300E2B8DE /* getBannedAddresses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = getBannedAddresses.json; path = "../../../../../../../System/Volumes/Data/Users/james/Projects/ckb-sdk-swift/Tests/API/RPC Fixtures/getBannedAddresses.json"; sourceTree = "<group>"; };
 		1A58F4362276904900C6546F /* APIMockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingTests.swift; sourceTree = "<group>"; };
 		1A58F4382276939D00C6546F /* genesisBlockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlockHash.json; sourceTree = "<group>"; };
 		1A58F43A227694D400C6546F /* genesisBlock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genesisBlock.json; sourceTree = "<group>"; };
@@ -251,6 +257,8 @@
 				1A58F442227699D400C6546F /* sendTransactionEmpty.json */,
 				1A58F44422769A0600C6546F /* localNodeInfo.json */,
 				1A4AEBDE2282EF7500F0D576 /* peers.json */,
+				1A55D39C22EEA7CC00E2B8DE /* setBan.json */,
+				1A55D39E22EEA7F300E2B8DE /* getBannedAddresses.json */,
 				1A58F44822769C7900C6546F /* liveCellEmpty.json */,
 				1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */,
 				1AA9B6872283D10E00C116B2 /* blockchainInfo.json */,
@@ -352,6 +360,7 @@
 				1AA9B6852283CE4500C116B2 /* PeerState.swift */,
 				1A2188732288FC1700F613CF /* DryRunResult.swift */,
 				1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */,
+				1A55D39A22EEA69F00E2B8DE /* BannedAddress.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -550,6 +559,7 @@
 				1A2D6B2922A35C5A00724E66 /* genesisBlock.json in Resources */,
 				1A2D6B2D22A35C5A00724E66 /* tipBlockNumber.json in Resources */,
 				1A2D6B2A22A35C5A00724E66 /* epoch.json in Resources */,
+				1A54E26122EEA9DE008CF6C3 /* setBan.json in Resources */,
 				1A199DEC22BA3526000C0C34 /* getLiveCellsByLockHash.json in Resources */,
 				1A2D6B3022A35C5A00724E66 /* peers.json in Resources */,
 				1A2D6B3122A35C5A00724E66 /* liveCellEmpty.json in Resources */,
@@ -562,6 +572,7 @@
 				1A2D6B3422A35C5A00724E66 /* peersState.json in Resources */,
 				1A2D6B3322A35C5A00724E66 /* blockchainInfo.json in Resources */,
 				1A2D6B2822A35C5A00724E66 /* genesisBlockHash.json in Resources */,
+				1A54E26222EEA9E1008CF6C3 /* getBannedAddresses.json in Resources */,
 				1A2D6B3A22A35C6400724E66 /* ecdsa_sig.json in Resources */,
 				1A2D6B2F22A35C5A00724E66 /* localNodeInfo.json in Resources */,
 			);
@@ -705,6 +716,7 @@
 				1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
 				1AB7516822B9F2DB00AC9F63 /* APIClient+Pool.swift in Sources */,
+				1A55D39B22EEA69F00E2B8DE /* BannedAddress.swift in Sources */,
 				1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */,
 				1A414AA021C770DD00B28C09 /* Utils.swift in Sources */,
 				1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */,
@@ -833,6 +845,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -891,6 +904,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -921,6 +935,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
@@ -950,6 +965,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;

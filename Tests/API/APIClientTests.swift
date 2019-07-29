@@ -136,6 +136,17 @@ class APIClientTests: RPCTestSkippable {
         XCTAssertNotNil(result)
     }
 
+    func testSetBan() throws {
+        let result = try client.setBan(address: "192.168.0.1", command: "insert", banTime: nil, absolute: nil, reason: "a reason")
+        XCTAssertTrue(result)
+    }
+
+    func testGetBannedAddress() throws {
+        let result = try client.getBannedAddresses()
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
+    }
+
     func testComputeTransactionHash() throws {
         let tx = Transaction()
         let result = try client.computeTransactionHash(transaction: tx)
