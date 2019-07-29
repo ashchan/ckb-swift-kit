@@ -138,7 +138,7 @@ class APIClientTests: RPCTestSkippable {
 
     func testSetBan() throws {
         let result = try client.setBan(address: "192.168.0.1", command: "insert", banTime: nil, absolute: nil, reason: "a reason")
-        XCTAssertTrue(result)
+        XCTAssertNil(result)
     }
 
     func testGetBannedAddress() throws {

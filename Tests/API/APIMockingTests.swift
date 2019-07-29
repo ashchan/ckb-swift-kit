@@ -104,7 +104,7 @@ class APIMockingTests: XCTestCase {
 
     func testSetBan() throws {
         let result = try getClient(json: "setBan").setBan(address: "192.168.0.1", command: "insert", banTime: nil, absolute: nil, reason: "a reason")
-        XCTAssertTrue(result)
+        XCTAssertNil(result)
     }
 
     func testGetBannedAddress() throws {
