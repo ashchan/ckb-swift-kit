@@ -10,12 +10,12 @@ import Foundation
 public struct APIRequest<R> {
     let id: Int
     let method: String
-    let params: [Any]
+    let params: [Any?]
     let decode: (Data) throws -> R?
 }
 
 extension APIRequest where R: Codable {
-    init(id: Int = 1, method: String, params: [Any] = []) {
+    init(id: Int = 1, method: String, params: [Any?] = []) {
         self.id = id
         self.method = method
         self.params = params
