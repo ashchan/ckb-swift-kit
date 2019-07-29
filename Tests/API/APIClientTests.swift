@@ -55,6 +55,13 @@ class APIClientTests: RPCTestSkippable {
         XCTAssertNil(try? client.getTransaction(hash: nonexistentHash))
     }
 
+    func testGetCellbaseOutputCapacityDetails() throws {
+        let tipHeader = try client.getTipHeader()
+        let result = try client.getCellbaseOutputCapacityDetails(blockHash: tipHeader.hash)
+        XCTAssertNotNil(result)
+        XCTAssert(Int64(result.txFee)! >= 0)
+    }
+
     func testGetBlockHash() throws {
         let result = try client.getBlockHash(number: "0")
         XCTAssertNotNil(result)

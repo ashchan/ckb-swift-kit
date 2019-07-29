@@ -1,0 +1,11 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "primary": "100000000000",
+        "proposal_reward": "0",
+        "secondary": "3936000",
+        "total": "100003936000",
+        "tx_fee": "0"
+    }
+}
