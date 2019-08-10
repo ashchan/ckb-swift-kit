@@ -1,3 +1,14 @@
+# [v0.18.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.17.0...v0.18.0) (2019-08-10)
+
+
+### Features
+
+* Add new chain RPC method get_cellbase_output_capacity_details ([85b2f8a](https://github.com/nervosnetwork/ckb-sdk-swift/commit/85b2f8a))
+* Add new chain RPC methods get_header, get_header_by_number ([0a9f7af](https://github.com/nervosnetwork/ckb-sdk-swift/commit/0a9f7af))
+* Add new net RPC methods set_ban, get_banned_addresses ([df4a7a5](https://github.com/nervosnetwork/ckb-sdk-swift/commit/df4a7a5))
+
+
+
 # [v0.17.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.16.0...v0.17.0) (2019-07-27)
 
 
