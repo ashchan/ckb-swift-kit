@@ -44,7 +44,7 @@ class APIMockingTests: XCTestCase {
     func testGetCellbaseOutputCapacityDetails() throws {
         let result = try getClient(json: "blockReward").getCellbaseOutputCapacityDetails(blockHash: "0xba0d878d2c3711d38b5ddc2bc917312ca3898cad98457cc7960e28ec31f26e7f")
         XCTAssertNotNil(result)
-        XCTAssert(Int64(result.txFee)! >= 0)
+        XCTAssert(Int64(result!.txFee)! >= 0)
     }
 
     func testGetBlockHash() throws {

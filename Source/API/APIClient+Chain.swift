@@ -55,7 +55,7 @@ public extension APIClient {
         return try load(APIRequest<Epoch>(method: "get_epoch_by_number", params: [number]))
     }
 
-    func getCellbaseOutputCapacityDetails(blockHash: H256) throws -> BlockReward {
-        return try load(APIRequest<BlockReward>(method: "get_cellbase_output_capacity_details", params: [blockHash]))
+    func getCellbaseOutputCapacityDetails(blockHash: H256) throws -> BlockReward? {
+        return try loadNullable(APIRequest<BlockReward>(method: "get_cellbase_output_capacity_details", params: [blockHash]))
     }
 }
