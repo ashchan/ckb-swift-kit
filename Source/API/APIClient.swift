@@ -7,7 +7,7 @@
 import Foundation
 
 /// JSON RPC API client.
-/// Implement CKB [JSON-RPC](https://github.com/nervosnetwork/ckb/tree/develop/rpc#json-rpc) interfaces.
+/// Implement CKB [JSON-RPC](https://github.com/nervosnetwork/ckb/tree/develop/rpc#ckb-json-rpc-protocols) interfaces.
 public class APIClient {
     private var url: URL
     public static let defaultLocalURL = URL(string: "http://localhost:8114")!

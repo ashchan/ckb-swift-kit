@@ -14,9 +14,8 @@ public extension APIClient {
         ))
     }
 
-    // Although this declares to return `H256`, the RPC actually always returns nil.
-    func deindexLockHash(lockHash: H256) throws -> H256? {
-        return try loadNullable(APIRequest<H256>(method: "deindex_lock_hash", params: [lockHash]))
+    func deindexLockHash(lockHash: H256) throws -> Bool? {
+        return try loadNullable(APIRequest<Bool>(method: "deindex_lock_hash", params: [lockHash]))
     }
 
     func getLockHashIndexStates() throws -> [LockHashIndexState] {

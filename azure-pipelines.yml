@@ -38,7 +38,7 @@ jobs:
       sdk: 'macosx10.14'
       configuration: 'Debug'
       skip_rpc_tests: 0
-      ckb_version: 'v0.17.0'
+      ckb_version: 'v0.18.0'
     steps:
       - task: CocoaPods@0
         displayName: 'pod install using the CocoaPods task with defaults'
@@ -56,7 +56,7 @@ jobs:
         displayName: 'Download CKB Binary'
         env: { CKB_FILENAME: 'ckb_$(CKB_VERSION)_x86_64-apple-darwin' }
       - task: Xcode@5
-        displayName: 'CKB Swift SDK RPc Tests'
+        displayName: 'CKB Swift SDK RPC Tests'
         inputs:
           actions: 'build test'
           sdk: '$(sdk)'

@@ -55,6 +55,14 @@ class APIClientTests: RPCTestSkippable {
         XCTAssertNil(try? client.getTransaction(hash: nonexistentHash))
     }
 
+    func testGetCellbaseOutputCapacityDetails() throws {
+        let tipHeader = try client.getTipHeader()
+        let result = try client.getCellbaseOutputCapacityDetails(blockHash: tipHeader.hash)
+        if let result = result {
+            XCTAssert(Int64(result.txFee)! >= 0)
+        }
+    }
+
     func testGetBlockHash() throws {
         let result = try client.getBlockHash(number: "0")
         XCTAssertNotNil(result)
@@ -64,6 +72,22 @@ class APIClientTests: RPCTestSkippable {
         let result = try client.getTipHeader()
         XCTAssertNotNil(result)
         XCTAssertTrue(Int64(result.number)! >= 0)
+    }
+
+    func testGetHeader() throws {
+        let tipHeader = try client.getTipHeader()
+        let hash = tipHeader.hash
+        let result = try client.getHeader(blockHash: hash)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.hash, hash)
+    }
+
+    func testGetHeaderByNumber() throws {
+        let tipHeader = try client.getTipHeader()
+        let number = tipHeader.number
+        let result = try client.getHeaderByNumber(number: number)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.number, number)
     }
 
     func testGetCellsByLockHash() throws {
@@ -134,6 +158,17 @@ class APIClientTests: RPCTestSkippable {
     func testGetPeers() throws {
         let result = try client.getPeers()
         XCTAssertNotNil(result)
+    }
+
+    func testSetBan() throws {
+        let result = try client.setBan(address: "192.168.0.1", command: "insert", banTime: nil, absolute: nil, reason: "a reason")
+        XCTAssertNil(result)
+    }
+
+    func testGetBannedAddress() throws {
+        let result = try client.getBannedAddresses()
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
     }
 
     func testComputeTransactionHash() throws {

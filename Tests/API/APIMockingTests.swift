@@ -41,15 +41,35 @@ class APIMockingTests: XCTestCase {
         XCTAssertNotNil(result)
     }
 
+    func testGetCellbaseOutputCapacityDetails() throws {
+        let result = try getClient(json: "blockReward").getCellbaseOutputCapacityDetails(blockHash: "0xba0d878d2c3711d38b5ddc2bc917312ca3898cad98457cc7960e28ec31f26e7f")
+        XCTAssertNotNil(result)
+        XCTAssert(Int64(result!.txFee)! >= 0)
+    }
+
     func testGetBlockHash() throws {
         let result = try? getClient(json: "genesisBlockHash").getBlockHash(number: "0")
         XCTAssertNotNil(result)
     }
 
     func testGetTipHeader() throws {
-        let result = try getClient(json: "tipHeader").getTipHeader()
+        let result = try getClient(json: "header").getTipHeader()
         XCTAssertNotNil(result)
         XCTAssertTrue(Int64(result.number)! >= 0)
+    }
+
+    func testGetHeader() throws {
+        let hash = "0xba0d878d2c3711d38b5ddc2bc917312ca3898cad98457cc7960e28ec31f26e7f"
+        let result = try getClient(json: "header").getHeader(blockHash: hash)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.hash, hash)
+    }
+
+    func testGetHeaderByNumber() throws {
+        let number = "1024"
+        let result = try getClient(json: "header").getHeaderByNumber(number: number)
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result.number, number)
     }
 
     func testGetLiveCell() throws {
@@ -100,6 +120,17 @@ class APIMockingTests: XCTestCase {
         let result = try getClient(json: "peers").getPeers()
         XCTAssertNotNil(result)
         XCTAssertFalse(result.first!.addresses.isEmpty)
+    }
+
+    func testSetBan() throws {
+        let result = try getClient(json: "setBan").setBan(address: "192.168.0.1", command: "insert", banTime: nil, absolute: nil, reason: "a reason")
+        XCTAssertNil(result)
+    }
+
+    func testGetBannedAddress() throws {
+        let result = try getClient(json: "getBannedAddresses").getBannedAddresses()
+        XCTAssertNotNil(result)
+        XCTAssert(result.count >= 0)
     }
 
     func testComputeTransactionHash() throws {

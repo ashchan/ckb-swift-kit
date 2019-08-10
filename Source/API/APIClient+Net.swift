@@ -14,4 +14,12 @@ public extension APIClient {
     func getPeers() throws -> [Node] {
         return try load(APIRequest<[Node]>(method: "get_peers", params: []))
     }
+
+    func setBan(address: String, command: String, banTime: Timestamp?, absolute: Bool?, reason: String?) throws -> Bool? {
+        return try loadNullable(APIRequest<Bool>(method: "set_ban", params: [address, command, banTime, absolute, reason]))
+    }
+
+    func getBannedAddresses() throws -> [BannedAddress] {
+        return try load(APIRequest<[BannedAddress]>(method: "get_banned_addresses", params: []))
+    }
 }
