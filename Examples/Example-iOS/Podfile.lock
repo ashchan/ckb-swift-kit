@@ -1,5 +1,5 @@
 PODS:
-  - CKB (0.14.0):
+  - CKB (0.18.0):
     - CryptoSwift (~> 1.0.0)
     - secp256k1.swift (~> 0.1.4)
     - Sodium (~> 0.8.0)
@@ -21,11 +21,11 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  CKB: 535cfb0542693bb5670158b34c2b64e5678dfdaf
+  CKB: 6dd5b7d33e2d1f0740585b178aa1cfa91b608835
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   Sodium: 63c0ca312a932e6da481689537d4b35568841bdc
 
 PODFILE CHECKSUM: 25595363a3344f0facecf26229cae03aed8a81d9
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.5
