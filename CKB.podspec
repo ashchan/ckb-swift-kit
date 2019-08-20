@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CKB"
-  s.version      = "0.18.0"
+  s.version      = "0.19.0"
   s.summary      = "Swift SDK for Nervos CKB"
 
   s.description  = <<-DESC
