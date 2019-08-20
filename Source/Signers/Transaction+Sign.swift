@@ -26,9 +26,11 @@ public extension Transaction {
 
         return Transaction(
             version: tx.version,
-            deps: tx.deps,
+            cellDeps: tx.cellDeps,
+            headerDeps: tx.headerDeps,
             inputs: tx.inputs,
             outputs: tx.outputs,
+            outputsData: tx.outputsData,
             witnesses: signedWitnesses,
             hash: txHash
         )

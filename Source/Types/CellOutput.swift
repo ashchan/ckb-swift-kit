@@ -8,13 +8,11 @@ import Foundation
 
 public struct CellOutput: Codable, Param {
     public let capacity: Capacity
-    public let data: HexString
     public let lock: Script
     public let type: Script?
 
-    public init(capacity: Capacity, data: HexString, lock: Script, type: Script? = nil) {
+    public init(capacity: Capacity, lock: Script, type: Script? = nil) {
         self.capacity = capacity
-        self.data = data
         self.lock = lock
         self.type = type
     }
@@ -22,7 +20,6 @@ public struct CellOutput: Codable, Param {
     public var param: [String: Any] {
         var result: [String: Any] = [
             "capacity": capacity,
-            "data": data,
             "lock": lock.param
         ]
         if let type = type {

@@ -8,35 +8,54 @@ import Foundation
 
 public struct Transaction: Codable, Param {
     public let version: Version
-    public let deps: [OutPoint]
+    public let cellDeps: [CellDep]
+    public let headerDeps: [H256]
     public let inputs: [CellInput]
     public let outputs: [CellOutput]
+    public let outputsData: [HexString]
     public let witnesses: [Witness]
     public let hash: H256
 
     public init(
         version: Number = "0",
-        deps: [OutPoint] = [],
+        cellDeps: [CellDep] = [],
+        headerDeps: [H256] = [],
         inputs: [CellInput] = [],
         outputs: [CellOutput] = [],
+        outputsData: [HexString] = [],
         witnesses: [Witness] = [],
         hash: H256 = ""
     ) {
         self.version = version
-        self.deps = deps
+        self.cellDeps = cellDeps
+        self.headerDeps = headerDeps
         self.inputs = inputs
         self.outputs = outputs
+        self.outputsData = outputsData
         self.witnesses = witnesses
         self.hash = hash
     }
 
+    enum CodingKeys: String, CodingKey {
+        case version
+        case cellDeps = "cell_deps"
+        case headerDeps = "header_deps"
+        case inputs
+        case outputs
+        case witnesses
+        case outputsData = "outputs_data"
+        case hash
+    }
+
     public var param: [String: Any] {
         return [
-            "version": version,
-            "deps": deps.map { $0.param },
-            "inputs": inputs.map { $0.param },
-            "outputs": outputs.map { $0.param },
-            "witnesses": witnesses.map { $0.param }
+            CodingKeys.version.rawValue: version,
+            CodingKeys.cellDeps.rawValue: cellDeps.map { $0.param },
+            CodingKeys.headerDeps.rawValue: headerDeps,
+            CodingKeys.inputs.rawValue: inputs.map { $0.param },
+            CodingKeys.outputs.rawValue: outputs.map { $0.param },
+            CodingKeys.outputsData.rawValue: outputsData,
+            CodingKeys.witnesses.rawValue: witnesses.map { $0.param }
         ]
     }
 }

@@ -1,41 +1,119 @@
 {
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-        "transaction": {
-            "deps": [],
-            "hash": "0xbecff6ee8cf2a40bdf391a03df501791b7946cea9a8d83b3d328a1ea5e1bc000",
-            "inputs": [
+    "jsonrpc":"2.0",
+    "result":{
+        "transaction":{
+            "cell_deps":[
+
+            ],
+            "hash":"0x477b8ead2fd6bee7cf2cca0f2530b03f5a5bdd1a48d2827ea37cd63b26182387",
+            "header_deps":[
+
+            ],
+            "inputs":[
                 {
-                    "args": [],
-                    "previous_output": {
-                        "block_hash": "0xca97a033aa9765914bc0b7887ff8723037614df11d06783555ff97e9a0e72b55",
-                        "cell": {
-                            "index": "0",
-                            "tx_hash": "0x602b713fac38c0224bc2e8ba0ec9c8363d7d1e508897b33c32f45d7554883c81",
-                        }
+                    "previous_output":{
+                        "index":"4294967295",
+                        "tx_hash":"0x0000000000000000000000000000000000000000000000000000000000000000"
                     },
-                    "since": "0"
+                    "since":"0"
                 }
             ],
-            "outputs": [
+            "outputs":[
                 {
-                    "capacity": "100000000000",
-                    "data": "0x",
-                    "lock": {
-                        "args": [],
-                        "code_hash": "0x0000000000000000000000000000000000000000000000000000000000000001",
-                        "hash_type": "Data"
+                    "capacity":"4900000000",
+                    "data_hash":"0xb29739ee0ac9bf2c55d1d0fc06068bbe7d8fc10bab0718f4ce4f9d42a13f5613",
+                    "lock":{
+                        "args":[
+
+                        ],
+                        "code_hash":"0xb35557e7e9854206f7bc13e3c3a7fa4cf8892c84a09237fb0aab40aab3771eee",
+                        "hash_type":"Data"
                     },
-                    "type": null
+                    "type":null
+                },
+                {
+                    "capacity":"119918500000000",
+                    "data_hash":"0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55",
+                    "lock":{
+                        "args":[
+
+                        ],
+                        "code_hash":"0xb35557e7e9854206f7bc13e3c3a7fa4cf8892c84a09237fb0aab40aab3771eee",
+                        "hash_type":"Data"
+                    },
+                    "type":null
+                },
+                {
+                    "capacity":"2428900000000",
+                    "data_hash":"0x5afa210bb091cc0936d4baccbc30dbaef028b9fc864c95d2da7672693a3540cc",
+                    "lock":{
+                        "args":[
+
+                        ],
+                        "code_hash":"0xb35557e7e9854206f7bc13e3c3a7fa4cf8892c84a09237fb0aab40aab3771eee",
+                        "hash_type":"Data"
+                    },
+                    "type":null
+                },
+                {
+                    "capacity":"5000000000000000",
+                    "data_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "lock":{
+                        "args":[
+                            "0x64257f00b6b63e987609fa9be2d0c86d351020fb"
+                        ],
+                        "code_hash":"0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c",
+                        "hash_type":"Data"
+                    },
+                    "type":null
+                },
+                {
+                    "capacity":"5000000000000000",
+                    "data_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "lock":{
+                        "args":[
+                            "0x3f1573b44218d4c12a91919a58a863be415a2bc3"
+                        ],
+                        "code_hash":"0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c",
+                        "hash_type":"Data"
+                    },
+                    "type":null
+                },
+                {
+                    "capacity":"5000000000000000",
+                    "data_hash":"0x0000000000000000000000000000000000000000000000000000000000000000",
+                    "lock":{
+                        "args":[
+                            "0x57ccb07be6875f61d93636b0ee11b675494627d2"
+                        ],
+                        "code_hash":"0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c",
+                        "hash_type":"Data"
+                    },
+                    "type":null
                 }
             ],
-            "version": "0",
-            "witnesses": []
+            "outputs_data":[
+                "0x72796c61692d7638",
+                "0x",
+                "0x",
+                "0x",
+                "0x",
+                "0x"
+            ],
+            "version":"0",
+            "witnesses":[
+                {
+                    "data":[
+                        "0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c00",
+                        "0x64257f00b6b63e987609fa9be2d0c86d351020fb"
+                    ]
+                }
+            ]
         },
-        "tx_status": {
-            "block_hash": null,
-            "status": "pending"
+        "tx_status":{
+            "block_hash":"0xa4c8d1bd59981258fd46279f8f3490bfa877f3f48bcdcf125d2d144c26741c91",
+            "status":"committed"
         }
-    }
+    },
+    "id":1
 }

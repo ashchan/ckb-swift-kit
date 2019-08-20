@@ -24,11 +24,11 @@ public struct SystemScript {
         }
 
         let outputIndex = 1
-        let outPoint = OutPoint(cell: CellOutPoint(txHash: systemCellTransaction.hash, index: outputIndex.description))
+        let outPoint = OutPoint(txHash: systemCellTransaction.hash, index: outputIndex.description)
         guard systemCellTransaction.outputs.count > outputIndex else {
             throw APIError.genericError("Fail to get data from system cell tx's outputs[\(outputIndex)]")
         }
-        let data = Data(hex: systemCellTransaction.outputs[outputIndex].data)
+        let data = Data(hex: systemCellTransaction.outputsData[outputIndex])
         guard let codeHash = Blake2b().hash(data: data) else {
             throw APIError.genericError("Fail to calculate cell hash of data from system cell tx's outputs[\(outputIndex)]")
         }

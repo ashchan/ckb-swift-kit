@@ -10,11 +10,11 @@ import XCTest
 class CellInputTests: XCTestCase {
     func testParam() {
         let input = CellInput(
-            previousOutput: OutPoint(blockHash: H256.zeroHash),
+            previousOutput: OutPoint(txHash: H256.zeroHash, index: "0"),
             since: "0"
         )
-        let blockHash = (input.param["previous_output"] as! [String: Any])["block_hash"] as! String
-        XCTAssertEqual(blockHash, H256.zeroHash)
+        let txHash = (input.param["previous_output"] as! [String: Any])["tx_hash"] as! String
+        XCTAssertEqual(txHash, H256.zeroHash)
         XCTAssertEqual(input.param["since"] as! Number, "0")
     }
 }
