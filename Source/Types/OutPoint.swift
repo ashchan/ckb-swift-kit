@@ -7,26 +7,26 @@
 import Foundation
 
 public struct OutPoint: Codable, Param {
-    public let blockHash: H256?
-    public let cell: CellOutPoint?
+    public let txHash: H256?
+    public let index: Number?
 
     enum CodingKeys: String, CodingKey {
-        case blockHash = "block_hash"
-        case cell
+        case txHash = "tx_hash"
+        case index
     }
 
-    public init(blockHash: H256? = nil, cell: CellOutPoint? = nil) {
-        self.blockHash = blockHash
-        self.cell = cell
+    public init(txHash: H256? = nil, index: Number = "0") {
+        self.txHash = txHash
+        self.index = index
     }
 
     public var param: [String: Any] {
         var result = [String: Any]()
-        if let blockHash = blockHash {
-            result["block_hash"] = blockHash
+        if let tx = txHash {
+            result[CodingKeys.txHash.rawValue] = tx
         }
-        if let cell = cell {
-            result["cell"] = cell.param
+        if let index = index {
+            result[CodingKeys.index.rawValue] = index
         }
         return result
     }
