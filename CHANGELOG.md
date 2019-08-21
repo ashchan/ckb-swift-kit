@@ -1,3 +1,12 @@
+# [v0.19.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v0.19.0) (2019-08-22)
+
+
+### Features
+
+* Modify transaction structure ([546fd3d](https://github.com/nervosnetwork/ckb-sdk-swift/commit/546fd3d))
+
+
+
 # [v0.18.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.17.0...v0.18.0) (2019-08-10)
 
 
