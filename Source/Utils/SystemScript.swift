@@ -8,11 +8,11 @@ import Foundation
 
 /// Provided by genesis block to unlock with the default secp256k1 algorithm.
 public struct SystemScript {
-    public let outPoint: OutPoint
+    public let depOutPoint: OutPoint
     public let secp256k1TypeHash: H256
 
-    public init(outPoint: OutPoint, secp256k1TypeHash: H256) {
-        self.outPoint = outPoint
+    public init(depOutPoint: OutPoint, secp256k1TypeHash: H256) {
+        self.depOutPoint = depOutPoint
         self.secp256k1TypeHash = secp256k1TypeHash
     }
 
@@ -30,8 +30,8 @@ public struct SystemScript {
         // TODO: Switch to Script.hash when that's added after serialization/hash change
         let secp256k1TypeHash = try client.computeScriptHash(script: type)
 
-        let outPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: "0")
+        let depOutPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: "0")
 
-        return SystemScript(outPoint: outPoint, secp256k1TypeHash: secp256k1TypeHash)
+        return SystemScript(depOutPoint: depOutPoint, secp256k1TypeHash: secp256k1TypeHash)
     }
 }
