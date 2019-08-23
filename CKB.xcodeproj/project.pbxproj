@@ -86,6 +86,7 @@
 		1AB7516E22BA0F7100AC9F63 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */; };
 		1AB7517022BA263C00AC9F63 /* APIClient+Indexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516F22BA263C00AC9F63 /* APIClient+Indexer.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
+		1AD01E09230F694B0005199E /* computeScriptHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AD01E08230F694B0005199E /* computeScriptHash.json */; };
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
 		1AD3195F225DBCB300F41790 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195E225DBCB300F41790 /* Network.swift */; };
 		1AD96320228D24FB00684FBB /* SystemScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9631F228D24FB00684FBB /* SystemScript.swift */; };
@@ -187,6 +188,7 @@
 		1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getLiveCellsByLockHash.json; sourceTree = "<group>"; };
 		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
 		1AC180922264672B00D243D9 /* Bech32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32Tests.swift; sourceTree = "<group>"; };
+		1AD01E08230F694B0005199E /* computeScriptHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = computeScriptHash.json; sourceTree = "<group>"; };
 		1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGenerator.swift; sourceTree = "<group>"; };
 		1AD3195E225DBCB300F41790 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeneratorTests.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				1AA9B6892283D15600C116B2 /* peersState.json */,
 				1A2188752288FC7B00F613CF /* dryRunTransaction.json */,
 				1A2188772288FEC800F613CF /* computeTransactionHash.json */,
+				1AD01E08230F694B0005199E /* computeScriptHash.json */,
 				1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */,
 				1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */,
 				1A199DE422BA2809000C0C34 /* indexLockHash.json */,
@@ -578,6 +581,7 @@
 				1A2D6B3522A35C5A00724E66 /* dryRunTransaction.json in Resources */,
 				1A2D6B3622A35C5A00724E66 /* computeTransactionHash.json in Resources */,
 				1A2D6B3B22A35C6400724E66 /* pubkey.json in Resources */,
+				1AD01E09230F694B0005199E /* computeScriptHash.json in Resources */,
 				1A2D6B3422A35C5A00724E66 /* peersState.json in Resources */,
 				1A54E26822EEB5BA008CF6C3 /* blockReward.json in Resources */,
 				1A2D6B3322A35C5A00724E66 /* blockchainInfo.json in Resources */,

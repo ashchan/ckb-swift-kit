@@ -135,6 +135,13 @@ class APIMockingTests: XCTestCase {
         let result = try? getClient(json: "computeTransactionHash").computeTransactionHash(transaction: tx)
         XCTAssertNotNil(result)
     }
+
+    func testComputeScriptHash() throws {
+        let script = Script(args: [], codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data)
+        let result = try? getClient(json: "computeScriptHash").computeScriptHash(script: script)
+        XCTAssertNotNil(result)
+        XCTAssertEqual("0xd8753dd87c7dd293d9b64d4ca20d77bb8e5f2d92bf08234b026e2d8b1b00e7e9", result)
+    }
     
     func testDryRunTransaction() throws {
         let tx = Transaction()

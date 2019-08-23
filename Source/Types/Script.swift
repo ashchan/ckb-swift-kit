@@ -22,6 +22,7 @@ public struct Script: Codable, Param {
         case hashType = "hash_type"
     }
 
+    // Before serialization is implemented _compute_script_hash RPC should be used instead.
     public var hash: String {
         var bytes = [UInt8]()
         bytes.append(contentsOf: Data(hex: codeHash).bytes)

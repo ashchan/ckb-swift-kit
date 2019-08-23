@@ -1,8 +1,9 @@
-# [v0.19.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v0.19.0) (2019-08-24)
+# [](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v) (2019-08-23)
 
 
 ### Features
 
+* Implement Experiment RPC method _compute_script_hash ([78e48e0](https://github.com/nervosnetwork/ckb-sdk-swift/commit/78e48e0))
 * Modify transaction structure ([546fd3d](https://github.com/nervosnetwork/ckb-sdk-swift/commit/546fd3d))
 
 
