@@ -15,8 +15,8 @@ public struct SystemScript {
         self.codeHash = codeHash
     }
 
-    /// System cell genesis block which has a default secp256k1 implementation for testnet/dev.
-    public static func loadFromGenesisBlock(nodeUrl: URL) throws -> SystemScript {
+    /// System script from genesis block which embeds a default secp256k1 implementation.
+    public static func loadSystemScript(nodeUrl: URL) throws -> SystemScript {
         let client = APIClient(url: nodeUrl)
         let genesisBlock = try client.genesisBlock()
         guard let systemCellTransaction = genesisBlock.transactions.first else {
@@ -34,5 +34,20 @@ public struct SystemScript {
         }
 
         return SystemScript(outPoint: outPoint, codeHash: Utils.prefixHex(codeHash.toHexString()))
+    }
+
+    /// System script (dep group) from genesis block which embeds a default secp256k1 implementation.
+    public static func loadDepGroupSystemScript(nodeUrl: URL) throws -> SystemScript {
+        let client = APIClient(url: nodeUrl)
+        let genesisBlock = try client.genesisBlock()
+        guard genesisBlock.transactions.count >= 2 else {
+            throw APIError.genericError("Fail to fetch system cell tx from genesis block.")
+        }
+        let systemCellTransaction = genesisBlock.transactions[1]
+
+        let outputIndex = 0
+        let outPoint = OutPoint(txHash: systemCellTransaction.hash, index: outputIndex.description)
+
+        return SystemScript(outPoint: outPoint, codeHash: H256.zeroHash)
     }
 }
