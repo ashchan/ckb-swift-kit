@@ -50,7 +50,7 @@
 
                             ],
                             "code_hash":"0xb35557e7e9854206f7bc13e3c3a7fa4cf8892c84a09237fb0aab40aab3771eee",
-                            "hash_type":"Data"
+                            "hash_type":"data"
                         },
                         "type":null
                     },
@@ -62,7 +62,7 @@
 
                             ],
                             "code_hash":"0xb35557e7e9854206f7bc13e3c3a7fa4cf8892c84a09237fb0aab40aab3771eee",
-                            "hash_type":"Data"
+                            "hash_type":"data"
                         },
                         "type":null
                     },
@@ -74,7 +74,7 @@
 
                             ],
                             "code_hash":"0xb35557e7e9854206f7bc13e3c3a7fa4cf8892c84a09237fb0aab40aab3771eee",
-                            "hash_type":"Data"
+                            "hash_type":"data"
                         },
                         "type":null
                     },
@@ -86,7 +86,7 @@
                                 "0x64257f00b6b63e987609fa9be2d0c86d351020fb"
                             ],
                             "code_hash":"0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c",
-                            "hash_type":"Data"
+                            "hash_type":"data"
                         },
                         "type":null
                     },
@@ -98,7 +98,7 @@
                                 "0x3f1573b44218d4c12a91919a58a863be415a2bc3"
                             ],
                             "code_hash":"0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c",
-                            "hash_type":"Data"
+                            "hash_type":"data"
                         },
                         "type":null
                     },
@@ -110,7 +110,7 @@
                                 "0x57ccb07be6875f61d93636b0ee11b675494627d2"
                             ],
                             "code_hash":"0x54811ce986d5c3e57eaafab22cdd080e32209e39590e204a99b32935f835a13c",
-                            "hash_type":"Data"
+                            "hash_type":"data"
                         },
                         "type":null
                     }
