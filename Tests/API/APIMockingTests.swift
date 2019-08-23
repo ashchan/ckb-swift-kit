@@ -131,9 +131,16 @@ class APIMockingTests: XCTestCase {
     }
 
     func testComputeTransactionHash() throws {
-        let tx = Transaction()
+        let tx = Transaction(
+            cellDeps: [CellDep(outPoint: OutPoint(txHash: "0xad8136760bc0e07a92879131b37ced3d6ce38d86a02327924307ec84e7891a64", index: "0"), isDepGroup: false)],
+            headerDeps: ["0x0b8458925f02f94b9ff4badf1d35e55af80011682dedcc5ae10501c19c9d3852"],
+            inputs: [CellInput(previousOutput: OutPoint(txHash: "0xf1c348cabc1549bf5fefb5317287610ad970a59366ef894dc9b70fd7715c81ee", index: "0"), since: "0")],
+            outputs: [CellOutput(capacity: "100000000000", lock: Script(args: [], codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data))],
+            outputsData: ["0x"]
+        )
         let result = try? getClient(json: "computeTransactionHash").computeTransactionHash(transaction: tx)
         XCTAssertNotNil(result)
+        XCTAssertEqual("0x20cdfd7bd5b9df3ce1e03eda2ffaf8a07a2f4cb897a5c654dedba8b0df9ad93a", result)
     }
 
     func testComputeScriptHash() throws {
