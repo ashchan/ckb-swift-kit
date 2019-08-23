@@ -1,3 +1,14 @@
+# [](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v0.19.0) (2019-08-24)
+
+
+### Features
+
+* Implement Experiment RPC method _compute_script_hash ([9a67e45](https://github.com/nervosnetwork/ckb-sdk-swift/commit/9a67e45))
+* Implement loading system script with dep group ([8dcf84c](https://github.com/nervosnetwork/ckb-sdk-swift/commit/8dcf84c))
+* Modify transaction structure ([546fd3d](https://github.com/nervosnetwork/ckb-sdk-swift/commit/546fd3d))
+
+
+
 # [](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v) (2019-08-23)
 
 
