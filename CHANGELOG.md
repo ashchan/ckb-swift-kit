@@ -1,21 +1,15 @@
-# [](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v0.19.0) (2019-08-24)
+# [v0.19.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v0.19.0) (2019-08-24)
 
 
 ### Features
 
+* Calculate system cell type hash ([a5f30c2](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a5f30c2))
+* Change isDepGroup boolean to DepType enum ([5f12311](https://github.com/nervosnetwork/ckb-sdk-swift/commit/5f12311))
+* Change ScriptHashType values ([c05a069](https://github.com/nervosnetwork/ckb-sdk-swift/commit/c05a069))
 * Implement Experiment RPC method _compute_script_hash ([9a67e45](https://github.com/nervosnetwork/ckb-sdk-swift/commit/9a67e45))
 * Implement loading system script with dep group ([8dcf84c](https://github.com/nervosnetwork/ckb-sdk-swift/commit/8dcf84c))
 * Modify transaction structure ([546fd3d](https://github.com/nervosnetwork/ckb-sdk-swift/commit/546fd3d))
-
-
-
-# [](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v) (2019-08-23)
-
-
-### Features
-
-* Implement Experiment RPC method _compute_script_hash ([78e48e0](https://github.com/nervosnetwork/ckb-sdk-swift/commit/78e48e0))
-* Modify transaction structure ([546fd3d](https://github.com/nervosnetwork/ckb-sdk-swift/commit/546fd3d))
+* Remove seal from header ([1dccb23](https://github.com/nervosnetwork/ckb-sdk-swift/commit/1dccb23))
 
 
 
