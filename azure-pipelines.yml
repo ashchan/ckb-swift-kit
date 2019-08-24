@@ -38,7 +38,7 @@ jobs:
       sdk: 'macosx10.14'
       configuration: 'Debug'
       skip_rpc_tests: 0
-      ckb_version: 'v0.19.0-pre3'
+      ckb_version: 'v0.19.0-rc1'
     steps:
       - task: CocoaPods@0
         displayName: 'pod install using the CocoaPods task with defaults'
