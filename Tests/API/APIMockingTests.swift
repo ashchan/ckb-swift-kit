@@ -59,7 +59,7 @@ class APIMockingTests: XCTestCase {
     }
 
     func testGetHeader() throws {
-        let hash = "0xba0d878d2c3711d38b5ddc2bc917312ca3898cad98457cc7960e28ec31f26e7f"
+        let hash = "0x205130d98f10bccc4a5d4643fe6dae6cb8c17ff9304f6de233efce50aa525ef3"
         let result = try getClient(json: "header").getHeader(blockHash: hash)
         XCTAssertNotNil(result)
         XCTAssertEqual(result.hash, hash)

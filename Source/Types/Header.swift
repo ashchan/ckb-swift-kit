@@ -20,6 +20,7 @@ public struct Header: Codable {
     public let unclesCount: Number
     public let dao: String
     public let hash: H256
+    public let nonce: Number
 
     enum CodingKeys: String, CodingKey {
         case version
@@ -33,7 +34,8 @@ public struct Header: Codable {
         case difficulty
         case unclesHash = "uncles_hash"
         case unclesCount = "uncles_count"
-        case hash
         case dao
+        case hash
+        case nonce
     }
 }
