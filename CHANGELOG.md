@@ -3,6 +3,7 @@
 
 ### Features
 
+* Add nonce to header ([792c848](https://github.com/nervosnetwork/ckb-sdk-swift/commit/792c848))
 * Calculate system cell type hash ([a5f30c2](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a5f30c2))
 * Change isDepGroup boolean to DepType enum ([5f12311](https://github.com/nervosnetwork/ckb-sdk-swift/commit/5f12311))
 * Change ScriptHashType values ([c05a069](https://github.com/nervosnetwork/ckb-sdk-swift/commit/c05a069))
