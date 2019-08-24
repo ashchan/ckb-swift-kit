@@ -6,11 +6,6 @@
 
 import Foundation
 
-public struct Seal: Codable {
-    public let nonce: String
-    public let proof: HexString
-}
-
 public struct Header: Codable {
     public let version: Version
     public let parentHash: H256
@@ -26,8 +21,6 @@ public struct Header: Codable {
     public let dao: String
     public let hash: H256
 
-    public let seal: Seal
-
     enum CodingKeys: String, CodingKey {
         case version
         case parentHash = "parent_hash"
@@ -42,6 +35,5 @@ public struct Header: Codable {
         case unclesCount = "uncles_count"
         case hash
         case dao
-        case seal
     }
 }

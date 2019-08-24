@@ -9,10 +9,6 @@
         "number": "1024",
         "parent_hash": "0x3533d5f0882a60d3b25b7dd57002a5d9eb591e89a98231e8abc5bf48f7ee0592",
         "proposals_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "seal": {
-            "nonce": "0",
-            "proof": "0x"
-        },
         "timestamp": "1557311767",
         "transactions_root": "0x81389ffabda2d1658c75a81e390a82b335d4cb849b2269d134b042fea9cb9513",
         "uncles_count": "0",
