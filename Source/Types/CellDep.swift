@@ -6,24 +6,29 @@
 
 import Foundation
 
+public enum DepType: String, Codable {
+    case code
+    case depGroup = "dep_group"
+}
+
 public struct CellDep: Codable, Param {
     public let outPoint: OutPoint
-    public let isDepGroup: Bool
+    public let depType: DepType
 
-    public init(outPoint: OutPoint, isDepGroup: Bool = false) {
+    public init(outPoint: OutPoint, depType: DepType = .code) {
         self.outPoint = outPoint
-        self.isDepGroup = isDepGroup
+        self.depType = depType
     }
 
     enum CodingKeys: String, CodingKey {
         case outPoint = "out_point"
-        case isDepGroup = "is_dep_group"
+        case depType = "dep_type"
     }
 
     public var param: [String: Any] {
         return [
             CodingKeys.outPoint.rawValue: outPoint.param,
-            CodingKeys.isDepGroup.rawValue: isDepGroup
+            CodingKeys.depType.rawValue: depType.rawValue
         ]
     }
 }

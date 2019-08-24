@@ -12,7 +12,7 @@ class TransactionSignTests: XCTestCase {
         let tx = Transaction(
             version: "0",
             cellDeps: [
-                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), isDepGroup: false)
+                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), depType: .code)
             ],
             inputs: [
                 CellInput(
@@ -57,7 +57,7 @@ class TransactionSignTests: XCTestCase {
         let tx = Transaction(
             version: "0",
             cellDeps: [
-                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), isDepGroup: false)
+                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), depType: .code)
             ],
             inputs: [
                 CellInput(
@@ -108,7 +108,7 @@ class TransactionSignTests: XCTestCase {
         let tx = Transaction(
             version: "0",
             cellDeps: [
-                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), isDepGroup: false)
+                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), depType: .code)
             ],
             inputs: [
                 CellInput(

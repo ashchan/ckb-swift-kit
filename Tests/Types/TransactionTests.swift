@@ -12,7 +12,7 @@ class TransactionTests: XCTestCase {
         let tx = Transaction(
             version: "0",
             cellDeps: [
-                CellDep(outPoint: OutPoint(txHash: "0xbffab7ee0a050e2cb882de066d3dbf3afdd8932d6a26eda44f06e4b23f0f4b5a", index: "0"), isDepGroup: false)
+                CellDep(outPoint: OutPoint(txHash: "0xbffab7ee0a050e2cb882de066d3dbf3afdd8932d6a26eda44f06e4b23f0f4b5a", index: "0"), depType: .code)
             ],
             outputs: [
                 CellOutput(
