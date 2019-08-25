@@ -84,30 +84,29 @@ private extension ViewController {
 
     func testSendCapacity() throws {
         // Fetch system script which we'll use to generate lock for address
-        let systemScript = try SystemScript.loadFromGenesisBlock(nodeUrl: nodeUrl)
+        let systemScript = try SystemScript.loadSystemScript(nodeUrl: nodeUrl)
         // Fill in the sender's private key
         let privateKey: Data = Data(hex: "your private key (hex string)")
 
         // Push system script's out point into deps
-        let deps = [systemScript.outPoint]
+        let deps = [CellDep(outPoint: systemScript.depOutPoint, depType: .depGroup)]
 
         // Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's [wallet module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/develop/faucet-server/Sources/App/Services/Wallet/Wallet.swift#L60).
         let inputs: [CellInput] = [/*...*/]
 
         // Generate lock script for the receiver's address
-        let toAddress = "ckt1q9gry5zgw2q74lpmm03tw9snpqph2myqkkpyfss95qs228"
-        let addressHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!) // "0x7281eafc3bdbe2b716130803756c80b58244c205"
-        let lockScript = Script(args: [addressHash], codeHash: systemScript.codeHash)
+        let toAddress = "ckt..."
+        let addressHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!)
+        let lockScript = Script(args: [addressHash], codeHash: systemScript.secp256k1TypeHash, hashType: .type)
         // Construct the outputs
-        let outputs = [CellOutput(capacity: 500_00_000_000.description, data: "0x", lock: lockScript, type: nil)]
+        let outputs = [CellOutput(capacity: 500_00_000_000.description, lock: lockScript, type: nil)]
 
         // Generate the transaction
-        let tx = Transaction(deps: deps, inputs: inputs, outputs: outputs, witnesses: [Witness(data: [])])
+        let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, witnesses: [Witness(data: [])])
         // For now we need to call the `computeTransactionHash` to get the tx hash
         let apiClient = APIClient(url: nodeUrl)
         let txHash = try apiClient.computeTransactionHash(transaction: tx)
         let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
-
 
         // Now send out the capacity
         let hash = try apiClient.sendTransaction(transaction: signedTx)

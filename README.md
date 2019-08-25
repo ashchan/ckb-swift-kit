@@ -29,7 +29,7 @@ target "MyApp" do
   use_frameworks!
   use_modular_headers!
 
-  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.14.0"
+  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.19.0"
 end
 ```
 
@@ -39,7 +39,7 @@ You can also use [Swift Package Manager](https://swift.org/package-manager/). In
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.14.0")
+  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.19.0")
 ]
 ```
 
@@ -68,33 +68,29 @@ print(height)                                  // "10420"
 ### Send Capacity Example
 
 ```swift
-// Fetch system script which we'll use to generate lock for address
-let nodeUrl = URL(string: "http://localhost:8114")!
-let systemScript = try SystemScript.loadFromGenesisBlock(nodeUrl: nodeUrl)
+let systemScript = try SystemScript.loadSystemScript(nodeUrl: nodeUrl)
 // Fill in the sender's private key
 let privateKey: Data = Data(hex: "your private key (hex string)")
 
 // Push system script's out point into deps
-let deps = [systemScript.outPoint]
+let deps = [CellDep(outPoint: systemScript.depOutPoint, depType: .depGroup)]
 
-// Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's
-// [CellService module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/68205ac338fa3ea3a3f007d8485c15de52cb3abd/faucet-server/Sources/App/Services/CellService.swift#L30-L48).
+// Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's [wallet module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/develop/faucet-server/Sources/App/Services/Wallet/Wallet.swift#L60).
 let inputs: [CellInput] = [/*...*/]
-let witnesses: [Witness] = [/*...*/]
 
 // Generate lock script for the receiver's address
-let toAddress = "ckt1q9gry5zgw2q74lpmm03tw9snpqph2myqkkpyfss95qs228"
-let addressHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!) // "0x7281eafc3bdbe2b716130803756c80b58244c205"
-let lockScript = Script(args: [addressHash], codeHash: systemScript.codeHash)
+let toAddress = "ckt..."
+let addressHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!)
+let lockScript = Script(args: [addressHash], codeHash: systemScript.secp256k1TypeHash, hashType: .type)
 // Construct the outputs
-let outputs = [CellOutput(capacity: 500_00_000_000.description, data: "0x", lock: lockScript, type: nil)]
+let outputs = [CellOutput(capacity: 500_00_000_000.description, lock: lockScript, type: nil)]
 
 // Generate the transaction
-let tx = Transaction(deps: deps, inputs: inputs, outputs: outputs, witnesses: witnesses)
+let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, witnesses: [Witness(data: [])])
 // For now we need to call the `computeTransactionHash` to get the tx hash
 let apiClient = APIClient(url: nodeUrl)
 let txHash = try apiClient.computeTransactionHash(transaction: tx)
-let signedTx = Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
+let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
 
 // Now send out the capacity
 let hash = try apiClient.sendTransaction(transaction: signedTx)
