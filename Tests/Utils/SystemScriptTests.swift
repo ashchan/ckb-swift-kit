@@ -8,8 +8,9 @@ import XCTest
 @testable import CKB
 
 class SystemScriptTests: RPCTestSkippable {
-    func testLoadFromGenesisBlock() {
-        let systemScript = try? SystemScript.loadFromGenesisBlock(nodeUrl: APIClient.defaultLocalURL)
+    func testLoadSystemScript() throws {
+        let systemScript = try SystemScript.loadSystemScript(nodeUrl: APIClient.defaultLocalURL)
         XCTAssertNotNil(systemScript)
+        XCTAssertEqual("0x68d5438ac952d2f584abf879527946a537e82c7f3c1cbf6d8ebf9767437d8e88", systemScript.secp256k1TypeHash)
     }
 }

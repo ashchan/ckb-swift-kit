@@ -3,17 +3,24 @@
     "jsonrpc": "2.0",
     "result": {
         "transaction": {
-            "deps": [],
-            "hash": "0xbecff6ee8cf2a40bdf391a03df501791b7946cea9a8d83b3d328a1ea5e1bc000",
+            "cell_deps": [
+                {
+                    "dep_type": "code",
+                    "out_point": {
+                        "index": "0",
+                        "tx_hash": "0xca457e8f2babbced0321daa535d5d357f554ff601a164c3ce76b547fd5ad2452"
+                    }
+                }
+            ],
+            "hash": "0x45746b0f98b11fa67c88b66ac61044238af6f1e69f0006c690998fbe0cc96878",
+            "header_deps": [
+                "0xb877a54927a2cc36f455533160f65025c0066a3a371a81be2a9bb75554abcc43"
+            ],
             "inputs": [
                 {
-                    "args": [],
                     "previous_output": {
-                        "block_hash": "0xca97a033aa9765914bc0b7887ff8723037614df11d06783555ff97e9a0e72b55",
-                        "cell": {
-                            "index": "0",
-                            "tx_hash": "0x602b713fac38c0224bc2e8ba0ec9c8363d7d1e508897b33c32f45d7554883c81",
-                        }
+                        "index": "0",
+                        "tx_hash": "0xd134dabdb4686abd4e25b0fc95d5b7da5e14efc87e99bd34965571725f6370e3"
                     },
                     "since": "0"
                 }
@@ -21,14 +28,16 @@
             "outputs": [
                 {
                     "capacity": "100000000000",
-                    "data": "0x",
                     "lock": {
                         "args": [],
-                        "code_hash": "0x0000000000000000000000000000000000000000000000000000000000000001",
-                        "hash_type": "Data"
+                        "code_hash": "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5",
+                        "hash_type": "data"
                     },
                     "type": null
                 }
+            ],
+            "outputs_data": [
+                "0x"
             ],
             "version": "0",
             "witnesses": []

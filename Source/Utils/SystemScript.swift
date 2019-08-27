@@ -6,33 +6,32 @@
 
 import Foundation
 
+/// Provided by genesis block to unlock with the default secp256k1 algorithm.
 public struct SystemScript {
-    public let outPoint: OutPoint
-    public let codeHash: H256
+    public let depOutPoint: OutPoint
+    public let secp256k1TypeHash: H256
 
-    public init(outPoint: OutPoint, codeHash: H256) {
-        self.outPoint = outPoint
-        self.codeHash = codeHash
+    public init(depOutPoint: OutPoint, secp256k1TypeHash: H256) {
+        self.depOutPoint = depOutPoint
+        self.secp256k1TypeHash = secp256k1TypeHash
     }
 
-    /// System cell genesis block which has a default secp256k1 implementation for testnet/dev.
-    public static func loadFromGenesisBlock(nodeUrl: URL) throws -> SystemScript {
+    public static func loadSystemScript(nodeUrl: URL) throws -> SystemScript {
         let client = APIClient(url: nodeUrl)
         let genesisBlock = try client.genesisBlock()
-        guard let systemCellTransaction = genesisBlock.transactions.first else {
+        guard genesisBlock.transactions.count >= 2 else {
             throw APIError.genericError("Fail to fetch system cell tx from genesis block.")
         }
 
-        let outputIndex = 1
-        let outPoint = OutPoint(cell: CellOutPoint(txHash: systemCellTransaction.hash, index: outputIndex.description))
-        guard systemCellTransaction.outputs.count > outputIndex else {
-            throw APIError.genericError("Fail to get data from system cell tx's outputs[\(outputIndex)]")
+        let systemCellTransaction = genesisBlock.transactions[0]
+        guard systemCellTransaction.outputs.count >= 2, let type = systemCellTransaction.outputs[1].type else {
+            throw APIError.genericError("Fail to fetch system cell tx from genesis block.")
         }
-        let data = Data(hex: systemCellTransaction.outputs[outputIndex].data)
-        guard let codeHash = Blake2b().hash(data: data) else {
-            throw APIError.genericError("Fail to calculate cell hash of data from system cell tx's outputs[\(outputIndex)]")
-        }
+        // TODO: Switch to Script.hash when that's added after serialization/hash change
+        let secp256k1TypeHash = try client.computeScriptHash(script: type)
 
-        return SystemScript(outPoint: outPoint, codeHash: Utils.prefixHex(codeHash.toHexString()))
+        let depOutPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: "0")
+
+        return SystemScript(depOutPoint: depOutPoint, secp256k1TypeHash: secp256k1TypeHash)
     }
 }
