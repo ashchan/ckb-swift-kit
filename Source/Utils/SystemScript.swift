@@ -34,4 +34,9 @@ public struct SystemScript {
 
         return SystemScript(depOutPoint: depOutPoint, secp256k1TypeHash: secp256k1TypeHash)
     }
+
+    public func lock(for publicKey: String) -> Script {
+        let pubkeyHash = Utils.prefixHex(AddressGenerator().hash(for: Data(hex: publicKey)).toHexString())
+        return Script(args: [pubkeyHash], codeHash: secp256k1TypeHash, hashType: .type)
+    }
 }
