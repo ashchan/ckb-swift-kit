@@ -1,3 +1,13 @@
+# [v0.20.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.19.0...v0.20.0) (2019-09-07)
+
+
+### Features
+
+* Add public key hash to lock script util ([c4096d2](https://github.com/nervosnetwork/ckb-sdk-swift/commit/c4096d2))
+* Add public key to lock script util ([8dd1844](https://github.com/nervosnetwork/ckb-sdk-swift/commit/8dd1844))
+
+
+
 # [v0.19.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v0.19.0) (2019-08-27)
 
 
