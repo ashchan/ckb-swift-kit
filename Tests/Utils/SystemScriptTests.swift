@@ -11,7 +11,7 @@ class SystemScriptTests: RPCTestSkippable {
     func testLoadSystemScript() throws {
         let systemScript = try SystemScript.loadSystemScript(nodeUrl: APIClient.defaultLocalURL)
         XCTAssertNotNil(systemScript)
-        XCTAssertEqual("0x68d5438ac952d2f584abf879527946a537e82c7f3c1cbf6d8ebf9767437d8e88", systemScript.secp256k1TypeHash)
+        XCTAssertEqual("0x1892ea40d82b53c678ff88312450bbb17e164d7a3e0a90941aa58839f56f8df2", systemScript.secp256k1TypeHash)
     }
 
     func testPublicKeyToScript() throws {
@@ -21,7 +21,7 @@ class SystemScriptTests: RPCTestSkippable {
         let lockScript = systemScript.lock(for: publicKey)
         let lockHash = try APIClient(url: APIClient.defaultLocalURL).computeScriptHash(script: lockScript)
         // let lockHash = lockScript.hash // TODO: Switch to this after serialization implemented
-        XCTAssertEqual("0x024b0fd0c4912e98aab6808f6474cacb1969255d526b3cac5d3bdd15962a8818", lockHash)
+        XCTAssertEqual("0xecaeea8c8581d08a3b52980272001dbf203bc6fa2afcabe7cc90cc2afff488ba", lockHash)
     }
 
     func testPublicKeyHashToScript() throws {
@@ -30,6 +30,6 @@ class SystemScriptTests: RPCTestSkippable {
         let lockScript = systemScript.lock(for: publicKeyHash)
         let lockHash = try APIClient(url: APIClient.defaultLocalURL).computeScriptHash(script: lockScript)
         // let lockHash = lockScript.hash // TODO: Switch to this after serialization implemented
-        XCTAssertEqual("0x024b0fd0c4912e98aab6808f6474cacb1969255d526b3cac5d3bdd15962a8818", lockHash)
+        XCTAssertEqual("0xecaeea8c8581d08a3b52980272001dbf203bc6fa2afcabe7cc90cc2afff488ba", lockHash)
     }
 }

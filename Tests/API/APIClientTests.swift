@@ -173,15 +173,15 @@ class APIClientTests: RPCTestSkippable {
 
     func testComputeTransactionHash() throws {
         let tx = Transaction(
-            cellDeps: [CellDep(outPoint: OutPoint(txHash: "0xca457e8f2babbced0321daa535d5d357f554ff601a164c3ce76b547fd5ad2452", index: "0"), depType: .code)],
-            headerDeps: ["0xb877a54927a2cc36f455533160f65025c0066a3a371a81be2a9bb75554abcc43"],
-            inputs: [CellInput(previousOutput: OutPoint(txHash: "0xd134dabdb4686abd4e25b0fc95d5b7da5e14efc87e99bd34965571725f6370e3", index: "0"), since: "0")],
+            cellDeps: [CellDep(outPoint: OutPoint(txHash: "0x29f94532fb6c7a17f13bcde5adb6e2921776ee6f357adf645e5393bd13442141", index: "0"), depType: .code)],
+            headerDeps: ["0x8033e126475d197f2366bbc2f30b907d15af85c9d9533253c6f0787dcbbb509e"],
+            inputs: [CellInput(previousOutput: OutPoint(txHash: "0x5ba156200c6310bf140fbbd3bfe7e8f03d4d5f82b612c1a8ec2501826eaabc17", index: "0"), since: "0")],
             outputs: [CellOutput(capacity: "100000000000", lock: Script(args: [], codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data))],
             outputsData: ["0x"]
         )
         let result = try client.computeTransactionHash(transaction: tx)
         XCTAssertNotNil(result)
-        XCTAssertEqual("0x45746b0f98b11fa67c88b66ac61044238af6f1e69f0006c690998fbe0cc96878", result)
+        XCTAssertEqual("0xba86cc2cb21832bf4a84c032eb6e8dc422385cc8f8efb84eb0bc5fe0b0b9aece", result)
     }
 
     func testComputeScriptHash() throws {
