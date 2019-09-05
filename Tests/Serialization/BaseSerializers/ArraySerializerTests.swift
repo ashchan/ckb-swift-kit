@@ -16,6 +16,30 @@ class ArraySerializerTests: XCTestCase {
         XCTAssertEqual(arraySerializer.body, [255, 255])
     }
 
+    func testByte3() {
+        struct Byte3Serializer: ArraySerializer {
+            typealias Element = Byte
+            var elements: [Element]
+            var length: Int { return 3 }
+
+            init(value: [Byte]) { elements = value }
+        }
+        XCTAssertEqual(Byte3Serializer(value: [0x01, 0x02, 0x03]).serialize(), [0x01, 0x02, 0x03])
+    }
+
+    func testTwoUint32() {
+        struct TwoUint32Serializer: ArraySerializer {
+            typealias Element = Byte
+            var elements: [Element]
+            var length: Int { return 8 }
+
+            init(_ value1: UInt32, _ value2: UInt32) {
+                elements = value1.littleEndianBytes + value2.littleEndianBytes
+            }
+        }
+        XCTAssertEqual(TwoUint32Serializer(0x01020304, 0xabcde).serialize(), [0x04, 0x03, 0x02, 0x01, 0xde, 0xbc, 0x0a, 0x00])
+    }
+
     // MARK: - Byte32Serializer
     func testByte32Serializer() {
         let hex = "e79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3"

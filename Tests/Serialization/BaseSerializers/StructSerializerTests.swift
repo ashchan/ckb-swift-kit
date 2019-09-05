@@ -20,7 +20,7 @@ class StructSerializerTests: XCTestCase {
             var f1: Byte
             var f2: UInt32
         }
-        let object = ByteAndUint32(f1: 0xab, f2: 66051/*0x010203*/)
+        let object = ByteAndUint32(f1: 0xab, f2: 0x010203)
         let byteAndUint32Serializer = StructSerializer([
             ByteSerializer(value: object.f1),
             UInt32Serializer(value: object.f2)
