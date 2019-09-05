@@ -16,6 +16,16 @@ class ArraySerializerTests: XCTestCase {
         XCTAssertEqual(arraySerializer.body, [255, 255])
     }
 
+    // MARK: - ByteSerializer
+    func testByteSerializer() {
+        XCTAssertEqual(ByteSerializer(value: UInt8(255)).serialize(), [255])
+
+        // Overflow
+        XCTAssertNil(ByteSerializer(value: "256"))
+        // Underflow
+        XCTAssertNil(ByteSerializer(value: "-1"))
+    }
+
     // MARK: - Byte32Serializer
     func testByte32Serializer() {
         let hex = "e79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3"

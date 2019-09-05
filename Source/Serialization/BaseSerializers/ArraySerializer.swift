@@ -63,6 +63,8 @@ struct UnsignedIntSerializer<T>: ArraySerializer where T: UnsignedInteger & Fixe
     }
 }
 
+typealias ByteSerializer = UnsignedIntSerializer<Byte>
+
 // UInt32 (4 bytes), little-endian
 typealias UInt32Serializer = UnsignedIntSerializer<UInt32>
 
