@@ -88,6 +88,8 @@
 		1A703C41231FB19A00EDF2C6 /* UnionSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A703C40231FB19A00EDF2C6 /* UnionSerializer.swift */; };
 		1A703C43231FB1AA00EDF2C6 /* UnionSerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A703C42231FB1AA00EDF2C6 /* UnionSerializerTests.swift */; };
 		1A703C47232085CC00EDF2C6 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A703C46232085CC00EDF2C6 /* Serializer.swift */; };
+		1A85454F23212A4100B26DC0 /* ByteSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A85454E23212A4100B26DC0 /* ByteSerializer.swift */; };
+		1A85455123212A5B00B26DC0 /* ByteSerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A85455023212A5B00B26DC0 /* ByteSerializerTests.swift */; };
 		1AA3B83F22EEBAFA00027520 /* BannedAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3B83D22EEBAFA00027520 /* BannedAddress.swift */; };
 		1AA3B84222EEBB4800027520 /* BlockReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA3B84122EEBB4800027520 /* BlockReward.swift */; };
 		1AA9B6842283CD4C00C116B2 /* ChainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */; };
@@ -200,6 +202,8 @@
 		1A703C40231FB19A00EDF2C6 /* UnionSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionSerializer.swift; sourceTree = "<group>"; };
 		1A703C42231FB1AA00EDF2C6 /* UnionSerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionSerializerTests.swift; sourceTree = "<group>"; };
 		1A703C46232085CC00EDF2C6 /* Serializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		1A85454E23212A4100B26DC0 /* ByteSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteSerializer.swift; sourceTree = "<group>"; };
+		1A85455023212A5B00B26DC0 /* ByteSerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteSerializerTests.swift; sourceTree = "<group>"; };
 		1AA3B83D22EEBAFA00027520 /* BannedAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannedAddress.swift; sourceTree = "<group>"; };
 		1AA3B84122EEBB4800027520 /* BlockReward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockReward.swift; sourceTree = "<group>"; };
 		1AA9B6832283CD4C00C116B2 /* ChainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainInfo.swift; sourceTree = "<group>"; };
@@ -273,8 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				1AB45ED8222AA624009B395B /* Crypto */,
-				1A28119521D3804600E7CEC5 /* Types */,
 				1A703C27231F4BAC00EDF2C6 /* Serialization */,
+				1A28119521D3804600E7CEC5 /* Types */,
 				1A414A7F21C32D2500B28C09 /* API */,
 				1A5BCBB4228C6B9200157426 /* Signers */,
 				1A414AA121C7711200B28C09 /* Utils */,
@@ -339,8 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				1AB45ED5222AA53F009B395B /* Crypto */,
-				1A414A8621C36FAA00B28C09 /* Types */,
 				1A703C26231F4B8F00EDF2C6 /* Serialization */,
+				1A414A8621C36FAA00B28C09 /* Types */,
 				1A414A7E21C32D1D00B28C09 /* API */,
 				1A5BCBB1228C56DC00157426 /* Signers */,
 				1A414A9E21C770CF00B28C09 /* Utils */,
@@ -475,6 +479,7 @@
 		1A703C44231FB1C000EDF2C6 /* BaseSerializers */ = {
 			isa = PBXGroup;
 			children = (
+				1A85454E23212A4100B26DC0 /* ByteSerializer.swift */,
 				1A703C38231FB13800EDF2C6 /* ArraySerializer.swift */,
 				1A703C34231FAF8600EDF2C6 /* StructSerializer.swift */,
 				1A703C2A231FAF1000EDF2C6 /* FixVecSerializer.swift */,
@@ -489,6 +494,7 @@
 		1A703C45231FB1DB00EDF2C6 /* BaseSerializers */ = {
 			isa = PBXGroup;
 			children = (
+				1A85455023212A5B00B26DC0 /* ByteSerializerTests.swift */,
 				1A703C3A231FB14800EDF2C6 /* ArraySerializerTests.swift */,
 				1A703C36231FAF9900EDF2C6 /* StructSerializerTests.swift */,
 				1A703C2C231FAF2400EDF2C6 /* FixVecSerializerTests.swift */,
@@ -788,6 +794,7 @@
 				1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */,
 				1A2D6B2622A35C4F00724E66 /* SystemScriptTests.swift in Sources */,
 				1A703C33231FAF6300EDF2C6 /* TableSerializerTests.swift in Sources */,
+				1A85455123212A5B00B26DC0 /* ByteSerializerTests.swift in Sources */,
 				1A2D6B2722A35C5300724E66 /* TransactionSignTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -811,6 +818,7 @@
 				1A2CDAE1228171180024CA71 /* Epoch.swift in Sources */,
 				1A414A8E21C3722300B28C09 /* CellInput.swift in Sources */,
 				1AA9B6862283CE4500C116B2 /* PeerState.swift in Sources */,
+				1A85454F23212A4100B26DC0 /* ByteSerializer.swift in Sources */,
 				1AB7517022BA263C00AC9F63 /* APIClient+Indexer.swift in Sources */,
 				1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */,
 				1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */,
