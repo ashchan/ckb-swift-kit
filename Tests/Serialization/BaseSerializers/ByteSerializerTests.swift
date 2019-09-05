@@ -10,6 +10,7 @@ import XCTest
 class ByteSerializerTests: XCTestCase {
     func testByteSerializer() {
         XCTAssertEqual(ByteSerializer(value: UInt8(255)).serialize(), [255])
+        XCTAssertEqual(ByteSerializer(value: "255")!.serialize(), [255])
 
         // Overflow
         XCTAssertNil(ByteSerializer(value: "256"))
