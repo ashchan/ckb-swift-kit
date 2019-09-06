@@ -21,7 +21,7 @@ struct FixVecSerializer<Item, ItemSerializer>: ObjectSerializer
     }
 
     var body: [Byte] {
-        items.flatMap { ItemSerializer.init(value: $0).serialize() }
+        return items.flatMap { ItemSerializer.init(value: $0).serialize() }
     }
 
     init(value: [Item]) {
