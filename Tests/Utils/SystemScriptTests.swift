@@ -19,8 +19,7 @@ class SystemScriptTests: RPCTestSkippable {
         let publicKey = Utils.privateToPublic(privateKey)
         let systemScript = try SystemScript.loadSystemScript(nodeUrl: APIClient.defaultLocalURL)
         let lockScript = systemScript.lock(for: publicKey)
-        let lockHash = try APIClient(url: APIClient.defaultLocalURL).computeScriptHash(script: lockScript)
-        // let lockHash = lockScript.hash // TODO: Switch to this after serialization implemented
+        let lockHash = lockScript.hash
         XCTAssertEqual("0xecaeea8c8581d08a3b52980272001dbf203bc6fa2afcabe7cc90cc2afff488ba", lockHash)
     }
 
@@ -28,8 +27,7 @@ class SystemScriptTests: RPCTestSkippable {
         let systemScript = try SystemScript.loadSystemScript(nodeUrl: APIClient.defaultLocalURL)
         let publicKeyHash = "0x36c329ed630d6ce750712a477543672adab57f4c"
         let lockScript = systemScript.lock(for: publicKeyHash)
-        let lockHash = try APIClient(url: APIClient.defaultLocalURL).computeScriptHash(script: lockScript)
-        // let lockHash = lockScript.hash // TODO: Switch to this after serialization implemented
+        let lockHash = lockScript.hash
         XCTAssertEqual("0xecaeea8c8581d08a3b52980272001dbf203bc6fa2afcabe7cc90cc2afff488ba", lockHash)
     }
 }

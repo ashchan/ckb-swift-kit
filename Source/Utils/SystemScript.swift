@@ -27,8 +27,7 @@ public struct SystemScript {
         guard systemCellTransaction.outputs.count >= 2, let type = systemCellTransaction.outputs[1].type else {
             throw APIError.genericError("Fail to fetch system cell tx from genesis block.")
         }
-        // TODO: Switch to Script.hash when that's added after serialization/hash change
-        let secp256k1TypeHash = try client.computeScriptHash(script: type)
+        let secp256k1TypeHash = type.hash
 
         let depOutPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: "0")
 

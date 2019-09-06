@@ -12,27 +12,20 @@ public enum ScriptHashType: String, Codable {
 }
 
 public struct Script: Codable, Param {
-    public let args: [HexString]
     public let codeHash: H256
     public let hashType: ScriptHashType
+    public let args: [HexString]
 
     enum CodingKeys: String, CodingKey {
-        case args
         case codeHash = "code_hash"
         case hashType = "hash_type"
+        case args
     }
 
-    // Before serialization is implemented _compute_script_hash RPC should be used instead.
     public var hash: String {
-        #warning("This needs re-implementation when serialization is applied.")
-        var bytes = [UInt8]()
-        bytes.append(contentsOf: Data(hex: codeHash).bytes)
-        bytes.append(hashType == .data ? 0x0 : 0x1)
-        args.forEach { (arg) in
-            bytes.append(contentsOf: Data(hex: arg).bytes)
-        }
-        let hash = Blake2b().hash(bytes: bytes)!
-        return Utils.prefixHex(Data(hash).toHexString())
+        let serialized = serialize()
+        let hash = Blake2b().hash(bytes: serialized)!.toHexString()
+        return Utils.prefixHex(hash)
     }
 
     public var param: [String: Any] {
@@ -44,8 +37,33 @@ public struct Script: Codable, Param {
     }
 
     public init(args: [HexString] = [], codeHash: H256 = H256.zeroHash, hashType: ScriptHashType = .data) {
-        self.args = args
         self.codeHash = Utils.prefixHex(codeHash)
         self.hashType = hashType
+        self.args = args
+    }
+}
+
+// Serialization
+extension ScriptHashType {
+    var byte: UInt8 {
+        return self == .data ? 0x0 : 0x1
+    }
+}
+
+extension Script {
+    func serialize() -> [UInt8] {
+        let normalizedArgs: [[Byte]] = args.map { (arg) in
+            // TODO: check if Data(hex: arg) needs to left pad arg string
+            return Data(hex: arg).bytes
+        }
+        let serializer = TableSerializer(
+            value: self,
+            fieldSerializers: [
+                Byte32Serializer(value: codeHash)!,
+                ByteSerializer(value: hashType.byte),
+                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: normalizedArgs)
+            ]
+        )
+        return serializer.serialize()
     }
 }
