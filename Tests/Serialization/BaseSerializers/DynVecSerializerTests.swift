@@ -5,27 +5,49 @@
 //
 
 import XCTest
+@testable import CKB
 
 class DynVecSerializerTests: XCTestCase {
+    typealias BytesSerializer = FixVecSerializer<Byte, ByteSerializer>
+    typealias BytesVecSerializer = DynVecSerializer<[Byte], BytesSerializer>
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testEmptyBytesVector() {
+        let emptySerializer = BytesVecSerializer(value: [])
+        XCTAssertEqual(emptySerializer.serialize(), [4, 0, 0, 0])
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testOneItemBytesVector() {
+        let oneItemSerializer = BytesVecSerializer(value: [[0x12, 0x34]])
+        XCTAssertEqual(
+            oneItemSerializer.serialize(),
+            [
+                0x0e, 0x00, 0x00, 0x00,
+                0x08, 0x00, 0x00, 0x00,
+                0x02, 0x00, 0x00, 0x00, 0x12, 0x34
+            ]
+        )
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMultiItemsBytesVector() {
+        let collectionOfBytes: [[Byte]] = [
+            [0x12, 0x34],
+            [],
+            [0x05, 0x67],
+            [0x89],
+            [0xab, 0xcd, 0xef]
+        ]
+        let multiItemsSerializer = BytesVecSerializer(value: collectionOfBytes)
+        XCTAssertEqual(
+            multiItemsSerializer.serialize(),
+            [
+                0x34, 0, 0, 0,
+                0x18, 0, 0, 0, 0x1e, 0, 0, 0, 0x22, 0, 0, 0, 0x28, 0, 0, 0, 0x2d, 0, 0, 0,
+                0x02, 0, 0, 0, 0x12, 0x34,
+                0, 0, 0, 0,
+                0x02, 0, 0, 0, 0x05, 0x67,
+                0x01, 0, 0, 0, 0x89,
+                0x03, 0, 0, 0, 0xab, 0xcd, 0xef
+            ]
+        )
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

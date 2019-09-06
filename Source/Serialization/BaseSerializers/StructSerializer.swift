@@ -18,7 +18,7 @@ struct StructSerializer<T>: ObjectSerializer {
     }
 
     var body: [Byte] {
-        return fieldSerializers.map { $0.serialize() }.reduce([], +)
+        return fieldSerializers.flatMap { $0.serialize() }
     }
 
     init(value: T) {

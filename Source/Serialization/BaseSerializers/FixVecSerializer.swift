@@ -11,8 +11,8 @@ struct FixVecSerializer<Item, ItemSerializer>: ObjectSerializer
     where ItemSerializer: ObjectSerializer, Item == ItemSerializer.ObjectType {
     typealias ObjectType = [Item]
 
-    var items: [Item]
-    var itemsCount: UInt32 {
+    private var items: [Item]
+    private var itemsCount: UInt32 {
         return UInt32(items.count)
     }
 
@@ -21,9 +21,7 @@ struct FixVecSerializer<Item, ItemSerializer>: ObjectSerializer
     }
 
     var body: [Byte] {
-        items.map { (item) in
-            return ItemSerializer.init(value: item).serialize()
-        }.reduce([], +)
+        items.flatMap { ItemSerializer.init(value: $0).serialize() }
     }
 
     init(value: [Item]) {

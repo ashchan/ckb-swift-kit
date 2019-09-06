@@ -12,16 +12,14 @@ struct ArraySerializer<Item, ItemSerializer>: ObjectSerializer
     where ItemSerializer: ObjectSerializer, Item == ItemSerializer.ObjectType {
     typealias ObjectType = [Item]
 
-    var items: [Item]
+    private var items: [Item]
 
     var header: [Byte] {
         return []
     }
 
     var body: [Byte] {
-        items.map { (item) in
-            return ItemSerializer.init(value: item).serialize()
-        }.reduce([], +)
+        items.flatMap { ItemSerializer.init(value: $0).serialize() }
     }
 
     init(value: [Item]) {
@@ -32,6 +30,7 @@ struct ArraySerializer<Item, ItemSerializer>: ObjectSerializer
 // 32 bytes, good for H256 (hash values)
 typealias Byte32Serializer = ArraySerializer<Byte, ByteSerializer>
 extension Byte32Serializer {
+    // BUGBUGBUG: This would affect normal ArraySerializer<Byte, ByteSerializer>!
     init?(value: HexString) {
         let data = Data(hex: value).bytes
         guard data.count == 32 else {
