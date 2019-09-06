@@ -12,8 +12,8 @@ extension ScriptHashType {
     }
 }
 
-final class ScriptSerializer: TableSerializer<Script> {
-    required init(value: Script) {
+public final class ScriptSerializer: TableSerializer<Script> {
+    public required init(value: Script) {
         let normalizedArgs: [[Byte]] = value.args.map { (arg) in
             // TODO: check if Data(hex: arg) needs to left pad arg string
             return Data(hex: arg).bytes

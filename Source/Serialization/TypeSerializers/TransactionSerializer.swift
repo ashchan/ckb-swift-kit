@@ -6,24 +6,29 @@
 
 import Foundation
 
-public extension Transaction {
-    /// https://github.com/nervosnetwork/ckb/blob/develop/util/types/schemas/ckb.mol#L69
-    func serialize() -> [UInt8] {
+ /// https://github.com/nervosnetwork/ckb/blob/develop/util/types/schemas/ckb.mol#L69
+public final class TransactionSerializer: TableSerializer<Transaction> {
+    public required init(value: Transaction) {
         let hexStringsToArrayOfBytes: ([HexString]) -> [[Byte]] = { strings in
             return strings.map { Data(hex: $0).bytes }
         }
-
-        let serializer = TableSerializer(
-            value: self,
+        super.init(
+            value: value,
             fieldSerializers: [
-                UInt32Serializer(value: version)!,
-                FixVecSerializer<CellDep, CellDepSerializer>(value: cellDeps),
-                FixVecSerializer<[Byte], Byte32Serializer>(value: hexStringsToArrayOfBytes(headerDeps)),
-                FixVecSerializer<CellInput, CellInputSerializer>(value: inputs),
-                DynVecSerializer<CellOutput, CellOutputSerializer>(value: outputs),
-                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: hexStringsToArrayOfBytes(outputsData))
+                UInt32Serializer(value: value.version)!,
+                FixVecSerializer<CellDep, CellDepSerializer>(value: value.cellDeps),
+                FixVecSerializer<[Byte], Byte32Serializer>(value: hexStringsToArrayOfBytes(value.headerDeps)),
+                FixVecSerializer<CellInput, CellInputSerializer>(value: value.inputs),
+                DynVecSerializer<CellOutput, CellOutputSerializer>(value: value.outputs),
+                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: hexStringsToArrayOfBytes(value.outputsData))
             ]
         )
+    }
+}
+
+public extension Transaction {
+    func serialize() -> [UInt8] {
+        let serializer = TransactionSerializer(value: self)
         return serializer.serialize()
     }
 

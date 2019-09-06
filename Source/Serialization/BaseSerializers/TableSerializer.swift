@@ -8,7 +8,7 @@ import Foundation
 
 /// The table is a dynamic-size type.
 /// It can be considered as a dynvec but the length is fixed.
-class TableSerializer<T>: ObjectSerializer {
+public class TableSerializer<T>: ObjectSerializer {
     typealias ObjectType = T
     private var value: T
     private var fieldSerializers: [Serializer]
