@@ -37,4 +37,10 @@ public final class Blake2b {
 
         return Data(output)
     }
+
+    // Hash and return H256 hex string
+    public func hash(bytes: [UInt8]) -> H256 {
+        let hashed = Blake2b().hash(bytes: bytes)!.toHexString()
+        return Utils.prefixHex(hashed)
+    }
 }

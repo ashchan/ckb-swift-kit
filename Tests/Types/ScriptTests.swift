@@ -47,6 +47,18 @@ class ScriptTests: XCTestCase {
         XCTAssertEqual(script.hash, hash)
     }
 
+    func testSerialize() {
+        let script = Script(
+            args: ["0x3954acece65096bfa81258983ddb83915fc56bd8"],
+            codeHash: "0x68d5438ac952d2f584abf879527946a537e82c7f3c1cbf6d8ebf9767437d8e88",
+            hashType: .type
+        )
+        XCTAssertEqual(
+            "5100000010000000300000003100000068d5438ac952d2f584abf879527946a537e82c7f3c1cbf6d8ebf9767437d8e88012000000008000000140000003954acece65096bfa81258983ddb83915fc56bd8",
+            script.serialize().toHexString()
+        )
+    }
+
     func testCodeHashHasPrefix() {
         let codeHash = Utils.prefixHex(H256.zeroHash)
         let script = Script(codeHash: H256(codeHash.dropFirst(2)))

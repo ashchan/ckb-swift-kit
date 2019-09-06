@@ -22,12 +22,6 @@ public struct Script: Codable, Param {
         case args
     }
 
-    public var hash: String {
-        let serialized = serialize()
-        let hash = Blake2b().hash(bytes: serialized)!.toHexString()
-        return Utils.prefixHex(hash)
-    }
-
     public var param: [String: Any] {
         return [
             CodingKeys.args.rawValue: args,
@@ -40,30 +34,5 @@ public struct Script: Codable, Param {
         self.codeHash = Utils.prefixHex(codeHash)
         self.hashType = hashType
         self.args = args
-    }
-}
-
-// Serialization
-extension ScriptHashType {
-    var byte: UInt8 {
-        return self == .data ? 0x0 : 0x1
-    }
-}
-
-extension Script {
-    func serialize() -> [UInt8] {
-        let normalizedArgs: [[Byte]] = args.map { (arg) in
-            // TODO: check if Data(hex: arg) needs to left pad arg string
-            return Data(hex: arg).bytes
-        }
-        let serializer = TableSerializer(
-            value: self,
-            fieldSerializers: [
-                Byte32Serializer(value: codeHash)!,
-                ByteSerializer(value: hashType.byte),
-                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: normalizedArgs)
-            ]
-        )
-        return serializer.serialize()
     }
 }
