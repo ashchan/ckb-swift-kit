@@ -11,8 +11,6 @@ class ScriptSerializerTests: XCTestCase {
     func testEmptyScriptHash() {
         let script = Script()
         XCTAssertEqual("0xbd7e6000ffb8e983a6023809037e0c4cedbc983637c46d74621fd28e5f15fe4f", script.hash)
-        let hash = try? APIClient(url: APIClient.defaultLocalURL).computeScriptHash(script: script)
-        XCTAssertEqual(script.hash, hash)
     }
 
     func testDataScriptHash() {
@@ -22,8 +20,6 @@ class ScriptSerializerTests: XCTestCase {
             hashType: .data
         )
         XCTAssertEqual("0xd8753dd87c7dd293d9b64d4ca20d77bb8e5f2d92bf08234b026e2d8b1b00e7e9", script.hash)
-        let hash = try? APIClient(url: APIClient.defaultLocalURL).computeScriptHash(script: script)
-        XCTAssertEqual(script.hash, hash)
     }
 
     func testTypeScriptHash() {
@@ -33,8 +29,6 @@ class ScriptSerializerTests: XCTestCase {
             hashType: .type
         )
         XCTAssertEqual("0xb1ed7d4f2b8a22866391121c504ee88bc1a800024d7aef5fd4219a3cb1c90cb3", script.hash)
-        let hash = try? APIClient(url: APIClient.defaultLocalURL).computeScriptHash(script: script)
-        XCTAssertEqual(script.hash, hash)
     }
 
     func testScriptHashWithZeroCodeHash() {
@@ -43,8 +37,6 @@ class ScriptSerializerTests: XCTestCase {
             codeHash: H256.zeroHash
         )
         XCTAssertEqual("0x5a2b913dfb1b79136fc72a575fd8e93ae080b504463c0066fea086482bfc3a94", script.hash)
-        let hash = try? APIClient(url: APIClient.defaultLocalURL).computeScriptHash(script: script)
-        XCTAssertEqual(script.hash, hash)
     }
 
     func testSerialize() {

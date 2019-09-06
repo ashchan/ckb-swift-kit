@@ -34,8 +34,9 @@ class TransactionSerializerTests: XCTestCase {
                 Witness(data: [])
             ]
         )
-        let hash = try? APIClient(url: APIClient.defaultLocalURL).computeTransactionHash(transaction: tx)
-        XCTAssertEqual(tx.computeHash(), hash)
+        XCTAssertEqual(tx.computeHash(), "0xc932addf21edeac2fdd4d677f3984688ee5514c87412087c6bb533bf96e4e624")
+        // let hash = try? APIClient(url: APIClient.defaultLocalURL).computeTransactionHash(transaction: tx)
+        // XCTAssertEqual(tx.computeHash(), hash)
     }
 
     func testTransactionWithInputs() {
@@ -47,7 +48,7 @@ class TransactionSerializerTests: XCTestCase {
             outputsData: ["0x"]
         )
         XCTAssertEqual(tx.computeHash(), "0xba86cc2cb21832bf4a84c032eb6e8dc422385cc8f8efb84eb0bc5fe0b0b9aece")
-        let hash = try? APIClient(url: APIClient.defaultLocalURL).computeTransactionHash(transaction: tx)
-        XCTAssertEqual(tx.computeHash(), hash)
+        // let hash = try? APIClient(url: APIClient.defaultLocalURL).computeTransactionHash(transaction: tx)
+        // XCTAssertEqual(tx.computeHash(), hash)
     }
 }
