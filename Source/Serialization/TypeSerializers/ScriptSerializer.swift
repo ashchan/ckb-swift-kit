@@ -6,27 +6,35 @@
 
 import Foundation
 
-// Serialization
 extension ScriptHashType {
     var byte: UInt8 {
         return self == .data ? 0x0 : 0x1
     }
 }
 
-public extension Script {
-    func serialize() -> [UInt8] {
-        let normalizedArgs: [[Byte]] = args.map { (arg) in
+final class ScriptSerializer: TableSerializer<Script> {
+    required init(value: Script) {
+        let normalizedArgs: [[Byte]] = value.args.map { (arg) in
             // TODO: check if Data(hex: arg) needs to left pad arg string
             return Data(hex: arg).bytes
         }
-        let serializer = TableSerializer(
-            value: self,
+        super.init(
+            value: value,
             fieldSerializers: [
-                Byte32Serializer(value: codeHash)!,
-                ByteSerializer(value: hashType.byte),
+                Byte32Serializer(value: value.codeHash)!,
+                ByteSerializer(value: value.hashType.byte),
                 DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: normalizedArgs)
             ]
         )
+    }
+}
+
+public extension Script {
+    internal var serializer: Serializer {
+        return ScriptSerializer(value: self)
+    }
+
+    func serialize() -> [UInt8] {
         return serializer.serialize()
     }
 

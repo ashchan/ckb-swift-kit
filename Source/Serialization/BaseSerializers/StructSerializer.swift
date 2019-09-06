@@ -8,7 +8,7 @@ import Foundation
 
 /// The struct is a fixed-size type: all fields in struct are fixed-size and it has a fixed quantity of fields.
 /// The size of a struct is the sum of all fields' size.
-struct StructSerializer<T>: ObjectSerializer {
+class StructSerializer<T>: ObjectSerializer {
     typealias ObjectType = T
     private var value: T
     private var fieldSerializers: [Serializer]
@@ -21,7 +21,7 @@ struct StructSerializer<T>: ObjectSerializer {
         return fieldSerializers.flatMap { $0.serialize() }
     }
 
-    init(value: T) {
+    required convenience init(value: T) {
         self.init(value: value, fieldSerializers: [])
     }
 

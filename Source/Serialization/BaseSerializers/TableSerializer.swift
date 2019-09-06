@@ -8,7 +8,7 @@ import Foundation
 
 /// The table is a dynamic-size type.
 /// It can be considered as a dynvec but the length is fixed.
-struct TableSerializer<T>: ObjectSerializer {
+class TableSerializer<T>: ObjectSerializer {
     typealias ObjectType = T
     private var value: T
     private var fieldSerializers: [Serializer]
@@ -30,7 +30,7 @@ struct TableSerializer<T>: ObjectSerializer {
         return serializedBody
     }
 
-    init(value: T) {
+    required convenience init(value: T) {
         self.init(value: value, fieldSerializers: [])
     }
 
@@ -41,7 +41,7 @@ struct TableSerializer<T>: ObjectSerializer {
     }
 
     // Do not iterate more than once
-    private mutating func preSerialize() {
+    private func preSerialize() {
         guard fieldSerializers.count > 0 else {
             return
         }
