@@ -22,12 +22,11 @@ struct StructSerializer<T>: ObjectSerializer {
     }
 
     init(value: T) {
-        self.value = value
-        self.fieldSerializers = []
+        self.init(value: value, fieldSerializers: [])
     }
 
     init(value: T, fieldSerializers: [Serializer]) {
-        self.init(value: value)
+        self.value = value
         self.fieldSerializers = fieldSerializers
     }
 }
