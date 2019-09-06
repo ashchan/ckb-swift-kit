@@ -45,6 +45,7 @@
 		1A2D6B3B22A35C6400724E66 /* pubkey.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BCBAF228C53C000157426 /* pubkey.json */; };
 		1A2D6B3C22A35C6400724E66 /* Secp256k1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB45ED9222AA644009B395B /* Secp256k1Tests.swift */; };
 		1A2D6B3D22A35C6400724E66 /* Blake2bTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C826B222F5D7B0053EC32 /* Blake2bTests.swift */; };
+		1A2F5FB72321F1FE000051CC /* SerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F5FB62321F1FE000051CC /* SerializerTests.swift */; };
 		1A38CA6422768E7900BEA1F3 /* APIMockingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */; };
 		1A414A7121C2226E00B28C09 /* CKB.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A414A6321C2226E00B28C09 /* CKB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A7A21C22A9300B28C09 /* APIClient.swift */; };
@@ -140,6 +141,7 @@
 		1A2CDAE22281796D0024CA71 /* epoch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = epoch.json; sourceTree = "<group>"; };
 		1A2D6B1722A35C3500724E66 /* CKBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CKBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2D6B1B22A35C3500724E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A2F5FB62321F1FE000051CC /* SerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializerTests.swift; sourceTree = "<group>"; };
 		1A38CA6322768E7900BEA1F3 /* APIMockingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockingClient.swift; sourceTree = "<group>"; };
 		1A414A6021C2226E00B28C09 /* CKB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CKB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A414A6321C2226E00B28C09 /* CKB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKB.h; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				1A703C45231FB1DB00EDF2C6 /* BaseSerializers */,
+				1A2F5FB62321F1FE000051CC /* SerializerTests.swift */,
 			);
 			path = Serialization;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */,
 				1A2D6B3922A35C5D00724E66 /* ScriptTests.swift in Sources */,
 				1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */,
+				1A2F5FB72321F1FE000051CC /* SerializerTests.swift in Sources */,
 				1A2D6B2622A35C4F00724E66 /* SystemScriptTests.swift in Sources */,
 				1A703C33231FAF6300EDF2C6 /* TableSerializerTests.swift in Sources */,
 				1A85455123212A5B00B26DC0 /* ByteSerializerTests.swift in Sources */,

@@ -6,7 +6,8 @@
 
 import Foundation
 
-struct ByteSerializer: Serializer {
+struct ByteSerializer: ObjectSerializer {
+    typealias ObjectType = Byte
     private let byte: Byte
 
     var header: [Byte] {
