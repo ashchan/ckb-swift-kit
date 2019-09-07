@@ -1,3 +1,23 @@
+# [v0.20.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.19.0...v0.20.0) (2019-09-07)
+
+
+### Features
+
+* Add public key hash to lock script util ([c4096d2](https://github.com/nervosnetwork/ckb-sdk-swift/commit/c4096d2))
+* Add public key to lock script util ([8dd1844](https://github.com/nervosnetwork/ckb-sdk-swift/commit/8dd1844))
+* Extract and make public of TransactionSerializer/ScriptSerializer ([8c79f70](https://github.com/nervosnetwork/ckb-sdk-swift/commit/8c79f70))
+* Implement Array Serializer(s) ([b8598fd](https://github.com/nervosnetwork/ckb-sdk-swift/commit/b8598fd))
+* Implement ByteSerializer ([eb64ddd](https://github.com/nervosnetwork/ckb-sdk-swift/commit/eb64ddd))
+* Implement DynVecSerializer ([a87a8da](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a87a8da))
+* Implement FixVecSerializer, refactor other serializers ([16b6186](https://github.com/nervosnetwork/ckb-sdk-swift/commit/16b6186))
+* Implement StructSerializer ([6530566](https://github.com/nervosnetwork/ckb-sdk-swift/commit/6530566))
+* Implement TableSerializer ([fad544e](https://github.com/nervosnetwork/ckb-sdk-swift/commit/fad544e))
+* Implement transaction serialization and other type serializers ([ea0eeeb](https://github.com/nervosnetwork/ckb-sdk-swift/commit/ea0eeeb))
+* Re-implement ByteSerializer ([9fecdd1](https://github.com/nervosnetwork/ckb-sdk-swift/commit/9fecdd1))
+* Update Script to use Molecule serialization ([013c4b3](https://github.com/nervosnetwork/ckb-sdk-swift/commit/013c4b3))
+
+
+
 # [v0.19.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.18.0...v0.19.0) (2019-08-27)
 
 

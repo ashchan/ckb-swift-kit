@@ -27,11 +27,19 @@ public struct SystemScript {
         guard systemCellTransaction.outputs.count >= 2, let type = systemCellTransaction.outputs[1].type else {
             throw APIError.genericError("Fail to fetch system cell tx from genesis block.")
         }
-        // TODO: Switch to Script.hash when that's added after serialization/hash change
-        let secp256k1TypeHash = try client.computeScriptHash(script: type)
+        let secp256k1TypeHash = type.hash
 
         let depOutPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: "0")
 
         return SystemScript(depOutPoint: depOutPoint, secp256k1TypeHash: secp256k1TypeHash)
+    }
+
+    public func lock(for publicKey: Data) -> Script {
+        let publicKeyHash = Utils.prefixHex(AddressGenerator().hash(for: publicKey).toHexString())
+        return lock(for: publicKeyHash)
+    }
+
+    public func lock(for publicKeyHash: String) -> Script {
+        return Script(args: [publicKeyHash], codeHash: secp256k1TypeHash, hashType: .type)
     }
 }

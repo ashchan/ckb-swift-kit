@@ -68,6 +68,7 @@ print(height)                                  // "10420"
 ### Send Capacity Example
 
 ```swift
+// Fetch system script which we'll use to generate lock for address
 let systemScript = try SystemScript.loadSystemScript(nodeUrl: nodeUrl)
 // Fill in the sender's private key
 let privateKey: Data = Data(hex: "your private key (hex string)")
@@ -80,13 +81,13 @@ let inputs: [CellInput] = [/*...*/]
 
 // Generate lock script for the receiver's address
 let toAddress = "ckt..."
-let addressHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!)
-let lockScript = Script(args: [addressHash], codeHash: systemScript.secp256k1TypeHash, hashType: .type)
+let publicKeyHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!)
+let lockScript = systemScript.lock(for: publicKeyHash)
 // Construct the outputs
 let outputs = [CellOutput(capacity: 500_00_000_000.description, lock: lockScript, type: nil)]
 
 // Generate the transaction
-let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, witnesses: [Witness(data: [])])
+let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, outputsData: ["0x"], witnesses: [Witness(data: [])])
 // For now we need to call the `computeTransactionHash` to get the tx hash
 let apiClient = APIClient(url: nodeUrl)
 let txHash = try apiClient.computeTransactionHash(transaction: tx)
@@ -94,7 +95,7 @@ let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
 
 // Now send out the capacity
 let hash = try apiClient.sendTransaction(transaction: signedTx)
-print(hash) // hash should equal to txHash
+print(hash) // hash should be equal to txHash
 ```
 
 ## Getting Help
