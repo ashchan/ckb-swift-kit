@@ -58,7 +58,7 @@ let apiClient = APIClient(url: nodeUrl)
 
 // Fetch local node info
 let nodeInfo = try apiClient.localNodeInfo()
-print(nodeInfo.version)                        // "0.12.0-pre (rylai30-1-g3e765560 2019-05-16)"
+print(nodeInfo.version)                        // "0.20.0 (rylai-v9 024408ee 2019-09-07)"
 
 // Get current height
 let height = try apiClient.getTipBlockNumber() // Numbers are represented as strings
@@ -88,12 +88,11 @@ let outputs = [CellOutput(capacity: 500_00_000_000.description, lock: lockScript
 
 // Generate the transaction
 let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, outputsData: ["0x"], witnesses: [Witness(data: [])])
-// For now we need to call the `computeTransactionHash` to get the tx hash
-let apiClient = APIClient(url: nodeUrl)
-let txHash = try apiClient.computeTransactionHash(transaction: tx)
-let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
+// Sign the transaction
+let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: tx.computeHash())
 
 // Now send out the capacity
+let apiClient = APIClient(url: nodeUrl)
 let hash = try apiClient.sendTransaction(transaction: signedTx)
 print(hash) // hash should be equal to txHash
 ```
