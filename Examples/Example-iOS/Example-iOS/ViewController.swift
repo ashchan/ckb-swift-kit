@@ -103,12 +103,11 @@ private extension ViewController {
 
         // Generate the transaction
         let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, outputsData: ["0x"], witnesses: [Witness(data: [])])
-        // For now we need to call the `computeTransactionHash` to get the tx hash
-        let apiClient = APIClient(url: nodeUrl)
-        let txHash = try apiClient.computeTransactionHash(transaction: tx)
-        let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
+        // Sign the transaction
+        let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: tx.computeHash())
 
         // Now send out the capacity
+        let apiClient = APIClient(url: nodeUrl)
         let hash = try apiClient.sendTransaction(transaction: signedTx)
         print(hash) // hash should be equal to txHash
     }
