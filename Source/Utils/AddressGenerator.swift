@@ -6,9 +6,8 @@
 
 import Foundation
 
-/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0021-ckb-address-format/0021-ckb-address-format.md),
-/// and [Common Address Format](https://github.com/nervosnetwork/ckb/wiki/Common-Address-Format).
-/// Currently we implement the predefined format for type 0x01 and code hash index 0x00.
+/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0021-ckb-address-format/0021-ckb-address-format.md).
+/// Currently we implement the predefined format type 0x01(short version for locks with popular code_hash) and code hash index 0x00(SECP256K1 + blake160).
 public class AddressGenerator {
     let network: Network
 
