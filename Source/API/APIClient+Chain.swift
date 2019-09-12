@@ -39,8 +39,8 @@ public extension APIClient {
         return try load(APIRequest<[CellOutputWithOutPoint]>(method: "get_cells_by_lock_hash", params: [lockHash, from, to]))
     }
 
-    func getLiveCell(outPoint: OutPoint) throws -> CellWithStatus {
-        return try load(APIRequest<CellWithStatus>(method: "get_live_cell", params: [outPoint.param]))
+    func getLiveCell(outPoint: OutPoint, withData: Bool = true) throws -> CellWithStatus {
+        return try load(APIRequest<CellWithStatus>(method: "get_live_cell", params: [outPoint.param, withData]))
     }
 
     func getTipBlockNumber() throws -> BlockNumber {

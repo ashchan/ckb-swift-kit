@@ -7,8 +7,18 @@
 import Foundation
 
 public struct CellWithStatus: Codable {
-    public let cell: CellOutput?
+    public let cell: CellInfo?
     public let status: String
+}
+
+public struct CellData: Codable {
+    public let content: HexString
+    public let hash: H256
+}
+
+public struct CellInfo: Codable {
+    public let output: CellOutput
+    public let data: CellData?
 }
 
 public struct LiveCell: Codable {

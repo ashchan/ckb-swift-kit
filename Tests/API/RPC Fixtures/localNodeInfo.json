@@ -1,15 +1,19 @@
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
         "addresses": [
             {
-                "address": "/ip4/0.0.0.0/tcp/8115/p2p/QmNT4WmGw3xbEdP7PDX1pMMCyXLUDoSe3Sq7MQhM3AcAYH",
-                "score": "1"
+                "address": "/ip4/192.168.0.2/tcp/8112/p2p/QmTRHCdrRtgUzYLNCin69zEvPvLYdxUZLLfLYyHVY3DZAS",
+                "score": "0xff"
+            },
+            {
+                "address": "/ip4/0.0.0.0/tcp/8112/p2p/QmTRHCdrRtgUzYLNCin69zEvPvLYdxUZLLfLYyHVY3DZAS",
+                "score": "0x1"
             }
         ],
         "is_outbound": null,
-        "node_id": "QmNT4WmGw3xbEdP7PDX1pMMCyXLUDoSe3Sq7MQhM3AcAYH",
-        "version": "0.12.0-pre (rylai23-10-g0983d4db 2019-05-12)"
-    },
-    "id": 1
+        "node_id": "QmTRHCdrRtgUzYLNCin69zEvPvLYdxUZLLfLYyHVY3DZAS",
+        "version": "0.0.0"
+    }
 }
