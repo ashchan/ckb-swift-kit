@@ -8,7 +8,7 @@ import Foundation
 
 public struct ChainInfo: Codable {
     public let chain: String
-    public let medianTime: Timestamp
+    public let medianTime: Date
     public let epoch: EpochNumber
     public let difficulty: HexNumber
     public let isInitialBlockDownload: Bool
@@ -26,7 +26,7 @@ public struct ChainInfo: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         chain = try container.decode(String.self, forKey: .chain)
-        medianTime = try container.decode(Timestamp.self, forKey: .medianTime)
+        medianTime = Date(hexSince1970: try container.decode(String.self, forKey: .medianTime))
         epoch = EpochNumber(hexValue: try container.decode(String.self, forKey: .epoch))!
         difficulty = try container.decode(HexNumber.self, forKey: .difficulty)
         isInitialBlockDownload = try container.decode(Bool.self, forKey: .isInitialBlockDownload)

@@ -9,7 +9,7 @@ import Foundation
 public struct Header: Codable {
     public let version: Version
     public let parentHash: H256
-    public let timestamp: Timestamp
+    public let timestamp: Date
     public let number: BlockNumber
     public let epoch: EpochNumber
     public let transactionsRoot: H256
@@ -45,7 +45,7 @@ public struct Header: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         version = Version(hexValue: try container.decode(String.self, forKey: .version))!
         parentHash = try container.decode(H256.self, forKey: .parentHash)
-        timestamp = try container.decode(Timestamp.self, forKey: .timestamp)
+        timestamp = Date(hexSince1970: try container.decode(String.self, forKey: .timestamp))
         number = BlockNumber(hexValue: try container.decode(String.self, forKey: .number))!
         epoch = EpochNumber(hexValue: try container.decode(String.self, forKey: .epoch))!
         transactionsRoot = try container.decode(H256.self, forKey: .transactionsRoot)

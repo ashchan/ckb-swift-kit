@@ -50,4 +50,13 @@ class PrimitivesTests: XCTestCase {
         XCTAssertEqual("0x400", UInt32(1024).hexString)
         XCTAssertEqual("0xabcdef", UInt32(11259375).hexString)
     }
+
+    func testDateFromTimestamp() {
+        let timestamp = UInt64(1567836000183).hexString
+        let date = Date(hexSince1970: timestamp)
+        let d20190907 = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        XCTAssertEqual(2019, d20190907.year)
+        XCTAssertEqual(9, d20190907.month)
+        XCTAssertEqual(7, d20190907.day)
+    }
 }

@@ -16,7 +16,6 @@ public typealias BlockNumber = UInt64
 public typealias EpochNumber = UInt64
 public typealias Capacity = UInt64
 public typealias Cycle = UInt64
-public typealias Timestamp = String
 public typealias Version = UInt32
 
 extension H256 {
@@ -38,5 +37,12 @@ extension UnsignedInteger where Self: FixedWidthInteger {
 
     var hexString: String {
         return Utils.prefixHex(String(self, radix: 16))
+    }
+}
+
+extension Date {
+    init(hexSince1970: String) {
+        let timeInterval = UInt64(hexValue: hexSince1970)!
+        self.init(timeIntervalSince1970: TimeInterval(timeInterval) / 1000)
     }
 }

@@ -66,7 +66,7 @@ private extension ViewController {
             Current tip header:
             \tEpoch: \(tipHeader.epoch)
             \tBlock number: \(tipHeader.number)
-            \tTime: \(Date(timeIntervalSince1970: TimeInterval(UInt64(tipHeader.timestamp.dropFirst(2), radix: 16)!) / 1000).description(with: .current))
+            \tTime: \(tipHeader.timestamp.description(with: .current))
             """
 
             showInfo(result)

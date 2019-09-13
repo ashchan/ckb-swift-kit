@@ -12,7 +12,7 @@ public struct TxPoolInfo: Codable {
     public let orphan: UInt64
     public let totalTxCycles: UInt64
     public let totalTxSize: UInt64
-    public let lastTxsUpdatedAt: Timestamp
+    public let lastTxsUpdatedAt: Date
 
     enum CodingKeys: String, CodingKey {
         case pending
@@ -30,6 +30,6 @@ public struct TxPoolInfo: Codable {
         orphan = UInt64(hexValue: try container.decode(String.self, forKey: .orphan))!
         totalTxCycles = UInt64(hexValue: try container.decode(String.self, forKey: .totalTxCycles))!
         totalTxSize = UInt64(hexValue: try container.decode(String.self, forKey: .totalTxSize))!
-        lastTxsUpdatedAt = try container.decode(Timestamp.self, forKey: .lastTxsUpdatedAt)
+        lastTxsUpdatedAt = Date(hexSince1970: try container.decode(String.self, forKey: .lastTxsUpdatedAt))
     }
 }
