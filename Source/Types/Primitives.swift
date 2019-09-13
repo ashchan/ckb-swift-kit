@@ -9,15 +9,15 @@ import CryptoSwift
 
 public typealias H256 = String // No strict typing for now.
 public typealias HexString = String // Present hex format data
-public typealias Timestamp = String
 public typealias ProposalShortId = [UInt8] // Fixed 10-element array representing short hash.
-public typealias Capacity = String
-public typealias Number = String // Unsigned (UInt64)
-public typealias Version = String
 public typealias HexNumber = String
-public typealias BlockNumber = String
-public typealias EpochNumber = String
-public typealias Cycle = String
+
+public typealias BlockNumber = UInt64
+public typealias EpochNumber = UInt64
+public typealias Capacity = UInt64
+public typealias Cycle = UInt64
+public typealias Timestamp = String
+public typealias Version = UInt32
 
 extension H256 {
     public static let zeroHash: H256 = "0x0000000000000000000000000000000000000000000000000000000000000000"
@@ -34,5 +34,9 @@ extension UnsignedInteger where Self: FixedWidthInteger {
             hexValue.starts(with: "0x") ? String(hexValue.dropFirst(2)) : hexValue,
             radix: 16
         )
+    }
+
+    var hexString: String {
+        return Utils.prefixHex(String(self, radix: 16))
     }
 }

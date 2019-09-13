@@ -17,9 +17,16 @@ public struct CellOutput: Codable, Param {
         self.type = type
     }
 
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        capacity = Capacity(hexValue: try container.decode(String.self, forKey: .capacity))!
+        lock = try container.decode(Script.self, forKey: .lock)
+        type = try container.decodeIfPresent(Script.self, forKey: .type)
+    }
+
     public var param: [String: Any] {
         var result: [String: Any] = [
-            "capacity": capacity,
+            "capacity": capacity.hexString,
             "lock": lock.param
         ]
         if let type = type {
@@ -31,11 +38,13 @@ public struct CellOutput: Codable, Param {
 
 public struct CellOutputWithOutPoint: Codable {
     public let outPoint: OutPoint
+    public let blockHash: H256
     public let capacity: Capacity
     public let lock: Script
 
     enum CodingKeys: String, CodingKey {
         case outPoint = "out_point"
+        case blockHash = "block_hash"
         case capacity, lock
     }
 }

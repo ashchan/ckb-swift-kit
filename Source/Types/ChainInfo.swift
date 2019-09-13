@@ -22,4 +22,14 @@ public struct ChainInfo: Codable {
         case isInitialBlockDownload = "is_initial_block_download"
         case alerts
     }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        chain = try container.decode(String.self, forKey: .chain)
+        medianTime = try container.decode(Timestamp.self, forKey: .medianTime)
+        epoch = EpochNumber(hexValue: try container.decode(String.self, forKey: .epoch))!
+        difficulty = try container.decode(HexNumber.self, forKey: .difficulty)
+        isInitialBlockDownload = try container.decode(Bool.self, forKey: .isInitialBlockDownload)
+        alerts = try container.decode([AlertMessage].self, forKey: .alerts)
+    }
 }

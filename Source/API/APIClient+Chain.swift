@@ -12,7 +12,7 @@ public extension APIClient {
     }
 
     func getBlockByNumber(number: BlockNumber) throws -> Block {
-        return try load(APIRequest<Block>(method: "get_block_by_number", params: [number]))
+        return try load(APIRequest<Block>(method: "get_block_by_number", params: [number.hexString]))
     }
 
     func getTransaction(hash: H256) throws -> TransactionWithStatus {
@@ -20,7 +20,7 @@ public extension APIClient {
     }
 
     func getBlockHash(number: BlockNumber) throws -> H256 {
-        return try load(APIRequest<String>(method: "get_block_hash", params: [number]))
+        return try load(APIRequest<String>(method: "get_block_hash", params: [number.hexString]))
     }
 
     func getTipHeader() throws -> Header {
@@ -32,11 +32,14 @@ public extension APIClient {
     }
 
     func getHeaderByNumber(number: BlockNumber) throws -> Header {
-        return try load(APIRequest<Header>(method: "get_header_by_number", params: [number]))
+        return try load(APIRequest<Header>(method: "get_header_by_number", params: [number.hexString]))
     }
 
     func getCellsByLockHash(lockHash: H256, from: BlockNumber, to: BlockNumber) throws -> [CellOutputWithOutPoint] {
-        return try load(APIRequest<[CellOutputWithOutPoint]>(method: "get_cells_by_lock_hash", params: [lockHash, from, to]))
+        return try load(APIRequest<[CellOutputWithOutPoint]>(
+            method: "get_cells_by_lock_hash",
+            params: [lockHash, from.hexString, to.hexString]
+        ))
     }
 
     func getLiveCell(outPoint: OutPoint, withData: Bool = true) throws -> CellWithStatus {
@@ -44,7 +47,7 @@ public extension APIClient {
     }
 
     func getTipBlockNumber() throws -> BlockNumber {
-        return try load(APIRequest<BlockNumber>(method: "get_tip_block_number"))
+        return BlockNumber(hexValue: try load(APIRequest<HexString>(method: "get_tip_block_number")))!
     }
 
     func getCurrentEpoch() throws -> Epoch {
@@ -52,7 +55,7 @@ public extension APIClient {
     }
 
     func getEpochByNumber(number: EpochNumber) throws -> Epoch {
-        return try load(APIRequest<Epoch>(method: "get_epoch_by_number", params: [number]))
+        return try load(APIRequest<Epoch>(method: "get_epoch_by_number", params: [number.hexString]))
     }
 
     func getCellbaseOutputCapacityDetails(blockHash: H256) throws -> BlockReward? {

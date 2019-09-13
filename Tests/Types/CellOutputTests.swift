@@ -10,15 +10,15 @@ import XCTest
 class CellOutputTests: XCTestCase {
     func testParam() {
         let output = CellOutput(
-            capacity: "100000",
+            capacity: 100000,
             lock: Script(args: [], codeHash: "0x")
         )
-        XCTAssertEqual(output.param["capacity"] as! Capacity, "100000")
+        XCTAssertEqual(output.param["capacity"] as! String, "0x186a0")
     }
 
     func testParamWithType() {
         let output = CellOutput(
-            capacity: "100000",
+            capacity: 100000,
             lock: Script(args: [], codeHash: "0x"),
             type: Script(args: ["0xabcd"], codeHash: "0x")
         )

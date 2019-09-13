@@ -33,4 +33,21 @@ class PrimitivesTests: XCTestCase {
         XCTAssertNil(UInt64(hexValue: "0xfffffffffffffffg"))
         XCTAssertNil(UInt64(hexValue: "0xffffffffffffffff1"))
     }
+
+    func testUnsignedIntegerToHexString() {
+        XCTAssertEqual("0x0", UInt8(0).hexString)
+        XCTAssertEqual("0xff", UInt8.max.hexString)
+
+        XCTAssertEqual("0x0", UInt16(0).hexString)
+        XCTAssertEqual("0xffff", UInt16.max.hexString)
+
+        XCTAssertEqual("0x0", UInt32(0).hexString)
+        XCTAssertEqual("0xffffffff", UInt32.max.hexString)
+
+        XCTAssertEqual("0x0", UInt64(0).hexString)
+        XCTAssertEqual("0xffffffffffffffff", UInt64.max.hexString)
+
+        XCTAssertEqual("0x400", UInt32(1024).hexString)
+        XCTAssertEqual("0xabcdef", UInt32(11259375).hexString)
+    }
 }

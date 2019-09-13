@@ -8,9 +8,9 @@ import Foundation
 
 public struct CellInput: Codable, Param {
     public let previousOutput: OutPoint
-    public let since: Number
+    public let since: UInt64
 
-    public init(previousOutput: OutPoint, since: Number) {
+    public init(previousOutput: OutPoint, since: UInt64) {
         self.previousOutput = previousOutput
         self.since = since
     }
@@ -20,10 +20,16 @@ public struct CellInput: Codable, Param {
         case since
     }
 
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        previousOutput = try container.decode(OutPoint.self, forKey: .previousOutput)
+        since = UInt64(hexValue: try container.decode(String.self, forKey: .since))!
+    }
+
     public var param: [String: Any] {
         return [
             CodingKeys.previousOutput.rawValue: previousOutput.param,
-            CodingKeys.since.rawValue: since
+            CodingKeys.since.rawValue: since.hexString
         ]
     }
 }

@@ -20,4 +20,13 @@ public struct BlockReward: Codable {
         case total
         case txFee = "tx_fee"
     }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        proposalReward = Capacity(hexValue: try container.decode(String.self, forKey: .proposalReward))!
+        primary = Capacity(hexValue: try container.decode(String.self, forKey: .primary))!
+        secondary = Capacity(hexValue: try container.decode(String.self, forKey: .secondary))!
+        total = Capacity(hexValue: try container.decode(String.self, forKey: .total))!
+        txFee = Capacity(hexValue: try container.decode(String.self, forKey: .txFee))!
+    }
 }

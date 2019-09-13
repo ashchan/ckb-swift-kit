@@ -18,4 +18,12 @@ public struct Epoch: Codable {
         case length
         case difficulty
     }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        number = EpochNumber(hexValue: try container.decode(String.self, forKey: .number))!
+        startNumber = BlockNumber(hexValue: try container.decode(String.self, forKey: .startNumber))!
+        length = BlockNumber(hexValue: try container.decode(String.self, forKey: .length))!
+        difficulty = try container.decode(HexNumber.self, forKey: .difficulty)
+    }
 }

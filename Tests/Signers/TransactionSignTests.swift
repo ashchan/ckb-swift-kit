@@ -10,24 +10,24 @@ import XCTest
 class TransactionSignTests: XCTestCase {
     func testSign() throws {
         let tx = Transaction(
-            version: "0",
+            version: 0,
             cellDeps: [
-                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), depType: .code)
+                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: 1), depType: .code)
             ],
             inputs: [
                 CellInput(
-                    previousOutput: OutPoint(txHash: "0xa80a8e01d45b10e1cbc8a2557c62ba40edbdc36cd63a31fc717006ca7b157b50", index: "0"),
-                    since: "0"
+                    previousOutput: OutPoint(txHash: "0xa80a8e01d45b10e1cbc8a2557c62ba40edbdc36cd63a31fc717006ca7b157b50", index: 0),
+                    since: 0
                 )
             ],
             outputs: [
                 CellOutput(
-                    capacity: "100000000000",
+                    capacity: 100000000000,
                     lock: Script(args: ["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 ),
                 CellOutput(
-                    capacity: "4900000000000",
+                    capacity: 4900000000000,
                     lock: Script(args: ["0x36c329ed630d6ce750712a477543672adab57f4c"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 )
@@ -55,23 +55,23 @@ class TransactionSignTests: XCTestCase {
 
     func testMultipleInputsSign() throws {
         let tx = Transaction(
-            version: "0",
+            version: 0,
             cellDeps: [
-                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), depType: .code)
+                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: 1), depType: .code)
             ],
             inputs: [
                 CellInput(
-                    previousOutput: OutPoint(txHash: "0x91fcfd61f420c1090aeded6b6d91d5920a279fe53ec34353afccc59264eeddd4", index: "0"),
-                    since: "113"
+                    previousOutput: OutPoint(txHash: "0x91fcfd61f420c1090aeded6b6d91d5920a279fe53ec34353afccc59264eeddd4", index: 0),
+                    since: 113
                 ),
                 CellInput(
-                    previousOutput: OutPoint(txHash: "0x00000000000000000000000000004e4552564f5344414f494e50555430303031", index: "0"),
-                    since: "0"
+                    previousOutput: OutPoint(txHash: "0x00000000000000000000000000004e4552564f5344414f494e50555430303031", index: 0),
+                    since: 0
                 )
             ],
             outputs: [
                 CellOutput(
-                    capacity: "10000009045634",
+                    capacity: 10000009045634,
                     lock: Script(args: ["0x36c329ed630d6ce750712a477543672adab57f4c"], codeHash: "0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"),
                     type: nil
                 )
@@ -106,24 +106,24 @@ class TransactionSignTests: XCTestCase {
 
     func testThrowErrorWhenWitnessesUnsatisfied() {
         let tx = Transaction(
-            version: "0",
+            version: 0,
             cellDeps: [
-                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: "1"), depType: .code)
+                CellDep(outPoint: OutPoint(txHash: "0xa76801d09a0eabbfa545f1577084b6f3bafb0b6250e7f5c89efcfd4e3499fb55", index: 1), depType: .code)
             ],
             inputs: [
                 CellInput(
-                    previousOutput: OutPoint(txHash: "0xa80a8e01d45b10e1cbc8a2557c62ba40edbdc36cd63a31fc717006ca7b157b50", index: "0"),
-                    since: "0"
+                    previousOutput: OutPoint(txHash: "0xa80a8e01d45b10e1cbc8a2557c62ba40edbdc36cd63a31fc717006ca7b157b50", index: 0),
+                    since: 0
                 )
             ],
             outputs: [
                 CellOutput(
-                    capacity: "100000000000",
+                    capacity: 100000000000,
                     lock: Script(args: ["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 ),
                 CellOutput(
-                    capacity: "4900000000000",
+                    capacity: 4900000000000,
                     lock: Script(args: ["0x36c329ed630d6ce750712a477543672adab57f4c"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 )

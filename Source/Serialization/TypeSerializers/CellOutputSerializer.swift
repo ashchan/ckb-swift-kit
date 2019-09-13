@@ -11,7 +11,7 @@ final class CellOutputSerializer: TableSerializer<CellOutput> {
         super.init(
             value: value,
             fieldSerializers: [
-                UInt64Serializer(value: value.capacity)!,
+                UInt64Serializer(value: value.capacity),
                 value.lock.serializer,
                 OptionSerializer(value: value.type, serializer: value.type?.serializer as? ScriptSerializer)
             ]

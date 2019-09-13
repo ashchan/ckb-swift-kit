@@ -12,7 +12,7 @@ final class OutPointSerializer: StructSerializer<OutPoint> {
             value: value,
             fieldSerializers: [
                 Byte32Serializer(value: value.txHash)!,
-                UInt32Serializer(value: value.index)!
+                UInt32Serializer(value: value.index)
             ]
         )
     }

@@ -8,4 +8,9 @@ import Foundation
 
 public struct DryRunResult: Codable {
     public let cycles: Cycle
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        cycles = Cycle(hexValue: try container.decode(String.self, forKey: .cycles))!
+    }
 }
