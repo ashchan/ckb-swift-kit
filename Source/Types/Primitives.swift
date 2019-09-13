@@ -11,7 +11,7 @@ public typealias H256 = String // No strict typing for now.
 public typealias HexString = String // Present hex format data
 public typealias Timestamp = String
 public typealias ProposalShortId = [UInt8] // Fixed 10-element array representing short hash.
-public typealias Capacity = String // Hex number for UInt64
+public typealias Capacity = String
 public typealias Number = String // Unsigned (UInt64)
 public typealias Version = String
 public typealias HexNumber = String
@@ -26,4 +26,13 @@ extension H256 {
 /// Able to convert to API parameters just like toJSON.
 public protocol Param {
     var param: [String: Any] { get }
+}
+
+extension UnsignedInteger where Self: FixedWidthInteger {
+    init?(hexValue: String) {
+        self.init(
+            hexValue.starts(with: "0x") ? String(hexValue.dropFirst(2)) : hexValue,
+            radix: 16
+        )
+    }
 }

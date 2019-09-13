@@ -112,6 +112,7 @@
 		1AB7516C22B9F32700AC9F63 /* APIClient+Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */; };
 		1AB7516E22BA0F7100AC9F63 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */; };
 		1AB7517022BA263C00AC9F63 /* APIClient+Indexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516F22BA263C00AC9F63 /* APIClient+Indexer.swift */; };
+		1ABF2099232B2A52008D59C8 /* PrimitivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF2098232B2A52008D59C8 /* PrimitivesTests.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
 		1AD01E09230F694B0005199E /* computeScriptHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AD01E08230F694B0005199E /* computeScriptHash.json */; };
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
@@ -240,6 +241,7 @@
 		1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		1AB7516F22BA263C00AC9F63 /* APIClient+Indexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Indexer.swift"; sourceTree = "<group>"; };
 		1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getLiveCellsByLockHash.json; sourceTree = "<group>"; };
+		1ABF2098232B2A52008D59C8 /* PrimitivesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitivesTests.swift; sourceTree = "<group>"; };
 		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
 		1AC180922264672B00D243D9 /* Bech32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32Tests.swift; sourceTree = "<group>"; };
 		1AD01E08230F694B0005199E /* computeScriptHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = computeScriptHash.json; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 		1A28119521D3804600E7CEC5 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				1ABF2098232B2A52008D59C8 /* PrimitivesTests.swift */,
 				1A28119621D3805800E7CEC5 /* ScriptTests.swift */,
 				1A4A4BAC22A6C154003DC827 /* CellInputTests.swift */,
 				1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */,
@@ -839,6 +842,7 @@
 				1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */,
 				1A2D6B3922A35C5D00724E66 /* ScriptTests.swift in Sources */,
 				1A36097623228B6C000E67EE /* TransactionSerializerTests.swift in Sources */,
+				1ABF2099232B2A52008D59C8 /* PrimitivesTests.swift in Sources */,
 				1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */,
 				1A2F5FB72321F1FE000051CC /* SerializerTests.swift in Sources */,
 				1A2D6B2622A35C4F00724E66 /* SystemScriptTests.swift in Sources */,
