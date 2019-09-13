@@ -17,7 +17,7 @@ public struct Transaction: Codable, Param {
     public let hash: H256
 
     public init(
-        version: Number = "0",
+        version: Number = "0x0",
         cellDeps: [CellDep] = [],
         headerDeps: [H256] = [],
         inputs: [CellInput] = [],

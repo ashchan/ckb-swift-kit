@@ -10,9 +10,9 @@ import XCTest
 class TransactionSerializerTests: XCTestCase {
     func testTransaction() {
         let tx = Transaction(
-            version: "0",
+            version: "0x0",
             cellDeps: [
-                CellDep(outPoint: OutPoint(txHash: "0xbffab7ee0a050e2cb882de066d3dbf3afdd8932d6a26eda44f06e4b23f0f4b5a", index: "0"), depType: .code)
+                CellDep(outPoint: OutPoint(txHash: "0xbffab7ee0a050e2cb882de066d3dbf3afdd8932d6a26eda44f06e4b23f0f4b5a", index: "0x0"), depType: .code)
             ],
             outputs: [
                 CellOutput(
