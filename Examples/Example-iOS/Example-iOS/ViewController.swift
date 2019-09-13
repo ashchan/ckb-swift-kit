@@ -66,7 +66,7 @@ private extension ViewController {
             Current tip header:
             \tEpoch: \(tipHeader.epoch)
             \tBlock number: \(tipHeader.number)
-            \tTime: \(Date(timeIntervalSince1970: TimeInterval(tipHeader.timestamp)! / 1000).description(with: .current))
+            \tTime: \(Date(timeIntervalSince1970: TimeInterval(UInt64(tipHeader.timestamp.dropFirst(2), radix: 16)!) / 1000).description(with: .current))
             """
 
             showInfo(result)
@@ -91,7 +91,7 @@ private extension ViewController {
         // Push system script's out point into deps
         let deps = [CellDep(outPoint: systemScript.depOutPoint, depType: .depGroup)]
 
-        // Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's [wallet module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/develop/faucet-server/Sources/App/Services/Wallet/Wallet.swift#L60).
+        // Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's [CellService module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/develop/faucet-server/Sources/App/Services/CellService.swift#L27).
         let inputs: [CellInput] = [/*...*/]
 
         // Generate lock script for the receiver's address
@@ -99,7 +99,7 @@ private extension ViewController {
         let publicKeyHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!)
         let lockScript = systemScript.lock(for: publicKeyHash)
         // Construct the outputs
-        let outputs = [CellOutput(capacity: 500_00_000_000.description, lock: lockScript, type: nil)]
+        let outputs = [CellOutput(capacity: 500_00_000_000, lock: lockScript, type: nil)]
 
         // Generate the transaction
         let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, outputsData: ["0x"], witnesses: [Witness(data: [])])
