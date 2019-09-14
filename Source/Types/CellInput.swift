@@ -23,7 +23,7 @@ public struct CellInput: Codable, Param {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         previousOutput = try container.decode(OutPoint.self, forKey: .previousOutput)
-        since = UInt64(hexValue: try container.decode(String.self, forKey: .since))!
+        since = UInt64(hexString: try container.decode(String.self, forKey: .since))!
     }
 
     public var param: [String: Any] {

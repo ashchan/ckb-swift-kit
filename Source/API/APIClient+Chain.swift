@@ -47,7 +47,7 @@ public extension APIClient {
     }
 
     func getTipBlockNumber() throws -> BlockNumber {
-        return BlockNumber(hexValue: try load(APIRequest<HexString>(method: "get_tip_block_number")))!
+        return BlockNumber(hexString: try load(APIRequest<HexString>(method: "get_tip_block_number")))!
     }
 
     func getCurrentEpoch() throws -> Epoch {

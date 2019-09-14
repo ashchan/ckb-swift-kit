@@ -25,11 +25,11 @@ public struct TxPoolInfo: Codable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        pending = UInt64(hexValue: try container.decode(String.self, forKey: .pending))!
-        proposed = UInt64(hexValue: try container.decode(String.self, forKey: .proposed))!
-        orphan = UInt64(hexValue: try container.decode(String.self, forKey: .orphan))!
-        totalTxCycles = UInt64(hexValue: try container.decode(String.self, forKey: .totalTxCycles))!
-        totalTxSize = UInt64(hexValue: try container.decode(String.self, forKey: .totalTxSize))!
+        pending = UInt64(hexString: try container.decode(String.self, forKey: .pending))!
+        proposed = UInt64(hexString: try container.decode(String.self, forKey: .proposed))!
+        orphan = UInt64(hexString: try container.decode(String.self, forKey: .orphan))!
+        totalTxCycles = UInt64(hexString: try container.decode(String.self, forKey: .totalTxCycles))!
+        totalTxSize = UInt64(hexString: try container.decode(String.self, forKey: .totalTxSize))!
         lastTxsUpdatedAt = Date(hexSince1970: try container.decode(String.self, forKey: .lastTxsUpdatedAt))
     }
 }

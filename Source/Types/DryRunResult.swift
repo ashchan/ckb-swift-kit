@@ -11,6 +11,6 @@ public struct DryRunResult: Codable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        cycles = Cycle(hexValue: try container.decode(String.self, forKey: .cycles))!
+        cycles = Cycle(hexString: try container.decode(String.self, forKey: .cycles))!
     }
 }

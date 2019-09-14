@@ -49,7 +49,7 @@ public struct Transaction: Codable, Param {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        version = Version(hexValue: try container.decode(String.self, forKey: .version))!
+        version = Version(hexString: try container.decode(String.self, forKey: .version))!
         cellDeps = try container.decode([CellDep].self, forKey: .cellDeps)
         headerDeps = try container.decode([H256].self, forKey: .headerDeps)
         inputs = try container.decode([CellInput].self, forKey: .inputs)
@@ -111,9 +111,9 @@ public struct TransactionPoint: Codable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        blockNumber = BlockNumber(hexValue: try container.decode(String.self, forKey: .blockNumber))!
+        blockNumber = BlockNumber(hexString: try container.decode(String.self, forKey: .blockNumber))!
         txHash = try container.decode(H256.self, forKey: .txHash)
-        index = UInt32(hexValue: try container.decode(String.self, forKey: .index))!
+        index = UInt32(hexString: try container.decode(String.self, forKey: .index))!
     }
 }
 

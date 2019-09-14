@@ -19,7 +19,7 @@ public struct CellOutput: Codable, Param {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        capacity = Capacity(hexValue: try container.decode(String.self, forKey: .capacity))!
+        capacity = Capacity(hexString: try container.decode(String.self, forKey: .capacity))!
         lock = try container.decode(Script.self, forKey: .lock)
         type = try container.decodeIfPresent(Script.self, forKey: .type)
     }

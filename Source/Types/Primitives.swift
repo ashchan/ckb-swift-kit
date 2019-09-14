@@ -27,10 +27,15 @@ public protocol Param {
     var param: [String: Any] { get }
 }
 
-extension UnsignedInteger where Self: FixedWidthInteger {
-    init?(hexValue: String) {
+public protocol HexStringRepresentable {
+    init?(hexString: String)
+    var hexString: String { get }
+}
+
+public extension HexStringRepresentable where Self: UnsignedInteger & FixedWidthInteger {
+    init?(hexString: String) {
         self.init(
-            hexValue.starts(with: "0x") ? String(hexValue.dropFirst(2)) : hexValue,
+            hexString.starts(with: "0x") ? String(hexString.dropFirst(2)) : hexString,
             radix: 16
         )
     }
@@ -40,9 +45,14 @@ extension UnsignedInteger where Self: FixedWidthInteger {
     }
 }
 
+extension UInt8: HexStringRepresentable {}
+extension UInt16: HexStringRepresentable {}
+extension UInt32: HexStringRepresentable {}
+extension UInt64: HexStringRepresentable {}
+
 extension Date {
     init(hexSince1970: String) {
-        let timeInterval = UInt64(hexValue: hexSince1970)!
+        let timeInterval = UInt64(hexString: hexSince1970)!
         self.init(timeIntervalSince1970: TimeInterval(timeInterval) / 1000)
     }
 }

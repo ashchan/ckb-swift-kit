@@ -20,7 +20,7 @@ public struct LockHashIndexState: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         lockHash = try container.decode(H256.self, forKey: .lockHash)
-        blockNumber = BlockNumber(hexValue: try container.decode(String.self, forKey: .blockNumber))!
+        blockNumber = BlockNumber(hexString: try container.decode(String.self, forKey: .blockNumber))!
         blockHash = try container.decode(H256.self, forKey: .blockHash)
     }
 }

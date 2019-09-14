@@ -17,7 +17,7 @@ public struct NodeAddress: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         address = try container.decode(String.self, forKey: .address)
-        score = UInt64(hexValue: try container.decode(String.self, forKey: .score))!
+        score = UInt64(hexString: try container.decode(String.self, forKey: .score))!
     }
 }
 

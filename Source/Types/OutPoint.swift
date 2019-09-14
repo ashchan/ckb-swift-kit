@@ -23,7 +23,7 @@ public struct OutPoint: Codable, Param {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         txHash = try container.decode(H256.self, forKey: .txHash)
-        index = UInt32(hexValue: try container.decode(String.self, forKey: .index))!
+        index = UInt32(hexString: try container.decode(String.self, forKey: .index))!
     }
 
     public var param: [String: Any] {

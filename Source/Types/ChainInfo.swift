@@ -27,7 +27,7 @@ public struct ChainInfo: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         chain = try container.decode(String.self, forKey: .chain)
         medianTime = Date(hexSince1970: try container.decode(String.self, forKey: .medianTime))
-        epoch = EpochNumber(hexValue: try container.decode(String.self, forKey: .epoch))!
+        epoch = EpochNumber(hexString: try container.decode(String.self, forKey: .epoch))!
         difficulty = try container.decode(HexNumber.self, forKey: .difficulty)
         isInitialBlockDownload = try container.decode(Bool.self, forKey: .isInitialBlockDownload)
         alerts = try container.decode([AlertMessage].self, forKey: .alerts)
