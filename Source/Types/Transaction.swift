@@ -17,7 +17,7 @@ public struct Transaction: Codable, Param {
     public let hash: H256
 
     public init(
-        version: Number = "0",
+        version: Version = 0,
         cellDeps: [CellDep] = [],
         headerDeps: [H256] = [],
         inputs: [CellInput] = [],
@@ -47,9 +47,21 @@ public struct Transaction: Codable, Param {
         case hash
     }
 
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        version = Version(hexString: try container.decode(String.self, forKey: .version))!
+        cellDeps = try container.decode([CellDep].self, forKey: .cellDeps)
+        headerDeps = try container.decode([H256].self, forKey: .headerDeps)
+        inputs = try container.decode([CellInput].self, forKey: .inputs)
+        outputs = try container.decode([CellOutput].self, forKey: .outputs)
+        outputsData = try container.decode([HexString].self, forKey: .outputsData)
+        witnesses = try container.decode([Witness].self, forKey: .witnesses)
+        hash = try container.decode(H256.self, forKey: .hash)
+    }
+
     public var param: [String: Any] {
         return [
-            CodingKeys.version.rawValue: version,
+            CodingKeys.version.rawValue: version.hexString,
             CodingKeys.cellDeps.rawValue: cellDeps.map { $0.param },
             CodingKeys.headerDeps.rawValue: headerDeps,
             CodingKeys.inputs.rawValue: inputs.map { $0.param },
@@ -89,12 +101,19 @@ public struct TransactionWithStatus: Codable {
 public struct TransactionPoint: Codable {
     public let blockNumber: BlockNumber
     public let txHash: H256
-    public let index: Number
+    public let index: UInt32
 
     enum CodingKeys: String, CodingKey {
         case blockNumber = "block_number"
         case txHash = "tx_hash"
         case index
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        blockNumber = BlockNumber(hexString: try container.decode(String.self, forKey: .blockNumber))!
+        txHash = try container.decode(H256.self, forKey: .txHash)
+        index = UInt32(hexString: try container.decode(String.self, forKey: .index))!
     }
 }
 

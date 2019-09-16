@@ -1,19 +1,19 @@
 {
+    "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "chain": "ckb_dev",
-        "difficulty": "0x100",
-        "epoch": "0",
-        "is_initial_block_download": false,
-        "median_time": "1557368872854",
         "alerts": [
             {
-                "id": "42",
+                "id": "0x2a",
                 "message": "An example alert message!",
-                "notice_until": "2524579200000",
-                "priority": "1"
+                "notice_until": "0x24bcca57c00",
+                "priority": "0x1"
             }
-        ]
-    },
-    "id": 1
+        ],
+        "chain": "main",
+        "difficulty": "0x7a1200",
+        "epoch": "0x1",
+        "is_initial_block_download": true,
+        "median_time": "0x5cd2b105"
+    }
 }

@@ -29,7 +29,7 @@ public struct SystemScript {
         }
         let secp256k1TypeHash = type.hash
 
-        let depOutPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: "0")
+        let depOutPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: 0)
 
         return SystemScript(depOutPoint: depOutPoint, secp256k1TypeHash: secp256k1TypeHash)
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A014D5E232A707E00CBBBA7 /* liveCell.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A014D5D232A707E00CBBBA7 /* liveCell.json */; };
 		1A11347E2228D14300840EE8 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* Node.swift */; };
 		1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */; };
 		1A199DEC22BA3526000C0C34 /* getLiveCellsByLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */; };
@@ -111,6 +112,7 @@
 		1AB7516C22B9F32700AC9F63 /* APIClient+Experiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516B22B9F32700AC9F63 /* APIClient+Experiment.swift */; };
 		1AB7516E22BA0F7100AC9F63 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */; };
 		1AB7517022BA263C00AC9F63 /* APIClient+Indexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7516F22BA263C00AC9F63 /* APIClient+Indexer.swift */; };
+		1ABF2099232B2A52008D59C8 /* PrimitivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABF2098232B2A52008D59C8 /* PrimitivesTests.swift */; };
 		1AC180912264634E00D243D9 /* Bech32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC180902264634E00D243D9 /* Bech32.swift */; };
 		1AD01E09230F694B0005199E /* computeScriptHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AD01E08230F694B0005199E /* computeScriptHash.json */; };
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
@@ -133,6 +135,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A014D5D232A707E00CBBBA7 /* liveCell.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = liveCell.json; sourceTree = "<group>"; };
 		1A11347D2228D14300840EE8 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getTransactionsByLockHash.json; sourceTree = "<group>"; };
 		1A199DE422BA2809000C0C34 /* indexLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = indexLockHash.json; sourceTree = "<group>"; };
@@ -238,6 +241,7 @@
 		1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		1AB7516F22BA263C00AC9F63 /* APIClient+Indexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Indexer.swift"; sourceTree = "<group>"; };
 		1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getLiveCellsByLockHash.json; sourceTree = "<group>"; };
+		1ABF2098232B2A52008D59C8 /* PrimitivesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitivesTests.swift; sourceTree = "<group>"; };
 		1AC180902264634E00D243D9 /* Bech32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32.swift; sourceTree = "<group>"; };
 		1AC180922264672B00D243D9 /* Bech32Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bech32Tests.swift; sourceTree = "<group>"; };
 		1AD01E08230F694B0005199E /* computeScriptHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = computeScriptHash.json; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 		1A28119521D3804600E7CEC5 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				1ABF2098232B2A52008D59C8 /* PrimitivesTests.swift */,
 				1A28119621D3805800E7CEC5 /* ScriptTests.swift */,
 				1A4A4BAC22A6C154003DC827 /* CellInputTests.swift */,
 				1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */,
@@ -343,6 +348,7 @@
 				1A4AEBDE2282EF7500F0D576 /* peers.json */,
 				1A55D39C22EEA7CC00E2B8DE /* setBan.json */,
 				1A55D39E22EEA7F300E2B8DE /* getBannedAddresses.json */,
+				1A014D5D232A707E00CBBBA7 /* liveCell.json */,
 				1A58F44822769C7900C6546F /* liveCellEmpty.json */,
 				1A4AEBDC2282EC9700F0D576 /* txPoolInfo.json */,
 				1AA9B6872283D10E00C116B2 /* blockchainInfo.json */,
@@ -697,6 +703,7 @@
 				1A2D6B2922A35C5A00724E66 /* genesisBlock.json in Resources */,
 				1A2D6B2D22A35C5A00724E66 /* tipBlockNumber.json in Resources */,
 				1A2D6B2A22A35C5A00724E66 /* epoch.json in Resources */,
+				1A014D5E232A707E00CBBBA7 /* liveCell.json in Resources */,
 				1A54E26122EEA9DE008CF6C3 /* setBan.json in Resources */,
 				1A199DEC22BA3526000C0C34 /* getLiveCellsByLockHash.json in Resources */,
 				1A2D6B3022A35C5A00724E66 /* peers.json in Resources */,
@@ -835,6 +842,7 @@
 				1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */,
 				1A2D6B3922A35C5D00724E66 /* ScriptTests.swift in Sources */,
 				1A36097623228B6C000E67EE /* TransactionSerializerTests.swift in Sources */,
+				1ABF2099232B2A52008D59C8 /* PrimitivesTests.swift in Sources */,
 				1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */,
 				1A2F5FB72321F1FE000051CC /* SerializerTests.swift in Sources */,
 				1A2D6B2622A35C4F00724E66 /* SystemScriptTests.swift in Sources */,

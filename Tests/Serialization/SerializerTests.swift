@@ -25,6 +25,7 @@ class SerializerTests: XCTestCase {
         let expected: [Byte] = [4, 3, 2, 1]
         XCTAssertEqual(UInt32Serializer(value: 16909060).serialize(), expected)
         XCTAssertEqual(UInt32Serializer(value: "16909060")!.serialize(), expected)
+        XCTAssertEqual(UInt32Serializer(value: "0x01020304")!.serialize(), expected)
 
         // Overflow
         XCTAssertNil(UInt32Serializer(value: (UInt64(UInt32.max) + 1).description))

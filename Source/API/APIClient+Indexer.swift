@@ -10,7 +10,7 @@ public extension APIClient {
     func indexLockHash(lockHash: H256, indexFrom: BlockNumber? = nil) throws -> LockHashIndexState {
         return try load(APIRequest<LockHashIndexState>(
             method: "index_lock_hash",
-            params: [lockHash, indexFrom].compactMap { $0 }
+            params: [lockHash, indexFrom?.hexString].compactMap { $0 }
         ))
     }
 
@@ -22,17 +22,17 @@ public extension APIClient {
         return try load(APIRequest<[LockHashIndexState]>(method: "get_lock_hash_index_states", params: []))
     }
 
-    func getLiveCellsByLockHash(lockHash: H256, page: Number, pageSize: Number, reverseOrder: Bool = false) throws -> [LiveCell] {
+    func getLiveCellsByLockHash(lockHash: H256, page: UInt32, pageSize: UInt32, reverseOrder: Bool = false) throws -> [LiveCell] {
         return try load(APIRequest<[LiveCell]>(
             method: "get_live_cells_by_lock_hash",
-            params: [lockHash, page, pageSize, reverseOrder]
+            params: [lockHash, page.hexString, pageSize.hexString, reverseOrder]
         ))
     }
 
-    func getTransactionsByLockHash(lockHash: H256, page: Number, pageSize: Number, reverseOrder: Bool = false) throws -> [CellTransaction] {
+    func getTransactionsByLockHash(lockHash: H256, page: UInt32, pageSize: UInt32, reverseOrder: Bool = false) throws -> [CellTransaction] {
         return try load(APIRequest<[CellTransaction]>(
             method: "get_transactions_by_lock_hash",
-            params: [lockHash, page, pageSize, reverseOrder]
+            params: [lockHash, page.hexString, pageSize.hexString, reverseOrder]
         ))
     }
 }

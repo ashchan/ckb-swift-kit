@@ -15,7 +15,7 @@ public final class TransactionSerializer: TableSerializer<Transaction> {
         super.init(
             value: value,
             fieldSerializers: [
-                UInt32Serializer(value: value.version)!,
+                UInt32Serializer(value: value.version),
                 FixVecSerializer<CellDep, CellDepSerializer>(value: value.cellDeps),
                 FixVecSerializer<[Byte], Byte32Serializer>(value: hexStringsToArrayOfBytes(value.headerDeps)),
                 FixVecSerializer<CellInput, CellInputSerializer>(value: value.inputs),

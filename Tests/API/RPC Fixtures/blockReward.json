@@ -2,10 +2,10 @@
     "id": 1,
     "jsonrpc": "2.0",
     "result": {
-        "primary": "100000000000",
-        "proposal_reward": "0",
-        "secondary": "3936000",
-        "total": "100003936000",
-        "tx_fee": "0"
+        "primary": "0x102b36211d",
+        "proposal_reward": "0x0",
+        "secondary": "0x2ca110a5",
+        "total": "0x1057d731c2",
+        "tx_fee": "0x0"
     }
 }

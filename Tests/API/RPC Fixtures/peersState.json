@@ -1,11 +1,11 @@
 {
-    "result" : [
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": [
         {
-            "last_updated" : "1557289448237",
-            "blocks_in_flight" : "86",
-            "peer" : "1"
+            "blocks_in_flight": "0x56",
+            "last_updated": "0x16a95af332d",
+            "peer": "0x1"
         }
-    ],
-    "jsonrpc" : "2.0",
-    "id" : 1
+    ]
 }
