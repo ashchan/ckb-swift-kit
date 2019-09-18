@@ -48,6 +48,13 @@ public struct CellOutputWithOutPoint: Codable {
         case capacity, lock
     }
 
+    public init(outPoint: OutPoint, blockHash: H256, capacity: Capacity, lock: Script) {
+        self.outPoint = outPoint
+        self.blockHash = blockHash
+        self.capacity = capacity
+        self.lock = lock
+    }
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         outPoint = try container.decode(OutPoint.self, forKey: .outPoint)

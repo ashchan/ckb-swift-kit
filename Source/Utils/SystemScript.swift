@@ -38,11 +38,11 @@ public struct SystemScript {
     }
 
     public func lock(for publicKey: Data) -> Script {
-        let publicKeyHash = Utils.prefixHex(AddressGenerator().hash(for: publicKey).toHexString())
+        let publicKeyHash = AddressGenerator().hash(for: publicKey).toHexString()
         return lock(for: publicKeyHash)
     }
 
     public func lock(for publicKeyHash: String) -> Script {
-        return Script(args: [publicKeyHash], codeHash: secp256k1TypeHash, hashType: .type)
+        return Script(args: [Utils.prefixHex(publicKeyHash)], codeHash: secp256k1TypeHash, hashType: .type)
     }
 }
