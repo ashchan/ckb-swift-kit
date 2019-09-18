@@ -1,12 +1,19 @@
 # [v0.21.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.20.0...v0.21.0) (2019-09-21)
 
 
+### Bug Fixes
+
+* CellOutputWithOutPoint decoder for capacity ([ccc5dd2](https://github.com/nervosnetwork/ckb-sdk-swift/commit/ccc5dd2))
+
+
 ### Features
 
 * Add support for parsing hex number to UnsignedIntSerializer ([9c5cadc](https://github.com/nervosnetwork/ckb-sdk-swift/commit/9c5cadc))
 * Add UnsignedInteger initializer for parsing hex value ([fdabbec](https://github.com/nervosnetwork/ckb-sdk-swift/commit/fdabbec))
 * Define HexStringRepresentable protocol ([bda9101](https://github.com/nervosnetwork/ckb-sdk-swift/commit/bda9101))
 * Encode/Parse numbers with hex format for RPC calling ([2ea114c](https://github.com/nervosnetwork/ckb-sdk-swift/commit/2ea114c))
+* Implement a simple Payment class that sends capacity ([a92942c](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a92942c))
+* Implenment simple LiveCellCollector ([e746470](https://github.com/nervosnetwork/ckb-sdk-swift/commit/e746470))
 * Represent timestamp properties as Date type ([74e84d6](https://github.com/nervosnetwork/ckb-sdk-swift/commit/74e84d6))
 * Update mocking client tests for parsing RPC numbers ([adf04d9](https://github.com/nervosnetwork/ckb-sdk-swift/commit/adf04d9))
 * Update RPC client to use hex numbers ([a2817dc](https://github.com/nervosnetwork/ckb-sdk-swift/commit/a2817dc))
