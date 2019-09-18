@@ -47,4 +47,19 @@ public struct CellOutputWithOutPoint: Codable {
         case blockHash = "block_hash"
         case capacity, lock
     }
+
+    public init(outPoint: OutPoint, blockHash: H256, capacity: Capacity, lock: Script) {
+        self.outPoint = outPoint
+        self.blockHash = blockHash
+        self.capacity = capacity
+        self.lock = lock
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        outPoint = try container.decode(OutPoint.self, forKey: .outPoint)
+        blockHash = try container.decode(H256.self, forKey: .blockHash)
+        capacity = Capacity(hexString: try container.decode(String.self, forKey: .capacity))!
+        lock = try container.decode(Script.self, forKey: .lock)
+    }
 }

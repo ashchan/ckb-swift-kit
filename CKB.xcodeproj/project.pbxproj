@@ -83,6 +83,10 @@
 		1A54E26222EEA9E1008CF6C3 /* getBannedAddresses.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A55D39E22EEA7F300E2B8DE /* getBannedAddresses.json */; };
 		1A54E26822EEB5BA008CF6C3 /* blockReward.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A54E26722EEB5BA008CF6C3 /* blockReward.json */; };
 		1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BCBB2228C571200157426 /* Transaction+Sign.swift */; };
+		1A6796B0232F0A7A001E9E3D /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6796AF232F0A7A001E9E3D /* Payment.swift */; };
+		1A6796B3232F0A95001E9E3D /* PaymentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6796B2232F0A95001E9E3D /* PaymentTests.swift */; };
+		1A6796B5232F0BB4001E9E3D /* LiveCellCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6796B4232F0BB4001E9E3D /* LiveCellCollector.swift */; };
+		1A6796B7232F3D00001E9E3D /* LiveCellCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6796B6232F3D00001E9E3D /* LiveCellCollectorTests.swift */; };
 		1A703C29231FAEF800EDF2C6 /* DynVecSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A703C28231FAEF800EDF2C6 /* DynVecSerializer.swift */; };
 		1A703C2B231FAF1000EDF2C6 /* FixVecSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A703C2A231FAF1000EDF2C6 /* FixVecSerializer.swift */; };
 		1A703C2D231FAF2400EDF2C6 /* FixVecSerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A703C2C231FAF2400EDF2C6 /* FixVecSerializerTests.swift */; };
@@ -208,6 +212,10 @@
 		1A5BCBAF228C53C000157426 /* pubkey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pubkey.json; sourceTree = "<group>"; };
 		1A5BCBB2228C571200157426 /* Transaction+Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Sign.swift"; sourceTree = "<group>"; };
 		1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSignTests.swift; sourceTree = "<group>"; };
+		1A6796AF232F0A7A001E9E3D /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		1A6796B2232F0A95001E9E3D /* PaymentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTests.swift; sourceTree = "<group>"; };
+		1A6796B4232F0BB4001E9E3D /* LiveCellCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCellCollector.swift; sourceTree = "<group>"; };
+		1A6796B6232F3D00001E9E3D /* LiveCellCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCellCollectorTests.swift; sourceTree = "<group>"; };
 		1A703C28231FAEF800EDF2C6 /* DynVecSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynVecSerializer.swift; sourceTree = "<group>"; };
 		1A703C2A231FAF1000EDF2C6 /* FixVecSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixVecSerializer.swift; sourceTree = "<group>"; };
 		1A703C2C231FAF2400EDF2C6 /* FixVecSerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixVecSerializerTests.swift; sourceTree = "<group>"; };
@@ -304,6 +312,7 @@
 				1A28119521D3804600E7CEC5 /* Types */,
 				1A414A7F21C32D2500B28C09 /* API */,
 				1A5BCBB4228C6B9200157426 /* Signers */,
+				1A6796B1232F0A84001E9E3D /* Payment */,
 				1A414AA121C7711200B28C09 /* Utils */,
 				1A5BCB9B228C474200157426 /* TestHelper.swift */,
 				1A2D6B1B22A35C3500724E66 /* Info.plist */,
@@ -393,6 +402,7 @@
 				1A414A8621C36FAA00B28C09 /* Types */,
 				1A414A7E21C32D1D00B28C09 /* API */,
 				1A5BCBB1228C56DC00157426 /* Signers */,
+				1A6796AE232F0A61001E9E3D /* Payment */,
 				1A414A9E21C770CF00B28C09 /* Utils */,
 				1A414A6321C2226E00B28C09 /* CKB.h */,
 				1A414A6421C2226E00B28C09 /* Info.plist */,
@@ -503,6 +513,24 @@
 				1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */,
 			);
 			path = Signers;
+			sourceTree = "<group>";
+		};
+		1A6796AE232F0A61001E9E3D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				1A6796AF232F0A7A001E9E3D /* Payment.swift */,
+				1A6796B4232F0BB4001E9E3D /* LiveCellCollector.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		1A6796B1232F0A84001E9E3D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				1A6796B2232F0A95001E9E3D /* PaymentTests.swift */,
+				1A6796B6232F3D00001E9E3D /* LiveCellCollectorTests.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 		1A703C26231F4B8F00EDF2C6 /* Serialization */ = {
@@ -835,10 +863,12 @@
 				1A703C37231FAF9900EDF2C6 /* StructSerializerTests.swift in Sources */,
 				1A4A4BB322A6C5F0003DC827 /* APIErrorTests.swift in Sources */,
 				1A2D6B3822A35C5A00724E66 /* APIMockingTests.swift in Sources */,
+				1A6796B7232F3D00001E9E3D /* LiveCellCollectorTests.swift in Sources */,
 				1A703C2D231FAF2400EDF2C6 /* FixVecSerializerTests.swift in Sources */,
 				1A4A4BAB22A6BF40003DC827 /* CellOutputTests.swift in Sources */,
 				1A703C3F231FB17900EDF2C6 /* OptionSerializerTests.swift in Sources */,
 				1A4A4BB722A6CA4C003DC827 /* APIMockingClientTests.swift in Sources */,
+				1A6796B3232F0A95001E9E3D /* PaymentTests.swift in Sources */,
 				1A2D6B2422A35C4F00724E66 /* UtilsTests.swift in Sources */,
 				1A2D6B3922A35C5D00724E66 /* ScriptTests.swift in Sources */,
 				1A36097623228B6C000E67EE /* TransactionSerializerTests.swift in Sources */,
@@ -865,6 +895,7 @@
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1A703C2B231FAF1000EDF2C6 /* FixVecSerializer.swift in Sources */,
 				1AB7516E22BA0F7100AC9F63 /* AlertMessage.swift in Sources */,
+				1A6796B5232F0BB4001E9E3D /* LiveCellCollector.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
 				1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */,
 				D5B02A91230A8030006B4189 /* CellDep.swift in Sources */,
@@ -887,6 +918,7 @@
 				1A414AA021C770DD00B28C09 /* Utils.swift in Sources */,
 				1A4AEBDB2282EB0100F0D576 /* TxPoolInfo.swift in Sources */,
 				1A414A9A21C3879500B28C09 /* Cell.swift in Sources */,
+				1A6796B0232F0A7A001E9E3D /* Payment.swift in Sources */,
 				1A414A8C21C3714E00B28C09 /* Transaction.swift in Sources */,
 				1A703C39231FB13800EDF2C6 /* ArraySerializer.swift in Sources */,
 				1AB7516A22B9F30200AC9F63 /* APIClient+Stats.swift in Sources */,

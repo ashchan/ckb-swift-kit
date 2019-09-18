@@ -7,10 +7,12 @@
 import Foundation
 
 public extension Transaction {
-    static func sign(tx: Transaction, with privateKey: Data, txHash: H256) throws -> Transaction {
+    static func sign(tx: Transaction, with privateKey: Data) throws -> Transaction {
         if tx.witnesses.count < tx.inputs.count {
             throw Error.invalidNumberOfWitnesses
         }
+
+        let txHash: H256 = tx.computeHash()
 
         let signedWitnesses = try tx.witnesses.map { witness -> Witness in
             let message: Data = ([txHash] + witness.data).map { Data(hex: $0) }.reduce(Data(), +)
