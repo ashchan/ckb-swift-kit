@@ -77,4 +77,13 @@ class AddressGeneratorTests: XCTestCase {
         )
         XCTAssertNil(AddressGenerator.publicKeyHash(for: "bbbbb"))
     }
+
+    func testValidate() {
+        XCTAssertTrue(AddressGenerator.validate("ckb1qyqp8eqad7ffy42ezmchkjyz54rhcqf8q9pqrn323p"))
+        XCTAssertTrue(AddressGenerator.validate("ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83"))
+
+        XCTAssertFalse(AddressGenerator.validate("ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu8i")) // Wrong checksum
+        XCTAssertFalse(AddressGenerator.validate("ckt1qyqrdaefa43s6m882pcj53m4gdnj4k440axqswmu83")) // None Bech32 character
+        XCTAssertFalse(AddressGenerator.validate("tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7")) // None ckt/ckb addresses
+    }
 }

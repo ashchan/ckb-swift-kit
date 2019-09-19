@@ -9,8 +9,6 @@ import Foundation
 /// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0021-ckb-address-format/0021-ckb-address-format.md).
 /// Currently we implement the predefined format type 0x01(short version for locks with popular code_hash) and code hash index 0x00(SECP256K1 + blake160).
 public class AddressGenerator {
-    public init() {}
-
     static func prefix(network: Network) -> String {
         switch network {
         case .testnet:
@@ -50,8 +48,19 @@ public class AddressGenerator {
     public static func hash(for publicKey: Data) -> Data {
         return blake160(publicKey)
     }
+}
 
-    private static func parse(address: String) -> (hrp: String, data: Data)? {
+public extension AddressGenerator {
+    static func validate(_ address: String) -> Bool {
+        guard let (hlp, _) = parse(address: address) else {
+            return false
+        }
+        return ["ckt", "ckb"].contains(hlp)
+    }
+}
+
+private extension AddressGenerator {
+    static func parse(address: String) -> (hrp: String, data: Data)? {
         if let parsed = Bech32().decode(bech32: address) {
             if let data = convertBits(data: parsed.data, fromBits: 5, toBits: 8, pad: false) {
                 return (hrp: parsed.hrp, data: data)
@@ -61,13 +70,11 @@ public class AddressGenerator {
         return nil
     }
 
-    private static func blake160(_ data: Data) -> Data {
+    static func blake160(_ data: Data) -> Data {
         return Blake2b().hash(data: data)!.prefix(upTo: 20)
     }
-}
 
-extension AddressGenerator {
-    private static func convertBits(data: Data, fromBits: Int, toBits: Int, pad: Bool) -> Data? {
+    static func convertBits(data: Data, fromBits: Int, toBits: Int, pad: Bool) -> Data? {
         var ret = Data()
         var acc = 0
         var bits = 0
