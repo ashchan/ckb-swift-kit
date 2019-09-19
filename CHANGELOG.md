@@ -8,6 +8,7 @@
 
 ### Features
 
+* Add AddressGenerator.validate ([0e181c7](https://github.com/nervosnetwork/ckb-sdk-swift/commit/0e181c7))
 * Add support for parsing hex number to UnsignedIntSerializer ([9c5cadc](https://github.com/nervosnetwork/ckb-sdk-swift/commit/9c5cadc))
 * Add UnsignedInteger initializer for parsing hex value ([fdabbec](https://github.com/nervosnetwork/ckb-sdk-swift/commit/fdabbec))
 * Define HexStringRepresentable protocol ([bda9101](https://github.com/nervosnetwork/ckb-sdk-swift/commit/bda9101))
