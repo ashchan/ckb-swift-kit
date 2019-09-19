@@ -19,7 +19,6 @@ public struct Header: Codable {
     public let unclesHash: H256
     public let unclesCount: UInt32
     public let dao: String
-    public let chainRoot: String
     public let nonce: UInt64
     public let hash: H256
 
@@ -36,7 +35,6 @@ public struct Header: Codable {
         case unclesHash = "uncles_hash"
         case unclesCount = "uncles_count"
         case dao
-        case chainRoot = "chain_root"
         case nonce
         case hash
     }
@@ -55,7 +53,6 @@ public struct Header: Codable {
         unclesHash = try container.decode(H256.self, forKey: .unclesHash)
         unclesCount = UInt32(hexString: try container.decode(String.self, forKey: .unclesCount))!
         dao = try container.decode(String.self, forKey: .dao)
-        chainRoot = try container.decode(String.self, forKey: .chainRoot)
         nonce = UInt64(hexString: try container.decode(String.self, forKey: .nonce))!
         hash = try container.decode(H256.self, forKey: .hash)
     }
