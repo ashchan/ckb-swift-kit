@@ -38,7 +38,7 @@ public struct SystemScript {
     }
 
     public func lock(for publicKey: Data) -> Script {
-        let publicKeyHash = AddressGenerator().hash(for: publicKey).toHexString()
+        let publicKeyHash = AddressGenerator.hash(for: publicKey).toHexString()
         return lock(for: publicKeyHash)
     }
 

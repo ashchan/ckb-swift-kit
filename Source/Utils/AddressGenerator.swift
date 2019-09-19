@@ -11,7 +11,7 @@ import Foundation
 public class AddressGenerator {
     public init() {}
 
-    func prefix(network: Network) -> String {
+    static func prefix(network: Network) -> String {
         switch network {
         case .testnet:
             return "ckt"
@@ -20,26 +20,26 @@ public class AddressGenerator {
         }
     }
 
-    public func publicKeyHash(for address: String) -> String? {
+    public static func publicKeyHash(for address: String) -> String? {
         guard let data = parse(address: address)?.data else {
             return nil
         }
         return Data(data.bytes.suffix(20)).toHexString()
     }
 
-    public func address(for publicKey: String, network: Network = .testnet) -> String {
+    public static func address(for publicKey: String, network: Network = .testnet) -> String {
         return address(for: Data(hex: publicKey), network: network)
     }
 
-    public func address(for publicKey: Data, network: Network = .testnet) -> String {
+    public static func address(for publicKey: Data, network: Network = .testnet) -> String {
         return address(publicKeyHash: hash(for: publicKey), network: network)
     }
 
-    public func address(publicKeyHash: String, network: Network = .testnet) -> String {
+    public static func address(publicKeyHash: String, network: Network = .testnet) -> String {
         return address(publicKeyHash: Data(hex: publicKeyHash), network: network)
     }
 
-    public func address(publicKeyHash: Data, network: Network = .testnet) -> String {
+    public static func address(publicKeyHash: Data, network: Network = .testnet) -> String {
         // Payload: type(01) | code hash index(00, P2PH) | pubkey blake160
         let type = Data([0x01])
         let codeHashIndex = Data([0x00])
@@ -47,11 +47,11 @@ public class AddressGenerator {
         return Bech32().encode(hrp: prefix(network: network), data: convertBits(data: payload, fromBits: 8, toBits: 5, pad: true)!)
     }
 
-    public func hash(for publicKey: Data) -> Data {
+    public static func hash(for publicKey: Data) -> Data {
         return blake160(publicKey)
     }
 
-    private func parse(address: String) -> (hrp: String, data: Data)? {
+    private static func parse(address: String) -> (hrp: String, data: Data)? {
         if let parsed = Bech32().decode(bech32: address) {
             if let data = convertBits(data: parsed.data, fromBits: 5, toBits: 8, pad: false) {
                 return (hrp: parsed.hrp, data: data)
@@ -61,13 +61,13 @@ public class AddressGenerator {
         return nil
     }
 
-    private func blake160(_ data: Data) -> Data {
+    private static func blake160(_ data: Data) -> Data {
         return Blake2b().hash(data: data)!.prefix(upTo: 20)
     }
 }
 
 extension AddressGenerator {
-    private func convertBits(data: Data, fromBits: Int, toBits: Int, pad: Bool) -> Data? {
+    private static func convertBits(data: Data, fromBits: Int, toBits: Int, pad: Bool) -> Data? {
         var ret = Data()
         var acc = 0
         var bits = 0
