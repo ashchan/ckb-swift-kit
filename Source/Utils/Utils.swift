@@ -22,13 +22,11 @@ public struct Utils {
     }
 
     public static func publicToAddress(_ publicKey: String, network: Network = .testnet) -> String {
-        let generator = AddressGenerator()
-        return generator.address(for: publicKey, network: network)
+        return AddressGenerator.address(for: publicKey, network: network)
     }
 
     public static func publicKeyHashToAddress(_ publicKeyHash: String, network: Network = .testnet) -> String {
-        let generator = AddressGenerator()
-        return generator.address(publicKeyHash: publicKeyHash, network: network)
+        return AddressGenerator.address(publicKeyHash: publicKeyHash, network: network)
     }
 
     public static func privateToAddress(_ privateKey: String, network: Network = .testnet) -> String {

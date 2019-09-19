@@ -9,79 +9,81 @@ import XCTest
 
 class AddressGeneratorTests: XCTestCase {
     func testPublicKeyHash() {
-        let generator = AddressGenerator()
-        let hash = generator.hash(for: Data(hex: "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01"))
+        let hash = AddressGenerator.hash(for: Data(hex: "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01"))
         XCTAssertEqual(Data(hex: "0x36c329ed630d6ce750712a477543672adab57f4c"), hash)
     }
 
     func testPubkeyToAddressTestnet() {
-        let generator = AddressGenerator()
         XCTAssertEqual(
             "ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83",
-            generator.address(for: "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01")
+            AddressGenerator.address(for: "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01")
         )
         XCTAssertEqual(
             "ckt1qyqq96psh4h7rxgjl7mmpvf5e0jnz79earcsyrlxrx",
-            generator.address(for: "0x0331b3c0225388c5010e3507beb28ecf409c022ef6f358f02b139cbae082f5a2a3")
+            AddressGenerator.address(for: "0x0331b3c0225388c5010e3507beb28ecf409c022ef6f358f02b139cbae082f5a2a3")
         )
         XCTAssertEqual(
             "ckt1qyq0phsyqvgkfkzrshphsramyxyz8yew3yzsl76naf",
-            generator.address(for: "0x0360bf05c11e7b4ac8de58077554e3d777acd64bf4abb9cd947002eb98a4827bba")
+            AddressGenerator.address(for: "0x0360bf05c11e7b4ac8de58077554e3d777acd64bf4abb9cd947002eb98a4827bba")
         )
     }
 
     func testPubkeyToAddressMainnet() {
-        let generator = AddressGenerator()
         XCTAssertEqual(
             "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd",
-            generator.address(for: "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01", network: .mainnet)
+            AddressGenerator.address(for: "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01", network: .mainnet)
         )
     }
 
     func testPubkeyHashToAddressTestnet() {
-        let generator = AddressGenerator()
         XCTAssertEqual(
             "ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83",
-            generator.address(publicKeyHash: "0x36c329ed630d6ce750712a477543672adab57f4c")
+            AddressGenerator.address(publicKeyHash: "0x36c329ed630d6ce750712a477543672adab57f4c")
         )
         XCTAssertEqual(
             "ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83",
-            generator.address(publicKeyHash: Data(hex: "0x36c329ed630d6ce750712a477543672adab57f4c"))
+            AddressGenerator.address(publicKeyHash: Data(hex: "0x36c329ed630d6ce750712a477543672adab57f4c"))
         )
     }
 
     func testPubkeyHashToAddressMainnet() {
-        let generator = AddressGenerator()
         XCTAssertEqual(
             "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd",
-            generator.address(publicKeyHash: "0x36c329ed630d6ce750712a477543672adab57f4c", network: .mainnet)
+            AddressGenerator.address(publicKeyHash: "0x36c329ed630d6ce750712a477543672adab57f4c", network: .mainnet)
         )
         XCTAssertEqual(
             "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd",
-            generator.address(publicKeyHash: Data(hex: "0x36c329ed630d6ce750712a477543672adab57f4c"), network: .mainnet)
+            AddressGenerator.address(publicKeyHash: Data(hex: "0x36c329ed630d6ce750712a477543672adab57f4c"), network: .mainnet)
         )
     }
 
     func testPubkeyHashToAddressMainnetRFC() {
-        let generator = AddressGenerator()
         XCTAssertEqual(
             "ckb1qyqp8eqad7ffy42ezmchkjyz54rhcqf8q9pqrn323p",
-            generator.address(publicKeyHash: "0x13e41d6F9292555916f17B4882a5477C01270142", network: .mainnet)
+            AddressGenerator.address(publicKeyHash: "0x13e41d6F9292555916f17B4882a5477C01270142", network: .mainnet)
         )
         XCTAssertEqual(
             "ckb1qyqp8eqad7ffy42ezmchkjyz54rhcqf8q9pqrn323p",
-            generator.address(publicKeyHash: Data(hex: "0x13e41d6F9292555916f17B4882a5477C01270142"), network: .mainnet)
+            AddressGenerator.address(publicKeyHash: Data(hex: "0x13e41d6F9292555916f17B4882a5477C01270142"), network: .mainnet)
         )
     }
 
     func testAddressToPubkeyHash() {
         let publicKey = "0x024a501efd328e062c8675f2365970728c859c592beeefd6be8ead3d901330bc01"
-        let generator = AddressGenerator()
-        let address = generator.address(for: publicKey)
+        let address = AddressGenerator.address(for: publicKey)
         XCTAssertEqual(
-            generator.hash(for: Data(hex: publicKey)).toHexString(),
-            generator.publicKeyHash(for: address)
+            AddressGenerator.hash(for: Data(hex: publicKey)).toHexString(),
+            AddressGenerator.publicKeyHash(for: address)
         )
-        XCTAssertNil(generator.publicKeyHash(for: "bbbbb"))
+        XCTAssertNil(AddressGenerator.publicKeyHash(for: "bbbbb"))
+    }
+
+    func testValidate() {
+        XCTAssertTrue(AddressGenerator.validate("ckb1qyqp8eqad7ffy42ezmchkjyz54rhcqf8q9pqrn323p"))
+        XCTAssertTrue(AddressGenerator.validate("ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83"))
+
+        XCTAssertFalse(AddressGenerator.validate("ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu8i")) // Wrong checksum
+        XCTAssertFalse(AddressGenerator.validate("ckt1qyqrdaefa43s6m882pcj53m4gdnj4k440axqswmu83")) // None Bech32 character
+        XCTAssertFalse(AddressGenerator.validate("tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7")) // None ckt/ckb addresses
     }
 }

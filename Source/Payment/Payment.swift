@@ -20,12 +20,11 @@ public final class Payment {
     public var unspentCellCollectorType: UnspentCellCollector.Type! = LiveCellCollector.self
 
     public init(from: String, to: String, amount: Capacity, fee: Capacity = 0, apiClient: APIClient) throws {
-        let addressGenerator = AddressGenerator()
-        guard let fromHash = addressGenerator.publicKeyHash(for: from) else {
+        guard let fromHash = AddressGenerator.publicKeyHash(for: from) else {
             throw Error.invalidFromAddress
         }
         fromPublicKeyHash = fromHash
-        guard let toHash = addressGenerator.publicKeyHash(for: to) else {
+        guard let toHash = AddressGenerator.publicKeyHash(for: to) else {
             throw Error.invalidToAddress
         }
         toPublicKeyHash = toHash
@@ -41,7 +40,7 @@ public final class Payment {
     }
 
     public func sign(privateKey: Data) throws -> Transaction? {
-        let pubKeyHash = AddressGenerator().hash(for: Utils.privateToPublic(privateKey))
+        let pubKeyHash = AddressGenerator.hash(for: Utils.privateToPublic(privateKey))
         guard pubKeyHash.toHexString() == fromPublicKeyHash else {
             throw Error.privateKeyAndAddressNotMatch
         }

@@ -31,7 +31,7 @@ final class LiveCellCollector: UnspentCellCollector {
     }
 
     convenience init(apiClient: APIClient, publicKey: Data) {
-        self.init(apiClient: apiClient, publicKeyHash: AddressGenerator().hash(for: publicKey))
+        self.init(apiClient: apiClient, publicKeyHash: AddressGenerator.hash(for: publicKey))
     }
 
     // Collect all unspent cells from genesis block to current tip.
