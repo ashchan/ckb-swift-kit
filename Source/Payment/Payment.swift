@@ -121,7 +121,7 @@ private extension Payment {
         var amountCollected = Capacity(0)
         var inputs = [CellInput]()
 
-        collecting: for cell in collector.getUnspentCells(amountToCollect) {
+        collecting: for cell in collector.getUnspentCells(from: 0, maxCapacity: amountToCollect) {
             let input = CellInput(previousOutput: cell.outPoint, since: 0)
             inputs.append(input)
             amountCollected += cell.capacity

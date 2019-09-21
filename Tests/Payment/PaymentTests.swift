@@ -144,7 +144,7 @@ class PaymentTests: RPCTestSkippable {
         }
 
         // Always return cells for 10,000 CKB
-        func getUnspentCells(_ maxCapacity: Capacity) -> [CellOutputWithOutPoint] {
+        func getUnspentCells(from blockNumber: BlockNumber, maxCapacity: Capacity) -> [CellOutputWithOutPoint] {
             let makeCell: (_ capacity: Capacity) -> CellOutputWithOutPoint = { [unowned self] capacity in
                 return CellOutputWithOutPoint(
                     outPoint: OutPoint(txHash: H256.zeroHash, index: 0),
