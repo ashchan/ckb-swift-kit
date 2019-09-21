@@ -58,44 +58,28 @@ let apiClient = APIClient(url: nodeUrl)
 
 // Fetch local node info
 let nodeInfo = try apiClient.localNodeInfo()
-print(nodeInfo.version)                        // "0.12.0-pre (rylai30-1-g3e765560 2019-05-16)"
+print(nodeInfo.version)                        // "0.20.0 (rylai-v9 024408ee 2019-09-07)"
 
 // Get current height
 let height = try apiClient.getTipBlockNumber() // Numbers are represented as strings
 print(height)                                  // "10420"
 ```
 
-### Send Capacity Example
+### Send Capacity Example (Using `Payment` class)
 
 ```swift
-// Fetch system script which we'll use to generate lock for address
-let systemScript = try SystemScript.loadSystemScript(nodeUrl: nodeUrl)
-// Fill in the sender's private key
-let privateKey: Data = Data(hex: "your private key (hex string)")
+let payment = try! Payment(
+    from: "ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83",
+    to: "ckt1qyqy0frc0r8kus23ermqkxny662m37yc26fqpcyqky",
+    amount: 100  * 100_000_000,
+    apiClient: APIClient(url: nodeUrl)
+)
 
-// Push system script's out point into deps
-let deps = [CellDep(outPoint: systemScript.depOutPoint, depType: .depGroup)]
-
-// Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's [wallet module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/develop/faucet-server/Sources/App/Services/Wallet/Wallet.swift#L60).
-let inputs: [CellInput] = [/*...*/]
-
-// Generate lock script for the receiver's address
-let toAddress = "ckt..."
-let publicKeyHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!)
-let lockScript = systemScript.lock(for: publicKeyHash)
-// Construct the outputs
-let outputs = [CellOutput(capacity: 500_00_000_000.description, lock: lockScript, type: nil)]
-
-// Generate the transaction
-let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, outputsData: ["0x"], witnesses: [Witness(data: [])])
-// For now we need to call the `computeTransactionHash` to get the tx hash
-let apiClient = APIClient(url: nodeUrl)
-let txHash = try apiClient.computeTransactionHash(transaction: tx)
-let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: txHash)
-
-// Now send out the capacity
-let hash = try apiClient.sendTransaction(transaction: signedTx)
-print(hash) // hash should be equal to txHash
+let privateKey = Data(hex: "e79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
+try payment.sign(privateKey: privateKey)
+if let txhash = try? payment.send() {
+    print(txhash)
+}
 ```
 
 ## Getting Help

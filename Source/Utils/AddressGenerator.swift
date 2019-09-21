@@ -6,17 +6,10 @@
 
 import Foundation
 
-/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/c6b74309e071fd631c12c5f7152a265d7db833f6/rfcs/0000-address-format/0000-address-format.md),
-/// and [Common Address Format](https://github.com/nervosnetwork/ckb/wiki/Common-Address-Format).
-/// Currently we implement the predefined format for type 0x01 and code hash index 0x00.
+/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0021-ckb-address-format/0021-ckb-address-format.md).
+/// Currently we implement the predefined format type 0x01(short version for locks with popular code_hash) and code hash index 0x00(SECP256K1 + blake160).
 public class AddressGenerator {
-    let network: Network
-
-    public init(network: Network = .testnet) {
-        self.network = network
-    }
-
-    var prefix: String {
+    static func prefix(network: Network) -> String {
         switch network {
         case .testnet:
             return "ckt"
@@ -25,38 +18,49 @@ public class AddressGenerator {
         }
     }
 
-    public func publicKeyHash(for address: String) -> String? {
+    public static func publicKeyHash(for address: String) -> String? {
         guard let data = parse(address: address)?.data else {
             return nil
         }
         return Data(data.bytes.suffix(20)).toHexString()
     }
 
-    public func address(for publicKey: String) -> String {
-        return address(for: Data(hex: publicKey))
+    public static func address(for publicKey: String, network: Network = .testnet) -> String {
+        return address(for: Data(hex: publicKey), network: network)
     }
 
-    public func address(for publicKey: Data) -> String {
-        return address(publicKeyHash: hash(for: publicKey))
+    public static func address(for publicKey: Data, network: Network = .testnet) -> String {
+        return address(publicKeyHash: hash(for: publicKey), network: network)
     }
 
-    public func address(publicKeyHash: String) -> String {
-        return address(publicKeyHash: Data(hex: publicKeyHash))
+    public static func address(publicKeyHash: String, network: Network = .testnet) -> String {
+        return address(publicKeyHash: Data(hex: publicKeyHash), network: network)
     }
 
-    public func address(publicKeyHash: Data) -> String {
+    public static func address(publicKeyHash: Data, network: Network = .testnet) -> String {
         // Payload: type(01) | code hash index(00, P2PH) | pubkey blake160
         let type = Data([0x01])
         let codeHashIndex = Data([0x00])
         let payload = type + codeHashIndex + publicKeyHash
-        return Bech32().encode(hrp: prefix, data: convertBits(data: payload, fromBits: 8, toBits: 5, pad: true)!)
+        return Bech32().encode(hrp: prefix(network: network), data: convertBits(data: payload, fromBits: 8, toBits: 5, pad: true)!)
     }
 
-    public func hash(for publicKey: Data) -> Data {
+    public static func hash(for publicKey: Data) -> Data {
         return blake160(publicKey)
     }
+}
 
-    func parse(address: String) -> (hrp: String, data: Data)? {
+public extension AddressGenerator {
+    static func validate(_ address: String) -> Bool {
+        guard let (hlp, _) = parse(address: address) else {
+            return false
+        }
+        return ["ckt", "ckb"].contains(hlp)
+    }
+}
+
+private extension AddressGenerator {
+    static func parse(address: String) -> (hrp: String, data: Data)? {
         if let parsed = Bech32().decode(bech32: address) {
             if let data = convertBits(data: parsed.data, fromBits: 5, toBits: 8, pad: false) {
                 return (hrp: parsed.hrp, data: data)
@@ -66,13 +70,11 @@ public class AddressGenerator {
         return nil
     }
 
-    private func blake160(_ data: Data) -> Data {
+    static func blake160(_ data: Data) -> Data {
         return Blake2b().hash(data: data)!.prefix(upTo: 20)
     }
-}
 
-extension AddressGenerator {
-    private func convertBits(data: Data, fromBits: Int, toBits: Int, pad: Bool) -> Data? {
+    static func convertBits(data: Data, fromBits: Int, toBits: Int, pad: Bool) -> Data? {
         var ret = Data()
         var acc = 0
         var bits = 0

@@ -57,8 +57,8 @@ struct UnsignedIntSerializer<T>: ObjectSerializer where T: UnsignedInteger & Fix
         self.value = value
     }
 
-    init?(value: Number) {
-        guard let uint = T(value) else {
+    init?(value: String) {
+        guard let uint = value.starts(with: "0x") ? T(value.dropFirst(2), radix: 16) : T(value) else {
             return nil
         }
         self.init(value: uint)

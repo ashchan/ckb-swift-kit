@@ -15,8 +15,17 @@ public extension APIClient {
         return try load(APIRequest<[Node]>(method: "get_peers", params: []))
     }
 
-    func setBan(address: String, command: String, banTime: Timestamp?, absolute: Bool?, reason: String?) throws -> Bool? {
-        return try loadNullable(APIRequest<Bool>(method: "set_ban", params: [address, command, banTime, absolute, reason]))
+    func setBan(address: String, command: String, banTime: Date?, absolute: Bool?, reason: String?) throws -> Bool? {
+        let time: String?
+        if let banTime = banTime {
+            time = UInt64(banTime.timeIntervalSince1970 * 1000).hexString
+        } else {
+            time = nil
+        }
+        return try loadNullable(APIRequest<Bool>(
+            method: "set_ban",
+            params: [address, command, time, absolute, reason])
+        )
     }
 
     func getBannedAddresses() throws -> [BannedAddress] {

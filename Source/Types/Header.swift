@@ -9,7 +9,7 @@ import Foundation
 public struct Header: Codable {
     public let version: Version
     public let parentHash: H256
-    public let timestamp: Timestamp
+    public let timestamp: Date
     public let number: BlockNumber
     public let epoch: EpochNumber
     public let transactionsRoot: H256
@@ -17,10 +17,10 @@ public struct Header: Codable {
     public let witnessesRoot: H256
     public let difficulty: HexNumber
     public let unclesHash: H256
-    public let unclesCount: Number
+    public let unclesCount: UInt32
     public let dao: String
+    public let nonce: UInt64
     public let hash: H256
-    public let nonce: Number
 
     enum CodingKeys: String, CodingKey {
         case version
@@ -35,7 +35,25 @@ public struct Header: Codable {
         case unclesHash = "uncles_hash"
         case unclesCount = "uncles_count"
         case dao
-        case hash
         case nonce
+        case hash
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        version = Version(hexString: try container.decode(String.self, forKey: .version))!
+        parentHash = try container.decode(H256.self, forKey: .parentHash)
+        timestamp = Date(hexSince1970: try container.decode(String.self, forKey: .timestamp))
+        number = BlockNumber(hexString: try container.decode(String.self, forKey: .number))!
+        epoch = EpochNumber(hexString: try container.decode(String.self, forKey: .epoch))!
+        transactionsRoot = try container.decode(H256.self, forKey: .transactionsRoot)
+        proposalsHash = try container.decode(H256.self, forKey: .proposalsHash)
+        witnessesRoot = try container.decode(H256.self, forKey: .witnessesRoot)
+        difficulty = try container.decode(HexString.self, forKey: .difficulty)
+        unclesHash = try container.decode(H256.self, forKey: .unclesHash)
+        unclesCount = UInt32(hexString: try container.decode(String.self, forKey: .unclesCount))!
+        dao = try container.decode(String.self, forKey: .dao)
+        nonce = UInt64(hexString: try container.decode(String.self, forKey: .nonce))!
+        hash = try container.decode(H256.self, forKey: .hash)
     }
 }

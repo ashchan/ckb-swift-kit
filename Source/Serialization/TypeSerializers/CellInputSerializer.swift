@@ -11,7 +11,7 @@ final class CellInputSerializer: StructSerializer<CellInput> {
         super.init(
             value: value,
             fieldSerializers: [
-                UInt64Serializer(value: value.since)!,
+                UInt64Serializer(value: value.since),
                 OutPointSerializer(value: value.previousOutput)
             ]
         )
