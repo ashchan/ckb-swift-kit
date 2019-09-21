@@ -83,6 +83,21 @@ private extension ViewController {
     }
 
     func testSendCapacity() throws {
+        let payment = try! Payment(
+            from: "ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83",
+            to: "ckt1qyqy0frc0r8kus23ermqkxny662m37yc26fqpcyqky",
+            amount: 100  * 100_000_000,
+            apiClient: APIClient(url: nodeUrl)
+        )
+
+        let privateKey = Data(hex: "e79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
+        try payment.sign(privateKey: privateKey)
+        if let txhash = try? payment.send() {
+            print(txhash)
+        }
+    }
+
+    func testConstructTxThenSendCapacity() throws {
         // Fetch system script which we'll use to generate lock for address
         let systemScript = try SystemScript.loadSystemScript(nodeUrl: nodeUrl)
         // Fill in the sender's private key
@@ -96,7 +111,7 @@ private extension ViewController {
 
         // Generate lock script for the receiver's address
         let toAddress = "ckt..."
-        let publicKeyHash = Utils.prefixHex(AddressGenerator(network: .testnet).publicKeyHash(for: toAddress)!)
+        let publicKeyHash = Utils.prefixHex(AddressGenerator().publicKeyHash(for: toAddress)!)
         let lockScript = systemScript.lock(for: publicKeyHash)
         // Construct the outputs
         let outputs = [CellOutput(capacity: 500_00_000_000, lock: lockScript, type: nil)]
@@ -104,7 +119,7 @@ private extension ViewController {
         // Generate the transaction
         let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, outputsData: ["0x"], witnesses: [Witness(data: [])])
         // Sign the transaction
-        let signedTx = try Transaction.sign(tx: tx, with: privateKey, txHash: tx.computeHash())
+        let signedTx = try Transaction.sign(tx: tx, with: privateKey)
 
         // Now send out the capacity
         let apiClient = APIClient(url: nodeUrl)

@@ -39,6 +39,7 @@ public final class Payment {
         self.apiClient = apiClient
     }
 
+    @discardableResult
     public func sign(privateKey: Data) throws -> Transaction? {
         let pubKeyHash = AddressGenerator.hash(for: Utils.privateToPublic(privateKey))
         guard pubKeyHash.toHexString() == fromPublicKeyHash else {
