@@ -1,3 +1,13 @@
+# [v0.21.1](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.21.0...v0.21.1) (2019-09-23)
+
+
+### Features
+
+* Allow live cell collector to accept a from block number param ([560d1b3](https://github.com/nervosnetwork/ckb-sdk-swift/commit/560d1b3))
+* Return last block around which live cells are scanned ([079a169](https://github.com/nervosnetwork/ckb-sdk-swift/commit/079a169))
+
+
+
 # [v0.21.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.20.0...v0.21.0) (2019-09-21)
 
 
