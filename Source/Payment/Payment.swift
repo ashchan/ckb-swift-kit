@@ -15,10 +15,12 @@ public final class Payment {
     private let fee: Capacity
 
     private let apiClient: APIClient
+    /// Keep track of the block number around which this payment has scanned and stopped.
+    public private(set) var lastBlockScanned: BlockNumber = 0
+    /// Block number from which to scan and collect live cells.
+    public var blockToCollectFrom: BlockNumber = 0
 
     public var signedTx: Transaction?
-    /// Keep track of the block number around which this payment has scanned and stopped.
-    public private(set) var lastBlockNumber: BlockNumber = 0
     public var unspentCellCollectorType: UnspentCellCollector.Type! = LiveCellCollector.self
 
     public init(from: String, to: String, amount: Capacity, fee: Capacity = 0, apiClient: APIClient) throws {
@@ -123,7 +125,7 @@ private extension Payment {
         var amountCollected = Capacity(0)
         var inputs = [CellInput]()
 
-        let unspentCells = collector.getUnspentCells(from: 0, maxCapacity: amountToCollect)
+        let unspentCells = collector.getUnspentCells(from: blockToCollectFrom, maxCapacity: amountToCollect)
         collecting: for cell in unspentCells.cells {
             let input = CellInput(previousOutput: cell.outPoint, since: 0)
             inputs.append(input)
@@ -140,7 +142,7 @@ private extension Payment {
         if amountToCollect > amountCollected {
             return ([], 0)
         }
-        self.lastBlockNumber = unspentCells.lastBlockNumber
+        self.lastBlockScanned = unspentCells.lastBlockScanned
         return (inputs, amountCollected - amountToCollect)
     }
 
