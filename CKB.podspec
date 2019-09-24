@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CKB"
-  s.version      = "0.21.1"
+  s.version      = "0.21.2"
   s.summary      = "Swift SDK for Nervos CKB"
 
   s.description  = <<-DESC
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/nervosnetwork/ckb-sdk-swift"
   s.license      = "MIT"
   s.author       = { "Nervos Core Dev" => "dev@nervos.org" }
-  s.source       = { git: "https://github.com/nervosnetwork/ckb-sdk-swift.git" } #, tag: "v#{s.version.to_s}" }
+  s.source       = { git: "https://github.com/nervosnetwork/ckb-sdk-swift.git" }, tag: "v#{s.version.to_s}" }
   s.social_media_url = 'https://twitter.com/nervosnetwork'
 
   s.swift_version = '5.0'

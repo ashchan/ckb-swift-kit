@@ -1144,7 +1144,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.21.1;
+				MARKETING_VERSION = 0.21.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
@@ -1175,7 +1175,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.21.1;
+				MARKETING_VERSION = 0.21.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
