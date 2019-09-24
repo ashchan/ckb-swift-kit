@@ -1,3 +1,12 @@
+# [v0.21.2](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.21.1...v0.21.2) (2019-09-24)
+
+
+### Features
+
+* Payment could be assigned a block number ([09b94d6](https://github.com/nervosnetwork/ckb-sdk-swift/commit/09b94d6))
+
+
+
 # [v0.21.1](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.21.0...v0.21.1) (2019-09-23)
 
 
