@@ -160,7 +160,7 @@ class PaymentTests: RPCTestSkippable {
                     makeCell(3000_00_000_000),
                     makeCell(4000_00_000_000)
                 ],
-                lastBlockNumber: 0
+                lastBlockScanned: 0
             )
         }
     }
