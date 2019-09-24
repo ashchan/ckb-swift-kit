@@ -8,7 +8,7 @@ import Foundation
 
 public struct UnspentCells {
     public let cells: [CellOutputWithOutPoint]
-    public let lastBlockNumber: BlockNumber // Last block that's scanned from
+    public let lastBlockScanned: BlockNumber // Last block that's scanned from
 }
 
 public protocol UnspentCellCollector {
@@ -47,7 +47,7 @@ final class LiveCellCollector: UnspentCellCollector {
         var to = from
         let step = BlockNumber(100) // Max allowed is 100
         guard let tip = try? apiClient.getTipBlockNumber() else {
-            return UnspentCells(cells: [], lastBlockNumber: 0)
+            return UnspentCells(cells: [], lastBlockScanned: 0)
         }
 
         var capacity = Capacity(0)
@@ -61,6 +61,6 @@ final class LiveCellCollector: UnspentCellCollector {
             from = to + 1
         }
 
-        return UnspentCells(cells: results, lastBlockNumber: from)
+        return UnspentCells(cells: results, lastBlockScanned: from)
     }
 }
