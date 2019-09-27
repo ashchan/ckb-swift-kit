@@ -51,4 +51,22 @@ class TransactionSerializerTests: XCTestCase {
         // let hash = try? APIClient(url: APIClient.defaultLocalURL).computeTransactionHash(transaction: tx)
         // XCTAssertEqual(tx.computeHash(), hash)
     }
+
+    func testTransactionWithWitnesses() {
+        let tx = Transaction(
+            cellDeps: [CellDep(outPoint: OutPoint(txHash: "0x29f94532fb6c7a17f13bcde5adb6e2921776ee6f357adf645e5393bd13442141", index: 0), depType: .code)],
+            headerDeps: ["0x8033e126475d197f2366bbc2f30b907d15af85c9d9533253c6f0787dcbbb509e"],
+            inputs: [
+                CellInput(previousOutput: OutPoint(txHash: "0x5ba156200c6310bf140fbbd3bfe7e8f03d4d5f82b612c1a8ec2501826eaabc17", index: 0), since: 0),
+                CellInput(previousOutput: OutPoint(txHash: "0x5ba156200c6310bf140fbbd3bfe7e8f03d4d5f82b612c1a8ec2501826eaabc17", index: 0), since: 1)
+            ],
+            outputs: [],
+            outputsData: ["0x"],
+            witnesses: [
+                "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb",
+                "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb"
+            ]
+        )
+        XCTAssertEqual(tx.computeHash(), "0xe37f68d4d81e0f790ca98c5abbd763764f826170867a0b96137f68df908e5641")
+    }
 }
