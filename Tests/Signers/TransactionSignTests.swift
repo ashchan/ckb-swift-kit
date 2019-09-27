@@ -37,7 +37,7 @@ class TransactionSignTests: XCTestCase {
                 "0x"
             ],
             witnesses: [
-                "0x0"
+                "0x"
             ]
         )
         let privateKey = Data(hex: "0xe79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
@@ -46,7 +46,7 @@ class TransactionSignTests: XCTestCase {
         XCTAssertEqual(
             signed.witnesses,
             [
-                "0x351e10e4dca1076cc87244cfc7565c1fa83b6fa693b6c5ce41ad0d7269bf7d855f8d34d5d195edf2d45f4f6d02085843595b6d96de265dbd237a8828eda879b2010"
+                "0x15edb4da91bd5beebf0aee82a9daa4d590ecdfc0895c6b010638573b2d1d502c50373e7d540e74eb8e3a3bd1dbd20c372c492fc7242592c8a04763be029325a900"
             ]
         )
     }
@@ -79,7 +79,7 @@ class TransactionSignTests: XCTestCase {
             ],
             witnesses: [
                 "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb",
-                "0x0"
+                "0x"
             ]
         )
         let privateKey = Data(hex: "0xe79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
@@ -91,7 +91,7 @@ class TransactionSignTests: XCTestCase {
         )
         XCTAssertEqual(
             signed.witnesses[1],
-            "0xb1cd85ec56d1149b7ad3ca875159b3148e9dff8c1b316a6a277439a838fcb4540e64910b0dcd9ef7ac90e58a80143798b69251a644016bb5096d18f8bf1ca2a2010"
+            "0x014de9c721a5a33435a02d44580978ecdb794d2a7f3fe7d875e7f058ef8c961f2e983079400cfd8a2bbe34f2d1fd3f0a6e2c390bf7e45006c06c7831e4a67e8101"
         )
     }
 
