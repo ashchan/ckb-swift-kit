@@ -36,4 +36,9 @@ class UtilsTests: XCTestCase {
         XCTAssertEqual("0x0001", Utils.prefixHex("0001"))
         XCTAssertEqual("0x0001", Utils.prefixHex("0x0001"))
     }
+
+    func testRemoveHexPrefix() {
+        XCTAssertEqual("0001", Utils.removeHexPrefix("0x0001"))
+        XCTAssertEqual("0001", Utils.removeHexPrefix("0001"))
+    }
 }

@@ -39,4 +39,8 @@ extension Utils {
     public static func prefixHex(_ string: String) -> String {
         return string.hasPrefix("0x") ? string : "0x" + string
     }
+
+    public static func removeHexPrefix(_ string: String) -> String {
+        return string.hasPrefix("0x") ? String(string.dropFirst(2)) : string
+    }
 }
