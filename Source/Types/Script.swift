@@ -14,7 +14,7 @@ public enum ScriptHashType: String, Codable {
 public struct Script: Codable, Param {
     public let codeHash: H256
     public let hashType: ScriptHashType
-    public let args: [HexString]
+    public let args: HexString
 
     enum CodingKeys: String, CodingKey {
         case codeHash = "code_hash"
@@ -30,7 +30,7 @@ public struct Script: Codable, Param {
         ]
     }
 
-    public init(args: [HexString] = [], codeHash: H256 = H256.zeroHash, hashType: ScriptHashType = .data) {
+    public init(args: HexString = "0x", codeHash: H256 = H256.zeroHash, hashType: ScriptHashType = .data) {
         self.codeHash = Utils.prefixHex(codeHash)
         self.hashType = hashType
         self.args = args

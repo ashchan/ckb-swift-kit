@@ -43,6 +43,6 @@ public struct SystemScript {
     }
 
     public func lock(for publicKeyHash: String) -> Script {
-        return Script(args: [Utils.prefixHex(publicKeyHash)], codeHash: secp256k1TypeHash, hashType: .type)
+        return Script(args: Utils.prefixHex(publicKeyHash), codeHash: secp256k1TypeHash, hashType: .type)
     }
 }

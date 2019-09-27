@@ -114,7 +114,7 @@ private extension Payment {
             inputs: inputs,
             outputs: outputs,
             outputsData: outputs.map { _ in "0x" },
-            witnesses: inputs.map { _ in Witness(data: ["0x"]) }
+            witnesses: inputs.map { _ in "0x" }
         )
     }
 

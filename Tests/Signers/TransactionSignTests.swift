@@ -23,12 +23,12 @@ class TransactionSignTests: XCTestCase {
             outputs: [
                 CellOutput(
                     capacity: 100000000000,
-                    lock: Script(args: ["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
+                    lock: Script(args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0", codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 ),
                 CellOutput(
                     capacity: 4900000000000,
-                    lock: Script(args: ["0x36c329ed630d6ce750712a477543672adab57f4c"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
+                    lock: Script(args: "0x36c329ed630d6ce750712a477543672adab57f4c", codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 )
             ],
@@ -37,16 +37,16 @@ class TransactionSignTests: XCTestCase {
                 "0x"
             ],
             witnesses: [
-                Witness(data: [])
+                "0x0"
             ]
         )
         let privateKey = Data(hex: "0xe79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
         let signed = try Transaction.sign(tx: tx, with: privateKey)
         XCTAssertEqual(signed.witnesses.count, tx.inputs.count)
         XCTAssertEqual(
-            signed.witnesses.first!.data,
+            signed.witnesses,
             [
-                "0x13eb78ef3ed0f40a13df2e4c872875cf69d326fe4c7f1a022078e0e9768d403510b2e202cf504edad6215abb7861ce126458d650355f4dbedac9ee0aeff8097800"
+                "0x351e10e4dca1076cc87244cfc7565c1fa83b6fa693b6c5ce41ad0d7269bf7d855f8d34d5d195edf2d45f4f6d02085843595b6d96de265dbd237a8828eda879b2010"
             ]
         )
     }
@@ -70,7 +70,7 @@ class TransactionSignTests: XCTestCase {
             outputs: [
                 CellOutput(
                     capacity: 10000009045634,
-                    lock: Script(args: ["0x36c329ed630d6ce750712a477543672adab57f4c"], codeHash: "0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"),
+                    lock: Script(args: "0x36c329ed630d6ce750712a477543672adab57f4c", codeHash: "0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"),
                     type: nil
                 )
             ],
@@ -78,25 +78,20 @@ class TransactionSignTests: XCTestCase {
                 "0x"
             ],
             witnesses: [
-                Witness(data: ["0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb"]),
-                Witness(data: [])
+                "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb",
+                "0x0"
             ]
         )
         let privateKey = Data(hex: "0xe79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
         let signed = try Transaction.sign(tx: tx, with: privateKey)
         XCTAssertEqual(signed.witnesses.count, tx.inputs.count)
         XCTAssertEqual(
-            signed.witnesses.first!.data,
-            [
-                "0x1c6b872ac9f28a777fd3006e8007302c8686334c63441364c1a38a06bf0400e206747847e4e002ebc3eaffa8a6ca88d513a745720eec501dd723051a457a208601",
-                "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb"
-            ]
+            signed.witnesses.first,
+            "0x2db8278bf806fb7eac778e56eb0b34deccb16bae68c2a088d277bded265d90da37fb995a1f629a9de7c9722640f2f9c67c5572e6b5fca1e831649484ba9a0b81004107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb"
         )
         XCTAssertEqual(
-            signed.witnesses[1].data,
-            [
-                "0xba231bed5fda5eb8a7c142b28ff0fe6cef9fdef3b8d60ea0d80e65ea60010acf0254a9c50d6b3caaf2aee9274e191b7758e9ded09faac9c19ce16d8da150e54b01"
-            ]
+            signed.witnesses[1],
+            "0xb1cd85ec56d1149b7ad3ca875159b3148e9dff8c1b316a6a277439a838fcb4540e64910b0dcd9ef7ac90e58a80143798b69251a644016bb5096d18f8bf1ca2a2010"
         )
     }
 
@@ -115,12 +110,12 @@ class TransactionSignTests: XCTestCase {
             outputs: [
                 CellOutput(
                     capacity: 100000000000,
-                    lock: Script(args: ["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
+                    lock: Script(args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0", codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 ),
                 CellOutput(
                     capacity: 4900000000000,
-                    lock: Script(args: ["0x36c329ed630d6ce750712a477543672adab57f4c"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
+                    lock: Script(args: "0x36c329ed630d6ce750712a477543672adab57f4c", codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 )
             ],

@@ -150,7 +150,7 @@ class PaymentTests: RPCTestSkippable {
                     outPoint: OutPoint(txHash: H256.zeroHash, index: 0),
                     blockHash: H256.zeroHash,
                     capacity: capacity,
-                    lock: Script(args: [Utils.prefixHex(self.publicKeyHash.toHexString())], codeHash: H256.zeroHash, hashType: .type)
+                    lock: Script(args: Utils.prefixHex(self.publicKeyHash.toHexString()), codeHash: H256.zeroHash, hashType: .type)
                 )
             }
             return UnspentCells(
