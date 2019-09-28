@@ -14,12 +14,10 @@ public struct Header: Codable {
     public let epoch: EpochNumber
     public let transactionsRoot: H256
     public let proposalsHash: H256
-    public let witnessesRoot: H256
-    public let difficulty: HexNumber
     public let unclesHash: H256
-    public let unclesCount: UInt32
     public let dao: String
     public let nonce: UInt64
+    public let compactTarget: UInt32 // TODO: Wait for CKB to update it to hex string
     public let hash: H256
 
     enum CodingKeys: String, CodingKey {
@@ -30,12 +28,10 @@ public struct Header: Codable {
         case epoch
         case transactionsRoot = "transactions_root"
         case proposalsHash = "proposals_hash"
-        case witnessesRoot = "witnesses_root"
-        case difficulty
         case unclesHash = "uncles_hash"
-        case unclesCount = "uncles_count"
         case dao
         case nonce
+        case compactTarget = "compact_target"
         case hash
     }
 
@@ -48,12 +44,10 @@ public struct Header: Codable {
         epoch = EpochNumber(hexString: try container.decode(String.self, forKey: .epoch))!
         transactionsRoot = try container.decode(H256.self, forKey: .transactionsRoot)
         proposalsHash = try container.decode(H256.self, forKey: .proposalsHash)
-        witnessesRoot = try container.decode(H256.self, forKey: .witnessesRoot)
-        difficulty = try container.decode(HexString.self, forKey: .difficulty)
         unclesHash = try container.decode(H256.self, forKey: .unclesHash)
-        unclesCount = UInt32(hexString: try container.decode(String.self, forKey: .unclesCount))!
         dao = try container.decode(String.self, forKey: .dao)
         nonce = UInt64(hexString: try container.decode(String.self, forKey: .nonce))!
+        compactTarget = try container.decode(UInt32.self, forKey: .compactTarget)
         hash = try container.decode(H256.self, forKey: .hash)
     }
 }
