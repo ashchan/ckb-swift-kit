@@ -10,7 +10,7 @@ public struct Epoch: Codable {
     public let number: EpochNumber
     public let startNumber: BlockNumber
     public let length: BlockNumber
-    public let compactTarget: UInt32 // TODO: Wait for CKB to update it to hex string
+    public let compactTarget: UInt32
 
     enum CodingKeys: String, CodingKey {
         case number
@@ -24,6 +24,6 @@ public struct Epoch: Codable {
         number = EpochNumber(hexString: try container.decode(String.self, forKey: .number))!
         startNumber = BlockNumber(hexString: try container.decode(String.self, forKey: .startNumber))!
         length = BlockNumber(hexString: try container.decode(String.self, forKey: .length))!
-        compactTarget = try container.decode(UInt32.self, forKey: .compactTarget)
+        compactTarget = UInt32(hexString: try container.decode(String.self, forKey: .compactTarget))!
     }
 }

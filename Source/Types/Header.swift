@@ -17,7 +17,7 @@ public struct Header: Codable {
     public let unclesHash: H256
     public let dao: String
     public let nonce: UInt64
-    public let compactTarget: UInt32 // TODO: Wait for CKB to update it to hex string
+    public let compactTarget: UInt32
     public let hash: H256
 
     enum CodingKeys: String, CodingKey {
@@ -47,7 +47,7 @@ public struct Header: Codable {
         unclesHash = try container.decode(H256.self, forKey: .unclesHash)
         dao = try container.decode(String.self, forKey: .dao)
         nonce = UInt64(hexString: try container.decode(String.self, forKey: .nonce))!
-        compactTarget = try container.decode(UInt32.self, forKey: .compactTarget)
+        compactTarget = UInt32(hexString: try container.decode(String.self, forKey: .compactTarget))!
         hash = try container.decode(H256.self, forKey: .hash)
     }
 }

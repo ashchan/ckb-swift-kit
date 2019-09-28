@@ -14,7 +14,7 @@
       "uncles_count": "0x0",
       "uncles_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
       "version": "0x0",
-      "compact_target": 536936448
+      "compact_target": "0x20010000"
     },
     "proposals": [],
     "transactions": [

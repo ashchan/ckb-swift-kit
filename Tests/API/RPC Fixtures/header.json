@@ -1,7 +1,7 @@
 {
   "jsonrpc": "2.0",
   "result": {
-    "compact_target": 536936448,
+    "compact_target": "0x1e083126",
     "dao": "0x28ef3c7ff38607000000c16ff2862300fcf149e38e00000000e3bad4847a0100",
     "epoch": "0x0",
     "hash": "0x70396940ae2e81bd2627a8e0e75f3d277585bb1afd78839cfd8f2c54e8697bbc",

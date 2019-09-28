@@ -29,7 +29,6 @@ class APIMockingTests: XCTestCase {
     func testGetCurrentEpoch() throws {
         let result = try getClient(json: "epoch").getCurrentEpoch()
         XCTAssertTrue(result.compactTarget >= 0)
-        // XCTAssertTrue(UInt32(result.compactTarget.dropFirst(2), radix: 16)! >= 0)
     }
 
     func testGetEpochByNumber() throws {
