@@ -1,20 +1,18 @@
 {
-    "id": 1,
-    "jsonrpc": "2.0",
-    "result": {
-        "dao": "0xd040e08b93e8000039585fc1261dd700f6e18bdea63700000061eb7ada030000",
-        "difficulty": "0x7a1200",
-        "epoch": "0x7080018000001",
-        "hash": "0x34b9566625faf600fc524930d6fbea62aa0346a66c0de3d227d0025d5971f749",
-        "nonce": "0x0",
-        "number": "0x400",
-        "parent_hash": "0xc8822e58c72f7dc524507afcd5357041220a0cbd4b7def14aa6c4ff878f78865",
-        "proposals_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "timestamp": "0x5cd2b117",
-        "transactions_root": "0x5540535f8bc68d800cde7170a2097711c41f2aeb376c87763cb4e4b30f830bfd",
-        "uncles_count": "0x0",
-        "uncles_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "version": "0x0",
-        "witnesses_root": "0xf076439a2db49c7294515ef15ec2995c35a3a0aa5641f40bee05abf45ac0d8a2"
-    }
+  "jsonrpc": "2.0",
+  "result": {
+    "compact_target": "0x1e083126",
+    "dao": "0x28ef3c7ff38607000000c16ff2862300fcf149e38e00000000e3bad4847a0100",
+    "epoch": "0x0",
+    "hash": "0x70396940ae2e81bd2627a8e0e75f3d277585bb1afd78839cfd8f2c54e8697bbc",
+    "nonce": "0x0",
+    "number": "0x0",
+    "parent_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "proposals_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "timestamp": "0x0",
+    "transactions_root": "0xec2e1c678b12fc41d312fe1e73ebe924947790cad552d0775e7657dd4d04248c",
+    "uncles_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "version": "0x0"
+  },
+  "id": 1
 }

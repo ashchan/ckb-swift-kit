@@ -28,7 +28,7 @@ class APIMockingTests: XCTestCase {
 
     func testGetCurrentEpoch() throws {
         let result = try getClient(json: "epoch").getCurrentEpoch()
-        XCTAssertTrue(UInt64(result.difficulty.dropFirst(2), radix: 16)! >= 0)
+        XCTAssertTrue(result.compactTarget >= 0)
     }
 
     func testGetEpochByNumber() throws {
@@ -59,17 +59,15 @@ class APIMockingTests: XCTestCase {
     }
 
     func testGetHeader() throws {
-        let hash = "0x34b9566625faf600fc524930d6fbea62aa0346a66c0de3d227d0025d5971f749"
+        let hash = "0x70396940ae2e81bd2627a8e0e75f3d277585bb1afd78839cfd8f2c54e8697bbc"
         let result = try getClient(json: "header").getHeader(blockHash: hash)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result.hash, hash)
     }
 
     func testGetHeaderByNumber() throws {
         let number = BlockNumber(1024)
         let result = try getClient(json: "header").getHeaderByNumber(number: number)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result.number, number)
     }
 
     func testGetLiveCell() throws {
