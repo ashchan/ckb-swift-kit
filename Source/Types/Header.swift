@@ -16,7 +16,7 @@ public struct Header: Codable {
     public let proposalsHash: H256
     public let unclesHash: H256
     public let dao: String
-    public let nonce: UInt64
+    public let nonce: String // 128 bits
     public let compactTarget: UInt32
     public let hash: H256
 
@@ -46,7 +46,7 @@ public struct Header: Codable {
         proposalsHash = try container.decode(H256.self, forKey: .proposalsHash)
         unclesHash = try container.decode(H256.self, forKey: .unclesHash)
         dao = try container.decode(String.self, forKey: .dao)
-        nonce = UInt64(hexString: try container.decode(String.self, forKey: .nonce))!
+        nonce = try container.decode(String.self, forKey: .nonce)
         compactTarget = UInt32(hexString: try container.decode(String.self, forKey: .compactTarget))!
         hash = try container.decode(H256.self, forKey: .hash)
     }
