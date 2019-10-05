@@ -11,7 +11,7 @@ class CellOutputTests: XCTestCase {
     func testParam() {
         let output = CellOutput(
             capacity: 100000,
-            lock: Script(args: [], codeHash: "0x")
+            lock: Script(args: "0x", codeHash: "0x")
         )
         XCTAssertEqual(output.param["capacity"] as! String, "0x186a0")
     }
@@ -19,10 +19,10 @@ class CellOutputTests: XCTestCase {
     func testParamWithType() {
         let output = CellOutput(
             capacity: 100000,
-            lock: Script(args: [], codeHash: "0x"),
-            type: Script(args: ["0xabcd"], codeHash: "0x")
+            lock: Script(args: "0x", codeHash: "0x"),
+            type: Script(args: "0xabcd", codeHash: "0x")
         )
-        let args = (output.param["type"] as! [String: Any])["args"] as! [HexString]
-        XCTAssertEqual(args.first!, "0xabcd")
+        let args = (output.param["type"] as! [String: Any])["args"] as! HexString
+        XCTAssertEqual(args, "0xabcd")
     }
 }

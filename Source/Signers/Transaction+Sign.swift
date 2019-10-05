@@ -14,16 +14,15 @@ public extension Transaction {
 
         let txHash: H256 = tx.computeHash()
 
-        let signedWitnesses = try tx.witnesses.map { witness -> Witness in
-            let message: Data = ([txHash] + witness.data).map { Data(hex: $0) }.reduce(Data(), +)
+        let signedWitnesses = try tx.witnesses.map { witness -> HexString in
+            let message: Data = [txHash, witness].map { Data(hex: $0) }.reduce(Data(), +)
             guard let messageHash = Blake2b().hash(data: message) else {
                 throw Error.failToHashWitnessesData
             }
             guard let signature = Secp256k1.signRecoverable(privateKey: privateKey, data: messageHash) else {
                 throw Error.failToSignWitnessesData
             }
-            let data = [ signature.toHexString() ] + witness.data
-            return Witness(data: data.map { Utils.prefixHex($0) })
+            return Utils.prefixHex(signature.toHexString()) + Utils.removeHexPrefix(witness)
         }
 
         return Transaction(

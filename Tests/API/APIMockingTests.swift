@@ -28,7 +28,7 @@ class APIMockingTests: XCTestCase {
 
     func testGetCurrentEpoch() throws {
         let result = try getClient(json: "epoch").getCurrentEpoch()
-        XCTAssertTrue(UInt64(result.difficulty.dropFirst(2), radix: 16)! >= 0)
+        XCTAssertTrue(result.compactTarget >= 0)
     }
 
     func testGetEpochByNumber() throws {
@@ -59,17 +59,15 @@ class APIMockingTests: XCTestCase {
     }
 
     func testGetHeader() throws {
-        let hash = "0xd629a10a08fb0f43fcb97e948fc2b6eb70ebd28536490fe3864b0e40d08397d1"
+        let hash = "0x70396940ae2e81bd2627a8e0e75f3d277585bb1afd78839cfd8f2c54e8697bbc"
         let result = try getClient(json: "header").getHeader(blockHash: hash)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result.hash, hash)
     }
 
     func testGetHeaderByNumber() throws {
         let number = BlockNumber(1024)
         let result = try getClient(json: "header").getHeaderByNumber(number: number)
         XCTAssertNotNil(result)
-        XCTAssertEqual(result.number, number)
     }
 
     func testGetLiveCell() throws {
@@ -138,22 +136,22 @@ class APIMockingTests: XCTestCase {
 
     func testComputeTransactionHash() throws {
         let tx = Transaction(
-            cellDeps: [CellDep(outPoint: OutPoint(txHash: "0x29f94532fb6c7a17f13bcde5adb6e2921776ee6f357adf645e5393bd13442141", index: 0), depType: .code)],
-            headerDeps: ["0xeca4e06e75df81c0247365f864a08c7ef0eec8a5c7d182a25e6c086408a97cd2"],
-            inputs: [CellInput(previousOutput: OutPoint(txHash: "0x5ba156200c6310bf140fbbd3bfe7e8f03d4d5f82b612c1a8ec2501826eaabc17", index: 0), since: 0)],
-            outputs: [CellOutput(capacity: 100000000000, lock: Script(args: [], codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data))],
+            cellDeps: [CellDep(outPoint: OutPoint(txHash: "0xa4037a893eb48e18ed4ef61034ce26eba9c585f15c9cee102ae58505565eccc3", index: 0), depType: .code)],
+            headerDeps: ["0x3ed784b863bc13dbff3f49f4efee16fd0f5b764af7707ab81ae738b7f8475846"],
+            inputs: [CellInput(previousOutput: OutPoint(txHash: "0x5169e6406ebed886ea1be802da474e3a46922556f06b1d88b23613f55630fcb4", index: 0), since: 0)],
+            outputs: [CellOutput(capacity: 100000000000, lock: Script(args: "0x", codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data))],
             outputsData: ["0x"]
         )
         let result = try? getClient(json: "computeTransactionHash").computeTransactionHash(transaction: tx)
         XCTAssertNotNil(result)
-        XCTAssertEqual("0x13ebb4a177fbbbef800f9988cc1763d313cbe76c3aed3f15c6fa93b723d1a070", result)
+        XCTAssertEqual("0xac963a60263aeb26f3089f0caa58fc081c87f6eb0b8483d840869ae8f34e9559", result)
     }
 
     func testComputeScriptHash() throws {
-        let script = Script(args: [], codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data)
+        let script = Script(args: "0x", codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data)
         let result = try? getClient(json: "computeScriptHash").computeScriptHash(script: script)
         XCTAssertNotNil(result)
-        XCTAssertEqual("0xd8753dd87c7dd293d9b64d4ca20d77bb8e5f2d92bf08234b026e2d8b1b00e7e9", result)
+        XCTAssertEqual("0x4ceaa32f692948413e213ce6f3a83337145bde6e11fd8cb94377ce2637dcc412", result)
     }
     
     func testDryRunTransaction() throws {

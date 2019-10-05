@@ -13,7 +13,7 @@ public struct Transaction: Codable, Param {
     public let inputs: [CellInput]
     public let outputs: [CellOutput]
     public let outputsData: [HexString]
-    public let witnesses: [Witness]
+    public let witnesses: [HexString]
     public let hash: H256
 
     public init(
@@ -23,7 +23,7 @@ public struct Transaction: Codable, Param {
         inputs: [CellInput] = [],
         outputs: [CellOutput] = [],
         outputsData: [HexString] = [],
-        witnesses: [Witness] = [],
+        witnesses: [HexString] = [],
         hash: H256 = ""
     ) {
         self.version = version
@@ -55,7 +55,7 @@ public struct Transaction: Codable, Param {
         inputs = try container.decode([CellInput].self, forKey: .inputs)
         outputs = try container.decode([CellOutput].self, forKey: .outputs)
         outputsData = try container.decode([HexString].self, forKey: .outputsData)
-        witnesses = try container.decode([Witness].self, forKey: .witnesses)
+        witnesses = try container.decode([HexString].self, forKey: .witnesses)
         hash = try container.decode(H256.self, forKey: .hash)
     }
 
@@ -67,7 +67,7 @@ public struct Transaction: Codable, Param {
             CodingKeys.inputs.rawValue: inputs.map { $0.param },
             CodingKeys.outputs.rawValue: outputs.map { $0.param },
             CodingKeys.outputsData.rawValue: outputsData,
-            CodingKeys.witnesses.rawValue: witnesses.map { $0.param }
+            CodingKeys.witnesses.rawValue: witnesses
         ]
     }
 }

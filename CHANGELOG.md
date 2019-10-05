@@ -1,3 +1,25 @@
+# [v0.22.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.21.2...v0.22.0) (2019-10-05)
+
+
+### Features
+
+* Parse header/epoch compact target field as hex string ([5f8f832](https://github.com/nervosnetwork/ckb-sdk-swift/commit/5f8f832))
+* Update header and epoch structures ([ec0deaa](https://github.com/nervosnetwork/ckb-sdk-swift/commit/ec0deaa))
+* Update Script.args and Transaction.witnesses type ([95e16d2](https://github.com/nervosnetwork/ckb-sdk-swift/commit/95e16d2))
+
+
+### BREAKING CHANGES
+
+* header and epoch structures are changed as per CKB update.
+
+Note: field compact_target is output from RPC as uint32, but they should be hex string to
+follow the convention. Await CKB to fix that.
+* Bytes serialization are used for these two structures.
+Before this [Bytes] serialization were used. This affects script and transaction
+hash calculation and transaction signing.
+
+
+
 # [v0.21.2](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.21.1...v0.21.2) (2019-09-24)
 
 

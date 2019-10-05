@@ -72,7 +72,6 @@
 		1A414AA021C770DD00B28C09 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A414A9F21C770DD00B28C09 /* Utils.swift */; };
 		1A4A4BAB22A6BF40003DC827 /* CellOutputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */; };
 		1A4A4BAD22A6C154003DC827 /* CellInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BAC22A6C154003DC827 /* CellInputTests.swift */; };
-		1A4A4BAF22A6C2EB003DC827 /* WitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BAE22A6C2EB003DC827 /* WitnessTests.swift */; };
 		1A4A4BB122A6C445003DC827 /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BB022A6C445003DC827 /* TransactionTests.swift */; };
 		1A4A4BB322A6C5F0003DC827 /* APIErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BB222A6C5F0003DC827 /* APIErrorTests.swift */; };
 		1A4A4BB522A6C64B003DC827 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A4BB422A6C64B003DC827 /* APIError.swift */; };
@@ -122,7 +121,6 @@
 		1AD3195D225DBA0B00F41790 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195C225DBA0B00F41790 /* AddressGenerator.swift */; };
 		1AD3195F225DBCB300F41790 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3195E225DBCB300F41790 /* Network.swift */; };
 		1AD96320228D24FB00684FBB /* SystemScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD9631F228D24FB00684FBB /* SystemScript.swift */; };
-		1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7C62B2251BCA9003FA254 /* Witness.swift */; };
 		2D6EA000E9B8936CB81356CC /* Pods_CKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4BD554CBEED5D384A1C737 /* Pods_CKB.framework */; };
 		C5FC62F40419407D3FC2BB33 /* Pods_CKBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2179DE52A415B08B8D134 /* Pods_CKBTests.framework */; };
 		D5B02A91230A8030006B4189 /* CellDep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B02A90230A8030006B4189 /* CellDep.swift */; };
@@ -186,7 +184,6 @@
 		1A414AA421C7713800B28C09 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellOutputTests.swift; sourceTree = "<group>"; };
 		1A4A4BAC22A6C154003DC827 /* CellInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInputTests.swift; sourceTree = "<group>"; };
-		1A4A4BAE22A6C2EB003DC827 /* WitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessTests.swift; sourceTree = "<group>"; };
 		1A4A4BB022A6C445003DC827 /* TransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTests.swift; sourceTree = "<group>"; };
 		1A4A4BB222A6C5F0003DC827 /* APIErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorTests.swift; sourceTree = "<group>"; };
 		1A4A4BB422A6C64B003DC827 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -258,7 +255,6 @@
 		1AD31960225DBD8A00F41790 /* AddressGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeneratorTests.swift; sourceTree = "<group>"; };
 		1AD9631F228D24FB00684FBB /* SystemScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemScript.swift; sourceTree = "<group>"; };
 		1AD96321228D2BF400684FBB /* SystemScriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemScriptTests.swift; sourceTree = "<group>"; };
-		1AE7C62B2251BCA9003FA254 /* Witness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Witness.swift; sourceTree = "<group>"; };
 		3280C4848C7A8236CA5F4CD8 /* Pods-CKBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5CAEE4335089142E8F3ECC55 /* Pods-CKBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKBTests/Pods-CKBTests.release.xcconfig"; sourceTree = "<group>"; };
 		5CD9DB4E09DDB6450D81BC6F /* Pods-CKB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKB/Pods-CKB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,7 +294,6 @@
 				1A28119621D3805800E7CEC5 /* ScriptTests.swift */,
 				1A4A4BAC22A6C154003DC827 /* CellInputTests.swift */,
 				1A4A4BAA22A6BF40003DC827 /* CellOutputTests.swift */,
-				1A4A4BAE22A6C2EB003DC827 /* WitnessTests.swift */,
 				1A4A4BB022A6C445003DC827 /* TransactionTests.swift */,
 			);
 			path = Types;
@@ -451,7 +446,6 @@
 				1A414A8D21C3722300B28C09 /* CellInput.swift */,
 				1A414A8F21C3723E00B28C09 /* CellOutput.swift */,
 				D5B02A90230A8030006B4189 /* CellDep.swift */,
-				1AE7C62B2251BCA9003FA254 /* Witness.swift */,
 				1A414A8721C36FCF00B28C09 /* Header.swift */,
 				1A414A8921C36FE900B28C09 /* Block.swift */,
 				1A2CDAE0228171180024CA71 /* Epoch.swift */,
@@ -854,7 +848,6 @@
 				1A703C2F231FAF3600EDF2C6 /* DynVecSerializerTests.swift in Sources */,
 				1A703C43231FB1AA00EDF2C6 /* UnionSerializerTests.swift in Sources */,
 				1A2D6B3D22A35C6400724E66 /* Blake2bTests.swift in Sources */,
-				1A4A4BAF22A6C2EB003DC827 /* WitnessTests.swift in Sources */,
 				1A4A4BAD22A6C154003DC827 /* CellInputTests.swift in Sources */,
 				1A4A4BB122A6C445003DC827 /* TransactionTests.swift in Sources */,
 				1A2D6B3C22A35C6400724E66 /* Secp256k1Tests.swift in Sources */,
@@ -906,7 +899,6 @@
 				1A85454F23212A4100B26DC0 /* ByteSerializer.swift in Sources */,
 				1AB7517022BA263C00AC9F63 /* APIClient+Indexer.swift in Sources */,
 				1A2F5FBB23223DF1000051CC /* TransactionSerializer.swift in Sources */,
-				1AE7C62C2251BCA9003FA254 /* Witness.swift in Sources */,
 				1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */,
 				1A36096B2322853F000E67EE /* CellOutputSerializer.swift in Sources */,
 				1A414A9621C37AA000B28C09 /* Script.swift in Sources */,
@@ -1144,7 +1136,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.21.2;
+				MARKETING_VERSION = 0.22.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
@@ -1175,7 +1167,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.21.2;
+				MARKETING_VERSION = 0.22.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.nervos.CKB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;

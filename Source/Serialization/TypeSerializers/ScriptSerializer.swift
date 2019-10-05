@@ -14,16 +14,12 @@ extension ScriptHashType {
 
 public final class ScriptSerializer: TableSerializer<Script> {
     public required init(value: Script) {
-        let normalizedArgs: [[Byte]] = value.args.map { (arg) in
-            // TODO: check if Data(hex: arg) needs to left pad arg string
-            return Data(hex: arg).bytes
-        }
         super.init(
             value: value,
             fieldSerializers: [
                 Byte32Serializer(value: value.codeHash)!,
                 ByteSerializer(value: value.hashType.byte),
-                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: normalizedArgs)
+                FixVecSerializer<Byte, ByteSerializer>(value: Data(hex: value.args).bytes)
             ]
         )
     }

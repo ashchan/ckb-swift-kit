@@ -17,12 +17,12 @@ class TransactionTests: XCTestCase {
             outputs: [
                 CellOutput(
                     capacity: 100000000000,
-                    lock: Script(args: ["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
+                    lock: Script(args: "0xe2193df51d78411601796b35b17b4f8f2cd85bd0", codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 ),
                 CellOutput(
                     capacity: 4900000000000,
-                    lock: Script(args: ["0x36c329ed630d6ce750712a477543672adab57f4c"], codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
+                    lock: Script(args: "0x36c329ed630d6ce750712a477543672adab57f4c", codeHash: "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"),
                     type: nil
                 )
             ],
@@ -31,7 +31,7 @@ class TransactionTests: XCTestCase {
                 "0x"
             ],
             witnesses: [
-                Witness(data: [])
+                "0x0"
             ]
         )
         XCTAssertEqual(tx.param["version"] as! String, "0x0")
