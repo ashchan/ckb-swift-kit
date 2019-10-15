@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/nervosnetwork/ckb-sdk-swift"
   s.license      = "MIT"
   s.author       = { "Nervos Core Dev" => "dev@nervos.org" }
-  s.source       = { git: "https://github.com/nervosnetwork/ckb-sdk-swift.git" }, tag: "v#{s.version.to_s}" }
+  s.source       = { git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v#{s.version.to_s}" }
   s.social_media_url = 'https://twitter.com/nervosnetwork'
 
   s.swift_version = '5.0'
