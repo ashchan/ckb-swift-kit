@@ -1,3 +1,12 @@
+# [v0.23.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.22.0...v0.23.0) (2019-10-19)
+
+
+### Bug Fixes
+
+* CocoaPods spec ([1b2d989](https://github.com/nervosnetwork/ckb-sdk-swift/commit/1b2d989))
+
+
+
 # [v0.22.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.21.2...v0.22.0) (2019-10-05)
 
 
