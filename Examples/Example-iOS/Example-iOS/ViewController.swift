@@ -111,13 +111,13 @@ private extension ViewController {
 
         // Generate lock script for the receiver's address
         let toAddress = "ckt..."
-        let publicKeyHash = Utils.prefixHex(AddressGenerator().publicKeyHash(for: toAddress)!)
+        let publicKeyHash = Utils.prefixHex(AddressGenerator.publicKeyHash(for: toAddress)!)
         let lockScript = systemScript.lock(for: publicKeyHash)
         // Construct the outputs
         let outputs = [CellOutput(capacity: 500_00_000_000, lock: lockScript, type: nil)]
 
         // Generate the transaction
-        let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, outputsData: ["0x"], witnesses: [Witness(data: [])])
+        let tx = Transaction(cellDeps: deps, inputs: inputs, outputs: outputs, outputsData: ["0x"], witnesses: ["0x"])
         // Sign the transaction
         let signedTx = try Transaction.sign(tx: tx, with: privateKey)
 
