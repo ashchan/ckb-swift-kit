@@ -1,5 +1,5 @@
 PODS:
-  - CKB (0.21.0):
+  - CKB (0.23.0):
     - CryptoSwift (~> 1.0.0)
     - secp256k1.swift (~> 0.1.4)
     - Sodium (~> 0.8.0)
@@ -11,7 +11,7 @@ DEPENDENCIES:
   - CKB (from `../../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - CryptoSwift
     - secp256k1.swift
     - Sodium
@@ -21,11 +21,11 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  CKB: 7d3cf393facb0f92a52c9d73bafb8cec4deb7f01
+  CKB: 5f88ec50389d47d20e7bcdf4f18375a66e0130d6
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   Sodium: 63c0ca312a932e6da481689537d4b35568841bdc
 
 PODFILE CHECKSUM: 25595363a3344f0facecf26229cae03aed8a81d9
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.3
