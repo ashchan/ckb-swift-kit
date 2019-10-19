@@ -23,7 +23,7 @@ public final class Payment {
     public var signedTx: Transaction?
     public var unspentCellCollectorType: UnspentCellCollector.Type! = LiveCellCollector.self
 
-    public init(from: String, to: String, amount: Capacity, fee: Capacity = 0, apiClient: APIClient) throws {
+    public init(from: String, to: String, amount: Capacity, fee: Capacity = 1000, apiClient: APIClient) throws {
         guard let fromHash = AddressGenerator.publicKeyHash(for: from) else {
             throw Error.invalidFromAddress
         }
