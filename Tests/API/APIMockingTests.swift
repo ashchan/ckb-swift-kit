@@ -160,6 +160,12 @@ class APIMockingTests: XCTestCase {
         XCTAssertNotNil(result)
     }
 
+    func testEstimateFeeRate() throws {
+        let result = try? getClient(json: "estimateFeeRate").estimateFeeRate(expectedConfirmBlocks: 5)
+        XCTAssertNotNil(result)
+        XCTAssert(result!.feeRate >= 0)
+    }
+
     func testIndexLockHash() throws {
         let lockHash = "0xd8753dd87c7dd293d9b64d4ca20d77bb8e5f2d92bf08234b026e2d8b1b00e7e9"
         let result = try getClient(json: "indexLockHash").indexLockHash(lockHash: lockHash, indexFrom: 1024)

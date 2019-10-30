@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A00059C23690F980069AC80 /* FeeRateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00059B23690F980069AC80 /* FeeRateResult.swift */; };
+		1A00059F236910980069AC80 /* estimateFeeRate.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A00059D236910630069AC80 /* estimateFeeRate.json */; };
 		1A014D5E232A707E00CBBBA7 /* liveCell.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A014D5D232A707E00CBBBA7 /* liveCell.json */; };
 		1A11347E2228D14300840EE8 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* Node.swift */; };
 		1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */; };
@@ -137,6 +139,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A00059B23690F980069AC80 /* FeeRateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeRateResult.swift; sourceTree = "<group>"; };
+		1A00059D236910630069AC80 /* estimateFeeRate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = estimateFeeRate.json; sourceTree = "<group>"; };
 		1A014D5D232A707E00CBBBA7 /* liveCell.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = liveCell.json; sourceTree = "<group>"; };
 		1A11347D2228D14300840EE8 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getTransactionsByLockHash.json; sourceTree = "<group>"; };
@@ -358,6 +362,7 @@
 				1AA9B6872283D10E00C116B2 /* blockchainInfo.json */,
 				1AA9B6892283D15600C116B2 /* peersState.json */,
 				1A2188752288FC7B00F613CF /* dryRunTransaction.json */,
+				1A00059D236910630069AC80 /* estimateFeeRate.json */,
 				1A2188772288FEC800F613CF /* computeTransactionHash.json */,
 				1AD01E08230F694B0005199E /* computeScriptHash.json */,
 				1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */,
@@ -456,6 +461,7 @@
 				1AB7516D22BA0F7100AC9F63 /* AlertMessage.swift */,
 				1AA9B6852283CE4500C116B2 /* PeerState.swift */,
 				1A2188732288FC1700F613CF /* DryRunResult.swift */,
+				1A00059B23690F980069AC80 /* FeeRateResult.swift */,
 				1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */,
 				1AA3B83D22EEBAFA00027520 /* BannedAddress.swift */,
 				1AA3B84122EEBB4800027520 /* BlockReward.swift */,
@@ -717,6 +723,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A00059F236910980069AC80 /* estimateFeeRate.json in Resources */,
 				1A2D6B2E22A35C5A00724E66 /* sendTransactionEmpty.json in Resources */,
 				1A2D6B3222A35C5A00724E66 /* txPoolInfo.json in Resources */,
 				1A199DEF22BA352D000C0C34 /* deindexLockHash.json in Resources */,
@@ -884,6 +891,7 @@
 				1A414A8821C36FCF00B28C09 /* Header.swift in Sources */,
 				1AC180912264634E00D243D9 /* Bech32.swift in Sources */,
 				1AD96320228D24FB00684FBB /* SystemScript.swift in Sources */,
+				1A00059C23690F980069AC80 /* FeeRateResult.swift in Sources */,
 				1A11347E2228D14300840EE8 /* Node.swift in Sources */,
 				1A414A7B21C22A9300B28C09 /* APIClient.swift in Sources */,
 				1A703C2B231FAF1000EDF2C6 /* FixVecSerializer.swift in Sources */,
