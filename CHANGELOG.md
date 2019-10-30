@@ -1,3 +1,12 @@
+# [v0.24.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.23.1...v0.24.0) (2019-11-02)
+
+
+### Features
+
+* Implement estimate_fee_rate RPC ([9e43807](https://github.com/nervosnetwork/ckb-sdk-swift/commit/9e43807))
+
+
+
 # [v0.23.1](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.23.0...v0.23.1) (2019-10-19)
 
 
