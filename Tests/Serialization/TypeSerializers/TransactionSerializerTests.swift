@@ -99,6 +99,7 @@ class TransactionSerializerTests: XCTestCase {
     func testFeeForSizeAndRate() {
         XCTAssertEqual(932, Transaction.fee(for: 1035, with: 900))
         XCTAssertEqual(1035, Transaction.fee(for: 1035, with: 1000))
+        XCTAssertEqual(1041, Transaction.fee(for: 1038, with: 1002))
     }
 
     func testTransactionFee() {
