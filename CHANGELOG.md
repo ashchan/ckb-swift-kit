@@ -3,7 +3,9 @@
 
 ### Features
 
+* Calculate transaction fee ([73dae6e](https://github.com/nervosnetwork/ckb-sdk-swift/commit/73dae6e))
 * Implement estimate_fee_rate RPC ([9e43807](https://github.com/nervosnetwork/ckb-sdk-swift/commit/9e43807))
+* Implement tx size calculation ([b4bac55](https://github.com/nervosnetwork/ckb-sdk-swift/commit/b4bac55))
 
 
 
