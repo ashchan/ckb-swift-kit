@@ -61,4 +61,17 @@ extension Transaction {
         let serializedTxOffsetBytesize = 4 // 4 bytes for the tx offset cost with molecule array (transactions)
         return serializer.serialize().count + serializedTxOffsetBytesize
     }
+
+    public func fee(rate: UInt64) -> Capacity {
+        return Self.fee(for: serializedSizeInBlock, with: rate)
+    }
+
+    /// Calulate fee based on transaction size and fee rate.
+    /// - Parameter txSize: Bytesize of the serialized tx in a block
+    /// - Parameter rate: Fee rate, shannons for 1KB
+    public static func fee(for txSize: Int, with rate: UInt64) -> Capacity {
+        let base = UInt64(txSize) * rate
+        let result = base / 1000
+        return base % 1000 == 0 ? result : result + 1
+    }
 }
