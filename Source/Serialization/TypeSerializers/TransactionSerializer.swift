@@ -63,7 +63,7 @@ extension Transaction {
     }
 
     public func fee(rate: UInt64) -> Capacity {
-        return Self.fee(for: serializedSizeInBlock, with: rate)
+        return Transaction.fee(for: serializedSizeInBlock, with: rate)
     }
 
     /// Calulate fee based on transaction size and fee rate.
