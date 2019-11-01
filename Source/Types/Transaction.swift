@@ -13,7 +13,8 @@ public struct Transaction: Codable, Param {
     public let inputs: [CellInput]
     public let outputs: [CellOutput]
     public let outputsData: [HexString]
-    public let witnesses: [HexString]
+    public let witnesses: [HexString] // Serialized and signed witnesses
+    public let unsignedWitnesses: [WitnessArgs] // These don't parse from/to RPC object
     public let hash: H256
 
     public init(
@@ -24,6 +25,7 @@ public struct Transaction: Codable, Param {
         outputs: [CellOutput] = [],
         outputsData: [HexString] = [],
         witnesses: [HexString] = [],
+        unsignedWitnesses: [WitnessArgs] = [],
         hash: H256 = ""
     ) {
         self.version = version
@@ -33,6 +35,7 @@ public struct Transaction: Codable, Param {
         self.outputs = outputs
         self.outputsData = outputsData
         self.witnesses = witnesses
+        self.unsignedWitnesses = unsignedWitnesses
         self.hash = hash
     }
 
@@ -56,6 +59,7 @@ public struct Transaction: Codable, Param {
         outputs = try container.decode([CellOutput].self, forKey: .outputs)
         outputsData = try container.decode([HexString].self, forKey: .outputsData)
         witnesses = try container.decode([HexString].self, forKey: .witnesses)
+        unsignedWitnesses = []
         hash = try container.decode(H256.self, forKey: .hash)
     }
 

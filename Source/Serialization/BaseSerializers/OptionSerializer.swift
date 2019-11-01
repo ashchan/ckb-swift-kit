@@ -31,3 +31,13 @@ struct OptionSerializer<T, TSerializer: Serializer>: ObjectSerializer {
         self.init(value: value, serializer: nil)
     }
 }
+
+struct EmptySerializer: Serializer {
+    var header: [Byte] {
+        return []
+    }
+
+    var body: [Byte] {
+        return []
+    }
+}

@@ -114,7 +114,10 @@ private extension Payment {
             inputs: inputs,
             outputs: outputs,
             outputsData: outputs.map { _ in "0x" },
-            witnesses: inputs.map { _ in "0x" }
+            witnesses: inputs.map { _ in "0x" },
+            unsignedWitnesses: inputs.enumerated().map({ (index, _)  in
+                return index == 0 ? WitnessArgs.emptyLock : WitnessArgs()
+            })
         )
     }
 

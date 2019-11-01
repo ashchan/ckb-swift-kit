@@ -19,7 +19,7 @@ public final class ScriptSerializer: TableSerializer<Script> {
             fieldSerializers: [
                 Byte32Serializer(value: value.codeHash)!,
                 ByteSerializer(value: value.hashType.byte),
-                FixVecSerializer<Byte, ByteSerializer>(value: Data(hex: value.args).bytes)
+                BytesSerializer(value: Data(hex: value.args).bytes)
             ]
         )
     }

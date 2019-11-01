@@ -20,7 +20,7 @@ public final class TransactionSerializer: TableSerializer<Transaction> {
                 FixVecSerializer<[Byte], Byte32Serializer>(value: hexStringsToArrayOfBytes(value.headerDeps)),
                 FixVecSerializer<CellInput, CellInputSerializer>(value: value.inputs),
                 DynVecSerializer<CellOutput, CellOutputSerializer>(value: value.outputs),
-                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: hexStringsToArrayOfBytes(value.outputsData))
+                DynVecSerializer<[Byte], BytesSerializer>(value: hexStringsToArrayOfBytes(value.outputsData))
             ]
         )
     }
@@ -49,7 +49,7 @@ final class TransactionPlusWitnessesSerializer: TableSerializer<Transaction> {
             value: value,
             fieldSerializers: [
                 TransactionSerializer(value: value),
-                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: hexStringsToArrayOfBytes(value.witnesses))
+                DynVecSerializer<[Byte], BytesSerializer>(value: hexStringsToArrayOfBytes(value.witnesses))
             ]
         )
     }

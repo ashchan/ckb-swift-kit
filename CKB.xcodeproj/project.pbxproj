@@ -11,6 +11,8 @@
 		1A00059F236910980069AC80 /* estimateFeeRate.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A00059D236910630069AC80 /* estimateFeeRate.json */; };
 		1A014D5E232A707E00CBBBA7 /* liveCell.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A014D5D232A707E00CBBBA7 /* liveCell.json */; };
 		1A11347E2228D14300840EE8 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* Node.swift */; };
+		1A136C46236BA87D004575FC /* WitnessArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C45236BA87D004575FC /* WitnessArgs.swift */; };
+		1A136C48236BAA5A004575FC /* WitnessArgsSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C47236BAA5A004575FC /* WitnessArgsSerializer.swift */; };
 		1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */; };
 		1A199DEC22BA3526000C0C34 /* getLiveCellsByLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */; };
 		1A199DED22BA352D000C0C34 /* getTransactionsByLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */; };
@@ -143,6 +145,8 @@
 		1A00059D236910630069AC80 /* estimateFeeRate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = estimateFeeRate.json; sourceTree = "<group>"; };
 		1A014D5D232A707E00CBBBA7 /* liveCell.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = liveCell.json; sourceTree = "<group>"; };
 		1A11347D2228D14300840EE8 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		1A136C45236BA87D004575FC /* WitnessArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessArgs.swift; sourceTree = "<group>"; };
+		1A136C47236BAA5A004575FC /* WitnessArgsSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessArgsSerializer.swift; sourceTree = "<group>"; };
 		1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getTransactionsByLockHash.json; sourceTree = "<group>"; };
 		1A199DE422BA2809000C0C34 /* indexLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = indexLockHash.json; sourceTree = "<group>"; };
 		1A199DE622BA281D000C0C34 /* deindexLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = deindexLockHash.json; sourceTree = "<group>"; };
@@ -327,6 +331,7 @@
 				1A36096A2322853F000E67EE /* CellOutputSerializer.swift */,
 				1A36096C23228675000E67EE /* CellDepSerializer.swift */,
 				1A2F5FB823223D9F000051CC /* ScriptSerializer.swift */,
+				1A136C47236BAA5A004575FC /* WitnessArgsSerializer.swift */,
 				1A2F5FBA23223DF1000051CC /* TransactionSerializer.swift */,
 			);
 			path = TypeSerializers;
@@ -454,6 +459,7 @@
 				1A414A8721C36FCF00B28C09 /* Header.swift */,
 				1A414A8921C36FE900B28C09 /* Block.swift */,
 				1A2CDAE0228171180024CA71 /* Epoch.swift */,
+				1A136C45236BA87D004575FC /* WitnessArgs.swift */,
 				1A414A8B21C3714E00B28C09 /* Transaction.swift */,
 				1A11347D2228D14300840EE8 /* Node.swift */,
 				1A4AEBDA2282EB0100F0D576 /* TxPoolInfo.swift */,
@@ -897,6 +903,7 @@
 				1A703C2B231FAF1000EDF2C6 /* FixVecSerializer.swift in Sources */,
 				1AB7516E22BA0F7100AC9F63 /* AlertMessage.swift in Sources */,
 				1A6796B5232F0BB4001E9E3D /* LiveCellCollector.swift in Sources */,
+				1A136C48236BAA5A004575FC /* WitnessArgsSerializer.swift in Sources */,
 				1AB45ED7222AA558009B395B /* Secp256k1.swift in Sources */,
 				1A5BCBB3228C571200157426 /* Transaction+Sign.swift in Sources */,
 				D5B02A91230A8030006B4189 /* CellDep.swift in Sources */,
@@ -935,6 +942,7 @@
 				1A703C47232085CC00EDF2C6 /* Serializer.swift in Sources */,
 				1A414A8A21C36FE900B28C09 /* Block.swift in Sources */,
 				1A414A9421C3789000B28C09 /* Primitives.swift in Sources */,
+				1A136C46236BA87D004575FC /* WitnessArgs.swift in Sources */,
 				1A703C41231FB19A00EDF2C6 /* UnionSerializer.swift in Sources */,
 				1A2F5FB923223D9F000051CC /* ScriptSerializer.swift in Sources */,
 				1A414A8321C334EB00B28C09 /* APIRequest.swift in Sources */,
