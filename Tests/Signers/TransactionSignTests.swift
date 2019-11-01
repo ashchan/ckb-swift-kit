@@ -77,7 +77,7 @@ class TransactionSignTests: XCTestCase {
                 "0x"
             ],
             unsignedWitnesses: [
-                .parsed("0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb", "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb", "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6cb"),
+                .parsed("0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb", "0x99caa8d7efdaab11c2bb7e45f4f385d0405f0fa2e8d3ba48496c28a2443e607d", "0xa6d5e23a77f4d7940aeb88764eebf8146185138641ac43b233e1c9b3daa170fa"),
                 .data("0x")
             ]
         )
@@ -87,7 +87,7 @@ class TransactionSignTests: XCTestCase {
         XCTAssertEqual(
             signed.witnesses,
             [
-                "0x9d00000010000000550000007900000041000000e30777db6a6d605c04f6e0b399a3286b64a2a3f69efb6f21d94a9fe58ac422414eaa2033479375e04dbbdb80df3b472a7a047728440a18b2c0baee443b5e09d700200000004107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb200000004107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6cb",
+                "0x9d00000010000000550000007900000041000000d896d67ddda97ab2d15cd13098b40e4a2b6d6c66ad465d987df9a28b0a038f4a18dbebbc702a1a0b2056aa9e4290a3640a4d73dd1f6483e6f8e0cd2784b4a78b002000000099caa8d7efdaab11c2bb7e45f4f385d0405f0fa2e8d3ba48496c28a2443e607d20000000a6d5e23a77f4d7940aeb88764eebf8146185138641ac43b233e1c9b3daa170fa",
                 "0x"
             ]
         )
