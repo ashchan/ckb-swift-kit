@@ -6,6 +6,9 @@
 * Calculate transaction fee ([73dae6e](https://github.com/nervosnetwork/ckb-sdk-swift/commit/73dae6e))
 * Implement estimate_fee_rate RPC ([9e43807](https://github.com/nervosnetwork/ckb-sdk-swift/commit/9e43807))
 * Implement tx size calculation ([b4bac55](https://github.com/nervosnetwork/ckb-sdk-swift/commit/b4bac55))
+* Implement WitnessArgs and its serializer ([f052a04](https://github.com/nervosnetwork/ckb-sdk-swift/commit/f052a04))
+* Let WitnessArgs support both parsed witness and raw data ([15dfe74](https://github.com/nervosnetwork/ckb-sdk-swift/commit/15dfe74))
+* Update tx signing ([499978e](https://github.com/nervosnetwork/ckb-sdk-swift/commit/499978e))
 
 
 
