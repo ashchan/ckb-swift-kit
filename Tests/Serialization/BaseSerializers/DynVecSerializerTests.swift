@@ -8,7 +8,6 @@ import XCTest
 @testable import CKB
 
 class DynVecSerializerTests: XCTestCase {
-    typealias BytesSerializer = FixVecSerializer<Byte, ByteSerializer>
     typealias BytesVecSerializer = DynVecSerializer<[Byte], BytesSerializer>
 
     func testEmptyBytesVector() {

@@ -20,7 +20,7 @@ public final class TransactionSerializer: TableSerializer<Transaction> {
                 FixVecSerializer<[Byte], Byte32Serializer>(value: hexStringsToArrayOfBytes(value.headerDeps)),
                 FixVecSerializer<CellInput, CellInputSerializer>(value: value.inputs),
                 DynVecSerializer<CellOutput, CellOutputSerializer>(value: value.outputs),
-                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: hexStringsToArrayOfBytes(value.outputsData))
+                DynVecSerializer<[Byte], BytesSerializer>(value: hexStringsToArrayOfBytes(value.outputsData))
             ]
         )
     }
@@ -42,14 +42,18 @@ public extension Transaction {
 
 final class TransactionPlusWitnessesSerializer: TableSerializer<Transaction> {
     required init(value: Transaction) {
-        let hexStringsToArrayOfBytes: ([HexString]) -> [[Byte]] = { strings in
-            return strings.map { Data(hex: $0).bytes }
+        let witnesses: [[Byte]]
+        if value.witnesses.isEmpty {
+            witnesses = value.serializeWitnessArgs()
+        } else {
+            witnesses = value.witnesses.map { Data(hex: $0).bytes }
         }
+
         super.init(
             value: value,
             fieldSerializers: [
                 TransactionSerializer(value: value),
-                DynVecSerializer<[Byte], FixVecSerializer<Byte, ByteSerializer>>(value: hexStringsToArrayOfBytes(value.witnesses))
+                DynVecSerializer<[Byte], BytesSerializer>(value: witnesses)
             ]
         )
     }
@@ -64,6 +68,10 @@ extension Transaction {
 
     public func fee(rate: UInt64) -> Capacity {
         return Transaction.fee(for: serializedSizeInBlock, with: rate)
+    }
+
+    func serializeWitnessArgs() -> [[Byte]] {
+        return unsignedWitnesses.map { $0.serialize() }
     }
 
     /// Calulate fee based on transaction size and fee rate.

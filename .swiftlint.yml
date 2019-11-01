@@ -3,6 +3,7 @@ disabled_rules:
   - force_try
   - identifier_name
   - todo
+  - large_tuple
 
 included:
   - Source

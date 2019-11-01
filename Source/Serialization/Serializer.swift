@@ -7,7 +7,7 @@
 import Foundation
 
 // [CKB Serialization RFC](https://github.com/yangby-cryptape/rfcs/blob/pr/serialization/rfcs/0008-serialization/0008-serialization.md)
-// [CKB Types serialization schema](https://github.com/nervosnetwork/ckb/blob/develop/util/types/schemas/ckb.mol)
+// [CKB Types serialization schema](https://github.com/nervosnetwork/ckb/blob/develop/util/types/schemas/blockchain.mol)
 
 // Primitive Type
 typealias Byte = UInt8
