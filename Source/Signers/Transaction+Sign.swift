@@ -14,12 +14,13 @@ public extension Transaction {
     ///
     /// - Returns: Signed transaction.
     static func sign(tx: Transaction, with privateKey: Data) throws -> Transaction {
-        if tx.unsignedWitnesses.isEmpty {
+        guard case .parsed(_, let inputType, let outputType) = tx.unsignedWitnesses.first else {
             throw Error.invalidNumberOfWitnesses
         }
 
         let txHash: H256 = tx.computeHash()
-        let emptiedWitnessData = Data(tx.unsignedWitnesses.first!.serialize())
+        let emptyWitness = WitnessArgs.parsed(WitnessArgs.emptyLockHash, inputType, outputType)
+        let emptiedWitnessData = Data(emptyWitness.serialize())
         var message = Data(hex: txHash)
         message += Data(UInt64Serializer(value: UInt64(emptiedWitnessData.count)).serialize())
         message += emptiedWitnessData
@@ -38,16 +39,7 @@ public extension Transaction {
         }
 
         let witnesses: [HexString] = tx.unsignedWitnesses.enumerated().map { (index, witnessArgs) in
-            let args: WitnessArgs
-            if index == 0 {
-                args = WitnessArgs(
-                    lock: Utils.prefixHex(signature.toHexString()),
-                    inputType: witnessArgs.inputType,
-                    outputType: witnessArgs.outputType
-                )
-            } else {
-                args = witnessArgs
-            }
+            let args = index == 0 ? .parsed(Utils.prefixHex(signature.toHexString()), inputType, outputType) : witnessArgs
             return Utils.prefixHex(args.serialize().toHexString())
         }
 

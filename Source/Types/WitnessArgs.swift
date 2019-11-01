@@ -6,19 +6,11 @@
 
 import Foundation
 
-public struct WitnessArgs {
-    public let lock: String
-    public let inputType: String
-    public let outputType: String
+public enum WitnessArgs {
+    case data(String) // Raw data as hex string
+    case parsed(String, String, String) // lock, inputType, outputType
 
-    public static let emptyLock: WitnessArgs = {
-        let lock = [String](repeating: "00", count: 65).joined()
-        return WitnessArgs(lock: Utils.prefixHex(lock))
-    }()
+    public static let emptyLockHash = [String](repeating: "00", count: 65).joined()
 
-    public init(lock: String = "0x", inputType: String = "0x", outputType: String = "0x") {
-        self.lock = lock
-        self.inputType = inputType
-        self.outputType = outputType
-    }
+    public static let emptyLock: WitnessArgs = .parsed(Utils.prefixHex(emptyLockHash), "0x", "0x")
 }

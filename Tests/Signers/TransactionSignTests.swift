@@ -77,8 +77,8 @@ class TransactionSignTests: XCTestCase {
                 "0x"
             ],
             unsignedWitnesses: [
-                WitnessArgs(lock: "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb"),
-                WitnessArgs()
+                .parsed("0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb", "0x", "0x"),
+                .data("0x")
             ]
         )
         let privateKey = Data(hex: "0xe79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")

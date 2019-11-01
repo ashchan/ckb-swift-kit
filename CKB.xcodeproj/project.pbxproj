@@ -13,7 +13,7 @@
 		1A11347E2228D14300840EE8 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A11347D2228D14300840EE8 /* Node.swift */; };
 		1A136C46236BA87D004575FC /* WitnessArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C45236BA87D004575FC /* WitnessArgs.swift */; };
 		1A136C48236BAA5A004575FC /* WitnessArgsSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C47236BAA5A004575FC /* WitnessArgsSerializer.swift */; };
-		1A136C4A236BBF2B004575FC /* WitnessArgsSerializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C49236BBF2B004575FC /* WitnessArgsSerializerTests.swift */; };
+		1A136C4A236BBF2B004575FC /* WitnessArgsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A136C49236BBF2B004575FC /* WitnessArgsTests.swift */; };
 		1A199DEB22BA3225000C0C34 /* LockHashIndexState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A199DEA22BA3225000C0C34 /* LockHashIndexState.swift */; };
 		1A199DEC22BA3526000C0C34 /* getLiveCellsByLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7517122BA273600AC9F63 /* getLiveCellsByLockHash.json */; };
 		1A199DED22BA352D000C0C34 /* getTransactionsByLockHash.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */; };
@@ -148,7 +148,7 @@
 		1A11347D2228D14300840EE8 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		1A136C45236BA87D004575FC /* WitnessArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessArgs.swift; sourceTree = "<group>"; };
 		1A136C47236BAA5A004575FC /* WitnessArgsSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessArgsSerializer.swift; sourceTree = "<group>"; };
-		1A136C49236BBF2B004575FC /* WitnessArgsSerializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessArgsSerializerTests.swift; sourceTree = "<group>"; };
+		1A136C49236BBF2B004575FC /* WitnessArgsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessArgsTests.swift; sourceTree = "<group>"; };
 		1A199DE222BA2781000C0C34 /* getTransactionsByLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getTransactionsByLockHash.json; sourceTree = "<group>"; };
 		1A199DE422BA2809000C0C34 /* indexLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = indexLockHash.json; sourceTree = "<group>"; };
 		1A199DE622BA281D000C0C34 /* deindexLockHash.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = deindexLockHash.json; sourceTree = "<group>"; };
@@ -343,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				1A36097323228B22000E67EE /* ScriptSerializerTests.swift */,
-				1A136C49236BBF2B004575FC /* WitnessArgsSerializerTests.swift */,
 				1A36097523228B6C000E67EE /* TransactionSerializerTests.swift */,
 			);
 			path = TypeSerializers;
@@ -519,6 +518,7 @@
 		1A5BCBB4228C6B9200157426 /* Signers */ = {
 			isa = PBXGroup;
 			children = (
+				1A136C49236BBF2B004575FC /* WitnessArgsTests.swift */,
 				1A5BCBB5228C6BB400157426 /* TransactionSignTests.swift */,
 			);
 			path = Signers;
@@ -885,7 +885,7 @@
 				1A2D6B3722A35C5A00724E66 /* APIClientTests.swift in Sources */,
 				1A2F5FB72321F1FE000051CC /* SerializerTests.swift in Sources */,
 				1A2D6B2622A35C4F00724E66 /* SystemScriptTests.swift in Sources */,
-				1A136C4A236BBF2B004575FC /* WitnessArgsSerializerTests.swift in Sources */,
+				1A136C4A236BBF2B004575FC /* WitnessArgsTests.swift in Sources */,
 				1A703C33231FAF6300EDF2C6 /* TableSerializerTests.swift in Sources */,
 				1A85455123212A5B00B26DC0 /* ByteSerializerTests.swift in Sources */,
 				1A36097423228B22000E67EE /* ScriptSerializerTests.swift in Sources */,

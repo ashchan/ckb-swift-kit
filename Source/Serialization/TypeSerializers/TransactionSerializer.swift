@@ -71,9 +71,7 @@ extension Transaction {
     }
 
     func serializeWitnessArgs() -> [[Byte]] {
-        return unsignedWitnesses.map { (witnessArgs) in
-            return WitnessArgsSerializer(value: witnessArgs).serialize()
-        }
+        return unsignedWitnesses.map { $0.serialize() }
     }
 
     /// Calulate fee based on transaction size and fee rate.
