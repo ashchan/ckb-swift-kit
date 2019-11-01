@@ -5,27 +5,22 @@
 //
 
 import XCTest
+@testable import CKB
 
 class WitnessArgsSerializerTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testOptionValue() {
+        let witnessArgs = WitnessArgs()
+        XCTAssertEqual(
+            [16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0, 16, 0, 0, 0],
+            WitnessArgsSerializer(value: witnessArgs).serialize()
+        )
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testEmptyLock() {
+        let witnessArgs = WitnessArgs.emptyLock
+        XCTAssertEqual(
+            [85, 0, 0, 0, 16, 0, 0, 0, 85, 0, 0, 0, 85, 0, 0, 0, 65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            WitnessArgsSerializer(value: witnessArgs).serialize()
+        )
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

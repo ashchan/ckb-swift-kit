@@ -25,3 +25,10 @@ public final class WitnessArgsSerializer: TableSerializer<WitnessArgs> {
         )
     }
 }
+
+public extension WitnessArgs {
+    func serialize() -> [UInt8] {
+        let serializer = WitnessArgsSerializer(value: self)
+        return serializer.serialize()
+    }
+}

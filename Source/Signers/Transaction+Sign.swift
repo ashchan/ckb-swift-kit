@@ -7,22 +7,48 @@
 import Foundation
 
 public extension Transaction {
+    /// Sign a transaction's witnesses data with private key.
+    /// Note this doesn't support multiple input groups yet.
+    /// - Parameter tx: The transaction to sign. It should include collected inputs and unsigned witnesses.
+    /// - Parameter privateKey: The private key to sign the transaction.
+    ///
+    /// - Returns: Signed transaction.
     static func sign(tx: Transaction, with privateKey: Data) throws -> Transaction {
-        if tx.witnesses.count < tx.inputs.count {
+        if tx.unsignedWitnesses.isEmpty {
             throw Error.invalidNumberOfWitnesses
         }
 
         let txHash: H256 = tx.computeHash()
+        let emptiedWitnessData = Data(tx.unsignedWitnesses.first!.serialize())
+        var message = Data(hex: txHash)
+        message += Data(UInt64Serializer(value: UInt64(emptiedWitnessData.count)).serialize())
+        message += emptiedWitnessData
 
-        let signedWitnesses = try tx.witnesses.map { witness -> HexString in
-            let message: Data = [txHash, witness].map { Data(hex: $0) }.reduce(Data(), +)
-            guard let messageHash = Blake2b().hash(data: message) else {
-                throw Error.failToHashWitnessesData
+        tx.unsignedWitnesses.dropFirst().forEach { (witnessArg) in
+            let witnessData = Data(witnessArg.serialize())
+            message += Data(UInt64Serializer(value: UInt64(witnessData.count)).serialize())
+            message += witnessData
+        }
+
+        guard let messageHash = Blake2b().hash(data: message) else {
+            throw Error.failToHashWitnessesData
+        }
+        guard let signature = Secp256k1.signRecoverable(privateKey: privateKey, data: messageHash) else {
+            throw Error.failToSignWitnessesData
+        }
+
+        let witnesses: [HexString] = tx.unsignedWitnesses.enumerated().map { (index, witnessArgs) in
+            let args: WitnessArgs
+            if index == 0 {
+                args = WitnessArgs(
+                    lock: Utils.prefixHex(signature.toHexString()),
+                    inputType: witnessArgs.inputType,
+                    outputType: witnessArgs.outputType
+                )
+            } else {
+                args = witnessArgs
             }
-            guard let signature = Secp256k1.signRecoverable(privateKey: privateKey, data: messageHash) else {
-                throw Error.failToSignWitnessesData
-            }
-            return Utils.prefixHex(signature.toHexString()) + Utils.removeHexPrefix(witness)
+            return Utils.prefixHex(args.serialize().toHexString())
         }
 
         return Transaction(
@@ -32,7 +58,7 @@ public extension Transaction {
             inputs: tx.inputs,
             outputs: tx.outputs,
             outputsData: tx.outputsData,
-            witnesses: signedWitnesses,
+            witnesses: witnesses,
             hash: txHash
         )
     }

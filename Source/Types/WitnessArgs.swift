@@ -16,7 +16,7 @@ public struct WitnessArgs {
         return WitnessArgs(lock: Utils.prefixHex(lock))
     }()
 
-    public init(lock: String = "", inputType: String = "", outputType: String = "") {
+    public init(lock: String = "0x", inputType: String = "0x", outputType: String = "0x") {
         self.lock = lock
         self.inputType = inputType
         self.outputType = outputType
