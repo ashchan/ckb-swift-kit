@@ -14,7 +14,7 @@ public extension Transaction {
     ///
     /// - Returns: Signed transaction.
     static func sign(tx: Transaction, with privateKey: Data) throws -> Transaction {
-        guard case .parsed(_, let inputType, let outputType) = tx.unsignedWitnesses.first else {
+        guard let firstWitness = tx.unsignedWitnesses.first, case let .parsed(_, inputType, outputType) = firstWitness else {
             throw Error.invalidNumberOfWitnesses
         }
 
