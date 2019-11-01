@@ -77,7 +77,7 @@ class TransactionSignTests: XCTestCase {
                 "0x"
             ],
             unsignedWitnesses: [
-                .parsed("0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb", "0x", "0x"),
+                .parsed("0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb", "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb", "0x4107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6cb"),
                 .data("0x")
             ]
         )
@@ -87,9 +87,70 @@ class TransactionSignTests: XCTestCase {
         XCTAssertEqual(
             signed.witnesses,
             [
-                "0x55000000100000005500000055000000410000002dd0a2ee5c7e92af78d0fbbbf7ac6dab7e52602a33b9f189a87d2d0bd346443c5dec66a5c13434fcf55cebfc56c98254146fd189c1e7c6774e2b1a66519e6a4e00",
+                "0x9d00000010000000550000007900000041000000e30777db6a6d605c04f6e0b399a3286b64a2a3f69efb6f21d94a9fe58ac422414eaa2033479375e04dbbdb80df3b472a7a047728440a18b2c0baee443b5e09d700200000004107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6fb200000004107bd23eedb9f2a2a749108f6bb9720d745d50f044cc4814bafe189a01fe6cb",
                 "0x"
             ]
+        )
+    }
+
+    func testMultipleInputSign2() throws {
+       let tx = Transaction(
+             version: 0,
+             cellDeps: [
+                 CellDep(outPoint: OutPoint(txHash: "0xe7d5ddd093bcc5909a6f441882e58906062eaf66a6ac1bcf7d7411931bc9ab72", index: 0), depType: .depGroup)
+             ],
+             inputs: [
+                 CellInput(
+                     previousOutput: OutPoint(txHash: "0xa31b9b8d105c62d69b7fbfc09bd700f3a1d6659232ffcfaa12a048ee5d7b7f2d", index: 0),
+                     since: 0
+                 ),
+                 CellInput(
+                     previousOutput: OutPoint(txHash: "0xec5e63e19ec0161092ba78a841e9ead5deb30e56c2d98752ed974f2f2b4aeff2", index: 0),
+                     since: 0
+                 ),
+                 CellInput(
+                     previousOutput: OutPoint(txHash: "0x5ad2600cb884572f9d8f568822c0447f6f49eb63b53257c20d0d8559276bf4e2", index: 0),
+                     since: 0
+                 ),
+                 CellInput(
+                     previousOutput: OutPoint(txHash: "0xf21e34224e90c1ab47f42e2977ea455445d22ba3aaeb4bd2fcb2075704f330ff", index: 0),
+                     since: 0
+                 ),
+                 CellInput(
+                     previousOutput: OutPoint(txHash: "0xc8212696d516c63bced000d3008c4a8c27c72c03f4becb40f0bf24a31063271f", index: 0),
+                     since: 0
+                 )
+             ],
+             outputs: [
+                 CellOutput(
+                     capacity: 1000000000000,
+                     lock: Script(args: "0x59a27ef3ba84f061517d13f42cf44ed020610061", codeHash: "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8", hashType: .type),
+                     type: nil
+                 ),
+                 CellOutput(
+                     capacity: 19113828003,
+                     lock: Script(args: "0x3954acece65096bfa81258983ddb83915fc56bd8", codeHash: "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8", hashType: .type),
+                     type: nil
+                 )
+             ],
+             outputsData: [
+                 "0x",
+                 "0x"
+             ],
+             unsignedWitnesses: [
+                WitnessArgs.parsed("0x", "0x", "0x"),
+                WitnessArgs.data("0x"),
+                WitnessArgs.data("0x"),
+                WitnessArgs.data("0x"),
+                WitnessArgs.data("0x")
+             ]
+         )
+        let privateKey = Data(hex: "0x845b781a1a094057b972714a2b09b85de4fc2eb205351c3e5179aabd264f3805")
+        XCTAssertEqual("0x03aea57404a99c685b098b7ee96469f0c5db57fa49aaef27cf7c080960da4b19", tx.computeHash())
+        let signed = try Transaction.sign(tx: tx, with: privateKey)
+        XCTAssertEqual(
+            "0x550000001000000055000000550000004100000090cdaca0b898586ef68c02e8514087e620d3b19767137baf2fbc8dee28c83ac047be76c76d7f5098a759f3d417c1daedf534a3772aa29159d807d948ed1f8c3a00",
+            signed.witnesses.first
         )
     }
 
