@@ -197,6 +197,13 @@ class APIClientTests: RPCTestSkippable {
         XCTAssertNotNil(result)
     }
 
+    func testEstimateFeeRate() throws {
+        let result = try? client.estimateFeeRate(expectedConfirmBlocks: 5)
+        if let result = result {
+            XCTAssert(result.feeRate >= 0)
+        }
+    }
+
     func testIndexLockHash() throws {
         let lockHash = "0x9a9a6bdbc38d4905eace1822f85237e3a1e238bb3f277aa7b7c8903441123510"
         var result = try client.indexLockHash(lockHash: lockHash, indexFrom: 0)

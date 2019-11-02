@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "fee_rate": "0x7d0"
+    }
+}

@@ -18,4 +18,8 @@ public extension APIClient {
     func dryRunTransaction(transaction: Transaction) throws -> DryRunResult {
         return try load(APIRequest<DryRunResult>(method: "dry_run_transaction", params: [transaction.param]))
     }
+
+    func estimateFeeRate(expectedConfirmBlocks: BlockNumber) throws -> FeeRateResult {
+        return try load(APIRequest<FeeRateResult>(method: "estimate_fee_rate", params: [expectedConfirmBlocks.hexString]))
+    }
 }

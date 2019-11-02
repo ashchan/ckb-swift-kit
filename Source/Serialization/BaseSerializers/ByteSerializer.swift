@@ -29,3 +29,5 @@ struct ByteSerializer: ObjectSerializer {
         self.init(value: byte)
     }
 }
+
+typealias BytesSerializer = FixVecSerializer<Byte, ByteSerializer>
