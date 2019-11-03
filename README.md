@@ -29,7 +29,7 @@ target "MyApp" do
   use_frameworks!
   use_modular_headers!
 
-  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.19.0"
+  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.24.0"
 end
 ```
 
@@ -39,7 +39,7 @@ You can also use [Swift Package Manager](https://swift.org/package-manager/). In
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.19.0")
+  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.24.0")
 ]
 ```
 
