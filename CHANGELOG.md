@@ -1,3 +1,12 @@
+# [v0.25.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.24.0...v0.25.0) (2019-11-16)
+
+
+### Features
+
+* Limit address generator to support short payload format version ([0e5d410](https://github.com/nervosnetwork/ckb-sdk-swift/commit/0e5d410))
+
+
+
 # [v0.24.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.23.1...v0.24.0) (2019-11-02)
 
 
