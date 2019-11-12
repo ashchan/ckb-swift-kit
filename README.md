@@ -8,6 +8,8 @@
 
 Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
 
+The ckb-sdk-swift is still under development and NOT production ready. You should get familiar with CKB transaction structure and RPC before using it.
+
 ## Prerequisites
 
 * Xcode 10.2 with Swift 5, or higher
