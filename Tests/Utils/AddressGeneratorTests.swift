@@ -86,4 +86,10 @@ class AddressGeneratorTests: XCTestCase {
         XCTAssertFalse(AddressGenerator.validate("ckt1qyqrdaefa43s6m882pcj53m4gdnj4k440axqswmu83")) // None Bech32 character
         XCTAssertFalse(AddressGenerator.validate("tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7")) // None ckt/ckb addresses
     }
+
+    func testValidateShortFormatSecpBlakeOnly() {
+        XCTAssertFalse(AddressGenerator.validate("ckb1qyqlqn8vsj7r0a5rvya76tey9jd2rdnca8lq2sg8su")) // Short format, multsig
+        XCTAssertFalse(AddressGenerator.validate("ckb1qsvf96jqmq4483ncl7yrzfzshwchu9jd0glq4yy5r2jcsw04d7xlydkr98kkxrtvuag8z2j8w4pkw2k6k4l5czfy37k")) // Full format: Type
+        XCTAssertFalse(AddressGenerator.validate("ckt1q2n9dutjk669cfznq7httfar0gtk7qp0du3wjfvzck9l0w3k9eqhvdkr98kkxrtvuag8z2j8w4pkw2k6k4l5czshhac")) // Full format: Data
+    }
 }

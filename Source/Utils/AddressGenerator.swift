@@ -6,8 +6,23 @@
 
 import Foundation
 
-/// Address generator based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0021-ckb-address-format/0021-ckb-address-format.md).
-/// Currently we implement the predefined format type 0x01(short version for locks with popular code_hash) and code hash index 0x00(SECP256K1 + blake160).
+// Based on CKB Address Format [RFC](https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0021-ckb-address-format/0021-ckb-address-format.md).
+
+public enum AddressPlayloadFormatType: UInt8 {
+    case short = 0x01     // short version for locks with popular code_hash
+    case fullData = 0x02  // full version with hash_type = "Data"
+    case fullType = 0x04  // full version with hash_type = "Type"
+}
+
+/// Code hash index for Short Payload Format
+public enum AddressCodeHashIndex: UInt8 {
+    case secp256k1Blake160 = 0x00
+    case secp256k1Multisig = 0x01
+}
+
+/// Nervos CKB Address generator.
+/// Currently only the short version lock for SECP256K1 + blake160 is implemented.
+/// Format type is 0x01 and code hash index is 0x00.
 public class AddressGenerator {
     static func prefix(network: Network) -> String {
         switch network {
@@ -38,9 +53,8 @@ public class AddressGenerator {
     }
 
     public static func address(publicKeyHash: Data, network: Network = .testnet) -> String {
-        // Payload: type(01) | code hash index(00, P2PH) | pubkey blake160
-        let type = Data([0x01])
-        let codeHashIndex = Data([0x00])
+        let type = Data([AddressPlayloadFormatType.short.rawValue])
+        let codeHashIndex = Data([AddressCodeHashIndex.secp256k1Blake160.rawValue])
         let payload = type + codeHashIndex + publicKeyHash
         return Bech32().encode(hrp: prefix(network: network), data: convertBits(data: payload, fromBits: 8, toBits: 5, pad: true)!)
     }
@@ -55,7 +69,8 @@ public extension AddressGenerator {
         guard let (hlp, _) = parse(address: address) else {
             return false
         }
-        return ["ckt", "ckb"].contains(hlp)
+
+        return [prefix(network: .mainnet), prefix(network: .testnet)].contains(hlp)
     }
 }
 
@@ -63,6 +78,16 @@ private extension AddressGenerator {
     static func parse(address: String) -> (hrp: String, data: Data)? {
         if let parsed = Bech32().decode(bech32: address) {
             if let data = convertBits(data: parsed.data, fromBits: 5, toBits: 8, pad: false) {
+                let payload = data.bytes
+                if payload.count != 22 {
+                    return nil
+                }
+                guard let format = AddressPlayloadFormatType(rawValue: payload[0]), format == .short else {
+                    return nil
+                }
+                guard let codeHashIndex = AddressCodeHashIndex(rawValue: payload[1]), codeHashIndex == .secp256k1Blake160 else {
+                    return nil
+                }
                 return (hrp: parsed.hrp, data: data)
             }
         }
