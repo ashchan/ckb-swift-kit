@@ -20,7 +20,7 @@ jobs:
           scheme: '$(scheme)'
           configuration: '$(configuration)'
           xcWorkspacePath: 'CKB.xcworkspace'
-          xcodeVersion: '10'
+          xcodeVersion: '11.2.1'
           signingOption: 'nosign'
           useXcpretty: true
           publishJUnitResults: true
@@ -63,7 +63,7 @@ jobs:
           scheme: '$(scheme)'
           configuration: '$(configuration)'
           xcWorkspacePath: 'CKB.xcworkspace'
-          xcodeVersion: '10'
+          xcodeVersion: '11.2.1'
           signingOption: 'nosign'
           useXcpretty: true
           publishJUnitResults: true
