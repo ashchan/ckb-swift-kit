@@ -1,3 +1,11 @@
+# [v0.25.1](https://github.com/ashchan/ckb-sdk-swift/compare/v0.25.0...v0.25.1) (2019-12-06)
+
+### Features
+
+* Update Swift version to 5.1
+* Import FoundationNetworking
+
+
 # [v0.25.0](https://github.com/nervosnetwork/ckb-sdk-swift/compare/v0.24.0...v0.25.0) (2019-11-16)
 
 

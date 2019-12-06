@@ -1,11 +1,11 @@
 PODS:
-  - CryptoSwift (1.0.0)
+  - CryptoSwift (1.2.0)
   - secp256k1.swift (0.1.4)
   - Sodium (0.8.0)
   - SwiftLint (0.34.0)
 
 DEPENDENCIES:
-  - CryptoSwift (~> 1.0.0)
+  - CryptoSwift (~> 1.2.0)
   - secp256k1.swift (~> 0.1.4)
   - Sodium (~> 0.8.0)
   - SwiftLint
@@ -18,11 +18,11 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  CryptoSwift: 40e374e45291d8dceedcb0d6184da94533eaabdf
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   Sodium: 63c0ca312a932e6da481689537d4b35568841bdc
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
 
-PODFILE CHECKSUM: 5c4c4a4a60743a7925b0294f5a96868be334a95c
+PODFILE CHECKSUM: b11e35dff312a85a101958a5ac7c5b3fd9408a0e
 
 COCOAPODS: 1.8.4

@@ -106,7 +106,7 @@ private extension ViewController {
         // Push system script's out point into deps
         let deps = [CellDep(outPoint: systemScript.depOutPoint, depType: .depGroup)]
 
-        // Gather inputs. For an simple example of how to gather inputs, see our Testnet Faucet's [CellService module](https://github.com/nervosnetwork/ckb-testnet-faucet/blob/develop/faucet-server/Sources/App/Services/CellService.swift#L27).
+        // Gather inputs. For an simple example of how to gather inputs.
         let inputs: [CellInput] = [/*...*/]
 
         // Generate lock script for the receiver's address

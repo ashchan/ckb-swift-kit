@@ -1,16 +1,15 @@
 # CKB SDK Swift
 
 [![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20Linux-4e4e4e.svg?colorA=28a745)](#installation)
-[![Azure Pipelines](https://dev.azure.com/nervosnetwork/ckb-sdk-swift/_apis/build/status/nervosnetwork.ckb-sdk-swift?branchName=develop)](https://dev.azure.com/nervosnetwork/ckb-sdk-swift/_build/latest?definitionId=7&branchName=develop)
-[![TravisCI](https://travis-ci.com/nervosnetwork/ckb-sdk-swift.svg?branch=develop)](https://travis-ci.com/nervosnetwork/ckb-sdk-swift)
-[![Codecov](https://codecov.io/gh/nervosnetwork/ckb-sdk-swift/branch/master/graph/badge.svg)](https://codecov.io/gh/nervosnetwork/ckb-sdk-swift/branch/master)
-[![Telegram Group](https://cdn.rawgit.com/Patrolavia/telegram-badge/8fe3382b/chat.svg)](https://t.me/nervos_ckb_dev)
+[![Azure Pipelines](https://dev.azure.com/ashchan/ckb-sdk-swift/_apis/build/status/ashchan.ckb-sdk-swift?branchName=develop)](https://dev.azure.com/ashchan/ckb-sdk-swift/_build/latest?definitionId=7&branchName=develop)
 
 Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
 
+The ckb-sdk-swift is still under development and NOT production ready. You should get familiar with CKB transaction structure and RPC before using it.
+
 ## Prerequisites
 
-* Xcode 10.2 with Swift 5, or higher
+* Xcode 12.1 with Swift 5.1, or higher
 * Target of iOS 11 or higher / macOS 10.13 or higher
 * CocoaPods or SPM
 
@@ -29,7 +28,7 @@ target "MyApp" do
   use_frameworks!
   use_modular_headers!
 
-  pod "CKB", git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v0.24.0"
+  pod "CKB", git: "https://github.com/ashchan/ckb-sdk-swift.git", tag: "v0.25.0"
 end
 ```
 
@@ -39,7 +38,7 @@ You can also use [Swift Package Manager](https://swift.org/package-manager/). In
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/nervosnetwork/ckb-sdk-swift", from: "0.24.0")
+  .package(url: "https://github.com/ashchan/ckb-sdk-swift", from: "0.25.0")
 ]
 ```
 
@@ -84,7 +83,7 @@ if let txhash = try? payment.send() {
 
 ## Getting Help
 
-* More Nervos CKB documentations can be found at the document website [docs.nervos.org](https://docs.nervos.org).
+* More Nervos CKB documentations can be found at the official document website [docs.nervos.org](https://docs.nervos.org).
 * Join [CKB Dev](https://t.me/nervos_ckb_dev) Telegram group, or [Nervos Talk](https://talk.nervos.org/) forum.
 
 ## Changelog
@@ -93,4 +92,4 @@ See [CHANGELOG.md](CHANGELOG.md) file.
 
 ## License
 
-Nervos CKB SDK is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
+CKB Swift SDK is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
