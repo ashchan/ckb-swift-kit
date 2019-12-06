@@ -7,11 +7,10 @@ Pod::Spec.new do |s|
   Swift SDK for Nervos CKB.
   DESC
 
-  s.homepage     = "https://github.com/nervosnetwork/ckb-sdk-swift"
+  s.homepage     = "https://github.com/ashchan/ckb-sdk-swift"
   s.license      = "MIT"
-  s.author       = { "Nervos Core Dev" => "dev@nervos.org" }
-  s.source       = { git: "https://github.com/nervosnetwork/ckb-sdk-swift.git", tag: "v#{s.version.to_s}" }
-  s.social_media_url = 'https://twitter.com/nervosnetwork'
+  s.author       = { "James Chen" => "james@ashchan.com" }
+  s.source       = { git: "https://github.com/ashchan/ckb-sdk-swift.git", tag: "v#{s.version.to_s}" }
 
   s.swift_version = '5.0'
   s.module_name = 'CKB'
