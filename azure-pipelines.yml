@@ -4,7 +4,7 @@ jobs:
       vmImage: 'macos-10.14'
     variables:
       scheme: 'CKB'
-      sdk: 'macosx10.14'
+      sdk: 'macosx10.15'
       configuration: 'Debug'
       skip_rpc_tests: 1
     steps:
@@ -36,7 +36,7 @@ jobs:
       vmImage: 'macos-10.14'
     variables:
       scheme: 'CKB'
-      sdk: 'macosx10.14'
+      sdk: 'macosx10.15'
       configuration: 'Debug'
       skip_rpc_tests: 0
       ckb_version: 'v0.26.0-rc1'
