@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author       = { "James Chen" => "james@ashchan.com" }
   s.source       = { git: "https://github.com/ashchan/ckb-sdk-swift.git", tag: "v#{s.version.to_s}" }
 
-  s.swift_version = '5.0'
+  s.swift_version = '5.1'
   s.module_name = 'CKB'
   s.ios.deployment_target = "11.0"
   s.osx.deployment_target = "10.13"
