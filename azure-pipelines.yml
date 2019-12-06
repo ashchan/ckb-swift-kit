@@ -50,7 +50,7 @@ jobs:
           curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
           unzip $CKB_FILENAME.zip
           cd $CKB_FILENAME
-          ./ckb init --chain devnet
+          ./ckb init --chain dev
           sed -i '' '/modules =/d' ckb.toml
           sed -i '' 's/# List of API modules: /modules = /g' ckb.toml
           ./ckb run&
