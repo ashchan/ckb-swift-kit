@@ -2,8 +2,6 @@
 
 [![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20Linux-4e4e4e.svg?colorA=28a745)](#installation)
 [![Azure Pipelines](https://dev.azure.com/ashchan/ckb-sdk-swift/_apis/build/status/ashchan.ckb-sdk-swift?branchName=develop)](https://dev.azure.com/ashchan/ckb-sdk-swift/_build/latest?definitionId=7&branchName=develop)
-[![TravisCI](https://travis-ci.com/ashchan/ckb-sdk-swift.svg?branch=develop)](https://travis-ci.com/ashchan/ckb-sdk-swift)
-[![Codecov](https://codecov.io/gh/ashchan/ckb-sdk-swift/branch/master/graph/badge.svg)](https://codecov.io/gh/ashchan/ckb-sdk-swift/branch/master)
 
 Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
 
