@@ -21,6 +21,7 @@ jobs:
           configuration: '$(configuration)'
           xcWorkspacePath: 'CKB.xcworkspace'
           xcodeVersion: '11.2.1'
+          xcodeDeveloperDir: '/Applications/Xcode_11.2.1.app'
           signingOption: 'nosign'
           useXcpretty: true
           publishJUnitResults: true
@@ -64,6 +65,7 @@ jobs:
           configuration: '$(configuration)'
           xcWorkspacePath: 'CKB.xcworkspace'
           xcodeVersion: '11.2.1'
+          xcodeDeveloperDir: '/Applications/Xcode_11.2.1.app'
           signingOption: 'nosign'
           useXcpretty: true
           publishJUnitResults: true
