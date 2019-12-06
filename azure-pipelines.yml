@@ -38,7 +38,7 @@ jobs:
       sdk: 'macosx10.14'
       configuration: 'Debug'
       skip_rpc_tests: 0
-      ckb_version: 'v0.25.0-p1'
+      ckb_version: 'v0.26.0-rc1'
     steps:
       - task: CocoaPods@0
         displayName: 'pod install using the CocoaPods task with defaults'
@@ -49,7 +49,7 @@ jobs:
           curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
           unzip $CKB_FILENAME.zip
           cd $CKB_FILENAME
-          ./ckb init
+          ./ckb init --chain devnet
           sed -i '' '/modules =/d' ckb.toml
           sed -i '' 's/# List of API modules: /modules = /g' ckb.toml
           ./ckb run&

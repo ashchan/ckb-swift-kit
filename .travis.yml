@@ -23,7 +23,7 @@ matrix:
         - curl -O -L https://github.com/nervosnetwork/ckb/releases/download/$CKB_VERSION/$CKB_FILENAME.zip
         - unzip $CKB_FILENAME.zip
         - export PATH=$PATH:$PWD/$CKB_FILENAME/
-        - ckb init
+        - ckb init --chain devnet
         - sed -i '' '/modules =/d' ckb.toml
         - sed -i '' 's/# List of API modules:/modules =/g' ckb.toml
         - ckb run&
