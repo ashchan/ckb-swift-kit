@@ -11,7 +11,7 @@ The ckb-sdk-swift is still under development and NOT production ready. You shoul
 
 ## Prerequisites
 
-* Xcode 10.2 with Swift 5, or higher
+* Xcode 12.1 with Swift 5.1, or higher
 * Target of iOS 11 or higher / macOS 10.13 or higher
 * CocoaPods or SPM
 
