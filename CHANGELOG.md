@@ -1,3 +1,9 @@
+# [v0.29.0](https://github.com/ashchan/ckb-sdk-swift/compare/v0.25.1...v0.29.0) (2020-03-07)
+
+* Update CryptoSwift to 1.3.0
+
+
+
 # [v0.25.1](https://github.com/ashchan/ckb-sdk-swift/compare/v0.25.0...v0.25.1) (2019-12-06)
 
 ### Features
