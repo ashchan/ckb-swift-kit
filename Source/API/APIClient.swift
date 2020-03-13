@@ -10,11 +10,18 @@ import AsyncHTTPClient
 /// JSON RPC API client.
 /// Implement CKB [JSON-RPC](https://github.com/nervosnetwork/ckb/tree/develop/rpc#ckb-json-rpc-protocols) interfaces.
 public class APIClient {
-    private var url: URL
+    private let url: URL
+    private let httpClient: HTTPClient
+
     public static let defaultLocalURL = URL(string: "http://localhost:8114")!
 
     public init(url: URL = APIClient.defaultLocalURL) {
         self.url = url
+        httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
+    }
+
+    deinit {
+        try? httpClient.syncShutdown()
     }
 
     public func load<R: Codable>(_ request: APIRequest<R>) throws -> R {
@@ -28,11 +35,6 @@ public class APIClient {
     public func loadNullable<R: Codable>(_ request: APIRequest<R>) throws -> R? {
         var result: R?
         var err: Error?
-
-        let httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
-        defer {
-            try? httpClient.syncShutdown()
-        }
 
         do {
             let httpRequest = try createRequest(request)
