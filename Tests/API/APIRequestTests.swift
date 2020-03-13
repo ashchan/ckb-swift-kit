@@ -14,7 +14,7 @@ class APIRequestTests: XCTestCase {
     }
 
     func testHasError() {
-        let data = "{\"jsonrpc\":\"2.0\", \"id\":1, \"result\":\"123\", \"error\":{\"code\":1, \"message\":\"Some error\"}}".data(using: .utf8)!
+        let data = "{\"jsonrpc\":\"2.0\", \"id\":\"1\", \"result\":\"123\", \"error\":{\"code\":1, \"message\":\"Some error\"}}".data(using: .utf8)!
         XCTAssertThrowsError(try APIRequest<HexString>(method: "get_tip_block_number").decode(data)) { error in
             XCTAssertEqual(
                 error.localizedDescription,
@@ -24,8 +24,8 @@ class APIRequestTests: XCTestCase {
     }
 
     func testUnmatchedId() {
-        let data = "{\"jsonrpc\":\"2.0\", \"id\":1, \"result\":\"123\"}".data(using: .utf8)!
-        XCTAssertThrowsError(try APIRequest<HexString>(id: 2, method: "get_tip_block_number").decode(data)) { error in
+        let data = "{\"jsonrpc\":\"2.0\", \"id\":\"1\", \"result\":\"123\"}".data(using: .utf8)!
+        XCTAssertThrowsError(try APIRequest<HexString>(id: "2", method: "get_tip_block_number").decode(data)) { error in
             XCTAssertEqual(
                 error.localizedDescription,
                 APIError.unmatchedId.localizedDescription

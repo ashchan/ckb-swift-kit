@@ -9,7 +9,7 @@ import XCTest
 
 class APIClientTests: RPCTestSkippable {
     func testSettingId() throws {
-        let result = try client.load(APIRequest<H256>(id: 10, method: "get_block_hash", params: ["0x0"]))
+        let result = try client.load(APIRequest<H256>(id: "10", method: "get_block_hash", params: ["0x0"]))
         XCTAssertNotNil(result)
     }
 

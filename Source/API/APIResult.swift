@@ -9,7 +9,7 @@ import Foundation
 /// JSON API Response
 struct APIResult<R: Codable>: Codable {
     let jsonrpc: String
-    let id: Int
+    let id: String
     let error: APIError?
     let result: R?
 }

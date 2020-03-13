@@ -41,10 +41,10 @@ public class APIClient {
                 let bytes = response.body.flatMap { $0.getData(at: 0, length: $0.readableBytes) }
                 result = try request.decode(bytes!)
             } else {
-                err = APIError.emptyResponse
+                err = APIError.genericError("Response status code: \(response.status.code), reason: \(response.status.reasonPhrase)")
             }
         } catch {
-            err = APIError.emptyResponse
+            err = APIError.genericError(error.localizedDescription)
         }
 
         if let err = err {
