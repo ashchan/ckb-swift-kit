@@ -5,9 +5,7 @@
 //
 
 import Foundation
-#if canImport(FoundationNetworking)
-import FoundationNetworking
-#endif
+import AsyncHTTPClient
 
 /// JSON RPC API client.
 /// Implement CKB [JSON-RPC](https://github.com/nervosnetwork/ckb/tree/develop/rpc#ckb-json-rpc-protocols) interfaces.
@@ -29,42 +27,43 @@ public class APIClient {
 
     public func loadNullable<R: Codable>(_ request: APIRequest<R>) throws -> R? {
         var result: R?
-        var error: Error?
+        var err: Error?
 
-        let semaphore = DispatchSemaphore(value: 0)
-        URLSession.shared.dataTask(with: try createRequest(request)) { (data, _, err) in
-            error = err
+        let httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
+        defer {
+            try? httpClient.syncShutdown()
+        }
 
-            do {
-                guard let data = data else {
-                    throw APIError.emptyResponse
-                }
-                result = try request.decode(data)
-            } catch let err {
-                error = err
+        do {
+            let httpRequest = try createRequest(request)
+            let response = try httpClient.execute(request: httpRequest).wait()
+            if response.status == .ok {
+                let bytes = response.body.flatMap { $0.getData(at: 0, length: $0.readableBytes) }
+                result = try request.decode(bytes!)
+            } else {
+                err = APIError.emptyResponse
             }
+        } catch {
+            err = APIError.emptyResponse
+        }
 
-            semaphore.signal()
-        }.resume()
-        semaphore.wait()
-
-        if let error = error {
-            throw error
+        if let err = err {
+            throw err
         }
 
         return result
     }
 
-    private func createRequest<R>(_ request: APIRequest<R>) throws -> URLRequest {
-        var req = URLRequest(url: url)
-        req.httpMethod = "POST"
-        req.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    private func createRequest<R>(_ request: APIRequest<R>) throws -> HTTPClient.Request {
+        var req = try HTTPClient.Request(url: url, method: .POST)
+        req.headers.add(name: "Content-Type", value: "application/json")
 
         let jsonObject: Any = [ "jsonrpc": "2.0", "id": request.id, "method": request.method, "params": request.params ]
         if !JSONSerialization.isValidJSONObject(jsonObject) {
             throw APIError.invalidParameters
         }
-        req.httpBody = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+        let body = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+        req.body = .data(body)
 
         return req
     }

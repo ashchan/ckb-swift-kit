@@ -11,34 +11,16 @@ The ckb-sdk-swift is still under development and NOT production ready. You shoul
 
 * Xcode 12.1 with Swift 5.1, or higher
 * Target of iOS 11 or higher / macOS 10.13 or higher
-* CocoaPods or SPM
+* Swift Package Manager
+* [libsodium](https://github.com/jedisct1/libsodium)
 
 ## Installation
 
-### CocoaPods
-
-Install [CocoaPods](http://cocoapods.org/?q=cryptoSwift) 1.7.0 or later.
-
-Add this to your `Podfile`:
-
-```ruby
-platform :osx, "10.13"
-
-target "MyApp" do
-  use_frameworks!
-  use_modular_headers!
-
-  pod "CKB", git: "https://github.com/ashchan/ckb-sdk-swift.git", tag: "v0.25.0"
-end
-```
-
-### Swift Package Manager(SPM)
-
-You can also use [Swift Package Manager](https://swift.org/package-manager/). In your `Package.swift` file, specify this in `dependencies`:
+In your `Package.swift` file, specify this in `dependencies`:
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/ashchan/ckb-sdk-swift", from: "0.25.0")
+  .package(url: "https://github.com/ashchan/ckb-sdk-swift", from: "0.29.0")
 ]
 ```
 

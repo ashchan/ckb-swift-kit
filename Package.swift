@@ -14,6 +14,7 @@ let package = Package(
         .package(url: "https://github.com/Boilertalk/secp256k1.swift.git", from: "0.1.4"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.3.0"),
         .package(url: "https://github.com/jedisct1/swift-sodium.git", from: "0.8.0"),
+        .package(url: "https://github.com/swift-server/async-http-client.git", from: "1.1.0"),
     ],
     targets: [
         .target(
@@ -21,7 +22,8 @@ let package = Package(
             dependencies: [
                 "CryptoSwift",
                 "secp256k1",
-                "Sodium"
+                "Sodium",
+                "AsyncHTTPClient",
             ],
             path: "./Source"
         ),
