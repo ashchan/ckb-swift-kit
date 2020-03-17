@@ -20,7 +20,7 @@ class APIMockingClientTests: XCTestCase {
 
     func testNullResult() {
         let client = APIMockingClient()
-        client.mockingData = "{\"jsonrpc\":\"2.0\", \"id\":1, \"result\":null}".data(using: .utf8)
+        client.mockingData = "{\"jsonrpc\":\"2.0\", \"id\":\"1\", \"result\":null}".data(using: .utf8)
         XCTAssertThrowsError(try client.load(APIRequest<BlockNumber>(method: "get_tip_block_number"))) { error in
             XCTAssertEqual(
                 error.localizedDescription,
