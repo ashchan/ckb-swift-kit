@@ -1,6 +1,6 @@
 # CKB SDK Swift
 
-[![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20Linux-4e4e4e.svg?colorA=28a745)](#installation)
+[![Platform](https://img.shields.io/badge/Platforms-macOS%20%7C%20Linux-4e4e4e.svg?colorA=28a745)](#installation)
 [![Azure Pipelines](https://dev.azure.com/ashchan/ckb-sdk-swift/_apis/build/status/ashchan.ckb-sdk-swift?branchName=develop)](https://dev.azure.com/ashchan/ckb-sdk-swift/_build/latest?definitionId=7&branchName=develop)
 
 Swift SDK for Nervos [CKB](https://github.com/nervosnetwork/ckb).
@@ -10,7 +10,7 @@ The ckb-sdk-swift is still under development and NOT production ready. You shoul
 ## Prerequisites
 
 * Xcode 12.1 with Swift 5.1, or higher
-* Target of iOS 11 or higher / macOS 10.13 or higher
+* Target of macOS 10.13 or higher
 * Swift Package Manager
 * [libsodium](https://github.com/jedisct1/libsodium)
 
