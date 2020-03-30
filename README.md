@@ -62,16 +62,3 @@ if let txhash = try? payment.send() {
     print(txhash)
 }
 ```
-
-## Getting Help
-
-* More Nervos CKB documentations can be found at the official document website [docs.nervos.org](https://docs.nervos.org).
-* Join [CKB Dev](https://t.me/nervos_ckb_dev) Telegram group, or [Nervos Talk](https://talk.nervos.org/) forum.
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) file.
-
-## License
-
-CKB Swift SDK is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
