@@ -9,14 +9,14 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "secp256k1", url: "https://github.com/ashchan/secp256k1.swift.git", .branch("master")),
-        .package(name: "Sodium", url: "https://github.com/jedisct1/swift-sodium.git", from: "0.8.0"),
+        .package(name: "ckb-blake2b", url: "https://github.com/ashchan/ckb-swift-blake2b.git", from: "0.1.0"),
     ],
     targets: [
         .target(
             name: "CKBFoundation",
             dependencies: [
                 "secp256k1",
-                "Sodium",
+                "ckb-blake2b",
             ]
         ),
         .target(
