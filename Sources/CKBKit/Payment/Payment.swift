@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CKBFoundation
 
 public final class Payment {
     public static let minAmount = Capacity(61 * 100_000_000) // Assuming output data is `0x` and algorithm is the default Secp256k1

@@ -5,7 +5,7 @@
 //
 
 import XCTest
-@testable import CKB
+@testable import CKBFoundation
 
 class Secp256k1Tests: XCTestCase {
     func testPrivateToPublic() {

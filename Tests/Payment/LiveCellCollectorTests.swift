@@ -5,7 +5,7 @@
 //
 
 import XCTest
-@testable import CKB
+@testable import CKBKit
 
 class LiveCellCollectorTests: RPCTestSkippable {
     func testGetUnspentCells() {

@@ -5,7 +5,7 @@
 //
 
 import XCTest
-@testable import CKB
+@testable import CKBFoundation
 
 class DynVecSerializerTests: XCTestCase {
     typealias BytesVecSerializer = DynVecSerializer<[Byte], BytesSerializer>

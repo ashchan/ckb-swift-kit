@@ -5,23 +5,23 @@
 //
 
 import Foundation
-import AsyncHTTPClient
+import CKBFoundation
 
 /// JSON RPC API client.
 /// Implement CKB [JSON-RPC](https://github.com/nervosnetwork/ckb/tree/develop/rpc#ckb-json-rpc-protocols) interfaces.
 public class APIClient {
     private let url: URL
-    private let httpClient: HTTPClient
+//    private let httpClient: HTTPClient
 
     public static let defaultLocalURL = URL(string: "http://localhost:8114")!
 
     public init(url: URL = APIClient.defaultLocalURL) {
         self.url = url
-        httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
+        // httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
     }
 
     deinit {
-        try? httpClient.syncShutdown()
+        // try? httpClient.syncShutdown()
     }
 
     public func load<R: Codable>(_ request: APIRequest<R>) throws -> R {
@@ -37,14 +37,15 @@ public class APIClient {
         var err: Error?
 
         do {
-            let httpRequest = try createRequest(request)
-            let response = try httpClient.execute(request: httpRequest).wait()
-            if response.status == .ok {
-                let bytes = response.body.flatMap { $0.getData(at: 0, length: $0.readableBytes) }
-                result = try request.decode(bytes!)
-            } else {
-                err = APIError.genericError("Response status code: \(response.status.code), reason: \(response.status.reasonPhrase)")
-            }
+            throw APIError.genericError("Not Impl")
+            // let httpRequest = try createRequest(request)
+            // let response = try httpClient.execute(request: httpRequest).wait()
+            // if response.status == .ok {
+            //    let bytes = response.body.flatMap { $0.getData(at: 0, length: $0.readableBytes) }
+            //    result = try request.decode(bytes!)
+            // } else {
+            //    err = APIError.genericError("Response status code: \(response.status.code), reason: \(response.status.reasonPhrase)")
+            // }
         } catch {
             err = APIError.genericError(error.localizedDescription)
         }
@@ -56,6 +57,7 @@ public class APIClient {
         return result
     }
 
+    /*
     private func createRequest<R>(_ request: APIRequest<R>) throws -> HTTPClient.Request {
         var req = try HTTPClient.Request(url: url, method: .POST)
         req.headers.add(name: "Content-Type", value: "application/json")
@@ -68,7 +70,7 @@ public class APIClient {
         req.body = .data(body)
 
         return req
-    }
+    }*/
 }
 
 extension APIClient {

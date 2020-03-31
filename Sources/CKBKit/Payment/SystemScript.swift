@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CKBFoundation
 
 /// Provided by genesis block to unlock with the default secp256k1 algorithm.
 public struct SystemScript {

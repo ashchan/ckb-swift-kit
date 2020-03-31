@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CKBFoundation
 
 public extension APIClient {
     func getBlock(hash: H256) throws -> Block {

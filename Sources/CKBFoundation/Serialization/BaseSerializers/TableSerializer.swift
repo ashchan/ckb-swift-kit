@@ -9,7 +9,7 @@ import Foundation
 /// The table is a dynamic-size type.
 /// It can be considered as a dynvec but the length is fixed.
 public class TableSerializer<T>: ObjectSerializer {
-    typealias ObjectType = T
+    public typealias ObjectType = T
     private var value: T
     private var fieldSerializers: [Serializer]
 
@@ -22,19 +22,19 @@ public class TableSerializer<T>: ObjectSerializer {
         return headerSize + UInt32(body.count)
     }
 
-    var header: [Byte] {
+    public var header: [Byte] {
         return bytesSize.littleEndianBytes + offsets.flatMap { $0.littleEndianBytes }
     }
 
-    var body: [Byte] {
+    public var body: [Byte] {
         return serializedBody
     }
 
-    required convenience init(value: T) {
+    public required convenience init(value: T) {
         self.init(value: value, fieldSerializers: [])
     }
 
-    init(value: T, fieldSerializers: [Serializer]) {
+    public init(value: T, fieldSerializers: [Serializer]) {
         self.value = value
         self.fieldSerializers = fieldSerializers
         preSerialize()

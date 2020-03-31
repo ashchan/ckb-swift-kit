@@ -5,7 +5,8 @@
 //
 
 import XCTest
-@testable import CKB
+import CKBFoundation
+@testable import CKBKit
 
 class APIMockingTests: XCTestCase {
     func testGenesisBlockHash() {
@@ -130,69 +131,6 @@ class APIMockingTests: XCTestCase {
 
     func testGetBannedAddress() throws {
         let result = try getClient(json: "getBannedAddresses").getBannedAddresses()
-        XCTAssertNotNil(result)
-        XCTAssert(result.count >= 0)
-    }
-
-    func testComputeTransactionHash() throws {
-        let tx = Transaction(
-            cellDeps: [CellDep(outPoint: OutPoint(txHash: "0xa4037a893eb48e18ed4ef61034ce26eba9c585f15c9cee102ae58505565eccc3", index: 0), depType: .code)],
-            headerDeps: ["0x3ed784b863bc13dbff3f49f4efee16fd0f5b764af7707ab81ae738b7f8475846"],
-            inputs: [CellInput(previousOutput: OutPoint(txHash: "0x5169e6406ebed886ea1be802da474e3a46922556f06b1d88b23613f55630fcb4", index: 0), since: 0)],
-            outputs: [CellOutput(capacity: 100000000000, lock: Script(args: "0x", codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data))],
-            outputsData: ["0x"]
-        )
-        let result = try? getClient(json: "computeTransactionHash").computeTransactionHash(transaction: tx)
-        XCTAssertNotNil(result)
-        XCTAssertEqual("0xac963a60263aeb26f3089f0caa58fc081c87f6eb0b8483d840869ae8f34e9559", result)
-    }
-
-    func testComputeScriptHash() throws {
-        let script = Script(args: "0x", codeHash: "0x28e83a1277d48add8e72fadaa9248559e1b632bab2bd60b27955ebc4c03800a5", hashType: .data)
-        let result = try? getClient(json: "computeScriptHash").computeScriptHash(script: script)
-        XCTAssertNotNil(result)
-        XCTAssertEqual("0x4ceaa32f692948413e213ce6f3a83337145bde6e11fd8cb94377ce2637dcc412", result)
-    }
-    
-    func testDryRunTransaction() throws {
-        let tx = Transaction()
-        let result = try? getClient(json: "dryRunTransaction").dryRunTransaction(transaction: tx)
-        XCTAssertNotNil(result)
-    }
-
-    func testEstimateFeeRate() throws {
-        let result = try? getClient(json: "estimateFeeRate").estimateFeeRate(expectedConfirmBlocks: 5)
-        XCTAssertNotNil(result)
-        XCTAssert(result!.feeRate >= 0)
-    }
-
-    func testIndexLockHash() throws {
-        let lockHash = "0xd8753dd87c7dd293d9b64d4ca20d77bb8e5f2d92bf08234b026e2d8b1b00e7e9"
-        let result = try getClient(json: "indexLockHash").indexLockHash(lockHash: lockHash, indexFrom: 1024)
-        XCTAssertNotNil(result)
-        XCTAssertEqual(result.lockHash, lockHash)
-    }
-
-    func testDeindexLockHash() throws {
-        let lockHash = "0xd8753dd87c7dd293d9b64d4ca20d77bb8e5f2d92bf08234b026e2d8b1b00e7e9"
-        let result = try getClient(json: "deindexLockHash").deindexLockHash(lockHash: lockHash)
-        XCTAssertNil(result)
-    }
-
-    func testGetLockHashIndexStates() throws {
-        let result = try getClient(json: "getLockHashIndexStates").getLockHashIndexStates()
-        XCTAssertNotNil(result)
-        XCTAssert(result.count >= 0)
-    }
-
-    func testGetLiveCellsByLockHash() throws {
-        let result = try getClient(json: "getLiveCellsByLockHash").getLiveCellsByLockHash(lockHash: "0xd8753dd87c7dd293d9b64d4ca20d77bb8e5f2d92bf08234b026e2d8b1b00e7e9", page: 0, pageSize: 2, reverseOrder: false)
-        XCTAssertNotNil(result)
-        XCTAssert(result.count >= 0)
-    }
-
-    func testGetTransactionssByLockHash() throws {
-        let result = try getClient(json: "getTransactionsByLockHash").getTransactionsByLockHash(lockHash: "0xd8753dd87c7dd293d9b64d4ca20d77bb8e5f2d92bf08234b026e2d8b1b00e7e9", page: 0, pageSize: 2, reverseOrder: false)
         XCTAssertNotNil(result)
         XCTAssert(result.count >= 0)
     }
