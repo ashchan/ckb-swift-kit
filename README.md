@@ -10,7 +10,6 @@ Swift toolkit for Nervos [CKB](https://github.com/nervosnetwork/ckb).
 * Swift 5.2, or higher
 * Target of macOS 10.15 or higher
 * Swift Package Manager
-* [libsodium](https://github.com/jedisct1/libsodium)
 
 ## Installation
 
