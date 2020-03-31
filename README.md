@@ -17,7 +17,7 @@ In your `Package.swift` file, specify this in `dependencies`:
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/ashchan/ckb-swift-kit", .branch("master"))
+    .package(url: "https://github.com/ashchan/ckb-swift-kit", .branch("master"))
 ]
 ```
 

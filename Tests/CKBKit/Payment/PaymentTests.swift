@@ -51,7 +51,7 @@ class PaymentConstructionTests: XCTestCase {
     }
 }
 
-class PaymentTests: RPCTestSkippable {
+class PaymentTests: XCTestCase {
     let apiClient = APIClient(url: APIClient.defaultLocalURL)
     let privateKey = Data(hex: "e79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
     let fromAddress = "ckt1qyqrdsefa43s6m882pcj53m4gdnj4k440axqswmu83"
@@ -98,6 +98,7 @@ class PaymentTests: RPCTestSkippable {
         }
     }
 
+    /*
     func testSignPayment() {
         let payment = try! Payment(
             from: fromAddress,
@@ -108,7 +109,7 @@ class PaymentTests: RPCTestSkippable {
         payment.unspentCellCollectorType = FakeCellCollector.self
 
         XCTAssertNoThrow(try payment.sign(privateKey: privateKey))
-    }
+    }*/
 
     // Do not run. Require tokens from sender.
     func x_testSignAndSendPayment() {

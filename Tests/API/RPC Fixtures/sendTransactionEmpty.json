@@ -1,8 +1,0 @@
-{
-  "jsonrpc": "2.0",
-  "error": {
-    "code": -3,
-    "message": "Transaction(Empty)"
-  },
-  "id": 1
-}

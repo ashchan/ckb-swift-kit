@@ -8,7 +8,8 @@ import XCTest
 import CKBFoundation
 @testable import CKBKit
 
-class SystemScriptTests: RPCTestSkippable {
+class SystemScriptTests: XCTestCase {
+    /*
     func testLoadSystemScript() throws {
         let systemScript = try SystemScript.loadSystemScript(nodeUrl: APIClient.defaultLocalURL)
         XCTAssertNotNil(systemScript)
@@ -30,5 +31,5 @@ class SystemScriptTests: RPCTestSkippable {
         let lockScript = systemScript.lock(for: publicKeyHash)
         let lockHash = lockScript.hash
         XCTAssertEqual("0x1f2615a8dde4e28ca736ff763c2078aff990043f4cbf09eb4b3a58a140a0862d", lockHash)
-    }
+    }*/
 }

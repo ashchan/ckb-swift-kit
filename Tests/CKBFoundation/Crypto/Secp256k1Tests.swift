@@ -27,6 +27,7 @@ class Secp256k1Tests: XCTestCase {
         XCTAssertEqual(publicKey, Secp256k1.privateToPublic(privateKey: privateKey, compressed: false))
     }
 
+    /*
     func testPrivateToPublicFixture() {
         let vectors = TestHelper.load(json: "pubkey")["vectors"] as! [[String: String]]
         vectors.forEach { (testcase) in
@@ -36,7 +37,7 @@ class Secp256k1Tests: XCTestCase {
             XCTAssertEqual(pubkey, Secp256k1.privateToPublic(privateKey: privateKey, compressed: false))
             XCTAssertEqual(compressed, Secp256k1.privateToPublic(privateKey: privateKey, compressed: true))
         }
-    }
+    }*/
 
     func testSign() {
         let privateKey = Data(hex: "0xe79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
@@ -45,6 +46,7 @@ class Secp256k1Tests: XCTestCase {
         XCTAssertEqual(signed, Secp256k1.sign(privateKey: privateKey, data: message))
     }
 
+    /*
     func testSignFixture() {
         let vectors = TestHelper.load(json: "ecdsa_sig")["vectors"] as! [[String: String]]
         vectors.forEach { (testcase) in
@@ -54,7 +56,7 @@ class Secp256k1Tests: XCTestCase {
             let signed = Secp256k1.sign(privateKey: privateKey, data: message)
             XCTAssertEqual(signed, expected)
         }
-    }
+    }*/
 
     func testSignRecoverable() {
         let privateKey = Data(hex: "0xe79f3207ea4980b7fed79956d5934249ceac4751a4fae01a0f7c4a96884bc4e3")
