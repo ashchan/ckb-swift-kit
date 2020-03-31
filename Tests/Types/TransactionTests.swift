@@ -5,7 +5,8 @@
 //
 
 import XCTest
-@testable import CKB
+import CKBFoundation
+@testable import CKBKit
 
 class TransactionTests: XCTestCase {
     func testParam() {

@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CKBFoundation
 
 public extension APIClient {
     func sendTransaction(transaction: Transaction) throws -> H256 {

@@ -50,7 +50,7 @@ extension UInt16: HexStringRepresentable {}
 extension UInt32: HexStringRepresentable {}
 extension UInt64: HexStringRepresentable {}
 
-extension Date {
+public extension Date {
     init(hexSince1970: String) {
         let timeInterval = UInt64(hexString: hexSince1970)!
         self.init(timeIntervalSince1970: TimeInterval(timeInterval) / 1000)

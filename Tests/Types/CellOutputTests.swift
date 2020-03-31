@@ -5,7 +5,7 @@
 //
 
 import XCTest
-@testable import CKB
+import CKBFoundation
 
 class CellOutputTests: XCTestCase {
     func testParam() {

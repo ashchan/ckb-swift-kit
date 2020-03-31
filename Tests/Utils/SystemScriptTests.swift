@@ -5,7 +5,8 @@
 //
 
 import XCTest
-@testable import CKB
+import CKBFoundation
+@testable import CKBKit
 
 class SystemScriptTests: RPCTestSkippable {
     func testLoadSystemScript() throws {

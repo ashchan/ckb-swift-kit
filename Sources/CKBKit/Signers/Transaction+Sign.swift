@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CKBFoundation
 
 public extension Transaction {
     /// Sign a transaction's witnesses data with private key.

@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CKBFoundation
 
 public struct UnspentCells {
     public let cells: [CellOutputWithOutPoint]

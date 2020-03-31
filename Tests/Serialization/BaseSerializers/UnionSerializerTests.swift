@@ -5,6 +5,7 @@
 //
 
 import XCTest
+@testable import CKBFoundation
 
 class UnionSerializerTests: XCTestCase {
 }

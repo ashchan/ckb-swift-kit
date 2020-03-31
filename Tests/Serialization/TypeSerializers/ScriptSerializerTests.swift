@@ -5,7 +5,7 @@
 //
 
 import XCTest
-@testable import CKB
+@testable import CKBFoundation
 
 class ScriptSerializerTests: XCTestCase {
     func testEmptyScriptHash() {

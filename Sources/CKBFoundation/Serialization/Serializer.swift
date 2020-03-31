@@ -10,9 +10,9 @@ import Foundation
 // [CKB Types serialization schema](https://github.com/nervosnetwork/ckb/blob/develop/util/types/schemas/blockchain.mol)
 
 // Primitive Type
-typealias Byte = UInt8
+public typealias Byte = UInt8
 
-protocol Serializer {
+public protocol Serializer {
     var header: [Byte] { get }
     var body: [Byte] { get }
 
@@ -20,19 +20,19 @@ protocol Serializer {
     func serialize() -> [Byte]
 }
 
-extension Serializer {
+public extension Serializer {
     func serialize() -> [Byte] {
         return header + body
     }
 }
 
-protocol ObjectSerializer: Serializer {
+public protocol ObjectSerializer: Serializer {
     associatedtype ObjectType
 
     init(value: ObjectType)
 }
 
-extension UnsignedInteger where Self: FixedWidthInteger {
+public extension UnsignedInteger where Self: FixedWidthInteger {
     var littleEndianBytes: [Byte] {
         var value = littleEndian
         let data = Data(bytes: &value, count: MemoryLayout.size(ofValue: value))
@@ -41,23 +41,23 @@ extension UnsignedInteger where Self: FixedWidthInteger {
 }
 
 // Unsigned Integer, little-endian
-struct UnsignedIntSerializer<T>: ObjectSerializer where T: UnsignedInteger & FixedWidthInteger {
-    typealias ObjectType = T
+public struct UnsignedIntSerializer<T>: ObjectSerializer where T: UnsignedInteger & FixedWidthInteger {
+    public typealias ObjectType = T
     private let value: T
 
-    var header: [Byte] {
+    public var header: [Byte] {
         return []
     }
 
-    var body: [Byte] {
+    public var body: [Byte] {
         return value.littleEndianBytes
     }
 
-    init(value: T) {
+    public init(value: T) {
         self.value = value
     }
 
-    init?(value: String) {
+    public init?(value: String) {
         guard let uint = value.starts(with: "0x") ? T(value.dropFirst(2), radix: 16) : T(value) else {
             return nil
         }
@@ -66,7 +66,7 @@ struct UnsignedIntSerializer<T>: ObjectSerializer where T: UnsignedInteger & Fix
 }
 
 // UInt32 (4 bytes), little-endian
-typealias UInt32Serializer = UnsignedIntSerializer<UInt32>
+public typealias UInt32Serializer = UnsignedIntSerializer<UInt32>
 
 // UInt64 (8 bytes), little-endian
-typealias UInt64Serializer = UnsignedIntSerializer<UInt64>
+public typealias UInt64Serializer = UnsignedIntSerializer<UInt64>

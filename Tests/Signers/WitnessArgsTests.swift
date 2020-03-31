@@ -5,7 +5,7 @@
 //
 
 import XCTest
-@testable import CKB
+import CKBFoundation
 
 class WitnessArgsTests: XCTestCase {
     func testOptionValueSerialization() {
