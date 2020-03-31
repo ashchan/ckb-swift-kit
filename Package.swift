@@ -10,14 +10,12 @@ let package = Package(
     dependencies: [
         .package(name: "secp256k1", url: "https://github.com/ashchan/secp256k1.swift.git", .branch("master")),
         .package(name: "Sodium", url: "https://github.com/jedisct1/swift-sodium.git", from: "0.8.0"),
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.3.0"),
     ],
     targets: [
         .target(
             name: "CKBFoundation",
             dependencies: [
                 "secp256k1",
-                "CryptoSwift",
                 "Sodium",
             ]
         ),
