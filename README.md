@@ -1,6 +1,7 @@
 # CKB Swift Kit
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS-4e4e4e.svg?colorA=28a745)](#installation)
+![Swift](https://github.com/ashchan/ckb-swift-kit/workflows/Swift/badge.svg)
 
 Swift toolkit for Nervos [CKB](https://github.com/nervosnetwork/ckb).
 
