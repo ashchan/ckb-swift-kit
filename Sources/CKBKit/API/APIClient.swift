@@ -19,7 +19,7 @@ public class APIClient {
         self.url = url
     }
 
-    public func load<R: Codable>(_ request: APIRequest<R>) -> Future<R, APIError> {
+    public func load<R: Codable>(_ request: APIRequest) -> Future<R, APIError> {
         return Future<R, APIError> { [unowned self] promise in
             let req: URLRequest
             do {
@@ -33,16 +33,16 @@ public class APIClient {
                     guard let data = data else {
                         return promise(.failure(APIError.emptyResponse))
                     }
-                    let result = try request.decode(data)
-                    return promise(.success(result!))
+                    let result = try JSONDecoder().decode(R.self, from: data)
+                    return promise(.success(result))
                 } catch {
-                    return promise(.failure(error as! APIError))
+                    return promise(.failure(APIError.genericError(error.localizedDescription)))
                 }
             }.resume()
         }
     }
 
-    private func createRequest<R>(_ request: APIRequest<R>) throws -> URLRequest {
+    private func createRequest(_ request: APIRequest) throws -> URLRequest {
         var req = URLRequest(url: url)
         req.httpMethod = "POST"
         req.addValue("application/json", forHTTPHeaderField: "Content-Type")

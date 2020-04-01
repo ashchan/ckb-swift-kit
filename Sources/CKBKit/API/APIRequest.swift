@@ -7,27 +7,14 @@
 import Foundation
 
 /// JSON RPC request object.
-public struct APIRequest<R> {
+public struct APIRequest {
     let id: String
     let method: String
     let params: [Any?]
-    let decode: (Data) throws -> R?
-}
 
-extension APIRequest where R: Codable {
     init(id: String = UUID().uuidString, method: String, params: [Any?] = []) {
         self.id = id
         self.method = method
         self.params = params
-        decode = { data in
-            let result = try JSONDecoder().decode(APIResult<R>.self, from: data)
-            if let error = result.error {
-                throw error
-            }
-            if id != result.id {
-                throw APIError.unmatchedId
-            }
-            return result.result
-        }
     }
 }

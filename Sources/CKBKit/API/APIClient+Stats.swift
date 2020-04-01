@@ -10,10 +10,10 @@ import CKBFoundation
 
 public extension APIClient {
     func getBlockchainInfo() -> Future<ChainInfo, APIError> {
-        load(APIRequest<ChainInfo>(method: "get_blockchain_info", params: []))
+        load(APIRequest(method: "get_blockchain_info", params: []))
     }
 
     func getPeersState() -> Future<[PeerState], APIError> {
-        load(APIRequest<[PeerState]>(method: "get_peers_state", params: []))
+        load(APIRequest(method: "get_peers_state", params: []))
     }
 }

@@ -10,10 +10,10 @@ import CKBFoundation
 
 public extension APIClient {
     func sendTransaction(transaction: Transaction) -> Future<H256, APIError> {
-        load(APIRequest<H256>(method: "send_transaction", params: [transaction.param]))
+        load(APIRequest(method: "send_transaction", params: [transaction.param]))
     }
 
     func txPoolInfo() -> Future<TxPoolInfo, APIError> {
-        load(APIRequest<TxPoolInfo>(method: "tx_pool_info", params: []))
+        load(APIRequest(method: "tx_pool_info", params: []))
     }
 }

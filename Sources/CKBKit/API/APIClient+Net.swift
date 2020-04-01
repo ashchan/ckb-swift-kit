@@ -10,10 +10,10 @@ import CKBFoundation
 
 public extension APIClient {
     func localNodeInfo() -> Future<Node, APIError> {
-        load(APIRequest<Node>(method: "local_node_info", params: []))
+        load(APIRequest(method: "local_node_info", params: []))
     }
 
     func getPeers() -> Future<[Node], APIError> {
-        load(APIRequest<[Node]>(method: "get_peers", params: []))
+        load(APIRequest(method: "get_peers", params: []))
     }
 }
