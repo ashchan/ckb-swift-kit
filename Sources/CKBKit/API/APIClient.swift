@@ -13,7 +13,7 @@ import CKBFoundation
 public class APIClient {
     private let url: URL
 
-    public static let defaultLocalURL = URL(string: "http://localhost:8114")!
+    public static let defaultLocalURL = URL(string: "http://127.0.0.1:8114")!
 
     public init(url: URL = APIClient.defaultLocalURL) {
         self.url = url
@@ -33,8 +33,12 @@ public class APIClient {
                     guard let data = data else {
                         return promise(.failure(APIError.emptyResponse))
                     }
-                    let result = try JSONDecoder().decode(R.self, from: data)
-                    return promise(.success(result))
+                    let result = try JSONDecoder().decode(APIResult<R>.self, from: data)
+                    if let result = result.result {
+                        return promise(.success(result))
+                    } else {
+                        return promise(.failure(APIError.emptyResponse))
+                    }
                 } catch {
                     return promise(.failure(APIError.genericError(error.localizedDescription)))
                 }
