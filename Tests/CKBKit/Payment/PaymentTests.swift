@@ -132,7 +132,7 @@ class PaymentTests: XCTestCase {
         let publicKeyHash: Data
 
         lazy var lock: Script = {
-            let systemScript = try! SystemScript.loadSystemScript(apiClient: apiClient)
+            let systemScript = SystemScript.loadSystemScript()
             return systemScript.lock(for: publicKeyHash.toHexString())
         }()
 

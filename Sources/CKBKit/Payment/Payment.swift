@@ -65,7 +65,7 @@ public final class Payment {
     }
 
     private lazy var systemScript: SystemScript = {
-        return try! SystemScript.loadSystemScript(apiClient: apiClient)
+        return SystemScript.loadSystemScript()
     }()
 }
 

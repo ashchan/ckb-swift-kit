@@ -21,15 +21,15 @@ public struct Utils {
         return publicKey.toHexString()
     }
 
-    public static func publicToAddress(_ publicKey: String, network: Network = .testnet) -> String {
+    public static func publicToAddress(_ publicKey: String, network: Network = .mainnet) -> String {
         return AddressGenerator.address(for: publicKey, network: network)
     }
 
-    public static func publicKeyHashToAddress(_ publicKeyHash: String, network: Network = .testnet) -> String {
+    public static func publicKeyHashToAddress(_ publicKeyHash: String, network: Network = .mainnet) -> String {
         return AddressGenerator.address(publicKeyHash: publicKeyHash, network: network)
     }
 
-    public static func privateToAddress(_ privateKey: String, network: Network = .testnet) -> String {
+    public static func privateToAddress(_ privateKey: String, network: Network = .mainnet) -> String {
         let publicKey = privateToPublic(privateKey)
         return publicToAddress(publicKey, network: network)
     }

@@ -17,23 +17,11 @@ public struct SystemScript {
         self.secp256k1TypeHash = secp256k1TypeHash
     }
 
-    public static func loadSystemScript(apiClient: APIClient) throws -> SystemScript {
-        throw APIError.genericError("Loading system script not impl")
-        /*
-        let genesisBlock = try apiClient.genesisBlock()
-
-        let systemCellTransaction = genesisBlock.transactions[0]
-        let type = systemCellTransaction.outputs[1].type
+    public static func loadSystemScript() -> SystemScript {
+        let depOutPoint = OutPoint(txHash: "0x71a7ba8fc96349fea0ed3a5c47992e3b4084b031a42264a018e0072e8172e46c", index: 0)
         let secp256k1TypeHash = "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8h"
 
-        let depOutPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: 0)
-
         return SystemScript(depOutPoint: depOutPoint, secp256k1TypeHash: secp256k1TypeHash)
- */
-    }
-
-    public static func loadSystemScript(nodeUrl: URL) throws -> SystemScript {
-        return try loadSystemScript(apiClient: APIClient(url: nodeUrl))
     }
 
     public func lock(for publicKey: Data) -> Script {
