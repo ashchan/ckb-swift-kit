@@ -5,7 +5,6 @@
 //
 
 import Foundation
-//import CryptoSwift
 
 public typealias H256 = String // No strict typing for now.
 public typealias HexString = String // Present hex format data
