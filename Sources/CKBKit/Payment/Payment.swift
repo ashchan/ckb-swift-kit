@@ -60,7 +60,7 @@ public final class Payment {
         guard let signedTx = signedTx else {
             throw Error.txNotSigned
         }
-        _ = try apiClient.sendTransaction(transaction: signedTx)
+        _ = apiClient.sendTransaction(transaction: signedTx)
         return signedTx.hash
     }
 

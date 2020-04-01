@@ -5,80 +5,68 @@
 //
 
 import Foundation
+import Combine
 import CKBFoundation
 
 /// JSON RPC API client.
 /// Implement CKB [JSON-RPC](https://github.com/nervosnetwork/ckb/tree/develop/rpc#ckb-json-rpc-protocols) interfaces.
 public class APIClient {
     private let url: URL
-//    private let httpClient: HTTPClient
 
     public static let defaultLocalURL = URL(string: "http://localhost:8114")!
 
     public init(url: URL = APIClient.defaultLocalURL) {
         self.url = url
-        // httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
     }
 
-    deinit {
-        // try? httpClient.syncShutdown()
-    }
+    public func load<R: Codable>(_ request: APIRequest<R>) -> Future<R, APIError> {
+        return Future<R, APIError> { [unowned self] promise in
+            let req: URLRequest
+            do {
+                req = try self.createRequest(request)
+            } catch {
+                return promise(.failure(error as! APIError))
+            }
 
-    public func load<R: Codable>(_ request: APIRequest<R>) throws -> R {
-        let result = try loadNullable(request)
-        if let result = result {
-            return result
+            URLSession.shared.dataTask(with: req) { (data, _, err) in
+                do {
+                    guard let data = data else {
+                        return promise(.failure(APIError.emptyResponse))
+                    }
+                    let result = try request.decode(data)
+                    return promise(.success(result!))
+                } catch {
+                    return promise(.failure(error as! APIError))
+                }
+            }.resume()
         }
-        throw APIError.emptyResponse
     }
 
-    public func loadNullable<R: Codable>(_ request: APIRequest<R>) throws -> R? {
-        var result: R?
-        var err: Error?
-
-        do {
-            throw APIError.genericError("Not Impl")
-            // let httpRequest = try createRequest(request)
-            // let response = try httpClient.execute(request: httpRequest).wait()
-            // if response.status == .ok {
-            //    let bytes = response.body.flatMap { $0.getData(at: 0, length: $0.readableBytes) }
-            //    result = try request.decode(bytes!)
-            // } else {
-            //    err = APIError.genericError("Response status code: \(response.status.code), reason: \(response.status.reasonPhrase)")
-            // }
-        } catch {
-            err = APIError.genericError(error.localizedDescription)
-        }
-
-        if let err = err {
-            throw err
-        }
-
-        return result
-    }
-
-    /*
-    private func createRequest<R>(_ request: APIRequest<R>) throws -> HTTPClient.Request {
-        var req = try HTTPClient.Request(url: url, method: .POST)
-        req.headers.add(name: "Content-Type", value: "application/json")
+    private func createRequest<R>(_ request: APIRequest<R>) throws -> URLRequest {
+        var req = URLRequest(url: url)
+        req.httpMethod = "POST"
+        req.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
         let jsonObject: Any = [ "jsonrpc": "2.0", "id": request.id, "method": request.method, "params": request.params ]
         if !JSONSerialization.isValidJSONObject(jsonObject) {
             throw APIError.invalidParameters
         }
-        let body = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
-        req.body = .data(body)
+        do {
+            req.httpBody = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+        } catch {
+            throw APIError.genericError(error.localizedDescription)
+        }
 
         return req
-    }*/
+    }
 }
 
 extension APIClient {
-    public func genesisBlockHash() throws -> H256 {
-        return try getBlockHash(number: 0)
+    public func genesisBlockHash() -> Future<H256, APIError> {
+        getBlockHash(number: 0)
     }
 
-    public func genesisBlock() throws -> Block {
-        return try getBlockByNumber(number: 0)
+    public func genesisBlock() -> Future<Block, APIError> {
+        getBlockByNumber(number: 0)
     }
 }

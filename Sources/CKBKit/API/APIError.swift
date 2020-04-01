@@ -11,7 +11,7 @@ public struct APIError: Codable, LocalizedError {
     let message: String
 
     var errorDescription: String {
-        return message
+        message
     }
 }
 
@@ -22,6 +22,6 @@ extension APIError {
     static let nullResult = APIError(code: genericErrorCode, message: "Null result")
     static let unmatchedId = APIError(code: genericErrorCode, message: "Unmatched id")
     static func genericError(_ message: String) -> APIError {
-        return APIError(code: genericErrorCode, message: message)
+        APIError(code: genericErrorCode, message: message)
     }
 }

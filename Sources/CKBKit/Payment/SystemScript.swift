@@ -18,20 +18,18 @@ public struct SystemScript {
     }
 
     public static func loadSystemScript(apiClient: APIClient) throws -> SystemScript {
+        throw APIError.genericError("Loading system script not impl")
+        /*
         let genesisBlock = try apiClient.genesisBlock()
-        guard genesisBlock.transactions.count >= 2 else {
-            throw APIError.genericError("Fail to fetch system cell tx from genesis block.")
-        }
 
         let systemCellTransaction = genesisBlock.transactions[0]
-        guard systemCellTransaction.outputs.count >= 2, let type = systemCellTransaction.outputs[1].type else {
-            throw APIError.genericError("Fail to fetch system cell tx from genesis block.")
-        }
-        let secp256k1TypeHash = type.hash
+        let type = systemCellTransaction.outputs[1].type
+        let secp256k1TypeHash = "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8h"
 
         let depOutPoint = OutPoint(txHash: genesisBlock.transactions[1].hash, index: 0)
 
         return SystemScript(depOutPoint: depOutPoint, secp256k1TypeHash: secp256k1TypeHash)
+ */
     }
 
     public static func loadSystemScript(nodeUrl: URL) throws -> SystemScript {

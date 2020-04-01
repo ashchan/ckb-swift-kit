@@ -44,10 +44,12 @@ final class LiveCellCollector: UnspentCellCollector {
     // All types of live cells are collected.
     // Performance concern: this has to iterate over all blocks. It could be very slow.
     func getUnspentCells(from blockNumber: BlockNumber = 0, maxCapacity: Capacity = .max) -> UnspentCells {
+        return UnspentCells(cells: [], lastBlockScanned: blockNumber)
+        /*
         var from = blockNumber
         var to = from
         let step = BlockNumber(100) // Max allowed is 100
-        guard let tip = try? apiClient.getTipBlockNumber() else {
+        guard let tip = apiClient.getTipBlockNumber() else {
             return UnspentCells(cells: [], lastBlockScanned: 0)
         }
 
@@ -63,5 +65,6 @@ final class LiveCellCollector: UnspentCellCollector {
         }
 
         return UnspentCells(cells: results, lastBlockScanned: from)
+        */
     }
 }

@@ -5,14 +5,15 @@
 //
 
 import Foundation
+import Combine
 import CKBFoundation
 
 public extension APIClient {
-    func sendTransaction(transaction: Transaction) throws -> H256 {
-        return try load(APIRequest<H256>(method: "send_transaction", params: [transaction.param]))
+    func sendTransaction(transaction: Transaction) -> Future<H256, APIError> {
+        load(APIRequest<H256>(method: "send_transaction", params: [transaction.param]))
     }
 
-    func txPoolInfo() throws -> TxPoolInfo {
-        return try load(APIRequest<TxPoolInfo>(method: "tx_pool_info", params: []))
+    func txPoolInfo() -> Future<TxPoolInfo, APIError> {
+        load(APIRequest<TxPoolInfo>(method: "tx_pool_info", params: []))
     }
 }

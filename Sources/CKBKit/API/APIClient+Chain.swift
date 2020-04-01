@@ -5,61 +5,62 @@
 //
 
 import Foundation
+import Combine
 import CKBFoundation
 
 public extension APIClient {
-    func getBlock(hash: H256) throws -> Block {
-        return try load(APIRequest<Block>(method: "get_block", params: [hash]))
+    func getBlock(hash: H256) -> Future<Block, APIError> {
+         load(APIRequest<Block>(method: "get_block", params: [hash]))
     }
 
-    func getBlockByNumber(number: BlockNumber) throws -> Block {
-        return try load(APIRequest<Block>(method: "get_block_by_number", params: [number.hexString]))
+    func getBlockByNumber(number: BlockNumber) -> Future<Block, APIError> {
+         load(APIRequest<Block>(method: "get_block_by_number", params: [number.hexString]))
     }
 
-    func getTransaction(hash: H256) throws -> TransactionWithStatus {
-        return try load(APIRequest<TransactionWithStatus>(method: "get_transaction", params: [hash]))
+    func getTransaction(hash: H256) -> Future<TransactionWithStatus, APIError> {
+         load(APIRequest<TransactionWithStatus>(method: "get_transaction", params: [hash]))
     }
 
-    func getBlockHash(number: BlockNumber) throws -> H256 {
-        return try load(APIRequest<String>(method: "get_block_hash", params: [number.hexString]))
+    func getBlockHash(number: BlockNumber) -> Future<H256, APIError> {
+         load(APIRequest<String>(method: "get_block_hash", params: [number.hexString]))
     }
 
-    func getTipHeader() throws -> Header {
-        return try load(APIRequest<Header>(method: "get_tip_header"))
+    func getTipHeader() -> Future<Header, APIError> {
+         load(APIRequest<Header>(method: "get_tip_header"))
     }
 
-    func getHeader(blockHash: H256) throws -> Header {
-        return try load(APIRequest<Header>(method: "get_header", params: [blockHash]))
+    func getHeader(blockHash: H256) -> Future<Header, APIError> {
+         load(APIRequest<Header>(method: "get_header", params: [blockHash]))
     }
 
-    func getHeaderByNumber(number: BlockNumber) throws -> Header {
-        return try load(APIRequest<Header>(method: "get_header_by_number", params: [number.hexString]))
+    func getHeaderByNumber(number: BlockNumber) -> Future<Header, APIError> {
+         load(APIRequest<Header>(method: "get_header_by_number", params: [number.hexString]))
     }
 
-    func getCellsByLockHash(lockHash: H256, from: BlockNumber, to: BlockNumber) throws -> [CellOutputWithOutPoint] {
-        return try load(APIRequest<[CellOutputWithOutPoint]>(
+    func getCellsByLockHash(lockHash: H256, from: BlockNumber, to: BlockNumber) -> Future<[CellOutputWithOutPoint], APIError> {
+         load(APIRequest<[CellOutputWithOutPoint]>(
             method: "get_cells_by_lock_hash",
             params: [lockHash, from.hexString, to.hexString]
         ))
     }
 
-    func getLiveCell(outPoint: OutPoint, withData: Bool = true) throws -> CellWithStatus {
-        return try load(APIRequest<CellWithStatus>(method: "get_live_cell", params: [outPoint.param, withData]))
+    func getLiveCell(outPoint: OutPoint, withData: Bool = true) -> Future<CellWithStatus, APIError> {
+         load(APIRequest<CellWithStatus>(method: "get_live_cell", params: [outPoint.param, withData]))
     }
 
-    func getTipBlockNumber() throws -> BlockNumber {
-        return BlockNumber(hexString: try load(APIRequest<HexString>(method: "get_tip_block_number")))!
+    func getTipBlockNumber() -> Future<String, APIError> {
+         load(APIRequest<HexString>(method: "get_tip_block_number"))
     }
 
-    func getCurrentEpoch() throws -> Epoch {
-        return try load(APIRequest<Epoch>(method: "get_current_epoch"))
+    func getCurrentEpoch() -> Future<Epoch, APIError> {
+         load(APIRequest<Epoch>(method: "get_current_epoch"))
     }
 
-    func getEpochByNumber(number: EpochNumber) throws -> Epoch {
-        return try load(APIRequest<Epoch>(method: "get_epoch_by_number", params: [number.hexString]))
+    func getEpochByNumber(number: EpochNumber) -> Future<Epoch, APIError> {
+         load(APIRequest<Epoch>(method: "get_epoch_by_number", params: [number.hexString]))
     }
 
-    func getCellbaseOutputCapacityDetails(blockHash: H256) throws -> BlockReward? {
-        return try loadNullable(APIRequest<BlockReward>(method: "get_cellbase_output_capacity_details", params: [blockHash]))
+    func getCellbaseOutputCapacityDetails(blockHash: H256) -> Future<BlockReward, APIError> {
+         load(APIRequest<BlockReward>(method: "get_cellbase_output_capacity_details", params: [blockHash]))
     }
 }
