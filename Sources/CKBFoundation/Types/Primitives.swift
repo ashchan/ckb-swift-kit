@@ -60,7 +60,7 @@ public extension Date {
 // MARK: - CryptoSwift Extensions
 
 /*
-The following foundation extensions are fromn [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift).
+The following foundation extensions are from [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift).
 
 
 Copyright (C) 2014-2017 Marcin Krzyżanowski marcin@krzyzanowskim.com This software is provided 'as-is', without any express or implied warranty.
