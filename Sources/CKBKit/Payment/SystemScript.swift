@@ -19,7 +19,7 @@ public struct SystemScript {
 
     public static func loadSystemScript() -> SystemScript {
         let depOutPoint = OutPoint(txHash: "0x71a7ba8fc96349fea0ed3a5c47992e3b4084b031a42264a018e0072e8172e46c", index: 0)
-        let secp256k1TypeHash = "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8h"
+        let secp256k1TypeHash = "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8"
 
         return SystemScript(depOutPoint: depOutPoint, secp256k1TypeHash: secp256k1TypeHash)
     }
