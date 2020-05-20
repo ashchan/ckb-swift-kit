@@ -14,6 +14,7 @@ let package = Package(
     dependencies: [
         .package(name: "secp256k1", url: "https://github.com/ashchan/secp256k1.swift.git", .branch("master")),
         .package(name: "ckb-blake2b", url: "https://github.com/ashchan/ckb-swift-blake2b.git", from: "0.1.0"),
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.3.1")),
     ],
     targets: [
         .target(
@@ -25,7 +26,10 @@ let package = Package(
         ),
         .target(
             name: "CKBKit",
-            dependencies: ["CKBFoundation"]
+            dependencies: [
+                "CKBFoundation",
+                "CryptoSwift",
+            ]
         ),
         .testTarget(
             name: "CKBKitTests",

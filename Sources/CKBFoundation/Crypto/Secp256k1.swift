@@ -140,7 +140,7 @@ final public class Secp256k1 {
         return result == 0 ? nil: pub
    }
 
-    func seckeyTweakAdd(privateKey: Data, tweak: Data) -> Data? {
+    public func seckeyTweakAdd(privateKey: Data, tweak: Data) -> Data? {
         var data = privateKey
         data.withUnsafeMutableBytes {
             let mutableBytes = $0.baseAddress!.assumingMemoryBound(to: UInt8.self)
@@ -149,7 +149,7 @@ final public class Secp256k1 {
         return data
     }
 
-    func pubkeyTweakAdd(publicKey: Data, tweak: Data) -> Data? {
+    public func pubkeyTweakAdd(publicKey: Data, tweak: Data) -> Data? {
         var pubkey = parsePublicKey(publicKey: publicKey)!
         _ = secp256k1_ec_pubkey_tweak_add(context, &pubkey, Array(tweak))
         return serializePublicKey(pubkey: &pubkey, compressed: true)
