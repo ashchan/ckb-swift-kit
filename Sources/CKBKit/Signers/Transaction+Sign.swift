@@ -35,7 +35,7 @@ public extension Transaction {
         guard let messageHash = Blake2b().hash(data: message) else {
             throw Error.failToHashWitnessesData
         }
-        guard let signature = Secp256k1.signRecoverable(privateKey: privateKey, data: messageHash) else {
+        guard let signature = Secp256k1.shared.signRecoverable(privateKey: privateKey, data: messageHash) else {
             throw Error.failToSignWitnessesData
         }
 

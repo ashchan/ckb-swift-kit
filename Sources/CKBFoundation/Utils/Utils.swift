@@ -8,7 +8,7 @@ import Foundation
 
 public struct Utils {
     public static func privateToPublic(_ privateKey: Data) -> Data {
-        return Secp256k1.privateToPublic(privateKey: privateKey)
+        return Secp256k1.shared.privateToPublic(privateKey: privateKey)
     }
 
     /// Generate compressed public key from private key.
