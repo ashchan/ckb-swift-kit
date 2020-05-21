@@ -2,10 +2,10 @@ import Foundation
 import CKBFoundation
 import CryptoSwift
 
-class Keychain {
-    let privateKey: Data
-    let publicKey: Data
-    let chainCode: Data
+public final class Keychain {
+    public let privateKey: Data
+    public let publicKey: Data
+    public let chainCode: Data
 
     private lazy var identifier: Data? = {
         if publicKey.isEmpty {
@@ -14,7 +14,7 @@ class Keychain {
         return RIPEMD160.hash(message: publicKey.sha256())
     }()
 
-    lazy var fingerprint: UInt32 = {
+    public lazy var fingerprint: UInt32 = {
         if let identifier = identifier {
             let bytes = Array(identifier)
             let index = bytes.startIndex
@@ -26,17 +26,17 @@ class Keychain {
         }
         return 0
     }()
-    var parentFingerprint: UInt32 = 0
-    var index: UInt32 = 0
-    var depth = 0
+    public var parentFingerprint: UInt32 = 0
+    public var index: UInt32 = 0
+    public var depth = 0
 
-    init(privateKey: Data, chainCode: Data) {
+    public init(privateKey: Data, chainCode: Data) {
         self.privateKey = privateKey
         self.chainCode = chainCode
         publicKey = Secp256k1.shared.privateToPublic(privateKey: privateKey, compressed: true)
     }
 
-    init(publicKey: Data, chainCode: Data, path: String = "") {
+    public init(publicKey: Data, chainCode: Data, path: String = "") {
         privateKey = Data()
         self.publicKey = publicKey
         self.chainCode = chainCode
@@ -48,18 +48,18 @@ class Keychain {
         }
     }
 
-    init(hmac: Data) {
+    public init(hmac: Data) {
         privateKey = Data(hmac[0..<32])
         publicKey = Secp256k1.shared.privateToPublic(privateKey: privateKey, compressed: true)
         chainCode = Data(hmac[32..<64])
     }
 
-    convenience init(seed: Data) {
+    public convenience init(seed: Data) {
         let hmac = Self.hmac(key: "Bitcoin seed".data(using: .ascii)!, message: seed)
         self.init(hmac: hmac)
     }
 
-    func derivedKeychain(with path: String) -> Keychain? {
+    public func derivedKeychain(with path: String) -> Keychain? {
         if ["m", "/", ""].contains(path) {
             return self
         }
@@ -83,7 +83,7 @@ class Keychain {
         return keychain
     }
 
-    func derivedKeychain(at index: UInt32, hardened: Bool = false) -> Keychain {
+    public func derivedKeychain(at index: UInt32, hardened: Bool = false) -> Keychain {
         var data = Data()
 
         if hardened {
