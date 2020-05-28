@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "CKBFoundation", targets: ["CKBKit"]),
     ],
     dependencies: [
-        .package(name: "secp256k1", url: "https://github.com/ashchan/secp256k1.swift.git", .branch("master")),
+        .package(name: "secp256k1", url: "https://github.com/ashchan/secp256k1.swift.git", .revision("fcc26596f57bd354dd8ff3e19b2ce3cf58992ee6")),
         .package(name: "ckb-blake2b", url: "https://github.com/ashchan/ckb-swift-blake2b.git", from: "0.1.0"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.3.1")),
     ],
